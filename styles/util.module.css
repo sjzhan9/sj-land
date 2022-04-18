@@ -1,0 +1,133 @@
+.outer {
+  background-color: var(--appbg);
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  transition: background-color 0.75s ease;
+}
+.container {
+  max-width: 1600px;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  z-index: 1;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: static;
+  width: 100%;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 9.5rem 4rem;
+  order: 1;
+  flex-grow: 1;
+  margin-left: 0.5rem;
+  background-color: var(--bg);
+  overflow: scroll;
+  transition: all 0.15s ease-in;
+}
+.pageColumn {
+  max-width: 38rem;
+  width: 100%;
+}
+.divider {
+  padding: 1.25rem 0rem 0rem 0.25rem;
+  /* margin-top: 0.5rem; */
+  font-size: 12.4px;
+  font-weight: 450;
+  color: var(--gray9);
+}
+.header {
+  font-family: Ninna, Inter, sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  /* font-family: Inter, sans-serif;
+  font-size: 3rem;
+  font-weight: 600;*/
+}
+.externalLink,
+.internalLink {
+  padding-right: 22px;
+  display: inline-flex;
+  padding-left: 3px;
+  margin-left: -3px;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.externalLink:after {
+  display: inline-block;
+  padding: 0px 0px 0px 1px;
+  content: url(/icons/external.svg);
+  width: 22px;
+  height: 20px;
+  margin-right: -22px;
+}
+
+.internalLink:after {
+  display: inline-block;
+  /* padding-right: 24px; */
+  padding: 0px 0px 0px 1px;
+  content: url(/icons/internal.svg);
+  width: 22px;
+  height: 20px;
+  margin-right: -22px;
+}
+.externalLink:hover,
+.internalLink:hover {
+  background-color: var(--gray5);
+  transition: all 0.2s ease;
+}
+.list {
+  padding: 0px;
+  margin-top: 3rem;
+}
+.description {
+  margin: 0rem 0rem 1rem;
+  padding: 0.25rem;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: var(--gray11);
+}
+.tileTitle {
+  font-weight: 400;
+  font-size: 16px;
+}
+.tileContent {
+  margin-top: 0.5rem;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gray9);
+}
+.inset4 {
+  padding: 0rem 0.25rem;
+}
+.grid {
+  padding-left: 0px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row: auto auto;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.read {
+  font-size: 1rem;
+  line-height: 170%;
+  color: var(--gray12);
+  margin-bottom: 1.5rem;
+}
+.readTitle {
+  font-size: 1.375rem;
+  line-height: 170%;
+  font-weight: 600;
+  color: var(--gray12);
+  margin-bottom: 0.5rem;
+}

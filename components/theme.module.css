@@ -1,0 +1,79 @@
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.tabs {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  background-color: var(--tabbg);
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.tabs * {
+  z-index: 2;
+}
+
+.input[type="radio"] {
+  display: none;
+}
+
+.tab {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.75rem;
+  width: 80.9373333333px;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--menuLabel);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+/* .tab:hover {
+  color: var(--gray12);
+} */
+.input[type="radio"]:checked + label {
+  color: var(--menuLabel);
+}
+
+.input[id="radio-1"]:checked ~ .glider {
+  transform: translateX(0);
+}
+
+.input[id="radio-2"]:checked ~ .glider {
+  transform: translateX(100%);
+}
+
+.input[id="radio-3"]:checked ~ .glider {
+  transform: translateX(200%);
+}
+
+.glider {
+  position: absolute;
+  display: flex;
+  height: 1.75rem;
+  width: 80.9373333333px;
+  background-color: var(--highlight);
+
+  z-index: 1;
+  border-radius: 6px;
+  transition: 0.25s ease-in-out;
+}
+
+@media (max-width: 700px) {
+  .tabs {
+    transform: scale(0.6);
+  }
+}

@@ -1,0 +1,29 @@
+.container {
+  padding: 0.6rem;
+  width: 16.75rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-shrink: 0;
+  background: var(--menu);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  transition: all 0.15s ease-in;
+}
+.title {
+  font-weight: 600;
+  font-size: 17px;
+  margin: 1.25rem 0rem 1.25rem 1rem;
+}
+.divider {
+  padding: 1.25rem 0rem 0.5rem 0.75rem;
+  /* margin-top: 0.5rem; */
+  font-size: 12.4px;
+  font-weight: 450;
+  color: var(--gray9);
+}
+.upper {
+  overflow: scroll;
+  flex-shrink: 1;
+}
