@@ -10,10 +10,10 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
         <div className={styles.icon}>
           <Image
             // priority
-            src={`/investments/${icon}.png`}
+            src={"/investments/" + { icon } + ".png"}
             height={32}
             width={32}
-            alt={title}
+            alt={title ? title : "image"}
           />
         </div>
         <div className={styles.stack}>

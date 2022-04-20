@@ -19,7 +19,7 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
   });
 
   return external ? (
-    <a target="_blank" className={styles.item} href={href}>
+    <a target="_blank" className={styles.item} href={href} rel="noreferrer">
       <div className={styles.left}>
         <Image
           className={styles.icon}
@@ -53,7 +53,7 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
           <Image
             className={styles.icon}
             priority
-            src={`/icons2/${svg}.svg`}
+            src={"/icons2/" + { svg } + ".svg"}
             //   className={utilStyles.borderCircle}
             height={22}
             width={22}

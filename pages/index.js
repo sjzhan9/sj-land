@@ -25,6 +25,7 @@ export default function Home() {
             <a
               href="https://withcompound.com"
               target="_blank"
+              rel="noreferrer"
               className={util.externalLink}
             >
               Compound

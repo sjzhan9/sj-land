@@ -4,11 +4,11 @@ import util from "../styles/util.module.css";
 
 export default function PodcastTile({ image, title, content, url }) {
   return (
-    <a href={url} target="blank" className={styles.container}>
+    <a href={url} target="_blank" className={styles.container}>
       <Image
         className={styles.image}
         // priority
-        src={`/podcasts/${image}.png`}
+        src={"/podcasts/" + { image } + ".png"}
         width={200}
         height={200}
         layout="responsive"

@@ -11,12 +11,17 @@ export default function ReadingListTile({ title, url, date }) {
           month: "short",
         })}
       </p>
-      <a href={url} target="blank" className={styles.container}>
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className={styles.container}
+      >
         <div className={styles.stack}>
           <h3 className={util.tileTitle}>{title}</h3>
           <p className={util.tileContent}>{url}</p>
         </div>
-        <Image height={20} width={20} src={`/icons/external.svg`} />
+        <Image height={20} width={20} src={"/icons/external.svg"} alt="icon" />
       </a>
     </div>
   );
