@@ -26,7 +26,7 @@ export default function About() {
             </p>
             <h2 className={util.readTitle}>On Design</h2>
             <p className={util.read}>
-              Though my bread and butter today is digital product design, I'm
+              Though my bread and butter today is digital product design, Im
               deeply fascinated by all design practices. I like to read about
               design histories and to talk about iconic chairs. My master thesis
               included an archive of influential 20th century industrial
@@ -49,10 +49,10 @@ export default function About() {
               In the 10 years that I've been studying and working in design. I
               spent the first two in arts, and the next four years trying my
               hands in different design practices. In the past four years, I
-              focused on designing and developing software products. I’ve worked
+              focused on designing and developing software products. Ive worked
               in large design teams as well as performed as the sole designer
               for startups. If you are interested to know more, you can find me
-              on LinkedIn. I’ve also added a short preview below.
+              on LinkedIn. Ive also added a short preview below.
             </p>
           </div>
         </div>

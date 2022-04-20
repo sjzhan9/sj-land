@@ -13,7 +13,7 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
             src={"/investments/" + icon + ".png"}
             height={32}
             width={32}
-            alt={title ? title : "image"}
+            alt="investment icon"
           />
         </div>
         <div className={styles.stack}>

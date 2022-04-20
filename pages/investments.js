@@ -8,7 +8,7 @@ export default function Investments() {
   return (
     <>
       <Head>
-        <title>SJ's Investments</title>
+        <title>SJs Investments</title>
         <meta name="description" content="SJ's Investments" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

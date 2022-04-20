@@ -10,7 +10,7 @@ export default function ReadingList() {
   return (
     <>
       <Head>
-        <title>SJ's Reading List</title>
+        <title>SJs Reading List</title>
         <meta
           name="description"
           content="Some of my bookmarks that I love re-reading"

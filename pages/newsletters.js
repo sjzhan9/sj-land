@@ -8,7 +8,7 @@ export default function Newsletters() {
   return (
     <>
       <Head>
-        <title>SJ's Favorite Newsletters</title>
+        <title>SJs Favorite Newsletters</title>
         <meta
           name="description"
           content="What I read in the morning and before bed"

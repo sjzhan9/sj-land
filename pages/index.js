@@ -21,11 +21,11 @@ export default function Home() {
           <h1 className={util.header}>Recents</h1>
 
           <p className={util.description}>
-            Currently, I’m leading design at<> </>
+            Currently, Im leading design at<> </>
             <a
               href="https://withcompound.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={util.externalLink}
             >
               Compound
@@ -50,63 +50,7 @@ export default function Home() {
           <ul className={util.list}>
             <Tile
               icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
-              content="If you are a founder, pitch to me!"
-              type="Updates"
-              date="2021-01-01"
-            />
-            <Tile
-              icon="about"
-              title="I've joined the Republic community as a Venture Fellow"
+              title="Ive joined the Republic community as a Venture Fellow"
               content="If you are a founder, pitch to me!"
               type="Updates"
               date="2021-01-01"

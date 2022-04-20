@@ -19,7 +19,12 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
   });
 
   return external ? (
-    <a target="_blank" className={styles.item} href={href} rel="noreferrer">
+    <a
+      target="_blank"
+      className={styles.item}
+      href={href}
+      rel="noopener noreferrer"
+    >
       <div className={styles.left}>
         <Image
           className={styles.icon}
