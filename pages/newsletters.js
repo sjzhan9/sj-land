@@ -30,19 +30,19 @@ export default function Newsletters() {
               url="https://robinhood.com"
             />
             <NewsletterTile
-              image="All In"
+              image="compound"
               title="All In"
               content="If you are a founder, pitch to me!"
               url="robinhood.com"
             />
             <NewsletterTile
-              image="Lex Fridman"
+              image="compound"
               title="Lex Fridman"
               content="If you are a founder, pitch to me!"
               url="robinhood.com"
             />
             <NewsletterTile
-              image="Not Boring"
+              image="compound"
               title="Not Boring"
               content="If you are a founder, pitch to me!"
               url="robinhood.com"

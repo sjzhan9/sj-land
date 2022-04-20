@@ -17,7 +17,7 @@ export default function Tile({ icon, title, content, type, date }) {
         <Image
           className={styles.icon}
           // priority
-          src={`/icons/${icon}.svg`}
+          src={"/icons/" + icon + ".svg"}
           height={32}
           width={32}
           alt={title}

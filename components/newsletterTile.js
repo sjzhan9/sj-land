@@ -8,7 +8,7 @@ export default function NewsletterTile({ image, title, content, url }) {
       <Image
         className={styles.image}
         // priority
-        src={"/newsletters/" + { image } + ".png"}
+        src={"/newsletters/" + image + ".png"}
         width={200}
         height={200}
         layout="responsive"

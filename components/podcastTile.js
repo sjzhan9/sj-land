@@ -8,7 +8,7 @@ export default function PodcastTile({ image, title, content, url }) {
       <Image
         className={styles.image}
         // priority
-        src={"/podcasts/" + { image } + ".png"}
+        src={"/podcasts/" + image + ".png"}
         width={200}
         height={200}
         layout="responsive"

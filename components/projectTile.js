@@ -16,7 +16,7 @@ export default function ProjectTile({ image, title, content, type, date }) {
         <Image
           className={styles.image}
           // priority
-          src={"/projects/" + { image } + ".png"}
+          src={"/projects/" + image + ".png"}
           width={400}
           height={220}
           layout="responsive"
