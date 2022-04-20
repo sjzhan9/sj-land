@@ -9,7 +9,7 @@ export default function Podcasts() {
   return (
     <>
       <Head>
-        <title>SJ's Favorite Podcasts</title>
+        <title>SJs Favorite Podcasts</title>
         <meta name="description" content="What I listening to when I commute" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

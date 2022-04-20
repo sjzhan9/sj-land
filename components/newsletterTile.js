@@ -13,6 +13,7 @@ export default function NewsletterTile({ image, title, content, url }) {
         height={200}
         layout="responsive"
         alt={title}
+        rel="noopener noreferrer"
       />
       <div className={styles.stack}>
         <h3 className={util.tileTitle}>{title}</h3>

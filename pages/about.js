@@ -33,7 +33,7 @@ export default function About() {
               designs. During undergrad, I wrote papers on Jony Ive and Issey
               Miyake. In my fashion years, I learnt about the supply chains and
               sewn collections of garments myself. Growing up with an architect
-              father, I've paid attention to shapes, forms and spaces at every
+              father, Ive paid attention to shapes, forms and spaces at every
               street corner since I was a kid. Across practices and throughout
               history, I believe the one constant of design, is that design
               makes objects or environments more functional and comprehensible.
@@ -46,7 +46,7 @@ export default function About() {
             </p>
             <h2 className={util.readTitle}>On Career</h2>
             <p className={util.read}>
-              In the 10 years that I've been studying and working in design. I
+              In the 10 years that Ive been studying and working in design. I
               spent the first two in arts, and the next four years trying my
               hands in different design practices. In the past four years, I
               focused on designing and developing software products. Ive worked
