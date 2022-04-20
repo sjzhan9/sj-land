@@ -5,7 +5,32 @@
 
 @font-face {
   font-family: "Ninna";
-  src: url("/styles/ninna.woff") format("woff");
+  src: url(/styles/ninna.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Aktiv Grotesk";
+  src: url("/styles/AktivGroteskVF_W_Wght.woff2")
+      format("woff2 supports variations"),
+    url("/styles/AktivGroteskVF_W_Wght.woff2") format("woff2-variations");
+
+  font-weight: 100 900;
+}
+/* @import url("/styles/AktivGroteskVF_W_Wght.woff2");
+html {
+  font-family: "Aktiv", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Aktiv var", sans-serif;
+    font-weight: 100 900;
+  }
+} */
+@font-face {
+  font-family: "Monument Grotesk";
+  src: url("/styles/ABCMonumentGrotesk-Medium-Trial.woff2") format("woff2"),
+    url("/styles/ABCMonumentGrotesk-Medium-Trial.otf") format("opentype");
+  font-weight: 500;
 }
 
 @import url("https://rsms.me/inter/inter.css");
@@ -15,46 +40,46 @@ html {
 @supports (font-variation-settings: normal) {
   html {
     font-family: "Inter var", sans-serif;
+    font-weight: 100 900;
   }
 }
 
 :root {
+  --appbg: rgb(255, 255, 255);
   --bg: white;
-  --menu: rgba(255, 255, 255, 0.625);
-  --highlight: white;
+
+  --menu: rgba(255, 255, 255, 0.452);
+  --menuLabel: rgba(0, 0, 0, 0.825);
+
+  --highlight: rgba(255, 255, 255, 0.589);
   --highlighthover: rgba(255, 255, 255, 0.5);
-  --highlightActiveBorder: rgba(0, 0, 0, 0.07);
-
-  --tabbg: rgba(0, 0, 0, 0.067);
-  --tabText: rgba(0, 0, 0, 0.425);
-
-  --appbg: rgb(221, 232, 241);
+  --highlightActiveBorder: rgba(0, 0, 0, 0.08);
+  --tabbg: rgba(0, 0, 0, 0.071);
+  --tabText: rgba(0, 0, 0, 0.344);
 
   --linkContainerBg: rgb(255, 255, 255);
   --linkContainerBorder: rgb(235, 235, 235);
   --linkContainerBgHover: rgb(242, 242, 242);
   --linkContainerBorderHover: rgb(224, 224, 224);
-
-  --menuLabel: rgba(0, 0, 0, 0.825);
 }
 
 .dark-theme {
   /* Remap your colors for dark mode */
-  --bg: rgb(22, 22, 22);
+  --appbg: rgb(25, 25, 25);
+  --bg: rgb(10, 10, 10);
+
+  --menu: rgba(10, 10, 10, 0.8);
+  --menuLabel: rgba(255, 255, 255, 0.8);
   --highlight: rgba(255, 255, 255, 0.1);
   --highlighthover: rgba(255, 255, 255, 0.05);
   --highlightActiveBorder: rgba(255, 255, 255, 0.04);
-
   --tabbg: rgba(255, 255, 255, 0.08);
   --tabText: rgba(255, 255, 255, 0.372);
 
-  --menu: rgba(10, 10, 10, 0.8);
-  --appbg: rgb(100, 79, 101);
   --linkContainerBg: rgb(34, 34, 34);
   --linkContainerBorder: rgb(39, 39, 39);
   --linkContainerBgHover: rgb(43, 43, 43);
   --linkContainerBorderHover: rgb(49, 49, 49);
-  --menuLabel: rgba(255, 255, 255, 0.8);
 }
 
 .bg {
@@ -63,26 +88,63 @@ html {
   height: 100%;
   left: 0px;
   top: 0px;
-  opacity: 0.45;
+  opacity: 0.25;
+  z-index: 1;
   /* transition: all 0.75s ease-in-out; */
 }
 
 .dark-theme .bg {
-  opacity: 0.55;
+  opacity: 0.25;
+}
+
+.noise {
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: contrast(700%) brightness(400%);
+  opacity: 0.3;
+  background: radial-gradient(
+      circle at 51% 50%,
+      rgba(90, 90, 90, 0.44),
+      rgba(59, 59, 59, 0.33)
+    ),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.77' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.tv {
+  left: -50px;
+  top: -50px;
+  z-index: 0;
+  position: absolute;
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  background: repeating-linear-gradient(
+    rgb(83, 83, 83),
+    rgb(98, 98, 98) 50%,
+    #fff 50%,
+    #fff
+  );
+  background-size: 10px 10px;
+  filter: url(#noise);
+  opacity: 0.4;
 }
 
 html,
 body,
+p,
 h1,
 h2,
 h3,
 h4,
-h5,
-p {
+h5 {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Monument Grotesk, Aktiv Grotesk, Inter, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -99,3 +161,6 @@ code {
   padding: 0px 4px;
   margin: 0px 0px 0px;
 }
+/* ::-webkit-scrollbar {
+  display: none;
+} */

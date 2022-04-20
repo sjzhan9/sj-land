@@ -8,6 +8,26 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" value={{ dark: "dark-theme" }}>
       <div className={util.outer}>
+        {/* <div className="noise"></div> */}
+        {/* <div className="tv">
+          <svg>
+            <filter id="noise">
+              <feTurbulence id="turbulence">
+                <animate
+                  attributeName="baseFrequency"
+                  dur="1s"
+                  values="0.9 0.9; 0.8 0.8 0.9 0.9; "
+                  repeatCount="indefinite"
+                ></animate>
+              </feTurbulence>
+              <feDisplacementMap
+                in="SourceGraphic"
+                scale="80"
+              ></feDisplacementMap>
+            </filter>
+          </svg>
+        </div> */}
+
         <Background />
         <div className={util.container}>
           <Menu />

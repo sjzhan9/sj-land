@@ -1,22 +1,29 @@
 import React, { useEffect } from "react";
+import { useTheme } from "next-themes";
 
 export default function Background() {
+  //   const { theme, setTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
+
   useEffect(() => {
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
     let time = 0;
+    console.log(resolvedTheme);
+
+    let baseNum = resolvedTheme == "dark" ? 50 : 150;
 
     const color = function (x, y, r, g, b) {
       context.fillStyle = `rgb(${r}, ${g}, ${b})`;
       context.fillRect(x, y, 10, 10);
     };
     const B = function (x, y, time) {
-      return Math.floor(200 + 56 * Math.cos((x * x - y * y) / 200 + time));
+      return Math.floor(baseNum + 56 * Math.cos((x * x - y * y) / 200 + time));
     };
 
     const G = function (x, y, time) {
       return Math.floor(
-        180 +
+        baseNum +
           36 *
             Math.sin(
               (x * x * Math.cos(time / 4) + y * y * Math.sin(time / 3)) / 300
@@ -30,7 +37,7 @@ export default function Background() {
     // //}
     const R = function (x, y, time) {
       return Math.floor(
-        192 +
+        baseNum +
           64 *
             Math.sin(
               5 * Math.sin(time / 9) +
@@ -50,9 +57,10 @@ export default function Background() {
     };
 
     startAnimation();
-  }, []);
+  }, [resolvedTheme]);
   return (
-    <canvas id="canvas" width="32px" height="20px" className="bg" />
-    // <div style={style}>haha</div>
+    <>
+      <canvas id="canvas" width="32px" height="20px" className="bg" />
+    </>
   );
 }

@@ -4,22 +4,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.675rem;
-
   position: static;
   width: 100%;
-  height: 2.625rem;
+  height: 2.5rem;
 
   box-sizing: border-box;
   border-radius: 6px;
-  margin-top: 1px;
-  border: 1px solid transparent;
+  margin-top: 2px;
+  border: 0.5px solid transparent;
+  transition: all 0.05s ease;
 }
 .item:hover {
   background: var(--highlighthover);
 }
+.item:active {
+  background: var(--highlighthover);
+  transform: scaleX(0.985) scaleY(0.985) translateY(0.5px);
+}
 .item[aria-current="page"] {
   background: var(--highlight);
-  border: 1px solid var(--highlightActiveBorder);
+  border: 0.5px solid var(--highlightActiveBorder);
 }
 .left {
   display: flex;
@@ -31,6 +35,9 @@
   font-size: 13.6px;
   margin: 0px 0px 0px 10px;
   color: var(--menuLabel);
+  /* font-family: "Aktiv Grotesk"; */
+  font-weight: 520;
+  letter-spacing: 0.15px;
 }
 .shortcut {
   background: var(--tabbg);

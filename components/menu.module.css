@@ -1,14 +1,14 @@
 .container {
-  padding: 0.6rem;
-  width: 16.75rem;
+  padding: 0.15rem;
+  width: 15rem;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   flex-shrink: 0;
-  background: var(--menu);
-  backdrop-filter: blur(12px);
-  border-radius: 10px;
+  /* background: var(--menu); */
+  /* backdrop-filter: blur(12px); */
+  /* border-radius: 10px; */
   transition: all 0.15s ease-in;
 }
 .title {
@@ -24,6 +24,6 @@
   color: var(--gray9);
 }
 .upper {
-  overflow: scroll;
+  overflow: auto;
   flex-shrink: 1;
 }
