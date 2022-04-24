@@ -28,7 +28,17 @@ export default function ReadingList({ list }) {
             Some of my bookmarks that I love re-reading
           </p>
           <ul className={util.list}>
-            {list.map((link) =>
+            {list.map((link) => (
+              <ReadingListTile
+                key={"key" + link.id}
+                title={link.properties.Name.title[0].plain_text}
+                url={link.properties.URL.url}
+                date={link.created_time}
+                fav={link.properties.Fav.checkbox}
+                tags={link.properties.Tags.multi_select}
+              />
+            ))}
+            {/* {list.map((link) =>
               list.id ? (
                 <ReadingListTile
                   key={link.id}
@@ -39,7 +49,19 @@ export default function ReadingList({ list }) {
                   tags={link.properties.Tags.multi_select}
                 />
               ) : null
-            )}
+            )} */}
+            {/* {list.id
+              ? list.map((link) => (
+                  <ReadingListTile
+                    key={link.id}
+                    title={link.properties.Name.title[0].plain_text}
+                    url={link.properties.URL.url}
+                    date={link.created_time}
+                    fav={link.properties.Fav.checkbox}
+                    tags={link.properties.Tags.multi_select}
+                  />
+                ))
+              : null} */}
           </ul>
         </div>
       </main>
