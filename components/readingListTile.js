@@ -2,7 +2,7 @@ import styles from "../components/readingListTile.module.css";
 import Image from "next/image";
 import util from "../styles/util.module.css";
 
-export default function ReadingListTile({ key, title, url, date, fav, tags }) {
+export default function ReadingListTile({ title, url, date, fav, tags }) {
   return (
     <div className={styles.outer}>
       <p className={styles.date}>

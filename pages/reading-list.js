@@ -9,7 +9,6 @@ import ReadingListTile from "../components/readingListTile";
 const { Client } = require("@notionhq/client");
 
 export default function ReadingList({ list }) {
-  console.log(list);
   return (
     <>
       <Head>
@@ -29,16 +28,18 @@ export default function ReadingList({ list }) {
             Some of my bookmarks that I love re-reading
           </p>
           <ul className={util.list}>
-            {list.map((link) => (
-              <ReadingListTile
-                key={link.id}
-                title={link.properties.Name.title[0].plain_text}
-                url={link.properties.URL.url}
-                date={link.created_time}
-                fav={link.properties.Fav.checkbox}
-                tags={link.properties.Tags.multi_select}
-              />
-            ))}
+            {list.map((link) =>
+              list.id ? (
+                <ReadingListTile
+                  key={link.id}
+                  title={link.properties.Name.title[0].plain_text}
+                  url={link.properties.URL.url}
+                  date={link.created_time}
+                  fav={link.properties.Fav.checkbox}
+                  tags={link.properties.Tags.multi_select}
+                />
+              ) : null
+            )}
           </ul>
         </div>
       </main>

@@ -9,7 +9,6 @@ export default function Background() {
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
     let time = 0;
-    console.log(resolvedTheme);
 
     let baseNum = resolvedTheme == "dark" ? 50 : 150;
 
