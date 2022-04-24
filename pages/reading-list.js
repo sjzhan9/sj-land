@@ -96,6 +96,7 @@ export async function getStaticProps() {
     props: {
       list: response.results,
     },
+    revalidate: 5,
   };
   // res.status(200).json({  });
 }
