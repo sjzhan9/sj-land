@@ -89,7 +89,7 @@ export default function Contact({ svg, label, shortcut }) {
             <div className={styles.stack}>
               <p className={styles.mainText}>Book a time</p>
               <p className={styles.subText}>
-                If you want advice, it's easier to chat live
+                {"If you want advice, it's easier to chat live"}
               </p>
             </div>
 
@@ -100,7 +100,7 @@ export default function Contact({ svg, label, shortcut }) {
           <div className={styles.row}>
             <div className={styles.stack}>
               <p className={styles.mainText}>Stay in touch</p>
-              <p className={styles.subText}>I'm more active on twitter</p>
+              <p className={styles.subText}>{"I'm more active on twitter"}</p>
             </div>
             <div className={styles.flexRow}>
               <a
