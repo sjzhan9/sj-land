@@ -2,6 +2,7 @@ import styles from "../components/menu.module.css";
 import { ThemeChanger } from "./theme";
 import Link from "next/link";
 import NavLink from "./navLink";
+import Contact from "./contact";
 
 export default function Menu() {
   //get url to decide the state of Link components
@@ -9,7 +10,7 @@ export default function Menu() {
   return (
     <div className={styles.container}>
       <div className={styles.upper}>
-        <h3 className={styles.title}>SJ ZHANG</h3>
+        <h3 className={styles.title}>SJ Zhang</h3>
         <nav className={styles.nav}>
           <NavLink svg="recents" href="/" label="Recents" shortcut="1" />
           <NavLink svg="about" href="/about" label="About" shortcut="2" />
@@ -47,6 +48,7 @@ export default function Menu() {
             shortcut="7"
           />
           <p className={styles.divider}>Stay in touch</p>
+          <Contact svg="chat" label="Contact" shortcut="8" />
           <NavLink
             svg="twitter"
             href="https://twitter.com/sjzhang_"

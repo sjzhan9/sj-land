@@ -6,7 +6,10 @@ import Link from "next/link";
 import Menu from "../components/menu";
 import Background from "../components/background";
 import ReadingListTile from "../components/readingListTile";
-export default function ReadingList() {
+const { Client } = require("@notionhq/client");
+
+export default function ReadingList({ list }) {
+  console.log(list);
   return (
     <>
       <Head>
@@ -25,21 +28,51 @@ export default function ReadingList() {
           <p className={util.description}>
             Some of my bookmarks that I love re-reading
           </p>
-
           <ul className={util.list}>
-            <ReadingListTile
-              title="My first impression of Web3"
-              url="https://moxie.org/2022/01/07/web3-first-impressions.html"
-              date="2022-01-01"
-            />
-            <ReadingListTile
-              title="We don't sell saddles here"
-              url="https://moxie.org/2022/01/07/web3-first-impressions.html"
-              date="2020-09-12"
-            />
+            {list.map((link) => (
+              <ReadingListTile
+                key={link.id}
+                title={link.properties.Name.title[0].plain_text}
+                url={link.properties.URL.url}
+                date={link.created_time}
+                fav={link.properties.Fav.checkbox}
+                tags={link.properties.Tags.multi_select}
+              />
+            ))}
           </ul>
         </div>
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+
+  const response = await notion.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID,
+    filter: {
+      and: [
+        {
+          property: "Display",
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
+    },
+    sorts: [
+      {
+        property: "Created",
+        direction: "descending",
+      },
+    ],
+  });
+
+  return {
+    props: {
+      list: response.results,
+    },
+  };
+  // res.status(200).json({  });
 }

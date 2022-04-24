@@ -12,9 +12,11 @@
   transition: all 0.15s ease-in;
 }
 .title {
-  font-weight: 600;
-  font-size: 17px;
+  font-weight: 550;
+  font-size: 15px;
   margin: 1.25rem 0rem 1.25rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 .divider {
   padding: 1.25rem 0rem 0.5rem 0.75rem;

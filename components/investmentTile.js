@@ -7,10 +7,11 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <div className={styles.icon}>
+        <div>
           <Image
             // priority
             src={"/investments/" + icon + ".png"}
+            className={styles.icon}
             height={32}
             width={32}
             alt="investment icon"

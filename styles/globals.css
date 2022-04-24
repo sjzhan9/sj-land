@@ -45,7 +45,7 @@ html {
 }
 
 :root {
-  --appbg: rgb(255, 255, 255);
+  --appbg: rgb(247, 247, 247);
   --bg: white;
 
   --menu: rgba(255, 255, 255, 0.452);
@@ -61,12 +61,35 @@ html {
   --linkContainerBorder: rgb(235, 235, 235);
   --linkContainerBgHover: rgb(242, 242, 242);
   --linkContainerBorderHover: rgb(224, 224, 224);
+
+  --overlayDarkness: rgba(0 0 0 / 0.3);
+  --modalBg: rgb(255, 255, 255);
+
+  /* --appbg: rgb(0, 0, 0);
+  --bg: white;
+
+  --menu: rgba(255, 255, 255, 0);
+  --menuLabel: rgba(255, 255, 255, 0.825);
+
+  --highlight: rgba(255, 255, 255, 0.104);
+  --highlighthover: rgba(255, 255, 255, 0.065);
+  --highlightActiveBorder: rgba(0, 0, 0, 0.08);
+  --tabbg: rgba(255, 255, 255, 0.071);
+  --tabText: rgba(255, 255, 255, 0.344);
+
+  --linkContainerBg: rgb(255, 255, 255);
+  --linkContainerBorder: rgb(235, 235, 235);
+  --linkContainerBgHover: rgb(242, 242, 242);
+  --linkContainerBorderHover: rgb(224, 224, 224);
+
+  --overlayDarkness: rgba(0 0 0 / 0.3);
+  --modalBg: rgb(255, 255, 255); */
 }
 
 .dark-theme {
   /* Remap your colors for dark mode */
-  --appbg: rgb(25, 25, 25);
-  --bg: rgb(10, 10, 10);
+  --appbg: rgb(26, 26, 26);
+  --bg: rgb(14, 14, 14);
 
   --menu: rgba(10, 10, 10, 0.8);
   --menuLabel: rgba(255, 255, 255, 0.8);
@@ -80,6 +103,9 @@ html {
   --linkContainerBorder: rgb(39, 39, 39);
   --linkContainerBgHover: rgb(43, 43, 43);
   --linkContainerBorderHover: rgb(49, 49, 49);
+
+  --overlayDarkness: rgba(0 0 0 / 0.65);
+  --modalBg: rgb(28, 28, 28);
 }
 
 .bg {
@@ -88,13 +114,16 @@ html {
   height: 100%;
   left: 0px;
   top: 0px;
-  opacity: 0.25;
+  opacity: 0.06;
   z-index: 1;
   /* transition: all 0.75s ease-in-out; */
 }
 
 .dark-theme .bg {
-  opacity: 0.25;
+  opacity: 0.06;
+}
+.dark-theme .iconInvert {
+  filter: invert(1);
 }
 
 .noise {
@@ -164,3 +193,36 @@ code {
 /* ::-webkit-scrollbar {
   display: none;
 } */
+.tag {
+  padding: 3px 4px;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 1;
+}
+.grayTag {
+  background-color: rgb(225, 225, 225);
+}
+.brownTag {
+  background-color: rgb(220, 197, 169);
+}
+.orangeTag {
+  background-color: rgb(255, 211, 180);
+}
+.yellowTag {
+  background-color: rgb(255, 244, 180);
+}
+.greenTag {
+  background-color: rgb(213, 250, 208);
+}
+.blueTag {
+  background-color: rgb(204, 225, 255);
+}
+.purpleTag {
+  background-color: rgb(199, 180, 255);
+}
+.pinkTag {
+  background-color: rgb(255, 180, 251);
+}
+.redTag {
+  background-color: rgb(255, 180, 180);
+}

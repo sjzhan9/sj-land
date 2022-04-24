@@ -1,0 +1,233 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.675rem 0.5rem 0.875rem;
+  position: static;
+  width: 100%;
+  height: 2.5rem;
+
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-top: 2px;
+  border: 0.5px solid transparent;
+  transition: all 0.1s ease;
+}
+.item:hover {
+  background: var(--highlighthover);
+  cursor: pointer;
+}
+.item:active {
+  background: var(--highlighthover);
+  transform: scaleX(0.985) scaleY(0.985) translateY(0.5px);
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.label {
+  font-weight: 480;
+  font-size: 13.2px;
+  margin: 0px 0px 0px 10px;
+  color: var(--menuLabel);
+  /* font-family: "Aktiv Grotesk"; */
+  font-weight: 520;
+  letter-spacing: 0.15px;
+}
+.shortcut {
+  background: var(--tabbg);
+  border-radius: 3px;
+  width: 16px;
+  height: 16px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shortcutText {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--tabText);
+}
+.icon {
+  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  /* backdrop-filter: blur(2px); */
+  background-color: var(--overlayDarkness);
+  /* animation: overlay-show 150ms cubic-bezier(0.16, 1, 0.3, 1) forwards; */
+  z-index: 998;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--modalBg);
+  color: var(--gray12);
+  box-shadow: rgba(20, 20, 20, 0.15) 0px 10px 38px -10px,
+    rgba(20, 20, 20, 0.05) 0px 10px 20px -15px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: stretch;
+  z-index: 999;
+  padding: 2rem;
+}
+
+.overlay[data-state="open"] {
+  animation: overlay-show 250ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.overlay[data-state="closed"] {
+  animation: overlay-out 200ms ease-out forwards;
+}
+.content[data-state="open"] {
+  animation: content-show 250ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.content[data-state="closed"] {
+  animation: content-out 200ms ease-out forwards;
+}
+.content h1 h2 h3 p {
+  color: var(--gray12);
+}
+
+@keyframes overlay-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes content-show {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes content-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+}
+.title {
+  margin-bottom: 0.75rem;
+  margin-left: -2px;
+}
+.mainText {
+  font-weight: 500;
+  font-size: 14.6px;
+  margin-bottom: 4px;
+}
+.subText {
+  color: var(--gray9);
+  font-size: 13px;
+}
+.buttonPair {
+  border: 1px solid var(--gray4);
+  display: flex;
+  flex-direction: row;
+  border-radius: 6px;
+}
+.button {
+  height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightBorder {
+  border-right: 1px solid var(--gray4);
+}
+.button:hover {
+  background-color: var(--gray4);
+}
+.textButton {
+  padding: 0.5rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  margin-right: -0.45rem;
+  margin-left: 0.5rem;
+}
+.textButton:hover {
+  background-color: var(--gray4);
+}
+.buttonText {
+  margin-left: 0.375rem;
+  font-size: 14px;
+}
+.singleButton {
+  border: 1px solid var(--gray4);
+  padding: 0.5rem 1rem;
+
+  border-radius: 6px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem 0rem 1.5rem;
+  border-bottom: 1px solid var(--gray3);
+  align-items: center;
+}
+.row:last-child {
+  padding: 1.5rem 0rem 0rem;
+
+  border-bottom: none;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+}

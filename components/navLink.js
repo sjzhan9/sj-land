@@ -1,5 +1,6 @@
 import styles from "../components/navLink.module.css";
 import React, { useEffect } from "react";
+import util from "../styles/util.module.css";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -27,11 +28,11 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
     >
       <div className={styles.left}>
         <Image
-          className={styles.icon}
+          className={styles.logoIcon + ""}
           priority
           src={"/icons/" + svg + ".svg"}
-          height={22}
-          width={22}
+          height={16}
+          width={16}
           alt={label}
         />
         <p className={styles.label}>{label}</p>
@@ -56,12 +57,11 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
       <a className={styles.item} aria-current={ariaCurrent}>
         <div className={styles.left}>
           <Image
-            className={styles.icon}
+            className={util.icon + " iconInvert"}
             priority
-            src={"/icons2/" + svg + ".svg"}
-            //   className={utilStyles.borderCircle}
-            height={22}
-            width={22}
+            src={"/feather/" + svg + ".svg"}
+            height={16}
+            width={16}
             alt={label}
           />
           <p className={styles.label}>{label}</p>

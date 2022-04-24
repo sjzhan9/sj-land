@@ -25,7 +25,7 @@
   width: 100%;
   background: var(--bg);
   border-radius: 10px;
-  padding: 5rem 4rem;
+  padding: 6.5rem 4rem;
   order: 1;
   flex-grow: 1;
   margin-left: 0.5rem;
@@ -47,9 +47,9 @@
 }
 .header {
   /* font-family: Ninna, Inter, sans-serif; */
-  font-size: 6rem;
+  font-size: 2.8rem;
   /* font-family: Inter; */
-  font-weight: 600;
+  font-weight: 630;
   margin-bottom: 1.5rem;
   /* font-variation-settings: "wght" 200, "wdth" 130; */
   /* font-variation-settings: "wght" 200; */
@@ -123,13 +123,19 @@
 .read {
   font-size: 1rem;
   line-height: 170%;
-  color: var(--gray12);
+  color: var(--gray11);
   margin-bottom: 1.5rem;
 }
 .readTitle {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   line-height: 170%;
   font-weight: 600;
   color: var(--gray12);
   margin-bottom: 0.5rem;
+}
+.icon {
+  border-radius: 5px;
+  width: 22px;
+  height: 22px;
+  opacity: 0.65;
 }
