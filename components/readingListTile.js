@@ -22,7 +22,9 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
           {fav ? <p>Fav</p> : null}
           {tags
             ? tags.map((tag) => (
-                <p className={tag.color + "Tag tag"}>{tag.name}</p>
+                <p key={tag.name + tag.color} className={tag.color + "Tag tag"}>
+                  {tag.name}
+                </p>
               ))
             : null}
           <p className={util.tileContent}>{url}</p>

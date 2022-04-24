@@ -12,7 +12,7 @@ export default function ReadingList({ list }) {
   return (
     <>
       <Head>
-        <title>SJs Reading List</title>
+        <title>{"SJ's Reading List"}</title>
         <meta
           name="description"
           content="Some of my bookmarks that I love re-reading"
@@ -30,7 +30,7 @@ export default function ReadingList({ list }) {
           <ul className={util.list}>
             {list.map((link) => (
               <ReadingListTile
-                key={"key" + link.id}
+                key={link.id}
                 title={link.properties.Name.title[0].plain_text}
                 url={link.properties.URL.url}
                 date={link.created_time}
