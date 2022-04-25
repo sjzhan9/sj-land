@@ -1,10 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import Menu from "../components/menu";
-import Background from "../components/background";
 import React, { Fragment } from "react";
-
 import util from "../styles/util.module.css";
+import ContactContent from "../components/contactContent";
 
 export default function About() {
   return (
@@ -54,6 +52,9 @@ export default function About() {
               for startups. If you are interested to know more, you can find me
               on LinkedIn. Ive also added a short preview below.
             </p>
+            <h2 className={util.readTitle}>Contact</h2>
+
+            <ContactContent inModal="false" />
           </div>
         </div>
       </main>

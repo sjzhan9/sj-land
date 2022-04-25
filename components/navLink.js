@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 
 export default function NavLink({ svg, label, href, shortcut, external }) {
   const router = useRouter();
-  const ariaCurrent = router.asPath === href ? "page" : undefined;
+  const ariaCurrent = router.pathname === href ? "page" : undefined;
 
   useEffect(() => {
     document.addEventListener("keypress", function (event) {

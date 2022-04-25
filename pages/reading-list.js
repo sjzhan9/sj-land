@@ -1,14 +1,50 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import util from "../styles/util.module.css";
 import Link from "next/link";
-import Menu from "../components/menu";
-import Background from "../components/background";
 import ReadingListTile from "../components/readingListTile";
 const { Client } = require("@notionhq/client");
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function ReadingList({ list }) {
+  const router = useRouter();
+  const [filter, setFilter] = React.useState("All");
+  const [currentList, setCurrentList] = React.useState(null);
+
+  function handleTagChange(e) {
+    setFilter(e.target.innerHTML);
+  }
+
+  //when filter changes create a filtered state with only items with the right tag
+  useEffect(() => {
+    if (filter !== "All") {
+      router.push({
+        query: { filter: filter },
+      });
+    } else {
+      router.push({
+        query: {},
+      });
+    }
+    let tempList = [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].properties.Tags.multi_select[0].name == filter) {
+        tempList.push(list[i]);
+      }
+    }
+    setCurrentList(tempList);
+  }, [filter]);
+
+  //set initial state
+  useEffect(() => {
+    if (router.query.filter && router.query.filter !== filter) {
+      // console.log("changing to " + router.query.filter);
+
+      setFilter(router.query.filter);
+    }
+  }, [router.query.filter]);
+
   return (
     <>
       <Head>
@@ -23,23 +59,64 @@ export default function ReadingList({ list }) {
       <main className={util.page}>
         <div className={util.pageColumn}>
           <h1 className={util.header}>Reading List</h1>
-
+          {/* 
           <p className={util.description}>
             Some of my bookmarks that I love re-reading
-          </p>
+          </p> */}
+
           <ul className={util.list}>
-            {list.map((link) => (
-              <ReadingListTile
-                key={link.id}
-                title={link.properties.Name.title[0].plain_text}
-                url={link.properties.URL.url}
-                date={link.created_time}
-                fav={link.properties.Fav.checkbox}
-                tags={link.properties.Tags.multi_select}
-              />
-            ))}
-            {/* {list.map((link) =>
-              list.id ? (
+            <div className={util.flexRow + " " + util.tabBar}>
+              <button
+                onClick={handleTagChange}
+                className={util.tab}
+                role="tab"
+                aria-selected={"All" == filter ? "true" : null}
+              >
+                All
+              </button>
+              <button
+                onClick={handleTagChange}
+                className={util.tab}
+                role="tab"
+                aria-selected={"General" == filter ? "true" : null}
+              >
+                General
+              </button>
+              <button
+                onClick={handleTagChange}
+                className={util.tab}
+                role="tab"
+                aria-selected={"Design Principles" == filter ? "true" : null}
+              >
+                Design Principles
+              </button>
+              <button
+                onClick={handleTagChange}
+                className={util.tab}
+                role="tab"
+                aria-selected={"Design Industry" == filter ? "true" : null}
+              >
+                Design Industry
+              </button>
+              <button
+                onClick={handleTagChange}
+                className={util.tab}
+                role="tab"
+                aria-selected={"Tech" == filter ? "true" : null}
+              >
+                Tech
+              </button>
+              <button
+                onClick={handleTagChange}
+                className={util.tab}
+                role="tab"
+                aria-selected={"Compensation" == filter ? "true" : null}
+              >
+                Compensation
+              </button>
+            </div>
+            {filter == "All" ? (
+              list.map((link) => (
                 <ReadingListTile
                   key={link.id}
                   title={link.properties.Name.title[0].plain_text}
@@ -48,20 +125,21 @@ export default function ReadingList({ list }) {
                   fav={link.properties.Fav.checkbox}
                   tags={link.properties.Tags.multi_select}
                 />
-              ) : null
-            )} */}
-            {/* {list.id
-              ? list.map((link) => (
-                  <ReadingListTile
-                    key={link.id}
-                    title={link.properties.Name.title[0].plain_text}
-                    url={link.properties.URL.url}
-                    date={link.created_time}
-                    fav={link.properties.Fav.checkbox}
-                    tags={link.properties.Tags.multi_select}
-                  />
-                ))
-              : null} */}
+              ))
+            ) : currentList ? (
+              currentList.map((link) => (
+                <ReadingListTile
+                  key={link.id}
+                  title={link.properties.Name.title[0].plain_text}
+                  url={link.properties.URL.url}
+                  date={link.created_time}
+                  fav={link.properties.Fav.checkbox}
+                  tags={link.properties.Tags.multi_select}
+                />
+              ))
+            ) : (
+              <p>loading...</p>
+            )}
           </ul>
         </div>
       </main>
@@ -98,5 +176,4 @@ export async function getStaticProps() {
     },
     revalidate: 5,
   };
-  // res.status(200).json({  });
 }

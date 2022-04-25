@@ -7,7 +7,7 @@ import Menu from "../components/menu";
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" value={{ dark: "dark-theme" }}>
-      <div className={util.outer}>
+      <div id="outer" className={util.outer}>
         {/* <div className="noise"></div> */}
         {/* <div className="tv">
           <svg>

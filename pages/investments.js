@@ -18,7 +18,39 @@ export default function Investments() {
           <h1 className={util.header}>Investments</h1>
 
           <p className={util.description}>
-            I invest in companies, and is a part of a few venture communities.
+            {
+              "With public equity, I invest in a basket of 10-20 stocks at any given time."
+            }
+          </p>
+          <p className={util.description}>
+            {
+              "With crypto, I’m heavy in Ethereal and Solana, and hold position in 1-5 DeFi alt coins at any given time."
+            }
+          </p>
+          <p className={util.description}>
+            {
+              "With private investments, I have invested in very selected few companies but still reach out if you are raising. I’m somewhat affiliated with "
+            }
+            <a
+              className={util.externalLink}
+              href="https://www.kleinerperkins.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kleiner Perkins
+            </a>
+            {", "}
+
+            <a
+              className={util.externalLink}
+              href="https://republic.com/venture-programs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Republic
+            </a>
+
+            {" and knows a few Solo GPs who writes larger checks."}
           </p>
 
           <ul className={util.list}>

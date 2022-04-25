@@ -22,7 +22,7 @@ export default function Newsletters() {
           <p className={util.description}>
             What I read in the morning and before bed
           </p>
-          <ul className={util.grid}>
+          <ul className={util.list}>
             <NewsletterTile
               image="compound"
               title="Robinhood Snacks"

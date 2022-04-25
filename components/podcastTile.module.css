@@ -3,9 +3,10 @@
   width: 100%;
   border-radius: 8px;
   display: block;
-
+  width: 300px;
+  flex-shrink: 0;
   border: 1px solid var(--gray5);
-  margin: 1rem 0rem 0rem;
+  margin: 0rem 0rem 0rem;
   background-color: var(--linkContainerBg);
   border: 1px solid var(--linkContainerBorder);
   transition: background-color 0.15s ease;

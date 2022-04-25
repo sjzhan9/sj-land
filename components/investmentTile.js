@@ -18,7 +18,9 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
           />
         </div>
         <div className={styles.stack}>
-          <h3 className={util.tileTitle}>{title}</h3>
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <h3 className={util.tileTitle}>{title}</h3>
+          </a>
           <p className={util.tileContent}>{content}</p>
         </div>
       </div>
@@ -28,7 +30,7 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
           <p className={styles.type}>First entered</p>
           <p className={styles.entry}>{entry}</p>
         </div>
-        <Image height={20} width={20} src={`/icons/external.svg`} alt="icon" />
+        {/* <Image height={20} width={20} src={`/icons/external.svg`} alt="icon" /> */}
       </div>
     </div>
   );

@@ -1,15 +1,15 @@
 .container {
-  padding: 2rem;
   width: 100%;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  align-items: flex-end;
+  padding: 1rem 1rem 1rem 1.25rem;
   background-color: var(--linkContainerBg);
   border: 1px solid var(--linkContainerBorder);
-
+  position: relative;
+  margin: 0.5rem 0rem 0rem;
   transition: background-color 0.15s ease;
 }
 .container:hover {
@@ -22,7 +22,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  margin-left: 0.25rem;
+  margin-left: 1.125rem;
+  overflow: hidden;
 }
 
 .type {
@@ -47,4 +48,54 @@
   font-weight: 400;
   color: var(--gray9);
   text-align: right;
+}
+.url {
+  margin-top: 0.25rem;
+  font-size: 12.6px;
+  font-weight: 400;
+  color: var(--gray9);
+  max-width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dateSub {
+  margin-top: 0.25rem;
+  font-size: 12.6px;
+  font-weight: 400;
+  color: var(--gray9);
+  /* max-width: 40%; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sub {
+  width: 100%;
+  overflow: hidden;
+}
+.icon {
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 80%;
+}
+.heart {
+  /* padding: 4px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--linkContainerBg);
+  border: 0.5px solid var(--linkContainerBorder);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 20px; */
+  position: absolute;
+  right: 20px;
+  top: 0px;
 }

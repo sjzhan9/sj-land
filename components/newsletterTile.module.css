@@ -1,18 +1,24 @@
 .container {
-  padding: 1.25rem;
   width: 100%;
-  border-radius: 8px;
-  display: block;
+  /* border-radius: 8px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding: 0.925rem 0.925rem 0.925rem 1.25rem; */
+  padding: 1.5rem 0rem 1.5rem 0rem;
 
-  border: 1px solid var(--gray5);
-  margin: 1rem 0rem 0rem;
-  background-color: var(--linkContainerBg);
-  border: 1px solid var(--linkContainerBorder);
+  /* background-color: var(--linkContainerBg); */
+  border-bottom: 1px solid var(--linkContainerBorder);
+  position: relative;
+  /* margin: 0.75rem 0rem 0rem; */
+  margin: 0rem;
+
   transition: background-color 0.15s ease;
 }
 .container:hover {
-  background-color: var(--linkContainerBgHover);
-  border: 1px solid var(--linkContainerBorderHover);
+  /* background-color: var(--linkContainerBgHover); */
+  /* border: 1px solid var(--linkContainerBorderHover); */
   cursor: pointer;
 }
 .stack {
@@ -20,8 +26,10 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  margin-top: 1rem;
+  margin-left: 2rem;
 }
 .image {
   border-radius: 6px;
+  width: 120px;
+  height: 120px;
 }

@@ -58,9 +58,9 @@ html {
   --tabText: rgba(0, 0, 0, 0.344);
 
   --linkContainerBg: rgb(255, 255, 255);
-  --linkContainerBorder: rgb(235, 235, 235);
-  --linkContainerBgHover: rgb(242, 242, 242);
-  --linkContainerBorderHover: rgb(224, 224, 224);
+  --linkContainerBorder: rgb(239, 239, 239);
+  --linkContainerBgHover: rgb(238, 238, 238);
+  --linkContainerBorderHover: rgb(228, 228, 228);
 
   --overlayDarkness: rgba(0 0 0 / 0.3);
   --modalBg: rgb(255, 255, 255);
@@ -99,10 +99,10 @@ html {
   --tabbg: rgba(255, 255, 255, 0.08);
   --tabText: rgba(255, 255, 255, 0.372);
 
-  --linkContainerBg: rgb(34, 34, 34);
-  --linkContainerBorder: rgb(39, 39, 39);
-  --linkContainerBgHover: rgb(43, 43, 43);
-  --linkContainerBorderHover: rgb(49, 49, 49);
+  --linkContainerBg: rgb(21, 21, 21);
+  --linkContainerBorder: rgb(26, 26, 26);
+  --linkContainerBgHover: rgb(42, 42, 42);
+  --linkContainerBorderHover: rgb(45, 45, 45);
 
   --overlayDarkness: rgba(0 0 0 / 0.65);
   --modalBg: rgb(28, 28, 28);
@@ -168,7 +168,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+button {
   padding: 0;
   margin: 0;
   font-family: Monument Grotesk, Aktiv Grotesk, Inter, -apple-system,
@@ -196,8 +197,9 @@ code {
 .tag {
   padding: 3px 4px;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1;
+  color: var(--gray12);
 }
 .grayTag {
   background-color: rgb(225, 225, 225);
@@ -225,4 +227,40 @@ code {
 }
 .redTag {
   background-color: rgb(255, 180, 180);
+}
+
+.dark-theme .grayTag {
+  background-color: rgb(69, 69, 69);
+}
+
+.dark-theme .brownTag {
+  background-color: rgb(73, 60, 44);
+}
+
+.dark-theme .orangeTag {
+  background-color: rgb(120, 112, 97);
+}
+
+.dark-theme .yellowTag {
+  background-color: rgb(111, 101, 40);
+}
+
+.dark-theme .greenTag {
+  background-color: rgb(26, 61, 21);
+}
+
+.dark-theme .blueTag {
+  background-color: rgb(26, 69, 127);
+}
+
+.dark-theme .purpleTag {
+  background-color: rgb(52, 33, 109);
+}
+
+.dark-theme .pinkTag {
+  background-color: rgb(90, 21, 86);
+}
+
+.dark-theme .redTag {
+  background-color: rgb(81, 24, 24);
 }

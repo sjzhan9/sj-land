@@ -29,7 +29,7 @@ export default function Menu() {
           <p className={styles.divider}>What I enjoy</p>
 
           <NavLink
-            svg="readinglist"
+            svg="reading"
             href="/reading-list"
             label="Reading List"
             shortcut="5"
@@ -48,7 +48,7 @@ export default function Menu() {
             shortcut="7"
           />
           <p className={styles.divider}>Stay in touch</p>
-          <Contact svg="chat" label="Contact" shortcut="8" />
+          <Contact svg="chat" label="Contact" shortcut="a" />
           <NavLink
             svg="twitter"
             href="https://twitter.com/sjzhang_"

@@ -93,18 +93,18 @@
   margin-top: 3rem;
 }
 .description {
-  margin: 0rem 0rem 1rem;
+  margin: 0rem 0rem 0.5rem;
   padding: 0.25rem;
-  line-height: 1.7;
+  line-height: 1.6;
   font-size: 1rem;
   color: var(--gray11);
 }
 .tileTitle {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
 }
 .tileContent {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   font-size: 13px;
   font-weight: 400;
   color: var(--gray9);
@@ -119,6 +119,12 @@
   grid-row: auto auto;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
+}
+.swimlane {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  /* width: 100%; */
 }
 .read {
   font-size: 1rem;
@@ -138,4 +144,41 @@
   width: 22px;
   height: 22px;
   opacity: 0.65;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tabBar {
+  margin-bottom: 1.25rem;
+}
+.tab {
+  padding: 7px 10px 7px 10px;
+  font-size: 14px;
+  position: static;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  /* border: 0.5px solid transparent; */
+  transition: all 0.1s ease;
+  line-height: 1;
+  color: var(--gray10);
+  background: transparent;
+  border: none;
+  margin-right: 1px;
+}
+.tab:hover {
+  background: var(--gray4);
+  /* color: var(--gray11); */
+  cursor: pointer;
+}
+.tab:active {
+  /* background: var(--highlighthover); */
+  transform: scaleX(0.975) scaleY(0.975) translateY(0.25px);
+}
+.tab[aria-selected="true"] {
+  background: var(--gray4);
+  color: var(--gray12);
 }

@@ -14,9 +14,9 @@ export default function NewsletterTile({ image, title, content, url }) {
         className={styles.image}
         // priority
         src={"/newsletters/" + image + ".png"}
-        width={200}
-        height={200}
-        layout="responsive"
+        width={120}
+        height={120}
+        layout="fixed"
         alt={title}
       />
       <div className={styles.stack}>
