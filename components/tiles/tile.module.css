@@ -38,7 +38,7 @@
 }
 .type {
   margin-top: 0.5rem;
-  font-size: 13px;
+  font-size: 12.6px;
   font-weight: 500;
   color: var(--gray9);
 }
@@ -53,8 +53,13 @@
 .date {
   width: 6rem;
   flex-shrink: 0;
-  font-size: 12px;
+  font-size: 12.6px;
   font-weight: 400;
   color: var(--gray9);
   text-align: right;
+}
+@media (max-width: 700px) {
+  .date {
+    font-size: 15px;
+  }
 }

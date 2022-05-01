@@ -54,3 +54,8 @@
   box-shadow: 0px 0px 0px 1px var(--gray5);
   overflow: hidden;
 }
+@media (max-width: 700px) {
+  .content {
+    font-size: 16.6px;
+  }
+}

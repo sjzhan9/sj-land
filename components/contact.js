@@ -33,14 +33,17 @@ export default function Contact({ svg, label, shortcut }) {
       <Dialog.Trigger asChild id="contactTrigger">
         <div className={styles.item}>
           <div className={styles.left}>
-            <Image
-              className={util.icon + " iconInvert"}
-              priority
-              src={"/feather/" + svg + ".svg"}
-              height={16}
-              width={16}
-              alt={label}
-            />
+            <div className={util.icon}>
+              <Image
+                className={"iconInvert"}
+                priority
+                src={"/feather/" + svg + ".svg"}
+                height={66}
+                width={66}
+                alt={label}
+              />
+            </div>
+
             <p className={styles.label}>{label}</p>
           </div>
           {shortcut ? (

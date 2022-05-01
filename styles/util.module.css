@@ -96,18 +96,25 @@
   margin: 0rem 0rem 0.5rem;
   padding: 0.25rem;
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 14.6px;
   color: var(--gray11);
 }
 .tileTitle {
   font-weight: 400;
   font-size: 14.6px;
+  color: var(--gray12);
 }
 .tileContent {
   margin-top: 0.25rem;
   font-size: 13.3px;
   font-weight: 400;
   color: var(--gray9);
+}
+.read {
+  font-size: 14.6px;
+  line-height: 170%;
+  color: var(--gray11);
+  margin-bottom: 1.5rem;
 }
 .inset4 {
   padding: 0rem 0.25rem;
@@ -126,12 +133,7 @@
   overflow: auto;
   /* width: 100%; */
 }
-.read {
-  font-size: 0.95rem;
-  line-height: 170%;
-  color: var(--gray11);
-  margin-bottom: 1.5rem;
-}
+
 .readTitle {
   font-size: 1.125rem;
   line-height: 170%;
@@ -141,8 +143,8 @@
 }
 .icon {
   border-radius: 5px;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   opacity: 0.65;
 }
 .flexRow {
@@ -190,6 +192,7 @@
 @media (max-width: 700px) {
   .outer {
     height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -223,8 +226,20 @@
   }
   .icon {
     border-radius: 5px;
-    width: 32px;
-    height: 32px;
+    width: 22px;
+    height: 22px;
     opacity: 0.65;
+  }
+  .description {
+    font-size: 16.6px;
+  }
+  .tileTitle {
+    font-size: 16.6px;
+  }
+  .tileContent {
+    font-size: 15px;
+  }
+  .read {
+    font-size: 16.6px;
   }
 }

@@ -1,10 +1,8 @@
 import styles from "../components/navLink.module.css";
 import React, { useEffect } from "react";
 import util from "../styles/util.module.css";
-
 import Link from "next/link";
 import Image from "next/image";
-
 import { useRouter } from "next/router";
 
 export default function NavLink({ svg, label, href, shortcut, external }) {
@@ -32,17 +30,20 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
       rel="noopener noreferrer"
     >
       <div className={styles.left}>
-        <Image
-          className={styles.logoIcon + ""}
-          priority
-          src={"/icons/" + svg + ".svg"}
-          height={16}
-          width={16}
-          alt={label}
-        />
+        <div className={styles.logoIcon}>
+          <Image
+            priority
+            src={"/icons/" + svg + ".svg"}
+            height={66}
+            width={66}
+            alt={label}
+          />
+        </div>
+
         <p className={styles.label}>{label}</p>
       </div>
       <svg
+        className={styles.desktopOnly}
         width="20"
         height="20"
         viewBox="0 0 20 20"
@@ -61,14 +62,16 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
     <Link href={href}>
       <a className={styles.item} aria-current={ariaCurrent}>
         <div className={styles.left}>
-          <Image
-            className={util.icon + " iconInvert"}
-            priority
-            src={"/feather/" + svg + ".svg"}
-            height={16}
-            width={16}
-            alt={label}
-          />
+          <div className={util.icon}>
+            <Image
+              className={"iconInvert"}
+              priority
+              src={"/feather/" + svg + ".svg"}
+              height={66}
+              width={66}
+              alt={label}
+            />
+          </div>
           <p className={styles.label}>{label}</p>
         </div>
         {shortcut ? (
