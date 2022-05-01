@@ -48,13 +48,12 @@
   /* margin-right: 1rem; */
 }
 .entry {
-  font-size: 14px;
+  font-size: var(--font-m);
   margin-top: 4px;
   font-weight: 500;
 }
 .type {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: var(--font-s);
   color: var(--gray9);
 }
 .icon {

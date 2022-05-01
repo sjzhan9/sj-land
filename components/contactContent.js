@@ -104,7 +104,13 @@ export default function ContactContent({ inModal }) {
           </a>
         ) : (
           <PopupButton
-            className={styles.singleButton + " " + styles.button}
+            className={
+              styles.singleButton +
+              " " +
+              styles.button +
+              " " +
+              styles.buttonText
+            }
             url="https://calendly.com/sjcompound/30min"
             /*
              * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to

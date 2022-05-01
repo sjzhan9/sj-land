@@ -16,13 +16,13 @@
   transition: background-color 0.15s ease;
 }
 .content {
-  font-size: 14.6px;
+  font-size: var(--font-l);
   color: var(--gray10);
   margin-top: 8px;
 }
 .date {
-  width: 80px;
-  font-size: 14px;
+  width: 70px;
+  font-size: var(--font-m);
   color: var(--gray10);
   margin-top: 1.5px;
   /* font-family: ; */
@@ -55,7 +55,7 @@
   overflow: hidden;
 }
 @media (max-width: 700px) {
-  .content {
-    font-size: 16.6px;
+  .date {
+    width: 76px;
   }
 }

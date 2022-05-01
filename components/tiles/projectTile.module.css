@@ -29,7 +29,7 @@
 }
 .type {
   margin-top: 0.5rem;
-  font-size: 13px;
+  font-size: var(--font-s);
   font-weight: 400;
   color: var(--gray9);
 }
@@ -44,7 +44,7 @@
   width: 6rem;
   flex-shrink: 0;
   padding: 1rem;
-  font-size: 12px;
+  font-size: var(--font-s);
   font-weight: 400;
   color: var(--gray9);
   text-align: right;

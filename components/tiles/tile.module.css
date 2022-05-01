@@ -53,13 +53,10 @@
 .date {
   width: 6rem;
   flex-shrink: 0;
-  font-size: 12.6px;
+  font-size: var(--font-s);
   font-weight: 400;
   color: var(--gray9);
   text-align: right;
 }
 @media (max-width: 700px) {
-  .date {
-    font-size: 15px;
-  }
 }

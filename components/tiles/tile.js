@@ -37,7 +37,7 @@ export default function Tile({ logoUrl, title, content, tags, date, url }) {
           </div>
         </div>
         <p className={styles.date}>
-          {new Date(date + " EST").toLocaleDateString("en-gb", {
+          {new Date(date).toLocaleDateString("en-gb", {
             year: "numeric",
             month: "short",
           })}

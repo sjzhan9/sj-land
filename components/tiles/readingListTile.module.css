@@ -51,7 +51,7 @@
 }
 .url {
   margin-top: 0.25rem;
-  font-size: 12.6px;
+  font-size: var(--font-s);
   font-weight: 400;
   color: var(--gray9);
   max-width: 60%;
@@ -61,7 +61,7 @@
 }
 .dateSub {
   margin-top: 0.25rem;
-  font-size: 12.6px;
+  font-size: var(--font-s);
   font-weight: 400;
   color: var(--gray9);
   /* max-width: 40%; */
