@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Menu from "../components/menu";
 import util from "../styles/util.module.css";
-import ProjectTile from "../components/projectTile";
+import ProjectTile from "../components/tiles/projectTile";
 
 export default function Projects() {
   return (
@@ -17,31 +17,181 @@ export default function Projects() {
         <div className={util.pageColumn}>
           <h1 className={util.header}>Projects</h1>
           <p className={util.description}>
-            I invest in companies, and is a part of a few venture communities.
+            {"Since mid 2020, I’ve focused my energy on "}
+            <a
+              href="https://withcompound.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={util.externalLink}
+            >
+              Compound
+            </a>
+            {
+              ". Before joining the founding team to lead design, I worked on various personal projects, freelance work, and corporate/startup jobs. As someone with a strong interest in crafts, I believe artistry and mastery often come from building. From 2019-2020 I worked on various hardware, installations, AR and creative coding sketches..."
+            }
           </p>
           <ul className={util.list}>
             <ProjectTile
               image="compound"
               title="Compound"
               content="This is where I work and spent the past 2y+"
-              type="Founding Designer"
+              type="Fulltime - Founding Designer"
               date="2022-05-01"
+              url="https://withcompound.com"
             />
             <ProjectTile
-              image="compound"
-              title="Compound"
-              content="This is where I work and spent the past 2y+"
-              type="Founding Designer"
-              date="2022-05-01"
+              image="f2s"
+              title="Form2Shape"
+              content={
+                "A graphic editor & library inspired by historically significant designs"
+              }
+              type="Side Project"
+              date="2020-05-20"
+              url="https://form2shape.com/"
             />
             <ProjectTile
-              image="compound"
-              title="Compound"
-              content="This is where I work and spent the past 2y+"
-              type="Founding Designer"
-              date="2022-05-01"
+              image="startup-idea-generator"
+              title="Startup Idea Generator"
+              content={
+                "A site that uses keywords to generate startup ideas. All the ideas are pre-generated though a machine learning model. It is trained on more than 1800 historical Y-Combinator startup descriptions on the foundation of GPT-2."
+              }
+              type="GPT2 - Side Project"
+              date="2020-04-25"
+              url="https://www.startupgenerator.app/"
+            />
+            <ProjectTile
+              image="flo-recruit"
+              title="Flo Recruit"
+              content={
+                "I spent 8 months freelancing for the legal recruiting platform. I worked on the dashboard for employer and school platform. I also designed and built the marketing website and a CMS driven blog."
+              }
+              type="Startup - Freelance"
+              date="2020-04-20"
+              url={"https://start.florecruit.com/"}
+            />
+            <ProjectTile
+              image="gesture-map"
+              title="Gesture Map"
+              content={"A interactive installation"}
+              type="OpenFrameworks + Kinect"
+              date="2020-02-20"
+              url={"https://vimeo.com/376008207"}
+            />
+            <ProjectTile
+              image="sf-everywhere"
+              title="SF Everywhere"
+              content={
+                "A Chrome extension that turns texts on a webpage into the system default font (San Francisco for Mac OS, Segoe UI for Window). It serves as an alternative to Reading Mode. You can use SF Everywhere to improve text readabilities but not completely remove the site design."
+              }
+              type="Chrome Extention - Side Project"
+              date="2020-02-20"
+              url={
+                "https://chrome.google.com/webstore/detail/system-font-everywhere/dcncgmembfephfbibnnigchndgncmdnj?authuser=1&hl=en"
+              }
+            />
+            <ProjectTile
+              image="crumb-film"
+              title="Crumb Film"
+              content={"Web Design & Dev for indie film studio"}
+              type="Freelance"
+              date="2019-12-20"
+              // url={"https://www.sj.land/crumb"}
+            />
+            <ProjectTile
+              image="sonos"
+              title="Sonos"
+              content={
+                "I led design on music and podcast service intergrations."
+              }
+              type="Fulltime"
+              date="2019-08-20"
+              url={
+                "https://chrome.google.com/webstore/detail/system-font-everywhere/dcncgmembfephfbibnnigchndgncmdnj?authuser=1&hl=en"
+              }
+            />
+            <ProjectTile
+              image="mixily"
+              title="Mixily"
+              content={
+                "I freelanced a few month for the lightweight event planning platform. As a Facebook Event alternative that focuses on privacy and being inclusive to non-facebook users, Mixily allows you to create and manage events, RSVPs, message attendees."
+              }
+              type="Freelance"
+              date="2019-07-20"
+              url={"https://www.mixily.com/"}
+            />
+
+            <ProjectTile
+              image="say-it"
+              title="Say it"
+              content={
+                "An iOS app that adds interactive text overlays to your photos and videos. The text overlay reacts to your facial expressions. This was done in early 2019, before instagram and TikTok popularized the live transcription feature for video recording."
+              }
+              type="Side Project - iOS"
+              date="2019-05-20"
+              url={
+                "https://apps.apple.com/us/app/say-it-ar-expressions/id1480969165"
+              }
+            />
+            <ProjectTile
+              image="onecare"
+              title="OneCare"
+              content={
+                "A 2-day design exercise to improve the quality of life for children with type-1 diabetes. The app helps patient monitor their glucose level, manage insulin injection alerts and track symptoms."
+              }
+              type="Design Exercise"
+              date="2019-04-20"
+              // url={"https://www.mixily.com/"}
+            />
+            <ProjectTile
+              image="billshare"
+              title="BillShare"
+              content={
+                "A design exercise to enable people splitting bills effectively. The experience utilizes familiar chat interfaces for the organization of groups. The App also enable various splitting methods. It was a 4 day project that I carried out from research to hi-fidelity UI design."
+              }
+              type="Design Exercise"
+              date="2019-03-20"
+              // url={"https://www.mixily.com/"}
+            />
+            <ProjectTile
+              image="oriant"
+              title="Oriant"
+              content={
+                "A design exercise to encourage students exploring orientation events and manage their orientation schedules. It was a 5 day project that I covered from research to prototyping. "
+              }
+              type="Design Exercise"
+              date="2019-02-20"
+              url={"oriant"}
+              internal="true"
+            />
+            <ProjectTile
+              image="parkamigo"
+              title="ParkAmigo"
+              content={
+                "I spent 2 weeks working on a complete redesign of the ParkAmigo iOS app."
+              }
+              type="iOS - Freelance"
+              date="2018-12-20"
+              // url={"https://www.mixily.com/"}
+            />
+            <ProjectTile
+              image="illesteva"
+              title="Illesteva"
+              content={
+                "I worked as a graphic designer at the eyewear brand. I redesigned and maintained the e-commerce site and was in charge of all online and offline graphical assets."
+              }
+              type="Web - Fulltime"
+              date="2017-8-24"
+              // url={"https://www.mixily.com/"}
             />
           </ul>
+          <p
+            className={util.tileContent}
+            style={{ marginTop: "6rem", textAlign: "center" }}
+          >
+            {
+              "Work before 2017 isn't very well-documented. May re-add in the future?"
+            }
+          </p>
         </div>
       </main>
     </>

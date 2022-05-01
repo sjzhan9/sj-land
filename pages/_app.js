@@ -3,11 +3,23 @@ import { ThemeProvider } from "next-themes";
 import util from "../styles/util.module.css";
 import Background from "../components/background";
 import Menu from "../components/menu";
+import toast, { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" value={{ dark: "dark-theme" }}>
       <div id="outer" className={util.outer}>
+        <Toaster
+          toastOptions={{
+            duration: 1500,
+            style: {
+              padding: "3px",
+              borderRadius: "6px",
+              fontSize: "14px",
+            },
+          }}
+        />
+
         {/* <div className="noise"></div> */}
         {/* <div className="tv">
           <svg>

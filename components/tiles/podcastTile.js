@@ -1,8 +1,8 @@
-import styles from "../components/newsletterTile.module.css";
+import styles from ".//podcastTile.module.css";
 import Image from "next/image";
-import util from "../styles/util.module.css";
+import util from "../../styles/util.module.css";
 
-export default function NewsletterTile({ image, title, content, url }) {
+export default function PodcastTile({ image, title, content, url }) {
   return (
     <a
       href={url}
@@ -13,10 +13,10 @@ export default function NewsletterTile({ image, title, content, url }) {
       <Image
         className={styles.image}
         // priority
-        src={"/newsletters/" + image + ".png"}
-        width={120}
-        height={120}
-        layout="fixed"
+        src={"/podcasts/" + image + ".png"}
+        width={200}
+        height={200}
+        layout="responsive"
         alt={title}
       />
       <div className={styles.stack}>

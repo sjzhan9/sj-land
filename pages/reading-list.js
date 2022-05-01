@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import util from "../styles/util.module.css";
 import Link from "next/link";
-import ReadingListTile from "../components/readingListTile";
+import ReadingListTile from "../components/tiles/readingListTile";
 const { Client } = require("@notionhq/client");
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -29,7 +29,10 @@ export default function ReadingList({ list }) {
     }
     let tempList = [];
     for (var i = 0; i < list.length; i++) {
-      if (list[i].properties.Tags.multi_select[0].name == filter) {
+      if (
+        list[i].properties.Tags.multi_select[0].name ==
+        filter.replace("&amp;", "&")
+      ) {
         tempList.push(list[i]);
       }
     }
@@ -39,8 +42,6 @@ export default function ReadingList({ list }) {
   //set initial state
   useEffect(() => {
     if (router.query.filter && router.query.filter !== filter) {
-      // console.log("changing to " + router.query.filter);
-
       setFilter(router.query.filter);
     }
   }, [router.query.filter]);
@@ -51,7 +52,7 @@ export default function ReadingList({ list }) {
         <title>{"SJ's Reading List"}</title>
         <meta
           name="description"
-          content="Some of my bookmarks that I love re-reading"
+          content="Articles that I enjoyed reading. Bookmake ones are the the ones I love re-reading."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -59,10 +60,11 @@ export default function ReadingList({ list }) {
       <main className={util.page}>
         <div className={util.pageColumn}>
           <h1 className={util.header}>Reading List</h1>
-          {/* 
+
           <p className={util.description}>
-            Some of my bookmarks that I love re-reading
-          </p> */}
+            Articles that I enjoyed reading. Bookmake ones are the the ones I
+            love re-reading.
+          </p>
 
           <ul className={util.list}>
             <div className={util.flexRow + " " + util.tabBar}>
@@ -86,18 +88,23 @@ export default function ReadingList({ list }) {
                 onClick={handleTagChange}
                 className={util.tab}
                 role="tab"
-                aria-selected={"Design Principles" == filter ? "true" : null}
+                aria-selected={
+                  "Business & Finance" == filter.replace("&amp;", "&")
+                    ? "true"
+                    : null
+                }
               >
-                Design Principles
+                {"Business & Finance"}
               </button>
               <button
                 onClick={handleTagChange}
                 className={util.tab}
                 role="tab"
-                aria-selected={"Design Industry" == filter ? "true" : null}
+                aria-selected={"Design" == filter ? "true" : null}
               >
-                Design Industry
+                Design
               </button>
+
               <button
                 onClick={handleTagChange}
                 className={util.tab}
@@ -147,6 +154,7 @@ export default function ReadingList({ list }) {
   );
 }
 
+//notion API
 export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 

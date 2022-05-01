@@ -1,6 +1,6 @@
-import styles from "../components/readingListTile.module.css";
+import styles from ".//readingListTile.module.css";
 import Image from "next/image";
-import util from "../styles/util.module.css";
+import util from "../../styles/util.module.css";
 
 export default function ReadingListTile({ title, url, date, fav, tags }) {
   let displayUrl = url
@@ -63,7 +63,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
           </div>
         </div>
       </div>
-      <div className={util.flexRow}>
+      <div className={util.tags + " " + util.flexRow}>
         {tags
           ? tags.map((tag) => (
               <p key={tag.name + tag.color} className={tag.color + "Tag tag"}>

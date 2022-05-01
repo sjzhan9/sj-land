@@ -1,20 +1,41 @@
 .container {
-  padding: 1.25rem;
   width: 100%;
-  border-radius: 8px;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0rem 0.25rem;
+}
+.left {
+  display: flex;
+  flex-shrink: 0;
+
+  flex-direction: row;
   align-items: flex-start;
-  border: 1px solid var(--gray5);
+  padding: 1.25rem 0rem;
+  margin-top: 2px;
+  margin-right: 1rem;
+}
+.right {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: stretch;
+  border-bottom: 1px solid var(--linkContainerBorder);
+  justify-content: space-between;
+  padding: 1.25rem 0rem;
 }
 .stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  margin-left: 1rem;
 }
+.icon {
+  border-radius: 5px;
 
+  flex-shrink: 0;
+}
 .type {
   margin-top: 0.5rem;
   font-size: 13px;
@@ -32,7 +53,6 @@
 .date {
   width: 6rem;
   flex-shrink: 0;
-  padding: 1rem;
   font-size: 12px;
   font-weight: 400;
   color: var(--gray9);

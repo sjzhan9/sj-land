@@ -1,18 +1,35 @@
 import styles from "../components/contactContent.module.css";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import * as Dialog from "@radix-ui/react-dialog";
 import util from "../styles/util.module.css";
 import { PopupButton } from "react-calendly";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactContent({ inModal }) {
   const [thisDocument, setThisDocument] = React.useState(false);
+
+  //copy feature start
+  function updateClipboard(e) {
+    navigator.clipboard.writeText("hi.sj.zhang@gmail.com").then(
+      function () {
+        toast("Copied to clipboard");
+      },
+      function () {
+        toast("Copy failed");
+      }
+    );
+  }
+  //copy feature end
 
   useEffect(() => {
     if (document) {
       // setThisDocument(document.getElementById("__next"));
       setThisDocument(document.body);
     }
+    // navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
+    //   if (result.state == "granted" || result.state == "prompt") {
+    //   }
+    // });
   }, []);
 
   return (
@@ -24,7 +41,7 @@ export default function ContactContent({ inModal }) {
         </div>
 
         <div className={styles.buttonPair}>
-          <button
+          <a
             className={styles.button + " " + styles.rightBorder}
             href="mailto:hi.sj.zhang@gmail.com"
             target="_blank"
@@ -43,8 +60,8 @@ export default function ContactContent({ inModal }) {
               />
             </svg>
             <span className={styles.buttonText}>Draft</span>
-          </button>
-          <button className={styles.button}>
+          </a>
+          <button onClick={updateClipboard} className={styles.button}>
             <svg
               width="20"
               height="20"
@@ -57,7 +74,9 @@ export default function ContactContent({ inModal }) {
                 fill="#909090"
               />
             </svg>
-            <span className={styles.buttonText}>Copy</span>
+            <span className={styles.buttonText} id="copy-text">
+              Copy
+            </span>
           </button>
         </div>
       </div>

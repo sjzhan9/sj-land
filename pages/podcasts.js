@@ -5,7 +5,7 @@ import util from "../styles/util.module.css";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-import PodcastTile from "../components/podcastTile";
+import PodcastTile from "../components/tiles/podcastTile";
 
 export default function Podcasts() {
   // useEffect(() => {

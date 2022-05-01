@@ -1,5 +1,5 @@
 .container {
-  padding: 0.5rem;
+  /* padding: 0.1rem; */
 
   width: 100%;
   border-radius: 8px;
@@ -25,16 +25,16 @@
   padding: 1rem;
 }
 .image {
-  border-radius: 6px;
+  border-radius: 6px 6px 0px 0px;
 }
 .type {
   margin-top: 0.5rem;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--gray9);
 }
 .outer {
-  margin: 1.5rem 0rem 0rem;
+  margin: 2rem 0rem 0rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;

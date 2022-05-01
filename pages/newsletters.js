@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import util from "../styles/util.module.css";
 import Link from "next/link";
-import NewsletterTile from "../components/newsletterTile";
+import NewsletterTile from "../components/tiles/newsletterTile";
 
 export default function Newsletters() {
   return (

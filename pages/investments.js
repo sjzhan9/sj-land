@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import util from "../styles/util.module.css";
 import Link from "next/link";
-import InvestmentTile from "../components/investmentTile";
+import InvestmentTile from "../components/tiles/investmentTile";
 
 export default function Investments() {
   return (

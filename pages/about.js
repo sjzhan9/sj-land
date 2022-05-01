@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import React, { Fragment } from "react";
 import util from "../styles/util.module.css";
 import ContactContent from "../components/contactContent";
+import ExpTile from "../components/tiles/expTile";
 
 export default function About() {
   return (
@@ -52,6 +52,47 @@ export default function About() {
               for startups. If you are interested to know more, you can find me
               on LinkedIn. Ive also added a short preview below.
             </p>
+
+            <ExpTile
+              date="2020–Now"
+              title="Founding Design at Compound"
+              url={"https://withcompound.com"}
+              content="Led design across product and brand."
+            />
+            <ExpTile
+              date="2020"
+              title="Design Fellow at Kleiner Perkins (Zumper)"
+              url={"https://zumper.com"}
+              content="Led landlord portal redesign."
+            />
+            <ExpTile
+              date="2019–20"
+              title="Design at Friendly Studio"
+              url={"https://friendly.studio"}
+              content="First designer at the design collective. Mainly worked for YC19 recruiting startup Flo Recruit."
+            />
+            <ExpTile
+              date="2019"
+              title="UX Design at Sonos"
+              url={"https://sonos.com"}
+              content="Led service connections redesign and music scheduling exploration."
+            />
+            <ExpTile
+              date="2017–18"
+              title="Web/Digital Design at Fashion Company"
+              url={"https://illesteva.com"}
+              content="Led the website redesign and ran email marketing efforts."
+            />
+            <ExpTile
+              date="2015–17"
+              title="Co-Founder at Fashion Company"
+              content="Got some press, sales, and traction but closed it down."
+            />
+            <ExpTile
+              date="2012–20"
+              title="Freelance Designer"
+              content="Brand, Packaging, Websites"
+            />
             <h2 className={util.readTitle}>Contact</h2>
 
             <ContactContent inModal="false" />

@@ -3,34 +3,23 @@
 @import "@radix-ui/colors/blackA.css";
 @import "@radix-ui/colors/grayDark.css";
 
-@font-face {
+/* @font-face {
   font-family: "Ninna";
   src: url(/styles/ninna.woff) format("woff");
-}
+} */
 
 @font-face {
   font-family: "Aktiv Grotesk";
-  src: url("/styles/AktivGroteskVF_W_Wght.woff2")
+  src: url("/fonts/AktivGroteskVF_W_Wght.woff2")
       format("woff2 supports variations"),
-    url("/styles/AktivGroteskVF_W_Wght.woff2") format("woff2-variations");
+    url("/fonts/AktivGroteskVF_W_Wght.woff2") format("woff2-variations");
 
   font-weight: 100 900;
 }
-/* @import url("/styles/AktivGroteskVF_W_Wght.woff2");
-html {
-  font-family: "Aktiv", sans-serif;
-}
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Aktiv var", sans-serif;
-    font-weight: 100 900;
-  }
-} */
 @font-face {
-  font-family: "Monument Grotesk";
-  src: url("/styles/ABCMonumentGrotesk-Medium-Trial.woff2") format("woff2"),
-    url("/styles/ABCMonumentGrotesk-Medium-Trial.otf") format("opentype");
-  font-weight: 500;
+  font-family: "Blanco";
+  src: url("/fonts/BlancoTrial-Regular.otf") format("otf");
+  font-weight: 400;
 }
 
 @import url("https://rsms.me/inter/inter.css");
@@ -45,6 +34,9 @@ html {
 }
 
 :root {
+  --font-sans: Aktiv Grotesk;
+  --font-serif: Blanco;
+
   --appbg: rgb(247, 247, 247);
   --bg: white;
 
@@ -64,32 +56,12 @@ html {
 
   --overlayDarkness: rgba(0 0 0 / 0.3);
   --modalBg: rgb(255, 255, 255);
-
-  /* --appbg: rgb(0, 0, 0);
-  --bg: white;
-
-  --menu: rgba(255, 255, 255, 0);
-  --menuLabel: rgba(255, 255, 255, 0.825);
-
-  --highlight: rgba(255, 255, 255, 0.104);
-  --highlighthover: rgba(255, 255, 255, 0.065);
-  --highlightActiveBorder: rgba(0, 0, 0, 0.08);
-  --tabbg: rgba(255, 255, 255, 0.071);
-  --tabText: rgba(255, 255, 255, 0.344);
-
-  --linkContainerBg: rgb(255, 255, 255);
-  --linkContainerBorder: rgb(235, 235, 235);
-  --linkContainerBgHover: rgb(242, 242, 242);
-  --linkContainerBorderHover: rgb(224, 224, 224);
-
-  --overlayDarkness: rgba(0 0 0 / 0.3);
-  --modalBg: rgb(255, 255, 255); */
 }
 
 .dark-theme {
   /* Remap your colors for dark mode */
   --appbg: rgb(26, 26, 26);
-  --bg: rgb(14, 14, 14);
+  --bg: rgb(16, 16, 16);
 
   --menu: rgba(10, 10, 10, 0.8);
   --menuLabel: rgba(255, 255, 255, 0.8);
@@ -172,10 +144,11 @@ h5,
 button {
   padding: 0;
   margin: 0;
-  font-family: Monument Grotesk, Aktiv Grotesk, Inter, -apple-system,
-    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-    Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-sans);
 }
+/* p {
+  font-family: var(--font-sans);
+} */
 
 a {
   color: inherit;
@@ -196,71 +169,81 @@ code {
 } */
 .tag {
   padding: 3px 4px;
+  margin-left: 3px;
   border-radius: 3px;
   font-size: 12px;
   line-height: 1;
-  color: var(--gray12);
+  color: rgba(0, 0, 0, 0.74);
+}
+.dark-theme .tag {
+  color: rgba(255, 255, 255, 0.68);
+}
+.defaultTag {
+  background-color: #f1f1f0;
 }
 .grayTag {
-  background-color: rgb(225, 225, 225);
+  background-color: #e3e2e0;
 }
 .brownTag {
-  background-color: rgb(220, 197, 169);
+  background-color: #ece1db;
 }
 .orangeTag {
-  background-color: rgb(255, 211, 180);
+  background-color: #f6dfcc;
 }
 .yellowTag {
-  background-color: rgb(255, 244, 180);
+  background-color: #faedcc;
 }
 .greenTag {
-  background-color: rgb(213, 250, 208);
+  background-color: #dfeddd;
 }
 .blueTag {
-  background-color: rgb(204, 225, 255);
+  background-color: #d7e5ee;
 }
 .purpleTag {
-  background-color: rgb(199, 180, 255);
+  background-color: #e6dfed;
 }
 .pinkTag {
-  background-color: rgb(255, 180, 251);
+  background-color: #f2e1e9;
 }
 .redTag {
-  background-color: rgb(255, 180, 180);
+  background-color: #fae3de;
 }
 
+.dark-theme .defaultTag {
+  background-color: #414141;
+}
 .dark-theme .grayTag {
-  background-color: rgb(69, 69, 69);
+  background-color: #5a5a5a;
 }
 
 .dark-theme .brownTag {
-  background-color: rgb(73, 60, 44);
+  background-color: #5b3d2f;
 }
 
 .dark-theme .orangeTag {
-  background-color: rgb(120, 112, 97);
+  background-color: #7d4f27;
 }
 
 .dark-theme .yellowTag {
-  background-color: rgb(111, 101, 40);
+  background-color: #836534;
 }
 
 .dark-theme .greenTag {
-  background-color: rgb(26, 61, 21);
+  background-color: #375841;
 }
 
 .dark-theme .blueTag {
-  background-color: rgb(26, 69, 127);
+  background-color: #2f4469;
 }
 
 .dark-theme .purpleTag {
-  background-color: rgb(52, 33, 109);
+  background-color: #453061;
 }
 
 .dark-theme .pinkTag {
-  background-color: rgb(90, 21, 86);
+  background-color: #62344b;
 }
 
 .dark-theme .redTag {
-  background-color: rgb(81, 24, 24);
+  background-color: #673932;
 }
