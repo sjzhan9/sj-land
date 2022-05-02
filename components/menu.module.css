@@ -11,13 +11,7 @@
   /* border-radius: 10px; */
   transition: all 0.15s ease-in;
 }
-.title {
-  font-weight: 550;
-  font-size: 15px;
-  margin: 1.25rem 0rem 1.25rem 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-}
+
 .divider {
   padding: 1.25rem 0rem 0.5rem 0.75rem;
   /* margin-top: 0.5rem; */
@@ -41,6 +35,7 @@
     transition: all 0.15s ease-in;
     overflow: auto;
     position: fixed;
+
     bottom: 0;
   }
   .container::-webkit-scrollbar {
@@ -55,8 +50,5 @@
   .nav {
     display: flex;
     flex-direction: row;
-  }
-  .title {
-    display: none;
   }
 }

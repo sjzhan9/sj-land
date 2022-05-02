@@ -7,7 +7,7 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <div>
+        <a href={url} target="_blank" rel="noopener noreferrer">
           <Image
             // priority
             src={"/investments/" + icon + ".png"}
@@ -16,7 +16,7 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
             width={32}
             alt="investment icon"
           />
-        </div>
+        </a>
       </div>
 
       <div className={styles.right}>
@@ -30,7 +30,6 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
           <p className={styles.type}>First entered</p>
           <p className={styles.entry}>{entry}</p>
         </div>
-        {/* <Image height={20} width={20} src={`/icons/external.svg`} alt="icon" /> */}
       </div>
     </div>
   );

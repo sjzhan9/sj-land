@@ -32,24 +32,24 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
           </svg>
         </div>
       ) : null}
+      <div className={styles.icon}>
+        <Image
+          onError="this.src='/feature/link.svg'"
+          src={
+            "https://s2.googleusercontent.com/s2/favicons?domain_url=" +
+            url +
+            "&sz=64"
+          }
+          // src={getFavicons("github.com").icons[0]}
+          height={20}
+          width={20}
+          alt="url favicon"
+        ></Image>
+      </div>
 
-      <div className={styles.left}>
-        <div className={styles.icon}>
-          <Image
-            onError="this.src='/feature/link.svg'"
-            src={
-              "https://s2.googleusercontent.com/s2/favicons?domain_url=" +
-              url +
-              "&sz=64"
-            }
-            // src={getFavicons("github.com").icons[0]}
-            height={20}
-            width={20}
-            alt="url favicon"
-          ></Image>
-        </div>
+      <div className={styles.right}>
         <div className={styles.stack}>
-          <h3 className={util.tileTitle}>{title}</h3>
+          <h3 className={styles.tileTitle}>{title}</h3>
           <div className={util.flexRow + " " + styles.sub}>
             <p className={styles.url}>{displayUrl}</p>
             <p className={styles.dateSub}>
@@ -62,16 +62,17 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             </p>
           </div>
         </div>
+        <div className={util.tags + " " + util.flexRow}>
+          {tags
+            ? tags.map((tag) => (
+                <p key={tag.name + tag.color} className={tag.color + "Tag tag"}>
+                  {tag.name}
+                </p>
+              ))
+            : null}
+        </div>
       </div>
-      <div className={util.tags + " " + util.flexRow}>
-        {tags
-          ? tags.map((tag) => (
-              <p key={tag.name + tag.color} className={tag.color + "Tag tag"}>
-                {tag.name}
-              </p>
-            ))
-          : null}
-      </div>
+
       {/* <Image
           height={20}
           width={20}

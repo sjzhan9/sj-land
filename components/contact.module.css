@@ -167,4 +167,15 @@
     justify-content: center;
     align-items: center;
   }
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    width: 94%;
+
+    padding: 2rem;
+  }
+  .title {
+    margin-bottom: 0rem;
+  }
 }

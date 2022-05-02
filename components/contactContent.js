@@ -100,7 +100,7 @@ export default function ContactContent({ inModal }) {
               styles.buttonText
             }
           >
-            Book Time
+            Book 30 mins
           </a>
         ) : (
           <PopupButton
@@ -117,7 +117,7 @@ export default function ContactContent({ inModal }) {
              * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
              */
             rootElement={thisDocument}
-            text="Book Time"
+            text="Book 30 mins"
           />
         )}
       </div>

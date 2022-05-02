@@ -42,6 +42,8 @@ function MyApp({ Component, pageProps }) {
 
         <Background />
         <div className={util.container}>
+          <h3 className={util.mobileTitle}>SJ Zhang</h3>
+
           <Menu />
           <Component {...pageProps} />
         </div>

@@ -1,22 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import util from "../styles/util.module.css";
 import Link from "next/link";
 import React, { useEffect } from "react";
+const { Client } = require("@notionhq/client");
 
 import PodcastTile from "../components/tiles/podcastTile";
 
-export default function Podcasts() {
-  // useEffect(() => {
-  //   const scrollContainer = document.querySelector("main");
-
-  //   scrollContainer.addEventListener("wheel", (evt) => {
-  //     evt.preventDefault();
-  //     scrollContainer.scrollLeft += evt.deltaY;
-  //   });
-  // });
-
+export default function Podcasts({ list }) {
+  console.log(list);
   return (
     <>
       <Head>
@@ -29,40 +21,36 @@ export default function Podcasts() {
         <div className={util.pageColumn}>
           <h1 className={util.header}>Podcasts</h1>
           <p className={util.description}>What I listening to when I commute</p>
+          <ul className={util.grid}>
+            {list.map((item) => (
+              <PodcastTile
+                key={item.id}
+                imageUrl={item.properties.Logo.files[0].file.url}
+                title={item.properties.Name.title[0].plain_text}
+                content={item.properties.Body.rich_text[0].plain_text}
+                url={item.properties.URL.url}
+                tags={item.properties.Tags.multi_select}
+                fav={item.properties.Fav.checkbox}
+              />
+            ))}
+          </ul>
         </div>
-        <ul className={util.grid}>
-          <PodcastTile
-            image="snacks"
-            title="Robinhood Snacks"
-            content="If you are a founder, pitch to me!"
-            url="https://robinhood.com"
-          />{" "}
-          <PodcastTile
-            image="snacks"
-            title="Robinhood Snacks"
-            content="If you are a founder, pitch to me!"
-            url="https://robinhood.com"
-          />{" "}
-          <PodcastTile
-            image="snacks"
-            title="Robinhood Snacks"
-            content="If you are a founder, pitch to me!"
-            url="https://robinhood.com"
-          />{" "}
-          <PodcastTile
-            image="snacks"
-            title="Robinhood Snacks"
-            content="If you are a founder, pitch to me!"
-            url="https://robinhood.com"
-          />{" "}
-          <PodcastTile
-            image="snacks"
-            title="Robinhood Snacks"
-            content="If you are a founder, pitch to me!"
-            url="https://robinhood.com"
-          />
-        </ul>
       </main>
     </>
   );
+}
+//notion API
+export async function getStaticProps() {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+
+  const response = await notion.databases.query({
+    database_id: process.env.NOTION_PODCASTS_ID,
+  });
+
+  return {
+    props: {
+      list: response.results,
+    },
+    revalidate: 5,
+  };
 }

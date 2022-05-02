@@ -1,8 +1,17 @@
-import styles from ".//podcastTile.module.css";
+import styles from "./podcastTile.module.css";
 import Image from "next/image";
 import util from "../../styles/util.module.css";
 
-export default function PodcastTile({ image, title, content, url }) {
+export default function PodcastTile({
+  imageUrl,
+  title,
+  content,
+  url,
+  tags,
+  fav,
+}) {
+  console.log(imageUrl);
+
   return (
     <a
       href={url}
@@ -10,18 +19,22 @@ export default function PodcastTile({ image, title, content, url }) {
       rel="noopener noreferrer"
       className={styles.container}
     >
-      <Image
-        className={styles.image}
-        // priority
-        src={"/podcasts/" + image + ".png"}
-        width={200}
-        height={200}
-        layout="responsive"
-        alt={title}
-      />
+      <div className={styles.image}>
+        {imageUrl ? (
+          <Image
+            // priority
+            src={imageUrl}
+            width={200}
+            height={200}
+            layout="responsive"
+            alt={title}
+          />
+        ) : null}
+      </div>
+
       <div className={styles.stack}>
         <h3 className={util.tileTitle}>{title}</h3>
-        <p className={util.tileContent}>{content}</p>
+        <p className={styles.content}>{content}</p>
       </div>
     </a>
   );

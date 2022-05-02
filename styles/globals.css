@@ -63,8 +63,8 @@ html {
 }
 @media (max-width: 700px) {
   :root {
-    --font-l: 16.6px;
-    --font-m: 15px;
+    --font-l: 16px;
+    --font-m: 14.8px;
     --font-s: 13.3px;
   }
 }
@@ -257,4 +257,11 @@ code {
 
 .dark-theme .redTag {
   background-color: #673932;
+}
+
+@media (max-width: 700px) {
+  .tag {
+    margin-left: 0px;
+    margin-right: 3px;
+  }
 }

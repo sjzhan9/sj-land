@@ -79,12 +79,15 @@
   display: flex;
   flex-direction: column;
   width: 16rem;
-  margin: 1rem 0rem;
+  margin: 0.75rem 0rem;
 }
 .icon {
   border-radius: 4px;
 }
 @media (max-width: 700px) {
+  .stack {
+    width: 100%;
+  }
   .textButton {
     margin-left: -0.45rem;
     margin-right: 0.5rem;
@@ -92,11 +95,10 @@
   .row {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem 0rem 1rem;
-    border-bottom: none;
+    padding: 1rem 0rem 1.5rem;
   }
   .row:first-child {
-    padding: 0rem 0rem 1rem;
+    padding-top: 0rem;
   }
   .singleButton {
     margin-left: 0px;

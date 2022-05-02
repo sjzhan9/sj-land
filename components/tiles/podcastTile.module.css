@@ -1,19 +1,16 @@
 .container {
-  padding: 1.25rem;
+  padding: 1rem;
   width: 100%;
   border-radius: 8px;
   display: block;
-  width: 300px;
+  width: auto;
   flex-shrink: 0;
-  border: 1px solid var(--gray5);
-  margin: 0rem 0rem 0rem;
+  /* margin: 0rem -1rem; */
   background-color: var(--linkContainerBg);
-  border: 1px solid var(--linkContainerBorder);
   transition: background-color 0.15s ease;
 }
 .container:hover {
   background-color: var(--linkContainerBgHover);
-  border: 1px solid var(--linkContainerBorderHover);
   cursor: pointer;
 }
 .stack {
@@ -24,5 +21,16 @@
   margin-top: 1rem;
 }
 .image {
-  border-radius: 6px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.content {
+  font-size: var(--font-m);
+  font-weight: 400;
+  color: var(--gray9);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }

@@ -59,4 +59,12 @@
   text-align: right;
 }
 @media (max-width: 700px) {
+  .right {
+    flex-direction: column;
+  }
+  .date {
+    width: 100%;
+    text-align: left;
+    margin-top: 0.5rem;
+  }
 }
