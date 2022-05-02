@@ -31,7 +31,7 @@
 }
 @media (max-width: 700px) {
   .container {
-    padding: 0.25rem 1rem 0.75rem 0.25rem;
+    padding: 0.25rem 0.75rem 0.5rem 0.375rem;
     width: 100%;
     justify-content: flex-start;
     display: flex;
@@ -40,6 +40,11 @@
     flex-shrink: 0;
     transition: all 0.15s ease-in;
     overflow: auto;
+    position: fixed;
+    bottom: 0;
+  }
+  .container::-webkit-scrollbar {
+    display: none;
   }
   .divider {
     display: none;

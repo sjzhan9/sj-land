@@ -98,4 +98,7 @@
   .row:first-child {
     padding: 0rem 0rem 1rem;
   }
+  .singleButton {
+    margin-left: 0px;
+  }
 }
