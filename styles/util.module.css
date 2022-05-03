@@ -25,14 +25,14 @@
   width: 100%;
   background: var(--bg);
   border-radius: 10px;
-  padding: 6.5rem 4rem;
+  padding: 6rem 4rem;
   order: 1;
   flex-grow: 1;
   margin-left: 0.5rem;
   background-color: var(--bg);
   overflow: auto;
   transition: all 0.15s ease-in;
-  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.015);
 }
 .pageColumn {
   max-width: 38rem;
@@ -116,6 +116,7 @@
   font-size: var(--font-m);
   font-weight: 400;
   color: var(--gray9);
+  line-height: 1.4;
 }
 .read {
   font-size: var(--font-l);

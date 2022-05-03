@@ -1,12 +1,12 @@
 .container {
   padding: 1rem;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   display: block;
   width: auto;
   flex-shrink: 0;
-  /* margin: 0rem -1rem; */
-  background-color: var(--linkContainerBg);
+  margin: 0rem;
+  /* background-color: var(--linkContainerBg); */
   transition: background-color 0.15s ease;
 }
 .container:hover {
@@ -25,12 +25,13 @@
   overflow: hidden;
 }
 .content {
+  margin-top: 0.25rem;
   font-size: var(--font-m);
   font-weight: 400;
   color: var(--gray9);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }

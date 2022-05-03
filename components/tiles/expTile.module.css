@@ -16,7 +16,7 @@
   transition: background-color 0.15s ease;
 }
 .content {
-  font-size: var(--font-l);
+  font-size: var(--font-m);
   color: var(--gray10);
   margin-top: 8px;
 }

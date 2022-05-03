@@ -37,9 +37,9 @@ html {
   --font-sans: Aktiv Grotesk;
   --font-serif: Blanco;
 
-  --font-l: 14.6px;
-  --font-m: 13.3px;
-  --font-s: 12px;
+  --font-l: 14.9px;
+  --font-m: 13.7px;
+  --font-s: 12.3px;
 
   --appbg: rgb(247, 247, 247);
   --bg: white;
@@ -54,7 +54,7 @@ html {
   --tabText: rgba(0, 0, 0, 0.344);
 
   --linkContainerBg: rgb(255, 255, 255);
-  --linkContainerBorder: rgb(239, 239, 239);
+  --linkContainerBorder: rgb(245, 245, 245);
   --linkContainerBgHover: rgb(238, 238, 238);
   --linkContainerBorderHover: rgb(228, 228, 228);
 

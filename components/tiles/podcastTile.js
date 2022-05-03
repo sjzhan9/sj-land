@@ -19,9 +19,10 @@ export default function PodcastTile({
       rel="noopener noreferrer"
       className={styles.container}
     >
-      <div className={styles.image}>
+      <div>
         {imageUrl ? (
           <Image
+            className={styles.image}
             // priority
             src={imageUrl}
             width={200}

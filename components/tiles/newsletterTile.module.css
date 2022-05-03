@@ -22,7 +22,7 @@
   align-items: flex-start;
   padding: 0px;
   margin-left: 2rem;
-  padding: 2rem 0rem 2rem 0rem;
+  padding: 1.5rem 0rem 1.5rem 0rem;
   width: 100%;
   border-bottom: 1px solid var(--linkContainerBorder);
 }
