@@ -12,6 +12,7 @@ export default function OneCare() {
         className={util.imageBg}
         src={"/project-page/onecare/onecare" + i + ".jpeg"}
         width="100%"
+        alt="project image"
       />
     );
   }

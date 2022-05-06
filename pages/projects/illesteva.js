@@ -12,6 +12,7 @@ export default function Illesteva() {
         className={util.imageBg}
         src={"/project-page/illesteva/illesteva" + i + ".png"}
         width="100%"
+        alt="project image"
       />
     );
   }

@@ -12,6 +12,7 @@ export default function Oriant() {
         className={util.imageBg}
         src={"/project-page/oriant/oriant" + i + ".png"}
         width="100%"
+        alt="project image"
       />
     );
   }
@@ -48,9 +49,9 @@ export default function Oriant() {
             height="100%"
             src="https://www.youtube.com/embed/eZGhdayv6r8"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           {images}
           <Link scroll={false} href="/projects">

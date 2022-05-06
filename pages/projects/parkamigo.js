@@ -12,6 +12,7 @@ export default function ParkAmigo() {
         className={util.imageBg}
         src={"/project-page/parkAmigo/parkAmigo" + i + ".png"}
         width="100%"
+        alt="project image"
       />
     );
   }
@@ -45,9 +46,9 @@ export default function ParkAmigo() {
             src="https://player.vimeo.com/video/312381737?h=57615d0838"
             width="100%"
             height="100%"
-            frameborder="0"
+            frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
 
           {images}

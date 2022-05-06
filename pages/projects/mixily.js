@@ -12,6 +12,7 @@ export default function Mixily() {
         className={util.imageBg}
         src={"/project-page/mixily/mixily" + i + ".png"}
         width="100%"
+        alt="project image"
       />
     );
   }

@@ -12,6 +12,7 @@ export default function Oriant() {
         className={util.imageBg}
         src={"/project-page/crumb/crumb" + i + ".png"}
         width="100%"
+        alt="project image"
       />
     );
   }
@@ -40,14 +41,7 @@ export default function Oriant() {
             <p className={util.projectDate}>Dec 2019</p>
           </div>
           {images}
-          <video
-            className={util.imageBg}
-            width="100%"
-            controls
-            autoplay
-            loop
-            muted
-          >
+          <video className={util.imageBg} width="100%" autoPlay loop muted>
             <source
               src="https://dl.dropbox.com/s/2o5bz8bdxuzzu96/Crumb%20Film.mp4?dl=0"
               type="video/mp4"

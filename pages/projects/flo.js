@@ -12,6 +12,7 @@ export default function Flo() {
         className={util.imageBg}
         src={"/project-page/flo/flo" + i + ".png"}
         width="100%"
+        alt="project image"
       />
     );
   }
