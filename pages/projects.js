@@ -34,8 +34,8 @@ export default function Projects() {
             <ProjectTile
               image="compound"
               title="Compound"
-              content="This is where I work and spent the past 2y+"
-              type="Fulltime - Founding Designer"
+              content="This is where I work and spent the last 2 years"
+              type="Founding Designer - Fulltime"
               date="2022-05-01"
               url="https://withcompound.com"
             />
@@ -45,7 +45,7 @@ export default function Projects() {
               content={
                 "A graphic editor & library inspired by historically significant designs"
               }
-              type="Side Project"
+              type="React - Side Project"
               date="2020-05-20"
               url="https://form2shape.com/"
             />
@@ -67,13 +67,14 @@ export default function Projects() {
               }
               type="Startup - Freelance"
               date="2020-04-20"
-              url={"https://start.florecruit.com/"}
+              url={"flo"}
+              internal="true"
             />
             <ProjectTile
               image="gesture-map"
               title="Gesture Map"
               content={"A interactive installation"}
-              type="OpenFrameworks + Kinect"
+              type="OpenFrameworks + Kinect - Side Project"
               date="2020-02-20"
               url={"https://vimeo.com/376008207"}
             />
@@ -95,7 +96,8 @@ export default function Projects() {
               content={"Web Design & Dev for indie film studio"}
               type="Freelance"
               date="2019-12-20"
-              // url={"https://www.sj.land/crumb"}
+              url={"crumb"}
+              internal="true"
             />
             <ProjectTile
               image="sonos"
@@ -103,11 +105,9 @@ export default function Projects() {
               content={
                 "I led design on music and podcast service intergrations."
               }
-              type="Fulltime"
+              type="NASDAQ: SONO - Fulltime"
               date="2019-08-20"
-              url={
-                "https://chrome.google.com/webstore/detail/system-font-everywhere/dcncgmembfephfbibnnigchndgncmdnj?authuser=1&hl=en"
-              }
+              url={"sonos.com"}
             />
             <ProjectTile
               image="mixily"
@@ -115,9 +115,10 @@ export default function Projects() {
               content={
                 "I freelanced a few month for the lightweight event planning platform. As a Facebook Event alternative that focuses on privacy and being inclusive to non-facebook users, Mixily allows you to create and manage events, RSVPs, message attendees."
               }
-              type="Freelance"
+              type="Startup - Freelance"
               date="2019-07-20"
-              url={"https://www.mixily.com/"}
+              url={"mixily"}
+              internal="true"
             />
 
             <ProjectTile
@@ -126,7 +127,7 @@ export default function Projects() {
               content={
                 "An iOS app that adds interactive text overlays to your photos and videos. The text overlay reacts to your facial expressions. This was done in early 2019, before instagram and TikTok popularized the live transcription feature for video recording."
               }
-              type="Side Project - iOS"
+              type="iOS - Side Project"
               date="2019-05-20"
               url={
                 "https://apps.apple.com/us/app/say-it-ar-expressions/id1480969165"
@@ -140,7 +141,8 @@ export default function Projects() {
               }
               type="Design Exercise"
               date="2019-04-20"
-              // url={"https://www.mixily.com/"}
+              url={"onecare"}
+              internal="true"
             />
             <ProjectTile
               image="billshare"
@@ -150,7 +152,8 @@ export default function Projects() {
               }
               type="Design Exercise"
               date="2019-03-20"
-              // url={"https://www.mixily.com/"}
+              url={"billshare"}
+              internal="true"
             />
             <ProjectTile
               image="oriant"
@@ -171,7 +174,8 @@ export default function Projects() {
               }
               type="iOS - Freelance"
               date="2018-12-20"
-              // url={"https://www.mixily.com/"}
+              url={"parkamigo"}
+              internal="true"
             />
             <ProjectTile
               image="illesteva"
@@ -181,16 +185,15 @@ export default function Projects() {
               }
               type="Web - Fulltime"
               date="2017-8-24"
-              // url={"https://www.mixily.com/"}
+              url={"illesteva"}
+              internal="true"
             />
           </ul>
           <p
             className={util.tileContent}
             style={{ marginTop: "6rem", textAlign: "center" }}
           >
-            {
-              "Work before 2017 isn't very well-documented. May re-add in the future?"
-            }
+            {"Work before 2017 wasn't very well-documented :)"}
           </p>
         </div>
       </main>

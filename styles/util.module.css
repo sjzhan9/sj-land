@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: center;
-  transition: background-color 0.75s ease;
+  transition: background-color 0.2s ease;
 }
 .container {
   /* max-width: 1800px;
@@ -25,18 +25,51 @@
   width: 100%;
   background: var(--bg);
   border-radius: 10px;
-  padding: 6rem 4rem;
+  padding: 2rem 2rem;
   order: 1;
   flex-grow: 1;
   margin-left: 0.5rem;
   background-color: var(--bg);
   overflow: auto;
-  transition: all 0.15s ease-in;
+  transition: background-color 0.2s ease;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.015);
 }
+.video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
 .pageColumn {
+  padding: 4rem 0rem;
+
   max-width: 38rem;
   width: 100%;
+}
+.projectColumn {
+  padding: 0rem 0rem 3rem;
+
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projectTopContainer {
+  padding: 1.375rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  margin: 0.25rem 0rem 2rem;
+}
+.projectTopLeft {
+  width: 70%;
+  max-width: 720px;
 }
 .divider {
   padding: 1.25rem 0rem 0rem 0.25rem;
@@ -51,6 +84,14 @@
   margin-bottom: 1.5rem;
   /* font-variation-settings: "wght" 200, "wdth" 130; */
   color: var(--gray12);
+  transition: color 0.25s ease;
+}
+.projectHeader {
+  font-size: 2.25rem;
+  font-weight: 630;
+  margin-bottom: 0.5rem;
+  color: var(--gray12);
+  transition: color 0.25s ease;
 }
 .externalLink,
 .internalLink {
@@ -91,6 +132,7 @@
   margin: 1.25rem 0rem 1.25rem 1rem;
   text-transform: uppercase;
   letter-spacing: 0.4px;
+  transition: color 0.25s ease;
 }
 .mobileTitle {
   display: none;
@@ -105,11 +147,13 @@
   line-height: 1.6;
   font-size: var(--font-l);
   color: var(--gray11);
+  transition: color 0.25s ease;
 }
 .tileTitle {
   font-weight: 400;
   font-size: var(--font-l);
   color: var(--gray12);
+  transition: color 0.25s ease;
 }
 .tileContent {
   margin-top: 0.25rem;
@@ -117,15 +161,24 @@
   font-weight: 400;
   color: var(--gray9);
   line-height: 1.4;
+  transition: color 0.25s ease;
 }
 .read {
   font-size: var(--font-l);
   line-height: 170%;
   color: var(--gray11);
   margin-bottom: 1.5rem;
+  transition: color 0.25s ease;
+}
+.projectDate {
+  text-align: center;
+  font-size: var(--font-m);
+  color: var(--gray9);
+  transition: color 0.25s ease;
 }
 .inset4 {
   padding: 0rem 0.25rem;
+  display: block;
 }
 .grid {
   padding-left: 0px;
@@ -149,6 +202,7 @@
   font-weight: 600;
   color: var(--gray12);
   margin-bottom: 0.5rem;
+  transition: color 0.25s ease;
 }
 .icon {
   border-radius: 5px;
@@ -196,6 +250,25 @@
 }
 .tab[aria-selected="true"] {
   background: var(--gray4);
+  color: var(--gray12);
+}
+.imageBg {
+  background-color: var(--imageBg);
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+.backButton {
+  padding: 12px 20px 12px 18px;
+  margin-top: 3.5rem;
+  border-radius: 24px;
+  background-color: var(--gray2);
+  color: var(--gray11);
+  font-size: var(--font-m);
+  font-weight: 480;
+  transition: all 0.2s ease;
+}
+.backButton:hover {
+  background-color: var(--gray4);
   color: var(--gray12);
 }
 

@@ -51,7 +51,7 @@ export default function Background() {
           color(x, y, R(x, y, time), G(x, y, time), B(x, y, time));
         }
       }
-      time = time + 0.01;
+      time = time + 0.015;
       window.requestAnimationFrame(startAnimation);
     };
 

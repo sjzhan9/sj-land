@@ -35,7 +35,6 @@ export default function ProjectTile({
               layout="responsive"
               alt={title}
             />
-
             <div className={styles.stack}>
               <h3 className={util.tileTitle}>{title}</h3>
               <p className={util.tileContent}>{content}</p>

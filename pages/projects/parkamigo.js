@@ -3,14 +3,14 @@ import Link from "next/link";
 import util from "../../styles/util.module.css";
 import Image from "next/image";
 
-export default function Oriant() {
-  const numOfImg = 10;
+export default function ParkAmigo() {
+  const numOfImg = 7;
   let images = [];
   for (var i = 1; i < numOfImg + 1; i++) {
     images.push(
       <img
         className={util.imageBg}
-        src={"/project-page/oriant/oriant" + i + ".png"}
+        src={"/project-page/parkAmigo/parkAmigo" + i + ".png"}
         width="100%"
       />
     );
@@ -18,10 +18,10 @@ export default function Oriant() {
   return (
     <>
       <Head>
-        <title>Oriant</title>
+        <title>ParkAmigo</title>
         <meta
           name="description"
-          content="A design exercise to encourage students exploring orientation events and manage their orientation schedules. It was a 5 day project that I covered from research to prototyping."
+          content="I spent 2 weeks working on a complete redesign of the ParkAmigo iOS app."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -30,28 +30,26 @@ export default function Oriant() {
         <div className={util.projectColumn}>
           <div className={util.projectTopContainer}>
             <div className={util.projectTopLeft}>
-              <h1 className={util.projectHeader}>Oriant</h1>
-              {/* <div className={util.inset4}> */}
+              <h1 className={util.projectHeader}>ParkAmigo</h1>
               <p className={util.description}>
-                A design exercise to encourage students exploring orientation
-                events and manage their orientation schedules. It was a 5 day
-                project that I covered from research to prototyping.
+                I spent 2 weeks working on a complete redesign of the ParkAmigo
+                iOS app.
               </p>
-              {/* </div> */}
             </div>
 
-            <p className={util.projectDate}>Feb 2019</p>
+            <p className={util.projectDate}>Dec 2018</p>
           </div>
+
           <iframe
             className={util.video}
+            src="https://player.vimeo.com/video/312381737?h=57615d0838"
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/eZGhdayv6r8"
-            title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen
           ></iframe>
+
           {images}
           <Link scroll={false} href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>

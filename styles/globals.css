@@ -41,7 +41,7 @@ html {
   --font-m: 13.7px;
   --font-s: 12.3px;
 
-  --appbg: rgb(247, 247, 247);
+  --appbg: rgb(252, 252, 252);
   --bg: white;
 
   --menu: rgba(255, 255, 255, 0.452);
@@ -55,11 +55,13 @@ html {
 
   --linkContainerBg: rgb(255, 255, 255);
   --linkContainerBorder: rgb(245, 245, 245);
-  --linkContainerBgHover: rgb(238, 238, 238);
-  --linkContainerBorderHover: rgb(228, 228, 228);
+  --linkContainerBgHover: rgb(243, 243, 243);
+  --linkContainerBorderHover: rgb(230, 230, 230);
 
   --overlayDarkness: rgba(0 0 0 / 0.3);
   --modalBg: rgb(255, 255, 255);
+
+  --imageBg: #f9fafb;
 }
 @media (max-width: 700px) {
   :root {
@@ -89,6 +91,8 @@ html {
 
   --overlayDarkness: rgba(0 0 0 / 0.65);
   --modalBg: rgb(28, 28, 28);
+
+  --imageBg: #191919;
 }
 
 .bg {
@@ -97,13 +101,13 @@ html {
   height: 100%;
   left: 0px;
   top: 0px;
-  opacity: 0.06;
+  opacity: 0.08;
   z-index: 1;
   /* transition: all 0.75s ease-in-out; */
 }
 
 .dark-theme .bg {
-  opacity: 0.06;
+  opacity: 0.08;
 }
 .dark-theme .iconInvert {
   filter: invert(1);
