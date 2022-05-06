@@ -10,7 +10,7 @@ export default function ParkAmigo() {
     images.push(
       <img
         className={util.imageBg}
-        src={"/project-page/parkAmigo/parkAmigo" + i + ".png"}
+        src={"/project-page/parkamigo/parkamigo" + i + ".png"}
         width="100%"
         alt="project image"
       />

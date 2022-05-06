@@ -15,7 +15,7 @@ export default function ProjectTile({
   return (
     <div className={styles.outer}>
       <p className={styles.date}>
-        {new Date(date + " EST").toLocaleDateString("en-gb", {
+        {new Date(date).toLocaleDateString("en-gb", {
           year: "numeric",
           month: "short",
         })}
@@ -23,8 +23,8 @@ export default function ProjectTile({
       {internal ? (
         <Link href={"/projects/" + url}>
           <a
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
             className={styles.container}
           >
             <Image
