@@ -10,12 +10,13 @@
   border: 1px solid var(--linkContainerBorder);
   position: relative;
   margin: 0.5rem 0rem 0rem;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, border 0.15s ease;
 }
 .tileTitle {
   font-size: var(--font-l);
   font-weight: 400;
   color: var(--gray12);
+  transition: all 0.2s ease;
 }
 .container:hover {
   background-color: var(--linkContainerBgHover);

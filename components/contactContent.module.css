@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: row;
   border-radius: 5px;
+  transition: border 0.2s ease;
 }
 .button {
   height: 2.25rem;
@@ -26,6 +27,7 @@
 }
 .rightBorder {
   border-right: 1px solid var(--gray4);
+  transition: background-color 0.2s ease, border 0.2s ease;
 }
 .button:hover {
   background-color: var(--gray4);
@@ -51,11 +53,13 @@
   margin-left: 0.375rem;
   font-size: var(--font-m);
   color: var(--gray12);
+  transition: color 0.2s ease;
 }
 .singleButton {
   border: 1px solid var(--gray4);
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
+  transition: border 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 .row {
   display: flex;
@@ -64,6 +68,7 @@
   padding: 1rem 0rem 1rem;
   border-bottom: 1px solid var(--gray3);
   align-items: center;
+  transition: border 0.2s ease;
 }
 .row:last-child {
   padding: 1.5rem 0rem 0rem;

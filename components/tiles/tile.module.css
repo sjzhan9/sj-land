@@ -24,6 +24,7 @@
   border-bottom: 1px solid var(--linkContainerBorder);
   justify-content: space-between;
   padding: 1.25rem 0rem;
+  transition: border 0.2s ease;
 }
 .stack {
   display: flex;

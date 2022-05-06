@@ -13,7 +13,6 @@
 }
 .container:hover {
   background-color: var(--linkContainerBgHover);
-  /* border: 1px solid var(--linkContainerBorderHover); */
   cursor: pointer;
 }
 .stack {
@@ -25,6 +24,7 @@
   padding: 1.5rem 0rem 1.5rem 0rem;
   width: 100%;
   border-bottom: 1px solid var(--linkContainerBorder);
+  transition: border 0.2s ease;
 }
 .image {
   border-radius: 8px;
