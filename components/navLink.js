@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 export default function NavLink({ svg, label, href, shortcut, external }) {
   const router = useRouter();
+
   const ariaCurrent =
     router.asPath.includes(href) && href !== "/"
       ? "page"

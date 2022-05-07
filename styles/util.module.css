@@ -151,6 +151,7 @@
 }
 .tileTitle {
   font-weight: 400;
+  line-height: 1.1;
   font-size: var(--font-l);
   color: var(--gray12);
   transition: color 0.25s ease;
@@ -158,7 +159,7 @@
 .tileContent {
   margin-top: 0.25rem;
   font-size: var(--font-m);
-  font-weight: 400;
+  font-weight: 380;
   color: var(--gray9);
   line-height: 1.4;
   transition: color 0.25s ease;

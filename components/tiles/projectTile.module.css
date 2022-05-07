@@ -18,11 +18,31 @@
   border: 1px solid var(--linkContainerBorderHover);
   cursor: pointer;
 }
+.container .externalIcon {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.container:hover .externalIcon {
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
+.externalIcon {
+  font-size: 16px;
+  margin-left: 3px;
+  color: var(--gray9);
+  font-weight: 300;
+}
 .stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .image {
   border-radius: 6px 6px 0px 0px;

@@ -8,6 +8,20 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function ReadingList({ list }) {
+  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
+  useEffect(() => {
+    let thisPage = document.querySelector("#readingPage");
+    let top = localStorage.getItem("reading-scroll");
+    if (top !== null) {
+      thisPage.scrollTop = top;
+    }
+    const handleScroll = () => {
+      localStorage.setItem("reading-scroll", thisPage.scrollTop);
+    };
+    thisPage.addEventListener("scroll", handleScroll);
+    return () => thisPage.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const router = useRouter();
   const [filter, setFilter] = React.useState("All");
   const [currentList, setCurrentList] = React.useState(null);
@@ -57,7 +71,7 @@ export default function ReadingList({ list }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={util.page}>
+      <main className={util.page} id="readingPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Reading List</h1>
 

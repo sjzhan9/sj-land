@@ -21,8 +21,14 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
 
       <div className={styles.right}>
         <div className={styles.stack}>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            <h3 className={util.tileTitle}>{title}</h3>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.companyLink}
+          >
+            <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+            <span className={styles.externalIcon}>↗</span>
           </a>
           <p className={util.tileContent}>{content}</p>
         </div>

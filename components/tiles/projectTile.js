@@ -28,6 +28,7 @@ export default function ProjectTile({
             className={styles.container}
           >
             <Image
+              priority
               className={styles.image}
               src={"/projects/" + image + ".png"}
               width={400}
@@ -60,7 +61,11 @@ export default function ProjectTile({
           />
 
           <div className={styles.stack}>
-            <h3 className={util.tileTitle}>{title}</h3>
+            <div className={styles.row}>
+              <h3 className={util.tileTitle}>{title}</h3>
+              <span className={styles.externalIcon}>↗</span>
+            </div>
+
             <p className={util.tileContent}>{content}</p>
             <p className={styles.type}>{type}</p>
           </div>

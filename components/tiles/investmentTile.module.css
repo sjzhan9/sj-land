@@ -40,6 +40,34 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
+  width: 66%;
+}
+.inline {
+  display: inline-block;
+}
+.container .externalIcon {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.container:hover .externalIcon {
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
+.externalIcon {
+  font-size: 16px;
+  margin-left: 3px;
+  color: var(--gray9);
+  font-weight: 300;
+}
+.companyLink {
+  transition: background-color 0.15s ease;
+}
+.companyLink:hover {
+  border-radius: 4px;
+  background-color: var(--gray4);
+  padding: 3px 4px 3px 5px;
+  margin: -3px -4px -3px -5px;
 }
 .stackRight {
   display: flex;

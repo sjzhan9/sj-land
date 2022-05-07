@@ -4,6 +4,8 @@ import util from "../styles/util.module.css";
 import Background from "../components/background";
 import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
+import restoreScrollPosition from "next-restore-scroll";
+import React, { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,10 +1,52 @@
 import Head from "next/head";
 import Link from "next/link";
-import Menu from "../components/menu";
+import React, { useEffect } from "react";
 import util from "../styles/util.module.css";
 import ProjectTile from "../components/tiles/projectTile";
+import { useRouter } from "next/router";
+import restoreScrollPosition from "next-restore-scroll";
 
 export default function Projects() {
+  const router = useRouter();
+
+  // useEffect(() => {
+  //   const handleRouteChange = (url, { shallow }) => {
+  //     console.log(
+  //       `App is changing to ${url} ${
+  //         shallow ? "with" : "without"
+  //       } shallow routing`
+  //     );
+  //     let thisPage = document.querySelector("#projectsPage");
+  //     console.log("scroll pos changed to " + thisPage.scrollTop);
+  //     localStorage.setItem("projects-scroll", thisPage.scrollTop);
+  //   };
+
+  //   router.events.on("routeChangeStart", handleRouteChange);
+
+  //   // If the component is unmounted, unsubscribe
+  //   // from the event with the `off` method:
+  //   return () => {
+  //     router.events.off("routeChangeStart", handleRouteChange);
+  //   };
+  // }, []);
+
+  //memorize scroll pos
+  useEffect(() => {
+    let thisPage = document.querySelector("#projectsPage");
+    let top = localStorage.getItem("projects-scroll");
+    console.log("scroll pos from local is" + top);
+    if (top !== null) {
+      thisPage.scrollTop = top;
+    }
+    const handleScroll = () => {
+      console.log("scroll pos changed to " + thisPage.scrollTop);
+      localStorage.setItem("projects-scroll", thisPage.scrollTop);
+    };
+
+    thisPage.addEventListener("scroll", handleScroll);
+    return () => thisPage.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
@@ -13,7 +55,13 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={util.page}>
+      <main
+        id="projectsPage"
+        className={util.page}
+        // onScroll={(e) => {
+        //   console.log("scrolling!", e.target.scrollTop);
+        // }}
+      >
         <div className={util.pageColumn}>
           <h1 className={util.header}>Projects</h1>
           <p className={util.description}>

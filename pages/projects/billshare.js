@@ -12,6 +12,7 @@ export default function Oriant() {
         className={util.imageBg}
         src={"/project-page/billshare/billshare" + i + ".png"}
         width="100%"
+        alt="project image"
       />
     );
   }
@@ -47,7 +48,7 @@ export default function Oriant() {
             <p className={util.projectDate}>Mar 2019</p>
           </div>
           {images}
-          <Link scroll={false} href="/projects">
+          <Link href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>
           </Link>
         </div>
