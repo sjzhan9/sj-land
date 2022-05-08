@@ -24,7 +24,7 @@ export default function ParkAmigo() {
           name="description"
           content="I spent 2 weeks working on a complete redesign of the ParkAmigo iOS app."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page}>

@@ -1,11 +1,26 @@
 import Head from "next/head";
 import util from "../styles/util.module.css";
 import Link from "next/link";
+import React, { useEffect } from "react";
+
 import NewsletterTile from "../components/tiles/newsletterTile";
 const { Client } = require("@notionhq/client");
 
 export default function Newsletters({ list }) {
-  console.log(list);
+  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
+  useEffect(() => {
+    let thisPage = document.querySelector("#newslettersPage");
+    let top = localStorage.getItem("newsletters-scroll");
+    if (top !== null) {
+      thisPage.scrollTop = top;
+    }
+    const handleScroll = () => {
+      localStorage.setItem("newsletters-scroll", thisPage.scrollTop);
+    };
+    thisPage.addEventListener("scroll", handleScroll);
+    return () => thisPage.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
@@ -14,10 +29,10 @@ export default function Newsletters({ list }) {
           name="description"
           content="What I read in the morning and before bed"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
-      <main className={util.page}>
+      <main className={util.page} id="newslettersPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Newsletters</h1>
           <p className={util.description}>

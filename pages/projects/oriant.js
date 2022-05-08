@@ -24,7 +24,7 @@ export default function Oriant() {
           name="description"
           content="A design exercise to encourage students exploring orientation events and manage their orientation schedules. It was a 5 day project that I covered from research to prototyping."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page}>
@@ -32,7 +32,7 @@ export default function Oriant() {
           <div className={util.projectTopContainer}>
             <div className={util.projectTopLeft}>
               <h1 className={util.projectHeader}>Oriant</h1>
-              {/* <div className={util.inset4}> */}
+              {/* <div className={util.inset}> */}
               <p className={util.description}>
                 A design exercise to encourage students exploring orientation
                 events and manage their orientation schedules. It was a 5 day

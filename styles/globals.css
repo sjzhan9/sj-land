@@ -43,6 +43,7 @@ html {
 
   --appbg: rgb(252, 252, 252);
   --bg: white;
+  --bgSticky: rgba(255, 255, 255, 0.746);
 
   --menu: rgba(255, 255, 255, 0.452);
   --menuLabel: rgba(0, 0, 0, 0.825);
@@ -75,6 +76,7 @@ html {
   /* Remap your colors for dark mode */
   --appbg: rgb(26, 26, 26);
   --bg: rgb(16, 16, 16);
+  --bgSticky: rgba(16, 16, 16, 0.746);
 
   --menu: rgba(10, 10, 10, 0.8);
   --menuLabel: rgba(255, 255, 255, 0.8);

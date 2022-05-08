@@ -28,7 +28,7 @@ export default function Oriant() {
                 methods. It was a 4 day project that I carried out from research
                 to hi-fidelity UI design."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page}>

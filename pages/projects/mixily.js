@@ -24,7 +24,7 @@ export default function Mixily() {
           name="description"
           content="I freelanced a few month for the lightweight event planning platform. As a Facebook Event alternative that focuses on privacy and being inclusive to non-facebook users, Mixily allows you to create and manage events, RSVPs, message attendees."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page}>

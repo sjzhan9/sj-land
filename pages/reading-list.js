@@ -23,7 +23,7 @@ export default function ReadingList({ list }) {
   }, []);
 
   const router = useRouter();
-  const [filter, setFilter] = React.useState("All");
+  const [filter, setFilter] = React.useState("Recently Added");
   const [currentList, setCurrentList] = React.useState(null);
 
   function handleTagChange(e) {
@@ -32,7 +32,7 @@ export default function ReadingList({ list }) {
 
   //when filter changes create a filtered state with only items with the right tag
   useEffect(() => {
-    if (filter !== "All") {
+    if (filter !== "Recently Added") {
       router.push({
         query: { filter: filter },
       });
@@ -68,7 +68,7 @@ export default function ReadingList({ list }) {
           name="description"
           content="Articles that I enjoyed reading. Bookmake ones are the the ones I love re-reading."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page} id="readingPage">
@@ -86,9 +86,9 @@ export default function ReadingList({ list }) {
                 onClick={handleTagChange}
                 className={util.tab}
                 role="tab"
-                aria-selected={"All" == filter ? "true" : null}
+                aria-selected={"Recently Added" == filter ? "true" : null}
               >
-                All
+                Recently Added
               </button>
               <button
                 onClick={handleTagChange}
@@ -136,7 +136,7 @@ export default function ReadingList({ list }) {
                 Compensation
               </button>
             </div>
-            {filter == "All" ? (
+            {filter == "Recently Added" ? (
               list.map((link) => (
                 <ReadingListTile
                   key={link.id}

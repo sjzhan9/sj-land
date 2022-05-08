@@ -93,23 +93,43 @@
   color: var(--gray12);
   transition: color 0.25s ease;
 }
-.externalLink,
 .internalLink {
   padding-right: 22px;
   display: inline-flex;
   padding-left: 3px;
   margin-left: -3px;
   border-radius: 4px;
-  align-items: center;
+  align-items: stretch;
 }
-
+.normalLink:hover {
+  color: var(--gray12);
+}
+.externalLink {
+  padding-right: 16px;
+  display: inline-flex;
+  padding-left: 4px;
+  margin-left: -3px;
+  margin-right: -2px;
+  border-radius: 4px;
+  align-items: stretch;
+}
+.externalLink:hover {
+  color: var(--gray12);
+}
 .externalLink:after {
   display: inline-block;
-  padding: 0px 0px 0px 1px;
-  content: url(/icons/external.svg);
-  width: 22px;
-  height: 20px;
-  margin-right: -22px;
+  padding: 0px 0px 0px 0px;
+  /* content: url(/icons/external.svg); */
+  content: "↗";
+  width: 14px;
+  height: 16px;
+  margin-right: -16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  margin-left: 3px;
+  color: var(--gray9);
+  font-weight: 300;
 }
 
 .internalLink:after {
@@ -143,7 +163,7 @@
 }
 .description {
   margin: 0rem 0rem 0.5rem;
-  padding: 0.25rem;
+  padding: 0.125rem;
   line-height: 1.6;
   font-size: var(--font-l);
   color: var(--gray11);
@@ -177,8 +197,8 @@
   color: var(--gray9);
   transition: color 0.25s ease;
 }
-.inset4 {
-  padding: 0rem 0.25rem;
+.inset {
+  padding: 0rem 0.125rem;
   display: block;
 }
 .grid {
@@ -198,6 +218,7 @@
 }
 
 .readTitle {
+  margin-top: 2rem;
   font-size: 1.125rem;
   line-height: 170%;
   font-weight: 600;
@@ -219,6 +240,13 @@
 }
 .tabBar {
   margin-bottom: 1.25rem;
+  position: sticky;
+  padding: 8px 0px;
+  top: -32px;
+  z-index: 10;
+  background-color: var(--bgSticky);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.2s ease;
 }
 .tags {
   flex-shrink: 0;

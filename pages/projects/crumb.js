@@ -24,7 +24,7 @@ export default function Oriant() {
           name="description"
           content="I started working with Crumb to come up with a few website designs. I ended up implementing a different design for them."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page}>

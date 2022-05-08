@@ -15,7 +15,7 @@ export default function ProjectTile({
   return (
     <div className={styles.outer}>
       <p className={styles.date}>
-        {new Date(date).toLocaleDateString("en-gb", {
+        {new Date(date).toLocaleDateString("en-US", {
           year: "numeric",
           month: "short",
         })}

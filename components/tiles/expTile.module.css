@@ -1,24 +1,21 @@
 .container {
   padding: 2rem;
   width: 100%;
-  /* border-radius: 8px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1rem 1.5rem 1rem 1.5rem; */
-  padding: 1.5rem 0rem 1.5rem 0rem;
-
-  /* margin-top: 0.75rem; */
-  /* background-color: var(--linkContainerBg); */
-  /* border-bottom: 1px solid var(--linkContainerBorder); */
-
+  padding: 1.25rem 0rem 1.25rem 0rem;
   transition: background-color 0.15s ease;
 }
+.container:last-child {
+  margin-bottom: 4rem;
+}
 .content {
-  font-size: var(--font-m);
+  font-size: var(--font-l);
   color: var(--gray10);
   margin-top: 8px;
+  line-height: 1.4;
 }
 .date {
   width: 70px;

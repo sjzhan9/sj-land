@@ -7,21 +7,27 @@ export default function Tile({ logoUrl, title, content, tags, date, url }) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          <Image
-            className={styles.icon}
-            // priority
-            src={logoUrl}
-            height={28}
-            width={28}
-            alt={title}
-          />
-        </a>
+        <Image
+          className={styles.icon}
+          // priority
+          src={logoUrl}
+          height={28}
+          width={28}
+          alt={title}
+        />
       </div>
 
       <div className={styles.right}>
         <div className={styles.stack}>
-          <h3 className={util.tileTitle}>{title}</h3>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.titleLink}
+          >
+            <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+            <span className={styles.externalIcon}>↗</span>
+          </a>
           <p className={util.tileContent}>{content}</p>
           <div className={util.tags + " " + util.flexRow}>
             {/* {tags
@@ -37,7 +43,7 @@ export default function Tile({ logoUrl, title, content, tags, date, url }) {
           </div>
         </div>
         <p className={styles.date}>
-          {new Date(date).toLocaleDateString("en-gb", {
+          {new Date(date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "short",
           })}

@@ -55,7 +55,10 @@ export default function Contact({ svg, label, shortcut }) {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
-        <Dialog.Content className={styles.content}>
+        <Dialog.Content
+          className={styles.content}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
           <Dialog.Title className={styles.title}>Contact</Dialog.Title>
           <ContactContent inModal="true" />
           {/* <Dialog.Close /> */}

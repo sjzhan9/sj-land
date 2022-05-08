@@ -1,6 +1,7 @@
 import styles from ".//readingListTile.module.css";
 import Image from "next/image";
 import util from "../../styles/util.module.css";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 export default function ReadingListTile({ title, url, date, fav, tags }) {
   let displayUrl = url
@@ -16,21 +17,32 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
       className={styles.container}
     >
       {fav ? (
-        <div className={styles.heart}>
-          <svg
-            width="13"
-            height="18"
-            viewBox="0 0 13 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 16.8747V0H13V16.8747C13 17.308 12.4864 17.5362 12.1649 17.2458L6.83512 12.4324C6.64477 12.2605 6.35523 12.2605 6.16488 12.4324L0.83512 17.2458C0.513554 17.5362 0 17.308 0 16.8747Z"
-              fill="#838383"
-              fillOpacity="0.27"
-            />
-          </svg>
-        </div>
+        <Tooltip.Provider delayDuration={300}>
+          <Tooltip.Root>
+            <Tooltip.Trigger asChild>
+              <div className={styles.heart}>
+                <svg
+                  width="13"
+                  height="18"
+                  viewBox="0 0 13 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 16.8747V0H13V16.8747C13 17.308 12.4864 17.5362 12.1649 17.2458L6.83512 12.4324C6.64477 12.2605 6.35523 12.2605 6.16488 12.4324L0.83512 17.2458C0.513554 17.5362 0 17.308 0 16.8747Z"
+                    fill="#838383"
+                    fillOpacity="0.27"
+                  />
+                </svg>
+              </div>
+            </Tooltip.Trigger>
+
+            <Tooltip.Content className={styles.content}>
+              Must Read. Filter feature coming soon.
+              <Tooltip.Arrow className={styles.arrow} />
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
       ) : null}
       <div className={styles.icon}>
         <Image
@@ -50,7 +62,9 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
       <div className={styles.right}>
         <div className={styles.stack}>
           <h3 className={styles.tileTitle}>{title}</h3>
-          <div className={util.flexRow + " " + styles.sub}>
+          <p className={styles.url}>{displayUrl}</p>
+
+          {/* <div className={util.flexRow + " " + styles.sub}>
             <p className={styles.url}>{displayUrl}</p>
             <p className={styles.dateSub}>
               {" · Added "}
@@ -60,7 +74,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
                 day: "2-digit",
               })}{" "}
             </p>
-          </div>
+          </div> */}
         </div>
         <div className={util.tags + " " + util.flexRow}>
           {tags

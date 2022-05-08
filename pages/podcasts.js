@@ -8,16 +8,29 @@ const { Client } = require("@notionhq/client");
 import PodcastTile from "../components/tiles/podcastTile";
 
 export default function Podcasts({ list }) {
-  console.log(list);
+  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
+  useEffect(() => {
+    let thisPage = document.querySelector("#podcastPage");
+    let top = localStorage.getItem("podcast-scroll");
+    if (top !== null) {
+      thisPage.scrollTop = top;
+    }
+    const handleScroll = () => {
+      localStorage.setItem("podcast-scroll", thisPage.scrollTop);
+    };
+    thisPage.addEventListener("scroll", handleScroll);
+    return () => thisPage.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
         <title>{"SJ's Favorite Podcasts"}</title>
         <meta name="description" content="What I listening to when I commute" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
-      <main className={util.page}>
+      <main className={util.page} id="podcastPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Podcasts</h1>
           <p className={util.description}>What I listening to when I commute</p>

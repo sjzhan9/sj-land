@@ -1,27 +1,42 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import React, { useEffect } from "react";
+
 import util from "../styles/util.module.css";
 import Link from "next/link";
 import Tile from "../components/tiles/tile";
 const { Client } = require("@notionhq/client");
 
 export default function Home({ list }) {
-  console.log(list);
+  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
+  useEffect(() => {
+    let thisPage = document.querySelector("#recentsPage");
+    let top = localStorage.getItem("recents-scroll");
+    if (top !== null) {
+      thisPage.scrollTop = top;
+    }
+    const handleScroll = () => {
+      localStorage.setItem("recents-scroll", thisPage.scrollTop);
+    };
+    thisPage.addEventListener("scroll", handleScroll);
+    return () => thisPage.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
         <title>SJ · Home</title>
         <meta name="description" content="Personal site of SJ Zhang" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" type="image/gif" />
       </Head>
 
-      <main className={util.page}>
+      <main className={util.page} id="recentsPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Recents</h1>
 
           <p className={util.description}>
-            Currently, Im leading design at<> </>
+            {"Currently, I'm designing at "}
             <a
               href="https://withcompound.com"
               target="_blank"
@@ -30,12 +45,13 @@ export default function Home({ list }) {
             >
               Compound
             </a>
-            , building a bank & wealth manager for startup founders and
-            employees.
+            {
+              ", building a bank & wealth manager for startup founders and employees."
+            }
           </p>
           <p className={util.description}>
             {
-              "I’m a designer and developer by training and trade. I spend most of my spare time reading about business, finance and crypto. If this combination interests you, welcome to my library where I share my reading list, investment updates, and my software adventures."
+              "I’m a designer and developer by training and trade. I spend most of my spare time reading about business, finance and crypto. If this combination interests you, welcome to my corner of the internet where I share my reading list, investment updates, and software adventures."
             }
           </p>
           {/* <p className={util.description}>
@@ -77,6 +93,16 @@ export async function getStaticProps() {
 
   const response = await notion.databases.query({
     database_id: process.env.NOTION_RECENTS_ID,
+    filter: {
+      and: [
+        {
+          property: "Display",
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
+    },
     sorts: [
       {
         property: "Time",

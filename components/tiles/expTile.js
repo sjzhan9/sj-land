@@ -15,7 +15,7 @@ export default function ExpTile({ icon, title, content, url, date }) {
             alt="investment icon"
           /> */}
           {/* <p className={styles.date}>
-            {new Date(date + " EST").toLocaleDateString("en-gb", {
+            {new Date(date + " EST").toLocaleDateString("en-US", {
               year: "numeric",
               month: "short",
             })}
