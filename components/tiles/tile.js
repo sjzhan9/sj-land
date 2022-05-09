@@ -50,18 +50,7 @@ export default function Tile({
             <span className={styles.externalIcon}>↗</span>
           </a>
           <p className={util.tileContent}>{content}</p>
-          <div className={util.tags + " " + util.flexRow}>
-            {/* {tags
-              ? tags.map((tag) => (
-                  <p
-                    key={tag.name + tag.color}
-                    className={tag.color + "Tag tag"}
-                  >
-                    {tag.name}
-                  </p>
-                ))
-              : null} */}
-          </div>
+          <div className={util.tags + " " + util.flexRow}></div>
         </div>
         <p className={styles.date}>
           {new Date(date).toLocaleDateString("en-US", {

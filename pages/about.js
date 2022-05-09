@@ -24,7 +24,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>SJ · About</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
@@ -197,8 +197,8 @@ export default function About() {
             <h2 className={util.readTitle}>This Site</h2>
 
             <p className={util.read}>
-              The site was initially built in Apr 2022 over 2 weekends. I built
-              this site for 2 reasons:
+              This site was initially built in Apr 2022 over 2 weekends. I built
+              it for 2 reasons:
             </p>
             <ol
               type="1"
@@ -210,8 +210,9 @@ export default function About() {
                 Sharing these in public gives me another level of rigor.
               </li>
               <li className={util.read} style={{ marginBottom: "0.5rem" }}>
-                Keep myself engaged with the latest stack in web dev. Coding and
-                iterating the site exposes me to new libraries and frameworks.
+                Keep myself engaged with the latest stacks. Iterating on my
+                personal site gives me an opportunity to try new libraries and
+                frameworks.
               </li>
             </ol>
 
