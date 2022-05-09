@@ -14,7 +14,7 @@
 }
 .tileTitle {
   font-size: var(--font-l);
-  font-weight: 400;
+  font-weight: 390;
   color: var(--gray12);
   transition: all 0.2s ease;
 }
@@ -52,14 +52,14 @@
   flex-shrink: 0;
   padding: 1rem;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 390;
   color: var(--gray9);
   text-align: right;
 }
 .url {
   margin: 0.35rem 0rem 0rem;
   font-size: var(--font-s);
-  font-weight: 400;
+  font-weight: 390;
   color: var(--gray9);
   max-width: 100%;
   white-space: nowrap;
@@ -69,7 +69,7 @@
 .dateSub {
   margin-top: 0.25rem;
   font-size: var(--font-s);
-  font-weight: 400;
+  font-weight: 390;
   color: var(--gray9);
   /* max-width: 40%; */
   white-space: nowrap;

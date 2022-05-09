@@ -7,16 +7,15 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <div className={styles.iconContainer}>
           <Image
             // priority
             src={"/investments/" + icon + ".png"}
-            className={styles.icon}
             height={32}
             width={32}
             alt="investment icon"
           />
-        </a>
+        </div>
       </div>
 
       <div className={styles.right}>

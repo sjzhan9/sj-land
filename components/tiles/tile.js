@@ -3,18 +3,39 @@ import util from "../../styles/util.module.css";
 
 import Image from "next/image";
 
-export default function Tile({ logoUrl, title, content, tags, date, url }) {
+export default function Tile({
+  internalUrl,
+  logoUrl,
+  title,
+  content,
+  tags,
+  date,
+  url,
+}) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <Image
-          className={styles.icon}
-          // priority
-          src={logoUrl}
-          height={28}
-          width={28}
-          alt={title}
-        />
+        {internalUrl ? (
+          <Image
+            className={styles.icon}
+            priority
+            unoptimized
+            src={"/recents/" + internalUrl + ".png"}
+            height={28}
+            width={28}
+            alt={title}
+          />
+        ) : (
+          <Image
+            className={styles.icon}
+            priority
+            unoptimized
+            src={logoUrl}
+            height={28}
+            width={28}
+            alt={title}
+          />
+        )}
       </div>
 
       <div className={styles.right}>

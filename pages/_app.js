@@ -4,8 +4,6 @@ import util from "../styles/util.module.css";
 import Background from "../components/background";
 import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
-import restoreScrollPosition from "next-restore-scroll";
-import React, { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,7 +19,6 @@ function MyApp({ Component, pageProps }) {
             },
           }}
         />
-
         {/* <div className="noise"></div> */}
         {/* <div className="tv">
           <svg>
@@ -41,11 +38,9 @@ function MyApp({ Component, pageProps }) {
             </filter>
           </svg>
         </div> */}
-
         <Background />
         <div className={util.container}>
           <h3 className={util.mobileTitle}>SJ Zhang</h3>
-
           <Menu />
           <Component {...pageProps} />
         </div>

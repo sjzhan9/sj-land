@@ -8,8 +8,6 @@
   transition: background-color 0.2s ease;
 }
 .container {
-  /* max-width: 1800px;
-  max-height: 1080px; */
   width: 100%;
   padding: 0.5rem;
   display: flex;
@@ -62,9 +60,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-
   justify-content: space-between;
-
   margin: 0.25rem 0rem 2rem;
 }
 .projectTopLeft {
@@ -79,31 +75,22 @@
   color: var(--gray9);
 }
 .header {
-  font-size: 2.8rem;
+  font-size: 2.25rem;
   font-weight: 620;
   margin-bottom: 1.5rem;
-  /* font-variation-settings: "wght" 200, "wdth" 130; */
   color: var(--gray12);
   transition: color 0.25s ease;
 }
 .projectHeader {
   font-size: 2.25rem;
-  font-weight: 630;
-  margin-bottom: 0.5rem;
+  font-weight: 620;
   color: var(--gray12);
   transition: color 0.25s ease;
 }
-.internalLink {
-  padding-right: 22px;
-  display: inline-flex;
-  padding-left: 3px;
-  margin-left: -3px;
-  border-radius: 4px;
-  align-items: stretch;
-}
 .normalLink:hover {
-  color: var(--gray12);
+  color: var(--gray10);
 }
+.internalLink,
 .externalLink {
   padding-right: 16px;
   display: inline-flex;
@@ -113,45 +100,46 @@
   border-radius: 4px;
   align-items: stretch;
 }
-.externalLink:hover {
-  color: var(--gray12);
-}
+
 .externalLink:after {
   display: inline-block;
   padding: 0px 0px 0px 0px;
-  /* content: url(/icons/external.svg); */
   content: "↗";
   width: 14px;
   height: 16px;
   margin-right: -16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  margin-left: 3px;
-  color: var(--gray9);
+  font-size: 15px;
+  margin-left: 2.5px;
   font-weight: 300;
 }
 
 .internalLink:after {
   display: inline-block;
-  /* padding-right: 24px; */
-  padding: 0px 0px 0px 1px;
-  content: url(/icons/internal.svg);
-  width: 22px;
-  height: 20px;
-  margin-right: -22px;
+  padding: 0px 0px 0px 0px;
+  content: "→";
+  width: 14px;
+  height: 16px;
+  margin-right: -16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  margin-left: 2.5px;
+  font-weight: 300;
 }
 .externalLink:hover,
 .internalLink:hover {
-  background-color: var(--gray5);
+  background-color: var(--gray4);
   transition: all 0.2s ease;
+  color: var(--gray12);
 }
 .siteTitle {
   font-weight: 550;
   font-size: 15px;
   margin: 1.25rem 0rem 1.25rem 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.2px;
   transition: color 0.2s ease;
 }
 .mobileTitle {
@@ -163,6 +151,7 @@
 }
 .description {
   margin: 0rem 0rem 0.5rem;
+  font-weight: 390;
   padding: 0.125rem;
   line-height: 1.6;
   font-size: var(--font-l);
@@ -170,24 +159,31 @@
   transition: color 0.25s ease;
 }
 .tileTitle {
-  font-weight: 400;
+  font-weight: 390;
+  letter-spacing: 0.1px;
   line-height: 1.1;
   font-size: var(--font-l);
+  color: var(--gray12);
+  transition: color 0.25s ease;
+}
+.readH3 {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-weight: 560;
   color: var(--gray12);
   transition: color 0.25s ease;
 }
 .tileContent {
   margin-top: 0.25rem;
   font-size: var(--font-m);
-  font-weight: 380;
-  color: var(--gray9);
+  color: var(--gray10);
   line-height: 1.4;
   transition: color 0.25s ease;
 }
 .read {
   font-size: var(--font-l);
-  line-height: 170%;
-  color: var(--gray11);
+  line-height: 160%;
+  color: var(--gray12);
   margin-bottom: 1.5rem;
   transition: color 0.25s ease;
 }
@@ -218,12 +214,12 @@
 }
 
 .readTitle {
-  margin-top: 2rem;
-  font-size: 1.125rem;
+  margin-top: 3.5rem;
+  font-size: 1.25rem;
   line-height: 170%;
-  font-weight: 600;
+  font-weight: 550;
   color: var(--gray12);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   transition: color 0.25s ease;
 }
 .icon {
@@ -239,10 +235,11 @@
   flex-wrap: wrap;
 }
 .tabBar {
-  margin-bottom: 1.25rem;
+  margin: -8px 0px -8px;
+  margin-bottom: 1rem;
   position: sticky;
   padding: 8px 0px;
-  top: -32px;
+  top: -34px;
   z-index: 10;
   background-color: var(--bgSticky);
   backdrop-filter: blur(10px);
@@ -253,13 +250,13 @@
   flex-wrap: nowrap !important;
 }
 .tab {
-  padding: 7px 10px 7px 10px;
+  padding: 6px 8px 6px 8px;
   font-size: var(--font-m);
-  font-weight: 440;
+  font-weight: 420;
   position: static;
-  height: 28px;
+  height: 26px;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 4px;
   /* border: 0.5px solid transparent; */
   transition: all 0.1s ease;
   line-height: 1;
@@ -270,11 +267,10 @@
 }
 .tab:hover {
   background: var(--gray4);
-  /* color: var(--gray11); */
+  color: var(--gray11);
   cursor: pointer;
 }
 .tab:active {
-  /* background: var(--highlighthover); */
   transform: scaleX(0.975) scaleY(0.975) translateY(0.25px);
 }
 .tab[aria-selected="true"] {

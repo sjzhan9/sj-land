@@ -8,7 +8,6 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function ReadingList({ list }) {
-  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
   useEffect(() => {
     let thisPage = document.querySelector("#readingPage");
     let top = localStorage.getItem("reading-scroll");
@@ -21,6 +20,9 @@ export default function ReadingList({ list }) {
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const description =
+    "From essay to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will add better sorting and filtering features soon.";
 
   const router = useRouter();
   const [filter, setFilter] = React.useState("Recently Added");
@@ -64,10 +66,7 @@ export default function ReadingList({ list }) {
     <>
       <Head>
         <title>{"SJ's Reading List"}</title>
-        <meta
-          name="description"
-          content="Articles that I enjoyed reading. Bookmake ones are the the ones I love re-reading."
-        />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
 
@@ -75,10 +74,7 @@ export default function ReadingList({ list }) {
         <div className={util.pageColumn}>
           <h1 className={util.header}>Reading List</h1>
 
-          <p className={util.description}>
-            Articles that I enjoyed reading. Bookmake ones are the the ones I
-            love re-reading.
-          </p>
+          <p className={util.description}>{description}</p>
 
           <ul className={util.list}>
             <div className={util.flexRow + " " + util.tabBar}>
@@ -196,6 +192,6 @@ export async function getStaticProps() {
     props: {
       list: response.results,
     },
-    revalidate: 5,
+    revalidate: 60,
   };
 }

@@ -8,7 +8,6 @@ const { Client } = require("@notionhq/client");
 import PodcastTile from "../components/tiles/podcastTile";
 
 export default function Podcasts({ list }) {
-  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
   useEffect(() => {
     let thisPage = document.querySelector("#podcastPage");
     let top = localStorage.getItem("podcast-scroll");
@@ -22,22 +21,26 @@ export default function Podcasts({ list }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const description =
+    "Mainly business and finance because there are infinite material to talk about. I used to listen to a few UX podcasts but most of them died except Design Details.";
+
   return (
     <>
       <Head>
         <title>{"SJ's Favorite Podcasts"}</title>
-        <meta name="description" content="What I listening to when I commute" />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page} id="podcastPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Podcasts</h1>
-          <p className={util.description}>What I listening to when I commute</p>
+          <p className={util.description}>{description}</p>
           <ul className={util.grid}>
             {list.map((item) => (
               <PodcastTile
                 key={item.id}
+                internalUrl={item.properties.Path.url}
                 imageUrl={item.properties.Logo.files[0].file.url}
                 title={item.properties.Name.title[0].plain_text}
                 content={item.properties.Body.rich_text[0].plain_text}
@@ -58,12 +61,18 @@ export async function getStaticProps() {
 
   const response = await notion.databases.query({
     database_id: process.env.NOTION_PODCASTS_ID,
+    sorts: [
+      {
+        property: "Order",
+        direction: "ascending",
+      },
+    ],
   });
 
   return {
     props: {
       list: response.results,
     },
-    revalidate: 5,
+    revalidate: 60,
   };
 }

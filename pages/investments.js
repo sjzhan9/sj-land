@@ -1,11 +1,9 @@
 import Head from "next/head";
 import React, { useEffect } from "react";
 import util from "../styles/util.module.css";
-import Link from "next/link";
 import InvestmentTile from "../components/tiles/investmentTile";
 
 export default function Investments() {
-  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
   useEffect(() => {
     let thisPage = document.querySelector("#investmentsPage");
     let top = localStorage.getItem("investments-scroll");
@@ -18,36 +16,31 @@ export default function Investments() {
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const description =
+    "Below are my current investment holdings. They range from 20% of my investable asset to as small as $1K, roughly ordered by my position size.";
+
   return (
     <>
       <Head>
         <title>{"SJ's Investments"}</title>
-        <meta name="description" content="SJ's Investments" />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page} id="investmentsPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Investments</h1>
-          <p className={util.description}>
-            {
-              "Below are my current investment holdings. They are far from equalty weighted. Some are as large as 20% of my investable asset, some may be as small as $1K. However, they are roughly ordered by my position size. I try to update them monthly but I don't trade very often."
-            }
-          </p>
+          <p className={util.description}>{description}</p>
 
           <p className={util.description}>
             {
-              "With public equity, I invest in a basket of 10-20 stocks at any given time."
+              "With public equity, I invest in a basket of 10-20 stocks at any given time. With crypto, I’m heavy in Ethereal and Solana, and tend hold positions in 1-5 smaller cap assets."
             }
           </p>
           <p className={util.description}>
             {
-              "With crypto, I’m heavy in Ethereal and Solana, and hold position in 1-5 DeFi alt coins at any given time."
-            }
-          </p>
-          <p className={util.description}>
-            {
-              "With private investments, I have invested in very selected few companies but still reach out if you are raising. I’m somewhat affiliated with "
+              "In the private market, I've invested in very selected few companies but still reach out if you are raising. I’m affiliated with "
             }
             <a
               className={util.externalLink}
@@ -68,7 +61,7 @@ export default function Investments() {
               Republic
             </a>
 
-            {" and knows a few Solo GPs who writes larger checks."}
+            {" and knows a few investor who writes larger checks."}
           </p>
 
           <ul className={util.list}>
@@ -124,7 +117,7 @@ export default function Investments() {
               icon="aapl"
               title="Apple"
               content={
-                "Consumer electronics, software and online services. Phenomenon business."
+                "Consumer electronics, software and online services. Just a good business."
               }
               entry="Feb 2018 · $40.5"
               url="https://www.apple.com"
@@ -155,14 +148,14 @@ export default function Investments() {
             <InvestmentTile
               icon="fb"
               title="Meta"
-              content="Social Media Company. Built the position betting social commerce."
+              content="Social Media Company. Built the position betting on social commerce."
               entry="Feb 2018 · $191"
               url="https://about.facebook.com"
             />
             <InvestmentTile
               icon="rdpx"
               title="Dopex Rebate Token"
-              content="Onchain structured product. Built the position betting defi option vaults."
+              content="Onchain structured product. Built the position betting on DeFi option vaults."
               entry="Jan 2022 · $119"
               url="https://www.dopex.io"
             />
@@ -190,7 +183,7 @@ export default function Investments() {
             <InvestmentTile
               icon="rbn"
               title="Ribbon Finance"
-              content="Onchain structured product. Built the position betting defi option vaults."
+              content="Onchain structured product. Built the position betting on DeFi option vaults."
               entry="Dec 2021 · $3.20"
               url="https://www.ribbon.finance"
             />

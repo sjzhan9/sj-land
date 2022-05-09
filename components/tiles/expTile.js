@@ -23,9 +23,20 @@ export default function ExpTile({ icon, title, content, url, date }) {
           <p className={styles.date}> {date}</p>
         </div>
         <div className={styles.stack}>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            <h3 className={util.tileTitle}>{title}</h3>
-          </a>
+          {url ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.titleLink}
+            >
+              <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+              <span className={styles.externalIcon}>↗</span>
+            </a>
+          ) : (
+            <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+          )}
+
           <p className={styles.content}>{content}</p>
         </div>
       </div>

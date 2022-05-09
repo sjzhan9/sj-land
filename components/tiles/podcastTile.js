@@ -3,6 +3,7 @@ import Image from "next/image";
 import util from "../../styles/util.module.css";
 
 export default function PodcastTile({
+  internalUrl,
   imageUrl,
   title,
   content,
@@ -20,17 +21,29 @@ export default function PodcastTile({
       className={styles.container}
     >
       <div>
-        {imageUrl ? (
+        {internalUrl ? (
           <Image
+            priority
+            unoptimized
             className={styles.image}
-            // priority
-            src={imageUrl}
-            width={200}
-            height={200}
+            src={"/podcasts/" + internalUrl + ".png"}
+            width={288}
+            height={288}
             layout="responsive"
             alt={title}
           />
-        ) : null}
+        ) : (
+          <Image
+            unoptimized
+            className={styles.image}
+            priority
+            src={imageUrl}
+            width={288}
+            height={288}
+            layout="responsive"
+            alt={title}
+          />
+        )}
       </div>
 
       <div className={styles.stack}>

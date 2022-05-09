@@ -1,13 +1,10 @@
 import Head from "next/head";
 import util from "../styles/util.module.css";
-import Link from "next/link";
 import React, { useEffect } from "react";
-
 import NewsletterTile from "../components/tiles/newsletterTile";
 const { Client } = require("@notionhq/client");
 
 export default function Newsletters({ list }) {
-  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
   useEffect(() => {
     let thisPage = document.querySelector("#newslettersPage");
     let top = localStorage.getItem("newsletters-scroll");
@@ -21,27 +18,27 @@ export default function Newsletters({ list }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
+  //page header and in-page description
+  const description =
+    "I skim through a lot of newsletters everyday. But below are the ones I pay closer attention to and frequently share with friends.";
+
   return (
     <>
       <Head>
         <title>{"SJ's Favorite Newsletters"}</title>
-        <meta
-          name="description"
-          content="What I read in the morning and before bed"
-        />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page} id="newslettersPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Newsletters</h1>
-          <p className={util.description}>
-            What I read in the morning and before bed
-          </p>
+          <p className={util.description}>{description}</p>
           <ul className={util.list}>
             {list.map((item) => (
               <NewsletterTile
                 key={item.id}
+                internalUrl={item.properties.Path.url}
                 imageUrl={item.properties.Logo.files[0].file.url}
                 title={item.properties.Name.title[0].plain_text}
                 content={item.properties.Body.rich_text[0].plain_text}
@@ -72,12 +69,18 @@ export async function getStaticProps() {
         },
       ],
     },
+    sorts: [
+      {
+        property: "Order",
+        direction: "ascending",
+      },
+    ],
   });
 
   return {
     props: {
       list: response.results,
     },
-    revalidate: 5,
+    revalidate: 60,
   };
 }

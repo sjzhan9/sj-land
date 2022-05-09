@@ -3,6 +3,7 @@ import Image from "next/image";
 import util from "../../styles/util.module.css";
 
 export default function NewsletterTile({
+  internalUrl,
   imageUrl,
   title,
   content,
@@ -18,14 +19,27 @@ export default function NewsletterTile({
       className={styles.container}
     >
       <div className={styles.image}>
-        <Image
-          // priority
-          src={imageUrl}
-          width={64}
-          height={64}
-          layout="fixed"
-          alt={title}
-        />
+        {internalUrl ? (
+          <Image
+            priority
+            unoptimized
+            src={"/newsletters/" + internalUrl + ".png"}
+            height={64}
+            width={64}
+            layout="fixed"
+            alt={title}
+          />
+        ) : (
+          <Image
+            unoptimized
+            priority
+            src={imageUrl}
+            width={64}
+            height={64}
+            layout="fixed"
+            alt={title}
+          />
+        )}
       </div>
 
       <div className={styles.stack}>

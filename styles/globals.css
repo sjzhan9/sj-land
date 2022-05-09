@@ -3,11 +3,6 @@
 @import "@radix-ui/colors/blackA.css";
 @import "@radix-ui/colors/grayDark.css";
 
-/* @font-face {
-  font-family: "Ninna";
-  src: url(/styles/ninna.woff) format("woff");
-} */
-
 @font-face {
   font-family: "Aktiv Grotesk";
   src: url("/fonts/AktivGroteskVF_W_Wght.woff2")
@@ -16,10 +11,26 @@
 
   font-weight: 100 900;
 }
+
 @font-face {
-  font-family: "Blanco";
-  src: url("/fonts/BlancoTrial-Regular.otf") format("otf");
-  font-weight: 400;
+  font-family: "sohne";
+  src: url("/fonts/test-soehne-leicht.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "sohne";
+  src: url("/fonts/test-soehne-buch.woff2") format("woff2");
+  font-weight: 390;
+}
+@font-face {
+  font-family: "sohne";
+  src: url("/fonts/test-soehne-kraftig.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "sohne";
+  src: url("/fonts/test-soehne-halbfett.woff2") format("woff2");
+  font-weight: 600;
 }
 
 @import url("https://rsms.me/inter/inter.css");
@@ -164,9 +175,11 @@ button {
   margin: 0;
   font-family: var(--font-sans);
 }
-/* p {
-  font-family: var(--font-sans);
-} */
+
+p {
+  letter-spacing: 0.1px;
+  font-weight: 390;
+}
 
 a {
   color: inherit;

@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   /* padding: 1.5rem 0rem 1.5rem 0rem; */
   position: relative;
@@ -19,9 +19,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   padding: 0px;
   margin-left: 2rem;
   padding: 1.5rem 0rem 1.5rem 0rem;
+  /* height: 6rem; */
   width: 100%;
   border-bottom: 1px solid var(--linkContainerBorder);
   transition: border 0.2s ease;

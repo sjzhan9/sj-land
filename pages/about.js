@@ -1,13 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect } from "react";
-
 import util from "../styles/util.module.css";
 import ContactContent from "../components/contactContent";
 import ExpTile from "../components/tiles/expTile";
 
 export default function About() {
-  //memorize scroll pos, add a id to the page element, then use below code to remember scroll pos
   useEffect(() => {
     let thisPage = document.querySelector("#aboutPage");
     let top = localStorage.getItem("about-scroll");
@@ -20,37 +18,26 @@ export default function About() {
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const description =
+    "A summary about me, my different interests, my design career, and why + how this site was built.";
   return (
     <>
       <Head>
         <title>About</title>
-        <meta name="description" content="About me" />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <main className={util.page} id="aboutPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>About</h1>
-          {/* <p className={util.description}>About me.</p> */}
           <div className={util.inset}>
+            <p className={util.description}>{description}</p>
+            <h2 className={util.readTitle}>Me</h2>
             <p className={util.read}>
               {
-                "I’m a designer, developer and product builder based in New York. I’m currently working at Series B fintech company "
-              }
-              <a
-                href="https://withcompound.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={util.externalLink}
-              >
-                Compound
-              </a>
-              {"."}
-            </p>
-            <h2 className={util.readTitle}>On Design</h2>
-            <p className={util.read}>
-              {
-                "I’m deeply fascinated by all design practices. I like to read about design histories and to talk about iconic chairs. My "
+                "I’m a designer based in New York. I’m deeply fascinated by all design practices from UI histories to iconic chairs. My "
               }
               <a
                 href="https://form2shape.com/"
@@ -64,7 +51,6 @@ export default function About() {
                 " included an archive of influential 20th century industrial designs. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In my fashion years, I learnt about the supply chains and sewn tens of garments myself. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
               }
             </p>
-            <h2 className={util.readTitle}>On Learning</h2>
             <p className={util.read}>
               {
                 "Another big part of my life is my pursuit to better understand how the world works. Complicated systems and economic patterns fascinate me. You can find what I’ve been reading in my "
@@ -72,13 +58,82 @@ export default function About() {
               <Link href="/reading-list">
                 <a className={util.internalLink}>Reading List</a>
               </Link>
-              {"."}
+              {". "}
             </p>
-            <h2 className={util.readTitle}>On Career</h2>
             <p className={util.read}>
               {
-                "In the 10 years that Ive been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In the past 5 years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on LinkedIn. I’ve also added a short preview below."
+                "As I learn I got interested in validating my understanding through investing. I participated in different venture related progroms at "
               }
+              <a
+                href="https://fellows.kleinerperkins.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={util.normalLink}
+              >
+                Kleiner Perkins
+              </a>
+              {" and "}
+              <a
+                href="https://republic.com/venture-programs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={util.normalLink}
+              >
+                Republic
+              </a>
+              {
+                " and now often make deal introductions. You can get a look at my current "
+              }
+              <Link href="/investments">
+                <a className={util.internalLink}>investing portfolio here</a>
+              </Link>
+              {". "}
+            </p>
+            <p className={util.read}>
+              {"To keep myself active, I play table tennis at "}
+              <a
+                href="https://pingpod.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={util.externalLink}
+              >
+                PingPod
+              </a>
+              {" and boulder at a few different gyms in Brooklyn. I used to "}
+              <a
+                href="https://instagram.com/woandworld"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={util.externalLink}
+              >
+                travel
+              </a>
+              {" a lot between 2014-2018."}
+            </p>
+            <h2 className={util.readTitle}>Career</h2>
+            <p className={util.read}>
+              {"I’m currently working at Series B fintech company "}
+              <a
+                href="https://withcompound.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={util.externalLink}
+              >
+                Compound
+              </a>
+              {". "}
+              {
+                "In the 10+ years that I've been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In last few years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on "
+              }
+              <a
+                href="https://www.linkedin.com/in/s-j-zhang/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={util.externalLink}
+              >
+                Linkedin
+              </a>
+              {". I’ve also added a short preview below."}
             </p>
             <div>
               <ExpTile
@@ -139,12 +194,11 @@ export default function About() {
               />
             </div>
 
-            <h2 className={util.readTitle}>About This Site</h2>
+            <h2 className={util.readTitle}>This Site</h2>
 
             <p className={util.read}>
-              Do I need to overshare to this degree? No. Could this have been a
-              notion page? Absolutely. But I built this custom site for 2
-              reasons:
+              The site was initially built in Apr 2022 over 2 weekends. I built
+              this site for 2 reasons:
             </p>
             <ol
               type="1"
@@ -227,16 +281,17 @@ export default function About() {
               </a>{" "}
               made light/dark-mode management easy.
             </p>
-
-            <p className={util.read}>
-              The site was initially built in Apr 2022 over 2 weekends.
-            </p>
           </div>
 
-          <h2 className={util.readTitle} style={{ marginTop: "5rem" }}>
+          <h2
+            className={util.readTitle}
+            style={{ margin: "4rem 0rem -0.5rem 0rem" }}
+          >
             Contact
           </h2>
-          <ContactContent inModal="false" />
+          <div className={util.inset}>
+            <ContactContent inModal="false" />
+          </div>
         </div>
       </main>
     </>

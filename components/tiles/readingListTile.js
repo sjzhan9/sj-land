@@ -46,6 +46,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
       ) : null}
       <div className={styles.icon}>
         <Image
+          unoptimized
           onError="this.src='/feature/link.svg'"
           src={
             "https://s2.googleusercontent.com/s2/favicons?domain_url=" +
@@ -63,18 +64,6 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
         <div className={styles.stack}>
           <h3 className={styles.tileTitle}>{title}</h3>
           <p className={styles.url}>{displayUrl}</p>
-
-          {/* <div className={util.flexRow + " " + styles.sub}>
-            <p className={styles.url}>{displayUrl}</p>
-            <p className={styles.dateSub}>
-              {" · Added "}
-              {new Date(date).toLocaleDateString("en-us", {
-                year: "numeric",
-                month: "short",
-                day: "2-digit",
-              })}{" "}
-            </p>
-          </div> */}
         </div>
         <div className={util.tags + " " + util.flexRow}>
           {tags
@@ -86,13 +75,6 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             : null}
         </div>
       </div>
-
-      {/* <Image
-          height={20}
-          width={20}
-          src={"/icons/external.svg"}
-          alt="external icon"
-        /> */}
     </a>
   );
 }
