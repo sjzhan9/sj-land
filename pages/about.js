@@ -37,7 +37,7 @@ export default function About() {
             <h2 className={util.readTitle}>Me</h2>
             <p className={util.read}>
               {
-                "I’m a designer based in New York. I’m deeply fascinated by all design practices from UI histories to iconic chairs. My "
+                "I’m a designer based in New York. I’m deeply fascinated by all design practices from UI history to iconic chairs. My "
               }
               <a
                 href="https://form2shape.com/"
@@ -48,7 +48,7 @@ export default function About() {
                 master thesis
               </a>
               {
-                " included an archive of influential 20th century industrial designs. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In my fashion years, I learnt about the supply chains and sewn tens of garments myself. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
+                " included an archive of influential 20th century industrial designs. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In my fashion years, I learned about supply chains and sewed dozens of garments myself. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
               }
             </p>
             <p className={util.read}>
@@ -216,7 +216,7 @@ export default function About() {
             </ol>
 
             <p className={util.read}>
-              This site in built with{" "}
+              This site is built with{" "}
               <a
                 href="https://nextjs.org/"
                 target="_blank"
