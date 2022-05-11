@@ -26,20 +26,20 @@ export default function OneCare() {
           content="A 2-day design exercise to improve the quality of life for children with type-1 diabetes. The app helps patient monitor their glucose level, manage insulin injection alerts and track symptoms."
         />
         <link rel="icon" href="/favicon.gif" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GA_MEASUREMENT_ID');
         `}
-        </Script>
-      </Head>
+      </Script>
 
       <main className={util.page}>
         <div className={util.projectColumn}>

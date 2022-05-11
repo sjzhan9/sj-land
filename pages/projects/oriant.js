@@ -26,20 +26,20 @@ export default function Oriant() {
           content="A design exercise to encourage students exploring orientation events and manage their orientation schedules. It was a 5 day project that I covered from research to prototyping."
         />
         <link rel="icon" href="/favicon.gif" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GA_MEASUREMENT_ID');
         `}
-        </Script>
-      </Head>
+      </Script>
 
       <main className={util.page}>
         <div className={util.projectColumn}>

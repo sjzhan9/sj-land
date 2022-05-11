@@ -29,21 +29,20 @@ export default function Home({ list }) {
         <title>SJ · Home</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" type="image/gif" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      </Head>{" "}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GA_MEASUREMENT_ID');
         `}
-        </Script>
-      </Head>
-
+      </Script>
       <main className={util.page} id="recentsPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Recents</h1>

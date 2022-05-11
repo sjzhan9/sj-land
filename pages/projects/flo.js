@@ -26,20 +26,20 @@ export default function Flo() {
           content="I spent 8 months freelancing for the legal recruiting platform. I worked on the dashboard for employer and school platform. I also designed and built the marketing website and a CMS driven blog."
         />
         <link rel="icon" href="/favicon.gif" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GA_MEASUREMENT_ID');
         `}
-        </Script>
-      </Head>
+      </Script>
 
       <main className={util.page}>
         <div className={util.projectColumn}>

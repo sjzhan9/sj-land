@@ -27,21 +27,20 @@ export default function Investments() {
         <title>{"SJ's Investments"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GA_MEASUREMENT_ID');
         `}
-        </Script>
-      </Head>
-
+      </Script>
       <main className={util.page} id="investmentsPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Investments</h1>
