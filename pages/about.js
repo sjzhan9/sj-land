@@ -34,6 +34,7 @@ export default function About() {
           <h1 className={util.header}>About</h1>
           <div className={util.inset}>
             <p className={util.description}>{description}</p>
+            <div className={util.divider}></div>
             <h2 className={util.readTitle}>Me</h2>
             <p className={util.read}>
               {

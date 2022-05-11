@@ -53,7 +53,7 @@ export default function Projects() {
               image="compound"
               title="Compound"
               content="This is where I work and spent the last 2 years"
-              type="Founding Designer - Fulltime"
+              type="Founding Designer · Full-time"
               date="2022-05-01"
               url="https://withcompound.com"
             />
@@ -63,7 +63,7 @@ export default function Projects() {
               content={
                 "A graphic editor & library inspired by historically significant designs"
               }
-              type="React - Side Project"
+              type="React · Side Project"
               date="2020-05-20"
               url="https://form2shape.com/"
             />
@@ -73,7 +73,7 @@ export default function Projects() {
               content={
                 "A site that uses keywords to generate startup ideas. All the ideas are pre-generated though a machine learning model. It is trained on more than 1800 historical Y-Combinator startup descriptions on the foundation of GPT-2."
               }
-              type="GPT2 - Side Project"
+              type="GPT2 · Side Project"
               date="2020-04-25"
               url="https://www.startupgenerator.app/"
             />
@@ -83,7 +83,7 @@ export default function Projects() {
               content={
                 "I spent 8 months freelancing for the legal recruiting platform. I worked on the dashboard for employer and school platform. I also designed and built the marketing website and a CMS driven blog."
               }
-              type="Startup - Freelance"
+              type="Startup · Freelance"
               date="2020-04-20"
               url={"flo"}
               internal="true"
@@ -92,7 +92,7 @@ export default function Projects() {
               image="gesture-map"
               title="Gesture Map"
               content={"A interactive installation"}
-              type="OpenFrameworks + Kinect - Side Project"
+              type="OpenFrameworks + Kinect · Side Project"
               date="2020-02-20"
               url={"https://vimeo.com/376008207"}
             />
@@ -102,7 +102,7 @@ export default function Projects() {
               content={
                 "A Chrome extension that turns texts on a webpage into the system default font (San Francisco for Mac OS, Segoe UI for Window). It serves as an alternative to Reading Mode. You can use SF Everywhere to improve text readabilities but not completely remove the site design."
               }
-              type="Chrome Extention - Side Project"
+              type="Chrome Extention · Side Project"
               date="2020-02-20"
               url={
                 "https://chrome.google.com/webstore/detail/system-font-everywhere/dcncgmembfephfbibnnigchndgncmdnj?authuser=1&hl=en"
@@ -123,7 +123,7 @@ export default function Projects() {
               content={
                 "I led design on music and podcast service intergrations."
               }
-              type="NASDAQ: SONO - Fulltime"
+              type="NASDAQ: SONO · Full-time"
               date="2019-08-20"
               url={"https://sonos.com"}
             />
@@ -133,7 +133,7 @@ export default function Projects() {
               content={
                 "I freelanced a few month for the lightweight event planning platform. As a Facebook Event alternative that focuses on privacy and being inclusive to non-facebook users, Mixily allows you to create and manage events, RSVPs, message attendees."
               }
-              type="Startup - Freelance"
+              type="Startup · Freelance"
               date="2019-07-20"
               url={"mixily"}
               internal="true"
@@ -145,7 +145,7 @@ export default function Projects() {
               content={
                 "An iOS app that adds interactive text overlays to your photos and videos. The text overlay reacts to your facial expressions. This was done in early 2019, before instagram and TikTok popularized the live transcription feature for video recording."
               }
-              type="iOS - Side Project"
+              type="iOS · Side Project"
               date="2019-05-20"
               url={
                 "https://apps.apple.com/us/app/say-it-ar-expressions/id1480969165"
@@ -201,7 +201,7 @@ export default function Projects() {
               content={
                 "I worked as a graphic designer at the eyewear brand. I redesigned and maintained the e-commerce site and was in charge of all online and offline graphical assets."
               }
-              type="Web - Fulltime"
+              type="Web · Full-time"
               date="2017-8-24"
               url={"illesteva"}
               internal="true"

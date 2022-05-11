@@ -24,7 +24,7 @@ export default function PodcastTile({
         {internalUrl ? (
           <Image
             priority
-            unoptimized
+            // unoptimized
             className={styles.image}
             src={"/podcasts/" + internalUrl + ".png"}
             width={288}
@@ -34,7 +34,7 @@ export default function PodcastTile({
           />
         ) : (
           <Image
-            unoptimized
+            // unoptimized
             className={styles.image}
             priority
             src={imageUrl}

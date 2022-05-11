@@ -22,7 +22,7 @@ export default function ReadingList({ list }) {
   }, []);
 
   const description =
-    "From essay to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will add better sorting and filtering features soon.";
+    "From essays to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will improve sorting and filtering soon.";
 
   const router = useRouter();
   const [filter, setFilter] = React.useState("Recently Added");

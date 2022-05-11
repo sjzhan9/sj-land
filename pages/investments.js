@@ -40,7 +40,7 @@ export default function Investments() {
           </p>
           <p className={util.description}>
             {
-              "In the private market, I've invested in very selected few companies but still reach out if you are raising. I’m affiliated with "
+              "In the private market, I've only invested in a select few. If you are a seed stage founder, I can be helpful giving product feedback, connecting you to design resources, and introducing you to folks at "
             }
             <a
               className={util.externalLink}
@@ -61,16 +61,16 @@ export default function Investments() {
               Republic
             </a>
 
-            {" and knows a few investor who writes larger checks."}
+            {" or some other investors who write larger checks."}
           </p>
 
           <ul className={util.list}>
-            <p className={util.divider}>Private</p>
+            <p className={util.textDivider}>Private</p>
             <InvestmentTile
               icon="replit"
               title="Replit"
               content={
-                "An online IDE, Editor, Compiler, Interpreter, and REPL. Betting on it becoming the Figma for SWEs."
+                "An online IDE, Editor, Compiler and more. Betting on it becoming the Figma for SWEs."
               }
               entry="Series B · $979M"
               url="https://replit.com/"
@@ -79,7 +79,7 @@ export default function Investments() {
               icon="mercury"
               title="Mercury"
               content={
-                "Online business banking platform. Betting on vertical focused neo banks."
+                "Online business banking platform. Betting on the best-in-class, vertical focused neobank."
               }
               entry="Series B · $1.2B"
               url="https://mercury.com/"
@@ -94,7 +94,7 @@ export default function Investments() {
               entry="$12M Valuation"
               url="https://citizens.coffee"
             />
-            <p className={util.divider}>Public</p>
+            <p className={util.textDivider}>Public</p>
             <InvestmentTile
               icon="eth"
               title="Ethereum"
@@ -117,7 +117,7 @@ export default function Investments() {
               icon="aapl"
               title="Apple"
               content={
-                "Consumer electronics, software and online services. Just a good business."
+                "Makes phones, computers and stuff. Just a good business."
               }
               entry="Feb 2018 · $40.5"
               url="https://www.apple.com"
@@ -148,14 +148,14 @@ export default function Investments() {
             <InvestmentTile
               icon="fb"
               title="Meta"
-              content="Social Media Company. Built the position betting on social commerce."
+              content="Betting on social commerce, not metaverse."
               entry="Feb 2018 · $191"
               url="https://about.facebook.com"
             />
             <InvestmentTile
               icon="rdpx"
               title="Dopex Rebate Token"
-              content="Onchain structured product. Built the position betting on DeFi option vaults."
+              content="On-chain structured product. Built the position betting on DeFi option vaults."
               entry="Jan 2022 · $119"
               url="https://www.dopex.io"
             />

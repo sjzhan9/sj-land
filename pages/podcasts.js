@@ -21,6 +21,7 @@ export default function Podcasts({ list }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
+  //page header and in-page description
   const description =
     "Mainly business and finance because there are infinite material to talk about. I used to listen to a few UX podcasts but most of them died except Design Details.";
 

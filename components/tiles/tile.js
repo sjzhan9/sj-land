@@ -19,7 +19,7 @@ export default function Tile({
           <Image
             className={styles.icon}
             priority
-            unoptimized
+            // unoptimized
             src={"/recents/" + internalUrl + ".png"}
             height={28}
             width={28}
@@ -29,7 +29,7 @@ export default function Tile({
           <Image
             className={styles.icon}
             priority
-            unoptimized
+            // unoptimized
             src={logoUrl}
             height={28}
             width={28}

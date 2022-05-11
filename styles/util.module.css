@@ -67,7 +67,7 @@
   width: 70%;
   max-width: 720px;
 }
-.divider {
+.textDivider {
   padding: 1.25rem 0rem 0rem 0.25rem;
   /* margin-top: 0.5rem; */
   font-size: 12.4px;
@@ -75,7 +75,7 @@
   color: var(--gray9);
 }
 .header {
-  font-size: 2.25rem;
+  font-size: 2.275rem;
   font-weight: 620;
   margin-bottom: 1.5rem;
   color: var(--gray12);
@@ -135,11 +135,11 @@
   color: var(--gray12);
 }
 .siteTitle {
-  font-weight: 550;
+  font-weight: 530;
   font-size: 15px;
   margin: 1.25rem 0rem 1.25rem 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.25px;
   transition: color 0.2s ease;
 }
 .mobileTitle {
@@ -153,7 +153,7 @@
   margin: 0rem 0rem 0.5rem;
   font-weight: 390;
   padding: 0.125rem;
-  line-height: 1.6;
+  line-height: 1.68;
   font-size: var(--font-l);
   color: var(--gray11);
   transition: color 0.25s ease;
@@ -182,7 +182,7 @@
 }
 .read {
   font-size: var(--font-l);
-  line-height: 160%;
+  line-height: 1.68;
   color: var(--gray12);
   margin-bottom: 1.5rem;
   transition: color 0.25s ease;
@@ -221,6 +221,10 @@
   color: var(--gray12);
   margin-bottom: 0.75rem;
   transition: color 0.25s ease;
+}
+.divider {
+  border-top: 1px solid var(--gray3);
+  margin: 3rem 0rem -1rem;
 }
 .icon {
   border-radius: 5px;
@@ -333,12 +337,11 @@
     position: static;
     width: auto;
     border-radius: 10px;
-    padding: 3rem 1rem 6rem;
+    padding: 1rem 1rem 2rem;
     order: 1;
     flex-grow: 1;
     margin-left: 0rem;
     overflow: auto;
-    /* margin: 0rem 0.35rem 0.35rem 0.35rem; */
     margin: 0.35rem 0.35rem 4rem 0.35rem;
   }
 

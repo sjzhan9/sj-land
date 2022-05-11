@@ -7,23 +7,19 @@ import { PopupButton } from "react-calendly";
 import ContactContent from "./contactContent";
 
 export default function Contact({ svg, label, shortcut }) {
-  const [openState, setOpenState] = React.useState(false);
-  // const [root, setRoot] = React.useState(false);
+  var time = 0;
 
-  // useEffect(() => {
-  //   if (document) {
-  //     setRoot(document.getElementById("outer"));
-  //   }
-  // }, []);
+  useEffect(() => {
+    setInterval(function () {
+      time++;
+    }, 200);
+  }, []);
 
   useEffect(() => {
     document.addEventListener("keypress", function (event) {
-      if (event.key === shortcut) {
-        if (openState == false) {
-          document.getElementById("contactTrigger").click();
-          // setOpenState(true);
-          // console.log(openState);
-        }
+      if (event.key === shortcut && time > 1) {
+        document.getElementById("contactTrigger").click();
+        time = 0;
       }
     });
   });

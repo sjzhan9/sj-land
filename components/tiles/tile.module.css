@@ -6,6 +6,9 @@
   justify-content: space-between;
   padding: 0rem 0.25rem;
 }
+.container:last-child .right {
+  border-bottom: none;
+}
 .left {
   display: flex;
   flex-shrink: 0;
@@ -33,7 +36,7 @@
   padding: 0px;
 }
 .icon {
-  border-radius: 5px;
+  border-radius: 6px;
 
   flex-shrink: 0;
 }

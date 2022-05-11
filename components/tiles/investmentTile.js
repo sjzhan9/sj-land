@@ -9,7 +9,8 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
       <div className={styles.left}>
         <div className={styles.iconContainer}>
           <Image
-            // priority
+            priority
+            className={styles.icon}
             src={"/investments/" + icon + ".png"}
             height={32}
             width={32}
@@ -31,10 +32,10 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
           </a>
           <p className={util.tileContent}>{content}</p>
         </div>
-        <div className={styles.stackRight}>
+        {/* <div className={styles.stackRight}>
           <p className={styles.type}>First entered</p>
           <p className={styles.entry}>{entry}</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

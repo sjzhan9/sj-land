@@ -22,7 +22,7 @@ export default function NewsletterTile({
         {internalUrl ? (
           <Image
             priority
-            unoptimized
+            // unoptimized
             src={"/newsletters/" + internalUrl + ".png"}
             height={64}
             width={64}
@@ -31,7 +31,7 @@ export default function NewsletterTile({
           />
         ) : (
           <Image
-            unoptimized
+            // unoptimized
             priority
             src={imageUrl}
             width={64}
