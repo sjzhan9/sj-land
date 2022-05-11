@@ -5,16 +5,8 @@ import Background from "../components/background";
 import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
 import React, { useEffect } from "react";
-import TagManager from "react-gtm-module";
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    const tagManagerArgs = {
-      id: "G-T2CWC86NTK",
-    };
-    TagManager.initialize(tagManagerArgs);
-  }, []);
-
   return (
     <ThemeProvider attribute="class" value={{ dark: "dark-theme" }}>
       <div id="outer" className={util.outer}>

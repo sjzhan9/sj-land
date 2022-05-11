@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import util from "../../styles/util.module.css";
 import Image from "next/image";
+import Script from "next/script";
 
 export default function Mixily() {
   const numOfImg = 5;
@@ -25,6 +26,19 @@ export default function Mixily() {
           content="I freelanced a few month for the lightweight event planning platform. As a Facebook Event alternative that focuses on privacy and being inclusive to non-facebook users, Mixily allows you to create and manage events, RSVPs, message attendees."
         />
         <link rel="icon" href="/favicon.gif" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+        </Script>
       </Head>
 
       <main className={util.page}>

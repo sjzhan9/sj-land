@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import util from "../../styles/util.module.css";
 import Image from "next/image";
+import Script from "next/script";
 
 export default function Illesteva() {
   const numOfImg = 7;
@@ -25,6 +26,19 @@ export default function Illesteva() {
           content="I worked as a graphic designer at the eyewear brand. I redesigned and maintained the e-commerce site and was in charge of all online and offline graphical assets."
         />
         <link rel="icon" href="/favicon.gif" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+        </Script>
       </Head>
 
       <main className={util.page}>

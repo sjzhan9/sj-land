@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import util from "../styles/util.module.css";
 import ProjectTile from "../components/tiles/projectTile";
 import { useRouter } from "next/router";
-import restoreScrollPosition from "next-restore-scroll";
+import Script from "next/script";
 
 export default function Projects() {
   useEffect(() => {
@@ -29,6 +29,19 @@ export default function Projects() {
         <title>{"SJ's Projects"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+        </Script>
       </Head>
 
       <main id="projectsPage" className={util.page}>

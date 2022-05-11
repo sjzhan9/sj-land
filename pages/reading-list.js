@@ -6,6 +6,7 @@ import ReadingListTile from "../components/tiles/readingListTile";
 const { Client } = require("@notionhq/client");
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 export default function ReadingList({ list }) {
   useEffect(() => {
@@ -68,6 +69,19 @@ export default function ReadingList({ list }) {
         <title>{"SJ's Reading List"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+        </Script>
       </Head>
 
       <main className={util.page} id="readingPage">
