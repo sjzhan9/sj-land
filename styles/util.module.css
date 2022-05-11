@@ -225,6 +225,7 @@
 .divider {
   border-top: 1px solid var(--gray3);
   margin: 3rem 0rem -1rem;
+  transition: border 0.25s ease;
 }
 .icon {
   border-radius: 5px;

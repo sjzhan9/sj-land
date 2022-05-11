@@ -53,7 +53,7 @@ export default function Projects() {
               image="compound"
               title="Compound"
               content="This is where I work and spent the last 2 years"
-              type="Founding Designer · Full-time"
+              type="Design · Full-time"
               date="2022-05-01"
               url="https://withcompound.com"
             />
