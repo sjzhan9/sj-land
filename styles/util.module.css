@@ -338,7 +338,7 @@
     position: static;
     width: auto;
     border-radius: 10px;
-    padding: 1rem 1rem 2rem;
+    padding: 0rem 1rem 2rem;
     order: 1;
     flex-grow: 1;
     margin-left: 0rem;
