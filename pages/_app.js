@@ -10,7 +10,7 @@ import TagManager from "react-gtm-module";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const tagManagerArgs = {
-      id: process.env.GOOGLE_TAG,
+      id: "G-T2CWC86NTK",
     };
     TagManager.initialize(tagManagerArgs);
   }, []);
