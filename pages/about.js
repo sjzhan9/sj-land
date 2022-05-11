@@ -28,7 +28,6 @@ export default function About() {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
-
       <main className={util.page} id="aboutPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>About</h1>

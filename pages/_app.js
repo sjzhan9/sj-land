@@ -4,6 +4,12 @@ import util from "../styles/util.module.css";
 import Background from "../components/background";
 import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
+import TagManager from "react-gtm-module";
+
+const tagManagerArgs = {
+  id: process.env.GOOGLE_TAG,
+};
+TagManager.initialize(tagManagerArgs);
 
 function MyApp({ Component, pageProps }) {
   return (

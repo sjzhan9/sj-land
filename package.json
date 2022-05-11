@@ -19,6 +19,7 @@
     "react": "18.0.0",
     "react-calendly": "^4.0.0",
     "react-dom": "18.0.0",
+    "react-gtm-module": "^2.0.11",
     "react-hot-toast": "^2.2.0"
   },
   "devDependencies": {
