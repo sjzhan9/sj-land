@@ -4,14 +4,17 @@ import util from "../styles/util.module.css";
 import Background from "../components/background";
 import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
+import React, { useEffect } from "react";
 import TagManager from "react-gtm-module";
 
-const tagManagerArgs = {
-  id: process.env.GOOGLE_TAG,
-};
-TagManager.initialize(tagManagerArgs);
-
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    const tagManagerArgs = {
+      id: process.env.GOOGLE_TAG,
+    };
+    TagManager.initialize(tagManagerArgs);
+  }, []);
+
   return (
     <ThemeProvider attribute="class" value={{ dark: "dark-theme" }}>
       <div id="outer" className={util.outer}>
