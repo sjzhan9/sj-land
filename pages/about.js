@@ -59,7 +59,7 @@ export default function About() {
                 rel="noopener noreferrer"
                 className={util.externalLink}
               >
-                master's thesis
+                {"master's thesis"}
               </a>
               {
                 " included an archive of influential 20th century industrial design. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In those fashion years, I learned about supply chains and sewed dozens of garments myself. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
