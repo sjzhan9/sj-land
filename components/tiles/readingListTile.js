@@ -53,7 +53,6 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             url +
             "&sz=64"
           }
-          // src={getFavicons("github.com").icons[0]}
           height={20}
           width={20}
           alt="url favicon"
@@ -62,7 +61,11 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
 
       <div className={styles.right}>
         <div className={styles.stack}>
-          <h3 className={styles.tileTitle}>{title}</h3>
+          <div>
+            <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+            <span className={styles.externalIcon}>↗</span>
+          </div>
+
           <p className={styles.url}>{displayUrl}</p>
         </div>
         <div className={util.tags + " " + util.flexRow}>

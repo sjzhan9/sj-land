@@ -21,7 +21,7 @@ export default function About() {
   }, []);
 
   const description =
-    "A summary about me, my different interests, my design career, and why + how this site was built.";
+    "A summary of me, my interests, my design career, and why/how this site was built.";
   return (
     <>
       <Head>
@@ -59,10 +59,10 @@ export default function About() {
                 rel="noopener noreferrer"
                 className={util.externalLink}
               >
-                master thesis
+                master's thesis
               </a>
               {
-                " included an archive of influential 20th century industrial designs. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In my fashion years, I learned about supply chains and sewed dozens of garments myself. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
+                " included an archive of influential 20th century industrial design. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In those fashion years, I learned about supply chains and sewed dozens of garments myself. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
               }
             </p>
             <p className={util.read}>
@@ -76,7 +76,7 @@ export default function About() {
             </p>
             <p className={util.read}>
               {
-                "As I learn I got interested in validating my understanding through investing. I participated in different venture related progroms at "
+                "As I learn I get interested in validating my understanding through investing. I participated in different venture related progroms at "
               }
               <a
                 href="https://fellows.kleinerperkins.com/"

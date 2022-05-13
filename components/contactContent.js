@@ -59,7 +59,7 @@ export default function ContactContent({ inModal }) {
                 fill="#909090"
               />
             </svg>
-            <span className={styles.buttonText}>Draft</span>
+            <span className={styles.buttonText}>Compose</span>
           </a>
           <button onClick={updateClipboard} className={styles.button}>
             <svg

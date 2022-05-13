@@ -43,11 +43,11 @@
   /* width: 70%; */
 }
 .inline {
-  display: inline-block;
+  display: inline;
 }
 .container .externalIcon {
   opacity: 0;
-  transition: opacity 0.15s ease, color 0.15s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .container:hover .externalIcon {
@@ -58,7 +58,6 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 15px;
   margin-left: 3px;
-  color: var(--gray9);
   font-weight: 300;
 }
 .companyLink {
@@ -69,9 +68,6 @@
   background-color: var(--gray4);
   padding: 2px 5px 2px 5px;
   margin: -2px -5px -2px -5px;
-}
-.companyLink:hover .externalIcon {
-  color: var(--gray11);
 }
 
 .stackRight {

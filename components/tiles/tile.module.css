@@ -63,7 +63,7 @@
   text-align: right;
 }
 .inline {
-  display: inline-block;
+  display: inline;
 }
 .container .externalIcon {
   opacity: 0;
@@ -78,7 +78,6 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 15px;
   margin-left: 3px;
-  color: var(--gray9);
   font-weight: 300;
 }
 .titleLink {
@@ -90,9 +89,7 @@
   padding: 2px 5px 2px 5px;
   margin: -2px -5px -2px -5px;
 }
-.titleLink:hover .externalIcon {
-  color: var(--gray11);
-}
+
 @media (max-width: 700px) {
   .right {
     flex-direction: column;

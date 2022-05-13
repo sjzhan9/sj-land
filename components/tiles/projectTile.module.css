@@ -20,7 +20,7 @@
 }
 .container .externalIcon {
   opacity: 0;
-  transition: opacity 0.15s ease, color 0.15s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .container:hover .externalIcon {
@@ -31,7 +31,6 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 15px;
   margin-left: 3px;
-  color: var(--gray12);
   font-weight: 300;
 }
 

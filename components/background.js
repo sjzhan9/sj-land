@@ -17,13 +17,13 @@ export default function Background() {
       context.fillRect(x, y, 10, 10);
     };
     const B = function (x, y, time) {
-      return Math.floor(baseNum + 56 * Math.cos((x * x - y * y) / 200 + time));
+      return Math.floor(baseNum + 48 * Math.cos((x * x - y * y) / 200 + time));
     };
 
     const G = function (x, y, time) {
       return Math.floor(
         baseNum +
-          36 *
+          50 *
             Math.sin(
               (x * x * Math.cos(time / 4) + y * y * Math.sin(time / 3)) / 300
             )

@@ -43,7 +43,10 @@ export default function NewsletterTile({
       </div>
 
       <div className={styles.stack}>
-        <h3 className={util.tileTitle}>{title}</h3>
+        <div>
+          <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+          <span className={styles.externalIcon}>↗</span>
+        </div>
         <p className={util.tileContent}>{content}</p>
       </div>
     </a>

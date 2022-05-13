@@ -21,7 +21,7 @@ export default function Home({ list }) {
   }, []);
 
   const description =
-    "I’m a designer and developer by training and trade. I spend most of my spare time reading about business, finance and crypto. If this combination interests you, welcome to my corner of the internet where I share my reading list, investment updates, and software adventures.";
+    "I’m a designer and developer by training and trade. I spend most of my spare time reading about business, finance and crypto. If this combination interests you, welcome to my corner of the internet. This is where I share my reading list, investment updates, and software adventures.";
 
   return (
     <>
