@@ -106,16 +106,7 @@
 .arrow {
   color: var(--linkContainerBg);
 }
-.content {
-  border-radius: 5px;
-  padding: 8px 12px;
-  font-size: var(--font-s);
-  line-height: 1;
-  color: var(--gray11);
-  background-color: var(--linkContainerBg);
-  box-shadow: hsl(206 22% 7% / 80%) 0px 10px 38px -10px,
-    hsl(206 22% 7% / 50%) 0px 10px 20px -15px;
-}
+
 .inline {
   display: inline;
 }
@@ -133,66 +124,6 @@
   font-size: 15px;
   margin-left: 3px;
   font-weight: 300;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .content {
-    animation-duration: 500ms;
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    animation-fill-mode: forwards;
-    will-change: transform, opacity;
-  }
-  .content[data-state="delayed-open"][data-side="top"] {
-    animation-name: slideDownAndFade;
-  }
-  .content[data-state="delayed-open"][data-side="right"] {
-    animation-name: slideLeftAndFade;
-  }
-  .content[data-state="delayed-open"][data-side="bottom"] {
-    animation-name: slideUpAndFade;
-  }
-  .content[data-state="delayed-open"][data-side="left"] {
-    animation-name: slideRightAndFade;
-  }
-}
-@keyframes slideUpAndFade {
-  0% {
-    opacity: 0;
-    transform: translateY(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes slideRightAndFade {
-  0% {
-    opacity: 0;
-    transform: translateX(-2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes slideDownAndFade {
-  0% {
-    opacity: 0;
-    transform: translateY(-2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes slideLeftAndFade {
-  0% {
-    opacity: 0;
-    transform: translateX(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 @media (max-width: 700px) {

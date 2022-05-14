@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import util from "../styles/util.module.css";
 import { PopupButton } from "react-calendly";
 import ContactContent from "./contactContent";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 export default function Contact({ svg, label, shortcut }) {
   var time = 0;
@@ -43,9 +44,23 @@ export default function Contact({ svg, label, shortcut }) {
             <p className={styles.label}>{label}</p>
           </div>
           {shortcut ? (
-            <div className={styles.shortcut}>
-              <span className={styles.shortcutText}>{shortcut}</span>
-            </div>
+            <Tooltip.Provider delayDuration={500}>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <div className={styles.shortcut}>
+                    <span className={styles.shortcutText}>{shortcut}</span>
+                  </div>
+                </Tooltip.Trigger>
+
+                <Tooltip.Content className={util.tooltip}>
+                  <span style={{ marginRight: "4px" }}>Press</span>
+                  <div className={styles.shortcut}>
+                    <span className={styles.shortcutText}>{shortcut}</span>
+                  </div>
+                  <Tooltip.Arrow className={styles.arrow} />
+                </Tooltip.Content>
+              </Tooltip.Root>
+            </Tooltip.Provider>
           ) : null}
         </div>
       </Dialog.Trigger>
@@ -57,7 +72,6 @@ export default function Contact({ svg, label, shortcut }) {
         >
           <Dialog.Title className={styles.title}>Contact</Dialog.Title>
           <ContactContent inModal="true" />
-          {/* <Dialog.Close /> */}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

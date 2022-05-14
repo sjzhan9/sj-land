@@ -4,6 +4,7 @@ import util from "../styles/util.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 export default function NavLink({ svg, label, href, shortcut, external }) {
   const router = useRouter();
@@ -64,9 +65,23 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
           <p className={styles.label}>{label}</p>
         </div>
         {shortcut ? (
-          <div className={styles.shortcut}>
-            <span className={styles.shortcutText}>{shortcut}</span>
-          </div>
+          <Tooltip.Provider delayDuration={500}>
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <div className={styles.shortcut}>
+                  <span className={styles.shortcutText}>{shortcut}</span>
+                </div>
+              </Tooltip.Trigger>
+
+              <Tooltip.Content className={util.tooltip}>
+                <span style={{ marginRight: "4px" }}>Press</span>
+                <div className={styles.shortcut}>
+                  <span className={styles.shortcutText}>{shortcut}</span>
+                </div>
+                <Tooltip.Arrow className={styles.arrow} />
+              </Tooltip.Content>
+            </Tooltip.Root>
+          </Tooltip.Provider>
         ) : null}
       </a>
     </Link>
