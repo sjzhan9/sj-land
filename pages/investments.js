@@ -27,7 +27,7 @@ export default function Investments() {
         <title>{"SJ's Investments"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />
-        <meta property="og:image" content="/og/index.png" />
+        <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"

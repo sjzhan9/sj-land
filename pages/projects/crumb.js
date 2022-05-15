@@ -26,7 +26,7 @@ export default function Oriant() {
           content="I started working with Crumb to come up with a few website designs. I ended up implementing a different design for them."
         />
         <link rel="icon" href="/favicon.gif" />{" "}
-        <meta property="og:image" content="/og/index.png" />
+        <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"

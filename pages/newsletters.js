@@ -29,7 +29,7 @@ export default function Newsletters({ list }) {
         <title>{"SJ's Favorite Newsletters"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
-        <meta property="og:image" content="/og/index.png" />
+        <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"

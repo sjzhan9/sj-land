@@ -26,7 +26,7 @@ export default function Illesteva() {
           content="I worked as a graphic designer at the eyewear brand. I redesigned and maintained the e-commerce site and was in charge of all online and offline graphical assets."
         />
         <link rel="icon" href="/favicon.gif" />{" "}
-        <meta property="og:image" content="/og/index.png" />
+        <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
