@@ -25,7 +25,8 @@ export default function ParkAmigo() {
           name="description"
           content="I spent 2 weeks working on a complete redesign of the ParkAmigo iOS app."
         />
-        <link rel="icon" href="/favicon.gif" />
+        <link rel="icon" href="/favicon.gif" />{" "}
+        <meta property="og:image" content="/og/index.png" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"

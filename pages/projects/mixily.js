@@ -25,7 +25,8 @@ export default function Mixily() {
           name="description"
           content="I freelanced a few month for the lightweight event planning platform. As a Facebook Event alternative that focuses on privacy and being inclusive to non-facebook users, Mixily allows you to create and manage events, RSVPs, message attendees."
         />
-        <link rel="icon" href="/favicon.gif" />
+        <link rel="icon" href="/favicon.gif" />{" "}
+        <meta property="og:image" content="/og/index.png" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"

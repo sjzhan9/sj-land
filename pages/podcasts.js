@@ -31,7 +31,8 @@ export default function Podcasts({ list }) {
       <Head>
         <title>{"SJ's Favorite Podcasts"}</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.gif" />
+        <link rel="icon" href="/favicon.gif" />{" "}
+        <meta property="og:image" content="/og/index.png" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
