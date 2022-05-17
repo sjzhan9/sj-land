@@ -138,6 +138,9 @@
   .dateSub {
     display: none;
   }
+  .stack {
+    width: 100%;
+  }
   .url {
     margin: 0.35rem 0rem 0.5rem;
     width: 100%;
