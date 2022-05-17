@@ -13,13 +13,18 @@
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-dialog": "^0.1.7",
     "@radix-ui/react-tooltip": "^0.1.7",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
     "next": "12.1.5",
     "next-restore-scroll": "^1.2.1",
     "next-themes": "^0.1.1",
+    "path": "^0.12.7",
     "react": "18.0.0",
     "react-calendly": "^4.0.0",
     "react-dom": "18.0.0",
-    "react-hot-toast": "^2.2.0"
+    "react-hot-toast": "^2.2.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1"
   },
   "devDependencies": {
     "eslint": "8.13.0",
