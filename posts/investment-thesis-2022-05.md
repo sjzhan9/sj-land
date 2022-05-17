@@ -1,6 +1,6 @@
 ---
 title: "SJ’s Investment Thesis"
-date: "2020-05-16"
+date: "2022-05-16"
 ---
 
 I was initially prompted to write a sector specific investment thesis that is almost like a report. However, as a believer in diversifying your investments in different software markets, I thought it would be more interesting to talk about how to pick the markets first. This article will explain how I think about picking long-term winners in profitable markets.
