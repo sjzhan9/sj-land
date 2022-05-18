@@ -140,7 +140,7 @@ export default function About() {
                 </a>
                 {". "}
                 {
-                  "In the 10+ years that I've been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In last few years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on "
+                  "In the 10+ years that I've been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In the last few years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on "
                 }
                 <a
                   href="https://www.linkedin.com/in/s-j-zhang/"
@@ -150,7 +150,7 @@ export default function About() {
                 >
                   Linkedin
                 </a>
-                {". I’ve also added a short preview below."}
+                {". I’ve also added a summary below."}
               </p>
             </div>
 
