@@ -157,10 +157,10 @@ export default function About() {
             <div>
               <ExpTile
                 date="2020–Now"
-                title="Founding Design at Compound"
+                title="Design at Compound"
                 url={"https://withcompound.com"}
                 content={
-                  "Started as the only designer from Seed to Series B. Then recruited and built a talent team of designers across product and brand."
+                  "Started as the only designer from Seed to Series B. Then recruited and built a talented team of designers across product and brand."
                 }
               />
               <ExpTile
