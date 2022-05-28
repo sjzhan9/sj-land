@@ -150,13 +150,15 @@
   margin-top: 3rem;
 }
 .description {
-  margin: 0rem 0rem 0.5rem;
   font-weight: 390;
   padding: 0.125rem;
   line-height: 1.68;
   font-size: var(--font-l);
   color: var(--gray11);
   transition: color 0.25s ease;
+}
+.description p {
+  margin: 0rem 0rem 0.5rem;
 }
 .tileTitle {
   font-weight: 390;
@@ -297,10 +299,22 @@
   flex-shrink: 0;
   flex-wrap: nowrap !important;
 }
+.badge {
+  font-size: var(--font-m);
+  padding: 6px 8px 6px 8px;
+  line-height: 1;
+  background-color: var(--gray3);
+  border-radius: 4px;
+  color: var(--gray11);
+  font-weight: 440;
+  margin-top: 0.75rem;
+  box-sizing: content-box;
+  display: inline-block;
+}
 .tab {
   padding: 6px 8px 6px 8px;
   font-size: var(--font-m);
-  font-weight: 420;
+  /* font-weight: 400; */
   position: static;
   height: 26px;
   box-sizing: border-box;
