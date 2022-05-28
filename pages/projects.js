@@ -7,18 +7,18 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 
 export default function Projects() {
-  useEffect(() => {
-    let thisPage = document.querySelector("#projectsPage");
-    let top = localStorage.getItem("projects-scroll");
-    if (top !== null) {
-      thisPage.scrollTop = top;
-    }
-    const handleScroll = () => {
-      localStorage.setItem("projects-scroll", thisPage.scrollTop);
-    };
-    thisPage.addEventListener("scroll", handleScroll);
-    return () => thisPage.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   let thisPage = document.querySelector("#projectsPage");
+  //   let top = localStorage.getItem("projects-scroll");
+  //   if (top !== null) {
+  //     thisPage.scrollTop = top;
+  //   }
+  //   const handleScroll = () => {
+  //     localStorage.setItem("projects-scroll", thisPage.scrollTop);
+  //   };
+  //   thisPage.addEventListener("scroll", handleScroll);
+  //   return () => thisPage.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   //page header and in-page description
   const description =

@@ -5,18 +5,18 @@ import InvestmentTile from "../components/tiles/investmentTile";
 import Script from "next/script";
 
 export default function Investments() {
-  useEffect(() => {
-    let thisPage = document.querySelector("#investmentsPage");
-    let top = localStorage.getItem("investments-scroll");
-    if (top !== null) {
-      thisPage.scrollTop = top;
-    }
-    const handleScroll = () => {
-      localStorage.setItem("investments-scroll", thisPage.scrollTop);
-    };
-    thisPage.addEventListener("scroll", handleScroll);
-    return () => thisPage.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   let thisPage = document.querySelector("#investmentsPage");
+  //   let top = localStorage.getItem("investments-scroll");
+  //   if (top !== null) {
+  //     thisPage.scrollTop = top;
+  //   }
+  //   const handleScroll = () => {
+  //     localStorage.setItem("investments-scroll", thisPage.scrollTop);
+  //   };
+  //   thisPage.addEventListener("scroll", handleScroll);
+  //   return () => thisPage.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const description =
     "Below are my current investment holdings. They range from 20% of my investable asset to as small as $1K, roughly ordered by my position size.";

@@ -109,13 +109,15 @@ html {
 }
 
 .bg {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
   opacity: 0.08;
-  z-index: 1;
+  z-index: -1;
+  height: 100%;
+
   /* transition: all 0.75s ease-in-out; */
 }
 
