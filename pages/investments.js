@@ -45,38 +45,41 @@ export default function Investments() {
       <main className={util.page} id="investmentsPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Investments</h1>
-          <p className={util.description}>{description}</p>
+          <div className={util.description}>
+            <p>{description}</p>
 
-          <p className={util.description}>
-            {
-              "With public equity, I invest in a basket of 10-20 stocks at any given time. With crypto, I’m heavy in Ethereal and Solana, and tend hold positions in 1-5 smaller cap assets."
-            }
-          </p>
-          <p className={util.description}>
-            {
-              "In the private market, I've only invested in a select few. If you are a seed stage founder, I can be helpful giving product feedback, connecting you to design resources, and introducing you to folks at "
-            }
-            <a
-              className={util.externalLink}
-              href="https://www.kleinerperkins.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Kleiner Perkins
-            </a>
-            {", "}
+            <p>
+              {
+                "With public equity, I invest in a basket of 5-20 stocks at any given time. With crypto, I’m heavy in Ethereal and Solana, and tend hold positions in 1-5 smaller cap assets."
+              }
+            </p>
+            <p>
+              {
+                "In the private market, I've only invested in a select few. If you are a seed stage founder, I can be helpful giving product feedback, connecting you to design resources, and introducing you to folks at "
+              }
+              <a
+                className={util.externalLink}
+                href="https://www.kleinerperkins.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Kleiner Perkins
+              </a>
+              {", "}
 
-            <a
-              className={util.externalLink}
-              href="https://republic.com/venture-programs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Republic
-            </a>
+              <a
+                className={util.externalLink}
+                href="https://republic.com/venture-programs"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Republic
+              </a>
 
-            {" or some other investors who write larger checks."}
-          </p>
+              {" or some other investors who write larger checks."}
+            </p>
+            <span className={util.badge}>{"Last updated May 28 2022"}</span>
+          </div>
 
           <ul className={util.list}>
             <p className={util.textDivider}>Private</p>
@@ -146,12 +149,19 @@ export default function Investments() {
               url="https://www.shopify.com"
             />
             <InvestmentTile
+              icon="real"
+              title="The Real Real"
+              content="Betting on consumer spending on “going out fashion” post pandemic and buying second-hand due to decreased spending power during the recession."
+              entry="May 2022 · $119"
+              url="https://www.therealreal.com"
+            />
+            {/* <InvestmentTile
               icon="docu"
               title="Docusign"
               content="Allows organizations to manage electronic agreements. Built the position on remote work being a norm."
               entry="May 2022 · $119"
               url="https://www.docusign.com/en-us/"
-            />
+            /> */}
             <InvestmentTile
               icon="abnb"
               title="Airbnb"
@@ -173,7 +183,7 @@ export default function Investments() {
               entry="Jan 2022 · $119"
               url="https://www.dopex.io"
             />
-            <InvestmentTile
+            {/* <InvestmentTile
               icon="avax"
               title="Avalanche"
               content="Fast L1 network. Part of my index of eth challengers."
@@ -186,7 +196,7 @@ export default function Investments() {
               content="Financial services and digital payments company. Betting on IRL payments and crypto moves by Jack Dorsey."
               entry="Mar 2022 · $90"
               url="https://block.xyz"
-            />
+            /> */}
             <InvestmentTile
               icon="refi"
               title="Reimagined Finance"
@@ -194,13 +204,13 @@ export default function Investments() {
               entry="Jan 2022 · $0.07"
               url="https://www.reimagined.fi"
             />
-            <InvestmentTile
+            {/* <InvestmentTile
               icon="rbn"
               title="Ribbon Finance"
               content="Onchain structured product. Built the position betting on DeFi option vaults."
               entry="Dec 2021 · $3.20"
               url="https://www.ribbon.finance"
-            />
+            /> */}
           </ul>
         </div>
       </main>
