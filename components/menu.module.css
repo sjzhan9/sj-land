@@ -38,6 +38,8 @@
     position: fixed;
     height: 60px;
     top: calc(100vh - 60px);
+    top: calc(100dvh - 60px);
+
     border-top: 1px solid var(--linkContainerBorder);
     margin: 0px;
     background-color: var(--appbg);

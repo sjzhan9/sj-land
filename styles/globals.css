@@ -11,28 +11,6 @@
 
   font-weight: 100 900;
 }
-
-@font-face {
-  font-family: "sohne";
-  src: url("/fonts/test-soehne-leicht.woff2") format("woff2");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "sohne";
-  src: url("/fonts/test-soehne-buch.woff2") format("woff2");
-  font-weight: 390;
-}
-@font-face {
-  font-family: "sohne";
-  src: url("/fonts/test-soehne-kraftig.woff2") format("woff2");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "sohne";
-  src: url("/fonts/test-soehne-halbfett.woff2") format("woff2");
-  font-weight: 600;
-}
-
 @import url("https://rsms.me/inter/inter.css");
 html {
   font-family: "Inter", sans-serif;
@@ -46,7 +24,7 @@ html {
 
 :root {
   --font-sans: Aktiv Grotesk;
-  --font-serif: Blanco;
+  /* --font-serif: Blanco; */
 
   --font-l: 14.9px;
   --font-m: 13.7px;
@@ -117,8 +95,6 @@ html {
   opacity: 0.08;
   z-index: -1;
   height: 100%;
-
-  /* transition: all 0.75s ease-in-out; */
 }
 
 .dark-theme .bg {
@@ -127,41 +103,6 @@ html {
 .dark-theme .iconInvert {
   filter: invert(1);
   transition: color 0.2s ease;
-}
-
-.noise {
-  left: 0px;
-  top: 0px;
-  z-index: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  filter: contrast(700%) brightness(400%);
-  opacity: 0.3;
-  background: radial-gradient(
-      circle at 51% 50%,
-      rgba(90, 90, 90, 0.44),
-      rgba(59, 59, 59, 0.33)
-    ),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.77' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-.tv {
-  left: -50px;
-  top: -50px;
-  z-index: 0;
-  position: absolute;
-  width: calc(100% + 50px);
-  height: calc(100% + 50px);
-  background: repeating-linear-gradient(
-    rgb(83, 83, 83),
-    rgb(98, 98, 98) 50%,
-    #fff 50%,
-    #fff
-  );
-  background-size: 10px 10px;
-  filter: url(#noise);
-  opacity: 0.4;
 }
 
 html,

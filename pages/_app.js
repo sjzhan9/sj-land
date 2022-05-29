@@ -20,7 +20,6 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Background />
-      <h3 className={util.mobileTitle}>SJ Zhang</h3>
       <Menu />
       <Component {...pageProps} />
     </ThemeProvider>
