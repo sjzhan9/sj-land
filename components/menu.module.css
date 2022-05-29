@@ -26,7 +26,7 @@
 }
 @media (max-width: 700px) {
   .container {
-    padding: 0.375rem 1.5rem 1rem 0.375rem;
+    padding: 0.375rem 1.5rem 0.5rem 0.375rem;
     width: 100%;
     justify-content: flex-start;
     display: flex;
@@ -35,8 +35,9 @@
     flex-shrink: 0;
     transition: all 0.15s ease-in;
     overflow-x: scroll;
+    overflow-y: hidden;
     position: fixed;
-    height: 68px;
+    height: 60px;
     top: auto;
     bottom: 0px;
     border-top: 1px solid var(--linkContainerBorder);
