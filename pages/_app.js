@@ -8,12 +8,7 @@ import React, { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider
-      attribute="class"
-      value={{ dark: "dark-theme" }}
-      // className={util.outer}
-    >
-      {/* <div id="outer" className={util.outer}> */}
+    <ThemeProvider attribute="class" value={{ dark: "dark-theme" }}>
       <Toaster
         toastOptions={{
           duration: 1500,
@@ -25,12 +20,9 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Background />
-      {/* <div className={util.container}> */}
       <h3 className={util.mobileTitle}>SJ Zhang</h3>
       <Menu />
       <Component {...pageProps} />
-      {/* </div> */}
-      {/* </div> */}
     </ThemeProvider>
   );
 }

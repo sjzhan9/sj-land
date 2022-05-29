@@ -7,18 +7,18 @@ import ExpTile from "../components/tiles/expTile";
 import Script from "next/script";
 
 export default function About() {
-  // useEffect(() => {
-  //   let thisPage = document.querySelector("#aboutPage");
-  //   let top = localStorage.getItem("about-scroll");
-  //   if (top !== null) {
-  //     thisPage.scrollTop = top;
-  //   }
-  //   const handleScroll = () => {
-  //     localStorage.setItem("about-scroll", thisPage.scrollTop);
-  //   };
-  //   thisPage.addEventListener("scroll", handleScroll);
-  //   return () => thisPage.removeEventListener("scroll", handleScroll);
-  // }, []);
+  useEffect(() => {
+    let thisPage = document.querySelector("#aboutPage");
+    let top = localStorage.getItem("about-scroll");
+    if (top !== null) {
+      thisPage.scrollTop = top;
+    }
+    const handleScroll = () => {
+      localStorage.setItem("about-scroll", thisPage.scrollTop);
+    };
+    thisPage.addEventListener("scroll", handleScroll);
+    return () => thisPage.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const description =
     "A summary of me, my interests, my design career, and why/how this site was built.";

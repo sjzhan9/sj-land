@@ -176,6 +176,7 @@ button {
   padding: 0;
   margin: 0;
   font-family: var(--font-sans);
+  position: relative;
 }
 
 p {
