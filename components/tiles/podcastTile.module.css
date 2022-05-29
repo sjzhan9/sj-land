@@ -53,3 +53,8 @@
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+@media (max-width: 700px) {
+  .container {
+    padding: 0.5rem;
+  }
+}
