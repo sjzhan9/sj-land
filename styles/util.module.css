@@ -1,32 +1,15 @@
-.outer {
-  background-color: var(--appbg);
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  transition: background-color 0.2s ease;
-}
-.container {
-  width: 100%;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  z-index: 1;
-}
 .page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: static;
-  width: 100%;
-  background: var(--bg);
+  margin: 0.5rem;
+  height: calc(100vh - 1rem);
+  position: relative;
   border-radius: 10px;
   padding: 2rem 2rem;
   order: 1;
   flex-grow: 1;
-  margin-left: 0.5rem;
+  margin-left: 16rem;
   background-color: var(--bg);
   overflow: auto;
   transition: background-color 0.2s ease;
@@ -142,9 +125,6 @@
   letter-spacing: 0.25px;
   transition: color 0.2s ease;
 }
-.mobileTitle {
-  display: none;
-}
 .list {
   padding: 0px;
   margin-top: 3rem;
@@ -255,7 +235,6 @@
   display: flex;
   flex-direction: row;
   overflow: auto;
-  /* width: 100%; */
 }
 
 .readTitle {
@@ -445,38 +424,21 @@
     text-transform: uppercase;
     letter-spacing: 0.4px;
   }
-  .outer {
-    height: 100vh;
-    height: 100dvh;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    transition: background-color 0.75s ease;
-  }
-  .container {
-    padding: 0px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    z-index: 1;
-  }
   .page {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: static;
     width: auto;
-    border-radius: 10px;
-    padding: 0rem 1rem 2rem;
+    border-radius: 0px;
+    padding: 0rem 1rem 4rem;
     order: 1;
     flex-grow: 1;
     margin-left: 0rem;
     overflow: auto;
-    margin: 0.35rem 0.35rem 4rem 0.35rem;
+    margin: 0rem;
+    height: auto;
   }
-
   .header {
     font-size: 2.5rem;
   }
