@@ -1,12 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
 import util from "../styles/util.module.css";
-import Link from "next/link";
 import ReadingListTile from "../components/tiles/readingListTile";
 const { Client } = require("@notionhq/client");
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import Settings from "../components/settings";
 
 export default function ReadingList({ list }) {
   useEffect(() => {
@@ -25,13 +24,21 @@ export default function ReadingList({ list }) {
   const description =
     "From essays to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will improve sorting and filtering soon.";
 
+  //reset the current list state
+
   const router = useRouter();
   const [filter, setFilter] = React.useState("Recently Added");
   const [currentList, setCurrentList] = React.useState(null);
-
+  const [fav, setFav] = React.useState(false);
+  // console.log("fav is " + fav);
   function handleTagChange(e) {
     setFilter(e.target.innerHTML);
   }
+
+  //filtering logic depends on query params
+  //if no query we assume the section is "recently added" and fav setting is "false"
+  //if you toggle section or fav setting, the changed setting will be reflected in param
+  //neither section or fav setting has initial value
 
   //when filter changes create a filtered state with only items with the right tag
   useEffect(() => {
@@ -88,7 +95,6 @@ export default function ReadingList({ list }) {
       <main className={util.page} id="readingPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Reading List</h1>
-
           <p className={util.description}>{description}</p>
 
           <ul className={util.list}>
@@ -146,6 +152,7 @@ export default function ReadingList({ list }) {
               >
                 Compensation
               </button>
+              <Settings status={fav} updateCheckbox={setFav} />
             </div>
             {filter == "Recently Added" ? (
               list.map((link) => (

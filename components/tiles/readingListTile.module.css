@@ -103,9 +103,6 @@
   right: 20px;
   top: 0px;
 }
-.arrow {
-  color: var(--linkContainerBg);
-}
 
 .inline {
   display: inline;

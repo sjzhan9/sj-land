@@ -342,7 +342,61 @@
   background-color: var(--gray4);
   color: var(--gray12);
 }
-
+.checkbox {
+  all: unset;
+  background-color: var(--gray2);
+  border: 1px solid var(--gray6);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  margin-right: 0.5rem;
+}
+.checkbox:hover {
+  background-color: var(--gray3);
+}
+.checkbox:focus {
+  box-shadow: 0 0 0 2px var(--gray11);
+}
+.arrow {
+  fill: var(--modalBg);
+}
+.popover {
+  border-radius: 5px;
+  padding: 12px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: var(--font-m);
+  line-height: 1;
+  color: var(--gray11);
+  background-color: var(--modalBg);
+  box-shadow: hsl(206 22% 7% / 80%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 50%) 0px 10px 20px -15px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .popover {
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: forwards;
+    will-change: transform, opacity;
+  }
+  .popover[data-side="top"][data-side="top"] {
+    animation-name: slideDownAndFade;
+  }
+  .popover[data-side="right"] {
+    animation-name: slideLeftAndFade;
+  }
+  .popover[data-side="bottom"] {
+    animation-name: slideUpAndFade;
+  }
+  .popover[data-side="left"] {
+    animation-name: slideRightAndFade;
+  }
+}
 .tooltip {
   border-radius: 5px;
   padding: 6px 8px;
@@ -352,7 +406,7 @@
   font-size: var(--font-s);
   line-height: 1;
   color: var(--gray11);
-  background-color: var(--linkContainerBg);
+  background-color: var(--modalBg);
   box-shadow: hsl(206 22% 7% / 80%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 50%) 0px 10px 20px -15px;
 }

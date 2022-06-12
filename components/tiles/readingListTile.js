@@ -39,7 +39,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
 
             <Tooltip.Content className={util.tooltip}>
               Must Read. Filter feature coming soon.
-              <Tooltip.Arrow className={styles.arrow} />
+              <Tooltip.Arrow className={util.arrow} />
             </Tooltip.Content>
           </Tooltip.Root>
         </Tooltip.Provider>
