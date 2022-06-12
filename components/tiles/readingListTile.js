@@ -38,7 +38,8 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             </Tooltip.Trigger>
 
             <Tooltip.Content className={util.tooltip}>
-              Must Read. Filter feature coming soon.
+              One of my favorites. You can set the filter to only show
+              favorites.
               <Tooltip.Arrow className={util.arrow} />
             </Tooltip.Content>
           </Tooltip.Root>
