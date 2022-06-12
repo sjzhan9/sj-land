@@ -12,25 +12,43 @@ export default function Settings({ status, updateCheckbox }) {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <div>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18.6666 6H5.33331L10.6666 12.3067V16.6667L13.3333 18V12.3067L18.6666 6Z"
-              stroke="#828282"
-              stroke-width="1.33333"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <div className={util.settingButton}>
+          {status ? (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.5556 5H4L10.2222 12.3578V17.4444L13.3333 19V12.3578L19.5556 5Z"
+                stroke="#828282"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="18.75" cy="5.1499" r="3" fill="#7D7D7D" />
+            </svg>
+          ) : (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.5556 5H4L10.2222 12.3578V17.4444L13.3333 19V12.3578L19.5556 5Z"
+                stroke="#828282"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
         </div>
       </Popover.Trigger>
-      <Popover.Anchor />
       <Popover.Content
         className={util.popover}
         onOpenAutoFocus={(e) => e.preventDefault()}
@@ -52,9 +70,9 @@ export default function Settings({ status, updateCheckbox }) {
               <path
                 d="M1 5L4.5 8.5L11.5 1.5"
                 stroke="#7D7D7D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </Checkbox.Indicator>

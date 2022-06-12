@@ -268,7 +268,28 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.settingButton {
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.25rem;
+}
+.settingButton:hover,
+.settingButton:focus {
+  background-color: var(--gray3);
+}
 .tabBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
   margin: -8px 0px -8px;
   margin-bottom: 1rem;
   position: sticky;
@@ -278,6 +299,15 @@
   background-color: var(--bgSticky);
   backdrop-filter: blur(10px);
   transition: background-color 0.2s ease;
+}
+.emptyState {
+  padding: 3rem;
+  font-size: var(--font-m);
+  color: var(--gray9);
+  border-radius: 6px;
+  border: 1px solid var(--gray3);
+  display: flex;
+  justify-content: center;
 }
 .tags {
   flex-shrink: 0;
@@ -372,7 +402,7 @@
   align-items: center;
   font-size: var(--font-m);
   line-height: 1;
-  color: var(--gray11);
+  color: var(--gray12);
   background-color: var(--modalBg);
   box-shadow: hsl(206 22% 7% / 80%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 50%) 0px 10px 20px -15px;

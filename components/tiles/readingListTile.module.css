@@ -26,11 +26,10 @@
 .stack {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   padding: 0px;
   margin-right: 1rem;
-  width: 78%;
-  flex-shrink: 1;
+  min-width: 0;
 }
 
 .type {
@@ -61,7 +60,6 @@
   font-size: var(--font-s);
   font-weight: 390;
   color: var(--gray9);
-  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
