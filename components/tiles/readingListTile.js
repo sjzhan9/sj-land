@@ -67,7 +67,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             <span className={styles.externalIcon}>↗</span>
           </div>
 
-          <p className={styles.url}>{displayUrl}</p>
+          <p className={styles.url + " " + util.hiddenOnMobile}>{displayUrl}</p>
         </div>
         <div className={util.tags + " " + util.flexRow}>
           {tags

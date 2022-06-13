@@ -135,6 +135,7 @@
   }
   .stack {
     width: 100%;
+    margin-bottom: 0.5rem;
   }
   .url {
     margin: 0.35rem 0rem 0.5rem;

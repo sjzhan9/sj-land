@@ -8,7 +8,8 @@ import Script from "next/script";
 import Settings from "../components/settings";
 
 export default function Talents({ list }) {
-  const description = "Incredible design talents that I keep an eye on.";
+  const description =
+    "Incredible design talents that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"

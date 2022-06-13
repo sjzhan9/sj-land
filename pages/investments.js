@@ -169,13 +169,14 @@ export default function Investments() {
               entry="IPO: Dec 2020 · $144"
               url="https://www.airbnb.com"
             />
-            <InvestmentTile
+            {/* <InvestmentTile
               icon="fb"
               title="Meta"
               content="Betting on social commerce, not metaverse."
               entry="Feb 2018 · $191"
               url="https://about.facebook.com"
-            />
+            /> */}
+
             <InvestmentTile
               icon="rdpx"
               title="Dopex Rebate Token"
@@ -189,14 +190,14 @@ export default function Investments() {
               content="Fast L1 network. Part of my index of eth challengers."
               entry="Nov 2021 · $72"
               url="https://www.avax.network"
-            />
+            /> */}
             <InvestmentTile
               icon="sq"
               title="Block"
               content="Financial services and digital payments company. Betting on IRL payments and crypto moves by Jack Dorsey."
               entry="Mar 2022 · $90"
               url="https://block.xyz"
-            /> */}
+            />
             <InvestmentTile
               icon="refi"
               title="Reimagined Finance"

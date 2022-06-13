@@ -402,10 +402,10 @@
   align-items: center;
   font-size: var(--font-m);
   line-height: 1;
-  color: var(--gray12);
+  color: var(--gray11);
   background-color: var(--modalBg);
-  box-shadow: hsl(206 22% 7% / 80%) 0px 10px 38px -10px,
-    hsl(206 22% 7% / 50%) 0px 10px 20px -15px;
+  box-shadow: hsl(206 22% 7% / 60%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 30%) 0px 10px 20px -15px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .popover {
@@ -502,6 +502,9 @@
 }
 
 @media (max-width: 700px) {
+  .hiddenOnMobile {
+    display: none;
+  }
   .siteTitle {
     display: none;
   }
