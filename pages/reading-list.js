@@ -17,17 +17,17 @@ export default function ReadingList({ list }) {
   //removing filter param triggers all and "overview"
   const router = useRouter();
   const [filter, setFilter] = React.useState(null);
-  const [fav, setFav] = React.useState(false);
+  const [fav, setFav] = React.useState(null);
   const [currentList, setCurrentList] = React.useState(null);
 
   useEffect(() => {
     let thisPage = document.querySelector("#readingPage");
-    let top = localStorage.getItem("reading-scroll");
+    let top = sessionStorage.getItem("reading-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      localStorage.setItem("reading-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("reading-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
@@ -43,21 +43,10 @@ export default function ReadingList({ list }) {
 
   //handlers to handle filter and fav setting changes
   function removeFilter() {
-    setFilter(null);
-    localStorage.setItem("reading-filter", null);
+    setFilter("all");
   }
   function handleTagChange(e) {
     setFilter(e.target.innerHTML);
-    localStorage.setItem("reading-filter", e.target.innerHTML);
-  }
-  function handleFavChange(e) {
-    if (e == true) {
-      localStorage.setItem("reading-fav", true);
-      setFav(true);
-    } else {
-      localStorage.setItem("reading-fav", null);
-      setFav(false);
-    }
   }
 
   //set initial states when url has queries
@@ -71,76 +60,88 @@ export default function ReadingList({ list }) {
       if (fav == false) {
         setFav(true);
       }
+    } else {
+      setFav(false);
     }
   }, [router.query.favonly]);
   //set initial state when url has no queries
   useEffect(() => {
     //preset filter when there's no filter in url, but data stored in local storage
-    if (router && !router.query.filter) {
-      let filterSelected = localStorage.getItem("reading-filter");
-      if (
-        filterSelected &&
-        filterSelected !== filter &&
-        filterSelected !== "null"
-      ) {
+    if (router && router.query.filter == null) {
+      let filterSelected = sessionStorage.getItem("reading-filter");
+      if (filterSelected && filterSelected !== filter) {
         setFilter(filterSelected);
+      } else {
+        setFilter("all");
       }
     }
     //set fav when no filter in url, but in the same session
-    if (router && !router.query.favonly) {
-      let favSelected = localStorage.getItem("reading-fav");
+    if (router && router.query.favonly == null) {
+      let favSelected = sessionStorage.getItem("reading-fav");
       if (favSelected == "true") {
         setFav(true);
+      } else {
+        setFav(false);
       }
     }
   }, []);
 
   useEffect(() => {
-    //cycle through scenarios and compose lists
-    let tempList = [];
-    if (filter && fav == false) {
-      router.push({
-        query: { filter: filter },
-      });
-      for (var i = 0; i < list.length; i++) {
-        if (
-          list[i].properties.Tags.multi_select[0].name ==
-          filter.replace("&amp;", "&")
-        ) {
+    if (filter && fav !== null) {
+      //cycle through scenarios and compose lists
+      let tempList = [];
+      if (filter !== "all" && !fav) {
+        router.push({
+          query: { filter: filter },
+        });
+        sessionStorage.setItem("reading-filter", filter);
+        sessionStorage.setItem("reading-fav", false);
+        for (var i = 0; i < list.length; i++) {
+          if (
+            list[i].properties.Tags.multi_select[0].name ==
+            filter.replace("&amp;", "&")
+          ) {
+            tempList.push(list[i]);
+          }
+        }
+      } else if (filter !== "all" && fav) {
+        router.push({
+          query: { filter: filter, favonly: fav },
+        });
+        sessionStorage.setItem("reading-filter", filter);
+        sessionStorage.setItem("reading-fav", true);
+        for (var i = 0; i < list.length; i++) {
+          if (
+            list[i].properties.Tags.multi_select[0].name ==
+              filter.replace("&amp;", "&") &&
+            list[i].properties.Fav.checkbox == fav
+          ) {
+            tempList.push(list[i]);
+          }
+        }
+      } else if (filter == "all" && fav) {
+        router.push({
+          query: { favonly: fav },
+        });
+        sessionStorage.setItem("reading-filter", "all");
+        sessionStorage.setItem("reading-fav", true);
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].properties.Fav.checkbox == fav) {
+            tempList.push(list[i]);
+          }
+        }
+      } else if (filter == "all" && !fav) {
+        router.push({
+          query: {},
+        });
+        sessionStorage.setItem("reading-filter", "all");
+        sessionStorage.setItem("reading-fav", false);
+        for (var i = 0; i < list.length; i++) {
           tempList.push(list[i]);
         }
       }
-    } else if (filter && fav) {
-      router.push({
-        query: { filter: filter, favonly: fav },
-      });
-      for (var i = 0; i < list.length; i++) {
-        if (
-          list[i].properties.Tags.multi_select[0].name ==
-            filter.replace("&amp;", "&") &&
-          list[i].properties.Fav.checkbox == fav
-        ) {
-          tempList.push(list[i]);
-        }
-      }
-    } else if (filter == null && fav) {
-      router.push({
-        query: { favonly: fav },
-      });
-      for (var i = 0; i < list.length; i++) {
-        if (list[i].properties.Fav.checkbox == fav) {
-          tempList.push(list[i]);
-        }
-      }
-    } else {
-      router.push({
-        query: {},
-      });
-      for (var i = 0; i < list.length; i++) {
-        tempList.push(list[i]);
-      }
+      setCurrentList(tempList);
     }
-    setCurrentList(tempList);
   }, [filter, fav]);
 
   return (
@@ -177,7 +178,7 @@ export default function ReadingList({ list }) {
                   onClick={removeFilter}
                   className={util.tab}
                   role="tab"
-                  aria-selected={filter ? null : "true"}
+                  aria-selected={filter == "all" ? "true" : null}
                 >
                   Recently Added
                 </button>
@@ -199,7 +200,7 @@ export default function ReadingList({ list }) {
                   </button>
                 ))}
               </div>
-              <Settings status={fav} updateCheckbox={handleFavChange} />
+              <Settings status={fav} updateCheckbox={setFav} />
             </div>
 
             {currentList ? (

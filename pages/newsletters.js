@@ -8,12 +8,12 @@ import Script from "next/script";
 export default function Newsletters({ list }) {
   useEffect(() => {
     let thisPage = document.querySelector("#newslettersPage");
-    let top = localStorage.getItem("newsletters-scroll");
+    let top = sessionStorage.getItem("newsletters-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      localStorage.setItem("newsletters-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("newsletters-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);

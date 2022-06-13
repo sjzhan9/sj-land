@@ -7,12 +7,12 @@ import Script from "next/script";
 export default function Investments() {
   useEffect(() => {
     let thisPage = document.querySelector("#investmentsPage");
-    let top = localStorage.getItem("investments-scroll");
+    let top = sessionStorage.getItem("investments-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      localStorage.setItem("investments-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("investments-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
