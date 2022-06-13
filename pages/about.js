@@ -9,12 +9,12 @@ import Script from "next/script";
 export default function About() {
   useEffect(() => {
     let thisPage = document.querySelector("#aboutPage");
-    let top = localStorage.getItem("about-scroll");
+    let top = sessionStorage.getItem("about-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      localStorage.setItem("about-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("about-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);

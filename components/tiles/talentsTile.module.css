@@ -1,16 +1,19 @@
-.container {
-  width: 100%;
+.person {
+  background-color: var(--linkContainerBg);
+  border: 1px solid var(--linkContainerBorder);
   border-radius: 8px;
+  width: 100%;
+  margin: 0.5rem 0rem 0rem;
+  transition: background-color 0.15s ease, border 0.15s ease;
+  overflow: hidden;
+}
+.container {
+  padding: 1rem 1rem 1rem 1.25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem 1rem 1.25rem;
-  background-color: var(--linkContainerBg);
-  border: 1px solid var(--linkContainerBorder);
   position: relative;
-  margin: 0.5rem 0rem 0rem;
-  transition: background-color 0.15s ease, border 0.15s ease;
 }
 .tileTitle {
   font-size: var(--font-l);
@@ -20,8 +23,10 @@
 }
 .container:hover {
   background-color: var(--linkContainerBgHover);
-  border: 1px solid var(--linkContainerBorderHover);
   cursor: pointer;
+}
+.person:hover {
+  border: 1px solid var(--linkContainerBorderHover);
 }
 .stack {
   display: flex;
@@ -85,6 +90,18 @@
   flex-shrink: 0;
   overflow: hidden;
 }
+.iconSmall {
+  border-radius: 3px;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  width: 12px;
+  height: 12px;
+  padding: 0px;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin-right: 6px;
+}
 .right {
   display: flex;
   flex-direction: row;
@@ -120,12 +137,43 @@
   margin-left: 3px;
   font-weight: 300;
 }
+.notable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0rem 1rem 0rem 1rem;
+  border-top: 1px solid var(--linkContainerBorder);
+  justify-content: space-between;
+}
+/* .notable:hover {
+  background-color: var(--linkContainerBgHover);
+  cursor: pointer;
+} */
+.notable p {
+  margin-top: 0rem;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-right: -0.5rem;
+}
+.flexRow p {
+  transition: color 100ms ease;
+}
+.flexRow:hover p {
+  color: var(--gray12);
+}
+.notableLabel {
+  font-size: var(--font-s);
+  color: var(--gray9);
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
 
 @media (max-width: 700px) {
-  /* .container {
-    flex-direction: column;
-    align-items: flex-start;
-  } */
   .right {
     flex-direction: column;
     align-items: flex-start;
@@ -138,9 +186,7 @@
     margin-bottom: 0.5rem;
   }
   .url {
-    margin: 0.35rem 0rem 0.5rem;
     width: 100%;
-
     max-width: 100%;
   }
   .container {

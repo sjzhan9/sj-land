@@ -9,12 +9,12 @@ import Script from "next/script";
 export default function Home({ list }) {
   useEffect(() => {
     let thisPage = document.querySelector("#recentsPage");
-    let top = localStorage.getItem("recents-scroll");
+    let top = sessionStorage.getItem("recents-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      localStorage.setItem("recents-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("recents-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);

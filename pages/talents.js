@@ -1,15 +1,15 @@
 import Head from "next/head";
 import util from "../styles/util.module.css";
-import ReadingListTile from "../components/tiles/readingListTile";
+import TalentsTile from "../components/tiles/talentsTile";
 const { Client } = require("@notionhq/client");
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import Settings from "../components/settings";
 
-export default function ReadingList({ list }) {
+export default function Talents({ list }) {
   const description =
-    "From essays to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will improve sorting and filtering soon.";
+    "Incredible design talents that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -21,25 +21,21 @@ export default function ReadingList({ list }) {
   const [currentList, setCurrentList] = React.useState(null);
 
   useEffect(() => {
-    let thisPage = document.querySelector("#readingPage");
-    let top = sessionStorage.getItem("reading-scroll");
+    let thisPage = document.querySelector("#talentsPage");
+    let top = sessionStorage.getItem("talents-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      sessionStorage.setItem("reading-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("talents-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const filters = [
-    "General",
-    "Business & Finance",
-    "Design",
-    "Tech",
-    "Compensation",
-  ];
+  //logic should remember filter, fav setting, and it's very own scroll pos
+
+  const filters = ["Product", "Brand", "Craft", "Design Engineer", "Agency"];
 
   //handlers to handle filter and fav setting changes
   function removeFilter() {
@@ -57,7 +53,7 @@ export default function ReadingList({ list }) {
   }, [router.query.filter]);
   useEffect(() => {
     if (router.query.favonly) {
-      if (fav == false) {
+      if (fav !== true) {
         setFav(true);
       }
     } else {
@@ -68,7 +64,7 @@ export default function ReadingList({ list }) {
   useEffect(() => {
     //preset filter when there's no filter in url, but data stored in local storage
     if (router && router.query.filter == null) {
-      let filterSelected = sessionStorage.getItem("reading-filter");
+      let filterSelected = sessionStorage.getItem("talents-filter");
       if (filterSelected && filterSelected !== filter) {
         setFilter(filterSelected);
       } else {
@@ -77,7 +73,7 @@ export default function ReadingList({ list }) {
     }
     //set fav when no filter in url, but in the same session
     if (router && router.query.favonly == null) {
-      let favSelected = sessionStorage.getItem("reading-fav");
+      let favSelected = sessionStorage.getItem("talents-fav");
       if (favSelected == "true") {
         setFav(true);
       } else {
@@ -94,8 +90,8 @@ export default function ReadingList({ list }) {
         router.push({
           query: { filter: filter },
         });
-        sessionStorage.setItem("reading-filter", filter);
-        sessionStorage.setItem("reading-fav", false);
+        sessionStorage.setItem("talents-filter", filter);
+        sessionStorage.setItem("talents-fav", false);
         for (var i = 0; i < list.length; i++) {
           if (
             list[i].properties.Tags.multi_select[0].name ==
@@ -108,8 +104,8 @@ export default function ReadingList({ list }) {
         router.push({
           query: { filter: filter, favonly: fav },
         });
-        sessionStorage.setItem("reading-filter", filter);
-        sessionStorage.setItem("reading-fav", true);
+        sessionStorage.setItem("talents-filter", filter);
+        sessionStorage.setItem("talents-fav", true);
         for (var i = 0; i < list.length; i++) {
           if (
             list[i].properties.Tags.multi_select[0].name ==
@@ -123,8 +119,8 @@ export default function ReadingList({ list }) {
         router.push({
           query: { favonly: fav },
         });
-        sessionStorage.setItem("reading-filter", "all");
-        sessionStorage.setItem("reading-fav", true);
+        sessionStorage.setItem("talents-filter", "all");
+        sessionStorage.setItem("talents-fav", true);
         for (var i = 0; i < list.length; i++) {
           if (list[i].properties.Fav.checkbox == fav) {
             tempList.push(list[i]);
@@ -134,8 +130,8 @@ export default function ReadingList({ list }) {
         router.push({
           query: {},
         });
-        sessionStorage.setItem("reading-filter", "all");
-        sessionStorage.setItem("reading-fav", false);
+        sessionStorage.setItem("talents-filter", "all");
+        sessionStorage.setItem("talents-fav", false);
         for (var i = 0; i < list.length; i++) {
           tempList.push(list[i]);
         }
@@ -147,7 +143,7 @@ export default function ReadingList({ list }) {
   return (
     <>
       <Head>
-        <title>{"SJ's Reading List"}</title>
+        <title>{"SJ's Talents List"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
@@ -166,9 +162,9 @@ export default function ReadingList({ list }) {
         `}
       </Script>
 
-      <main className={util.page} id="readingPage">
+      <main className={util.page} id="talentsPage">
         <div className={util.pageColumn}>
-          <h1 className={util.header}>Reading List</h1>
+          <h1 className={util.header}>Talents</h1>
           <p className={util.description}>{description}</p>
 
           <ul className={util.list}>
@@ -180,7 +176,7 @@ export default function ReadingList({ list }) {
                   role="tab"
                   aria-selected={filter == "all" ? "true" : null}
                 >
-                  Recently Added
+                  All
                 </button>
                 {filters.map((filterName) => (
                   <button
@@ -210,13 +206,23 @@ export default function ReadingList({ list }) {
                 </div>
               ) : (
                 currentList.map((link) => (
-                  <ReadingListTile
+                  <TalentsTile
                     key={link.id}
                     title={link.properties.Name.title[0].plain_text}
                     url={link.properties.URL.url}
                     date={link.created_time}
                     fav={link.properties.Fav.checkbox}
                     tags={link.properties.Tags.multi_select}
+                    notableUrl={
+                      link.properties.NotableUrl.url == null
+                        ? null
+                        : link.properties.NotableUrl.url
+                    }
+                    notableTitle={
+                      link.properties.NotableTitle.rich_text[0] == undefined
+                        ? null
+                        : link.properties.NotableTitle.rich_text[0].plain_text
+                    }
                   />
                 ))
               )
@@ -235,7 +241,7 @@ export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_READINGLIST_ID,
+    database_id: process.env.NOTION_TALENTS_ID,
     filter: {
       and: [
         {

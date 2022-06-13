@@ -11,12 +11,12 @@ import Script from "next/script";
 export default function Podcasts({ list }) {
   useEffect(() => {
     let thisPage = document.querySelector("#podcastPage");
-    let top = localStorage.getItem("podcast-scroll");
+    let top = sessionStorage.getItem("podcast-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      localStorage.setItem("podcast-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("podcast-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);

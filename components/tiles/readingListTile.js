@@ -38,8 +38,9 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             </Tooltip.Trigger>
 
             <Tooltip.Content className={util.tooltip}>
-              Must Read. Filter feature coming soon.
-              <Tooltip.Arrow className={styles.arrow} />
+              One of my favorites. You can set the filter to only show
+              favorites.
+              <Tooltip.Arrow className={util.arrow} />
             </Tooltip.Content>
           </Tooltip.Root>
         </Tooltip.Provider>
@@ -66,7 +67,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             <span className={styles.externalIcon}>↗</span>
           </div>
 
-          <p className={styles.url}>{displayUrl}</p>
+          <p className={styles.url + " " + util.hiddenOnMobile}>{displayUrl}</p>
         </div>
         <div className={util.tags + " " + util.flexRow}>
           {tags
