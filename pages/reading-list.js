@@ -8,6 +8,18 @@ import Script from "next/script";
 import Settings from "../components/settings";
 
 export default function ReadingList({ list }) {
+  const description =
+    "From essays to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will improve sorting and filtering soon.";
+
+  //filtering logic depends on query params
+  //if no query we assume the section is "recently added" and fav setting is "false"
+  //if you toggle section or fav setting, the changed setting will be reflected in param
+  //removing filter param triggers all and "overview"
+  const router = useRouter();
+  const [filter, setFilter] = React.useState(null);
+  const [fav, setFav] = React.useState(false);
+  const [currentList, setCurrentList] = React.useState(null);
+
   useEffect(() => {
     let thisPage = document.querySelector("#readingPage");
     let top = localStorage.getItem("reading-scroll");
@@ -21,18 +33,6 @@ export default function ReadingList({ list }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const description =
-    "From essays to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will improve sorting and filtering soon.";
-
-  //filtering logic depends on query params
-  //if no query we assume the section is "recently added" and fav setting is "false"
-  //if you toggle section or fav setting, the changed setting will be reflected in param
-  //removing filter param triggers all and "overview"
-  const router = useRouter();
-  const [filter, setFilter] = React.useState(null);
-  const [fav, setFav] = React.useState(false);
-  const [currentList, setCurrentList] = React.useState(null);
-
   const filters = [
     "General",
     "Business & Finance",
@@ -41,14 +41,26 @@ export default function ReadingList({ list }) {
     "Compensation",
   ];
 
+  //handlers to handle filter and fav setting changes
   function removeFilter() {
     setFilter(null);
+    localStorage.setItem("reading-filter", null);
   }
   function handleTagChange(e) {
     setFilter(e.target.innerHTML);
+    localStorage.setItem("reading-filter", e.target.innerHTML);
+  }
+  function handleFavChange(e) {
+    if (e == true) {
+      localStorage.setItem("reading-fav", true);
+      setFav(true);
+    } else {
+      localStorage.setItem("reading-fav", null);
+      setFav(false);
+    }
   }
 
-  //set initial states
+  //set initial states when url has queries
   useEffect(() => {
     if (router.query.filter && router.query.filter !== filter) {
       setFilter(router.query.filter);
@@ -61,6 +73,27 @@ export default function ReadingList({ list }) {
       }
     }
   }, [router.query.favonly]);
+  //set initial state when url has no queries
+  useEffect(() => {
+    //preset filter when there's no filter in url, but data stored in local storage
+    if (router && !router.query.filter) {
+      let filterSelected = localStorage.getItem("reading-filter");
+      if (
+        filterSelected &&
+        filterSelected !== filter &&
+        filterSelected !== "null"
+      ) {
+        setFilter(filterSelected);
+      }
+    }
+    //set fav when no filter in url, but in the same session
+    if (router && !router.query.favonly) {
+      let favSelected = localStorage.getItem("reading-fav");
+      if (favSelected == "true") {
+        setFav(true);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     //cycle through scenarios and compose lists
@@ -166,7 +199,7 @@ export default function ReadingList({ list }) {
                   </button>
                 ))}
               </div>
-              <Settings status={fav} updateCheckbox={setFav} />
+              <Settings status={fav} updateCheckbox={handleFavChange} />
             </div>
 
             {currentList ? (

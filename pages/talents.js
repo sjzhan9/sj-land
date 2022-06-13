@@ -8,20 +8,6 @@ import Script from "next/script";
 import Settings from "../components/settings";
 
 export default function Talents({ list }) {
-  console.log(list);
-  useEffect(() => {
-    let thisPage = document.querySelector("#talentsPage");
-    let top = localStorage.getItem("talents-scroll");
-    if (top !== null) {
-      thisPage.scrollTop = top;
-    }
-    const handleScroll = () => {
-      localStorage.setItem("talents-scroll", thisPage.scrollTop);
-    };
-    thisPage.addEventListener("scroll", handleScroll);
-    return () => thisPage.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const description = "Incredible design talents that I keep an eye on.";
 
   //filtering logic depends on query params
@@ -30,19 +16,35 @@ export default function Talents({ list }) {
   //removing filter param triggers all and "overview"
   const router = useRouter();
   const [filter, setFilter] = React.useState(null);
-  const [fav, setFav] = React.useState(false);
+  const [fav, setFav] = React.useState(null);
   const [currentList, setCurrentList] = React.useState(null);
+
+  useEffect(() => {
+    let thisPage = document.querySelector("#talentsPage");
+    let top = sessionStorage.getItem("talents-scroll");
+    if (top !== null) {
+      thisPage.scrollTop = top;
+    }
+    const handleScroll = () => {
+      sessionStorage.setItem("talents-scroll", thisPage.scrollTop);
+    };
+    thisPage.addEventListener("scroll", handleScroll);
+    return () => thisPage.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  //logic should remember filter, fav setting, and it's very own scroll pos
 
   const filters = ["Product", "Brand", "Craft", "Design Engineer", "Agency"];
 
+  //handlers to handle filter and fav setting changes
   function removeFilter() {
-    setFilter(null);
+    setFilter("all");
   }
   function handleTagChange(e) {
     setFilter(e.target.innerHTML);
   }
 
-  //set initial states
+  //set initial states when url has queries
   useEffect(() => {
     if (router.query.filter && router.query.filter !== filter) {
       setFilter(router.query.filter);
@@ -50,64 +52,97 @@ export default function Talents({ list }) {
   }, [router.query.filter]);
   useEffect(() => {
     if (router.query.favonly) {
-      if (fav == false) {
+      if (fav !== true) {
         setFav(true);
       }
+    } else {
+      setFav(false);
     }
   }, [router.query.favonly]);
-
+  //set initial state when url has no queries
   useEffect(() => {
-    //cycle through scenarios and compose lists
-    let tempList = [];
-    if (filter && fav == false) {
-      router.push({
-        query: { filter: filter },
-      });
-      for (var i = 0; i < list.length; i++) {
-        if (
-          list[i].properties.Tags.multi_select[0].name ==
-          filter.replace("&amp;", "&")
-        ) {
-          tempList.push(list[i]);
-        }
-      }
-    } else if (filter && fav) {
-      router.push({
-        query: { filter: filter, favonly: fav },
-      });
-      for (var i = 0; i < list.length; i++) {
-        if (
-          list[i].properties.Tags.multi_select[0].name ==
-            filter.replace("&amp;", "&") &&
-          list[i].properties.Fav.checkbox == fav
-        ) {
-          tempList.push(list[i]);
-        }
-      }
-    } else if (filter == null && fav) {
-      router.push({
-        query: { favonly: fav },
-      });
-      for (var i = 0; i < list.length; i++) {
-        if (list[i].properties.Fav.checkbox == fav) {
-          tempList.push(list[i]);
-        }
-      }
-    } else {
-      router.push({
-        query: {},
-      });
-      for (var i = 0; i < list.length; i++) {
-        tempList.push(list[i]);
+    //preset filter when there's no filter in url, but data stored in local storage
+    if (router && router.query.filter == null) {
+      let filterSelected = sessionStorage.getItem("talents-filter");
+      if (filterSelected && filterSelected !== filter) {
+        setFilter(filterSelected);
+      } else {
+        setFilter("all");
       }
     }
-    setCurrentList(tempList);
+    //set fav when no filter in url, but in the same session
+    if (router && router.query.favonly == null) {
+      let favSelected = sessionStorage.getItem("talents-fav");
+      if (favSelected == "true") {
+        setFav(true);
+      } else {
+        setFav(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (filter && fav !== null) {
+      //cycle through scenarios and compose lists
+      let tempList = [];
+      if (filter !== "all" && !fav) {
+        router.push({
+          query: { filter: filter },
+        });
+        sessionStorage.setItem("talents-filter", filter);
+        sessionStorage.setItem("talents-fav", false);
+        for (var i = 0; i < list.length; i++) {
+          if (
+            list[i].properties.Tags.multi_select[0].name ==
+            filter.replace("&amp;", "&")
+          ) {
+            tempList.push(list[i]);
+          }
+        }
+      } else if (filter !== "all" && fav) {
+        router.push({
+          query: { filter: filter, favonly: fav },
+        });
+        sessionStorage.setItem("talents-filter", filter);
+        sessionStorage.setItem("talents-fav", true);
+        for (var i = 0; i < list.length; i++) {
+          if (
+            list[i].properties.Tags.multi_select[0].name ==
+              filter.replace("&amp;", "&") &&
+            list[i].properties.Fav.checkbox == fav
+          ) {
+            tempList.push(list[i]);
+          }
+        }
+      } else if (filter == "all" && fav) {
+        router.push({
+          query: { favonly: fav },
+        });
+        sessionStorage.setItem("talents-filter", "all");
+        sessionStorage.setItem("talents-fav", true);
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].properties.Fav.checkbox == fav) {
+            tempList.push(list[i]);
+          }
+        }
+      } else if (filter == "all" && !fav) {
+        router.push({
+          query: {},
+        });
+        sessionStorage.setItem("talents-filter", "all");
+        sessionStorage.setItem("talents-fav", false);
+        for (var i = 0; i < list.length; i++) {
+          tempList.push(list[i]);
+        }
+      }
+      setCurrentList(tempList);
+    }
   }, [filter, fav]);
 
   return (
     <>
       <Head>
-        <title>{"SJ's Talent List"}</title>
+        <title>{"SJ's Talents List"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
@@ -138,7 +173,7 @@ export default function Talents({ list }) {
                   onClick={removeFilter}
                   className={util.tab}
                   role="tab"
-                  aria-selected={filter ? null : "true"}
+                  aria-selected={filter == "all" ? "true" : null}
                 >
                   All
                 </button>
