@@ -1,10 +1,10 @@
-import styles from ".//talentsTile.module.css";
+import styles from ".//talentTile.module.css";
 import Image from "next/image";
 import util from "../../styles/util.module.css";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import React, { useState } from "react";
 
-export default function TalentsTile({
+export default function TalentTile({
   title,
   url,
   date,

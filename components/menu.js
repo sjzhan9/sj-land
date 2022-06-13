@@ -32,7 +32,7 @@ export default function Menu() {
             label="Reading List"
             shortcut="5"
           />
-          <NavLink svg="users" href="/talents" label="Talents" shortcut="6" />
+          <NavLink svg="users" href="/talent" label="Talent" shortcut="6" />
           <NavLink
             svg="newsletters"
             href="/newsletters"

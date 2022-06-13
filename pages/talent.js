@@ -1,15 +1,15 @@
 import Head from "next/head";
 import util from "../styles/util.module.css";
-import TalentsTile from "../components/tiles/talentsTile";
+import TalentTile from "../components/tiles/talentTile";
 const { Client } = require("@notionhq/client");
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import Settings from "../components/settings";
 
-export default function Talents({ list }) {
+export default function Talent({ list }) {
   const description =
-    "Incredible design talents that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
+    "Incredible design talent that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -21,13 +21,13 @@ export default function Talents({ list }) {
   const [currentList, setCurrentList] = React.useState(null);
 
   useEffect(() => {
-    let thisPage = document.querySelector("#talentsPage");
-    let top = sessionStorage.getItem("talents-scroll");
+    let thisPage = document.querySelector("#talentPage");
+    let top = sessionStorage.getItem("talent-scroll");
     if (top !== null) {
       thisPage.scrollTop = top;
     }
     const handleScroll = () => {
-      sessionStorage.setItem("talents-scroll", thisPage.scrollTop);
+      sessionStorage.setItem("talent-scroll", thisPage.scrollTop);
     };
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
@@ -64,7 +64,7 @@ export default function Talents({ list }) {
   useEffect(() => {
     //preset filter when there's no filter in url, but data stored in local storage
     if (router && router.query.filter == null) {
-      let filterSelected = sessionStorage.getItem("talents-filter");
+      let filterSelected = sessionStorage.getItem("talent-filter");
       if (filterSelected && filterSelected !== filter) {
         setFilter(filterSelected);
       } else {
@@ -73,7 +73,7 @@ export default function Talents({ list }) {
     }
     //set fav when no filter in url, but in the same session
     if (router && router.query.favonly == null) {
-      let favSelected = sessionStorage.getItem("talents-fav");
+      let favSelected = sessionStorage.getItem("talent-fav");
       if (favSelected == "true") {
         setFav(true);
       } else {
@@ -90,8 +90,8 @@ export default function Talents({ list }) {
         router.push({
           query: { filter: filter },
         });
-        sessionStorage.setItem("talents-filter", filter);
-        sessionStorage.setItem("talents-fav", false);
+        sessionStorage.setItem("talent-filter", filter);
+        sessionStorage.setItem("talent-fav", false);
         for (var i = 0; i < list.length; i++) {
           if (
             list[i].properties.Tags.multi_select[0].name ==
@@ -104,8 +104,8 @@ export default function Talents({ list }) {
         router.push({
           query: { filter: filter, favonly: fav },
         });
-        sessionStorage.setItem("talents-filter", filter);
-        sessionStorage.setItem("talents-fav", true);
+        sessionStorage.setItem("talent-filter", filter);
+        sessionStorage.setItem("talent-fav", true);
         for (var i = 0; i < list.length; i++) {
           if (
             list[i].properties.Tags.multi_select[0].name ==
@@ -119,8 +119,8 @@ export default function Talents({ list }) {
         router.push({
           query: { favonly: fav },
         });
-        sessionStorage.setItem("talents-filter", "all");
-        sessionStorage.setItem("talents-fav", true);
+        sessionStorage.setItem("talent-filter", "all");
+        sessionStorage.setItem("talent-fav", true);
         for (var i = 0; i < list.length; i++) {
           if (list[i].properties.Fav.checkbox == fav) {
             tempList.push(list[i]);
@@ -130,8 +130,8 @@ export default function Talents({ list }) {
         router.push({
           query: {},
         });
-        sessionStorage.setItem("talents-filter", "all");
-        sessionStorage.setItem("talents-fav", false);
+        sessionStorage.setItem("talent-filter", "all");
+        sessionStorage.setItem("talent-fav", false);
         for (var i = 0; i < list.length; i++) {
           tempList.push(list[i]);
         }
@@ -143,7 +143,7 @@ export default function Talents({ list }) {
   return (
     <>
       <Head>
-        <title>{"SJ's Talents List"}</title>
+        <title>{"SJ's Talent List"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
@@ -162,9 +162,9 @@ export default function Talents({ list }) {
         `}
       </Script>
 
-      <main className={util.page} id="talentsPage">
+      <main className={util.page} id="talentPage">
         <div className={util.pageColumn}>
-          <h1 className={util.header}>Talents</h1>
+          <h1 className={util.header}>Talent</h1>
           <p className={util.description}>{description}</p>
 
           <ul className={util.list}>
@@ -206,7 +206,7 @@ export default function Talents({ list }) {
                 </div>
               ) : (
                 currentList.map((link) => (
-                  <TalentsTile
+                  <TalentTile
                     key={link.id}
                     title={link.properties.Name.title[0].plain_text}
                     url={link.properties.URL.url}
