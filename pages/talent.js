@@ -93,11 +93,17 @@ export default function Talent({ list }) {
         sessionStorage.setItem("talent-filter", filter);
         sessionStorage.setItem("talent-fav", false);
         for (var i = 0; i < list.length; i++) {
-          if (
-            list[i].properties.Tags.multi_select[0].name ==
-            filter.replace("&amp;", "&")
+          for (
+            var j = 0;
+            j < list[i].properties.Tags.multi_select.length;
+            j++
           ) {
-            tempList.push(list[i]);
+            if (
+              list[i].properties.Tags.multi_select[j].name ==
+              filter.replace("&amp;", "&")
+            ) {
+              tempList.push(list[i]);
+            }
           }
         }
       } else if (filter !== "all" && fav) {
@@ -107,12 +113,18 @@ export default function Talent({ list }) {
         sessionStorage.setItem("talent-filter", filter);
         sessionStorage.setItem("talent-fav", true);
         for (var i = 0; i < list.length; i++) {
-          if (
-            list[i].properties.Tags.multi_select[0].name ==
-              filter.replace("&amp;", "&") &&
-            list[i].properties.Fav.checkbox == fav
+          for (
+            var j = 0;
+            j < list[i].properties.Tags.multi_select.length;
+            j++
           ) {
-            tempList.push(list[i]);
+            if (
+              list[i].properties.Tags.multi_select[j].name ==
+                filter.replace("&amp;", "&") &&
+              list[i].properties.Fav.checkbox == fav
+            ) {
+              tempList.push(list[i]);
+            }
           }
         }
       } else if (filter == "all" && fav) {
