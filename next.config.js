@@ -8,6 +8,15 @@ const nextConfig = {
       "amazonaws.com",
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/book",
+        destination: "https://calendly.com/sjcompound/30min",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
