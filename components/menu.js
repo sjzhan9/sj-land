@@ -32,21 +32,27 @@ export default function Menu() {
             label="Reading List"
             shortcut="5"
           />
-          <NavLink svg="users" href="/talent" label="Talent" shortcut="6" />
+          <NavLink
+            svg="shopping-bag"
+            href="/goods"
+            label="Goods"
+            shortcut="6"
+          />
+          <NavLink svg="users" href="/talent" label="Talent" shortcut="7" />
           <NavLink
             svg="newsletters"
             href="/newsletters"
             label="Newsletters"
-            shortcut="7"
+            shortcut="8"
           />
           <NavLink
             svg="podcasts"
             href="/podcasts"
             label="Podcasts"
-            shortcut="8"
+            shortcut="9"
           />
           <p className={styles.divider}>Stay in touch</p>
-          <Contact svg="chat" label="Contact" shortcut="9" />
+          <Contact svg="chat" label="Contact" shortcut="0" />
           <NavLink
             svg="twitter"
             href="https://twitter.com/sjzhang_"
