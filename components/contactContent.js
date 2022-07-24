@@ -42,7 +42,7 @@ export default function ContactContent({ inModal }) {
 
         <div className={styles.buttonPair}>
           <a
-            className={styles.button + " " + styles.rightBorder}
+            className={util.button + " " + styles.rightBorder}
             href="mailto:hi.sj.zhang@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -59,9 +59,9 @@ export default function ContactContent({ inModal }) {
                 fill="#909090"
               />
             </svg>
-            <span className={styles.buttonText}>Compose</span>
+            <span className={util.iconButtonText}>Compose</span>
           </a>
-          <button onClick={updateClipboard} className={styles.button}>
+          <button onClick={updateClipboard} className={util.button}>
             <svg
               width="18"
               height="18"
@@ -74,7 +74,7 @@ export default function ContactContent({ inModal }) {
                 fill="#909090"
               />
             </svg>
-            <span className={styles.buttonText} id="copy-text">
+            <span className={util.iconButtonText} id="copy-text">
               Copy
             </span>
           </button>
@@ -93,11 +93,7 @@ export default function ContactContent({ inModal }) {
             target="_blank"
             rel="noopener noreferrer"
             className={
-              styles.button +
-              " " +
-              styles.singleButton +
-              " " +
-              styles.buttonText
+              util.button + " " + util.singleButton + " " + util.iconButtonText
             }
           >
             Book 30 mins
@@ -105,11 +101,7 @@ export default function ContactContent({ inModal }) {
         ) : (
           <PopupButton
             className={
-              styles.singleButton +
-              " " +
-              styles.button +
-              " " +
-              styles.buttonText
+              util.singleButton + " " + util.button + " " + util.iconButtonText
             }
             url="https://calendly.com/sjcompound/30min"
             /*
@@ -141,7 +133,7 @@ export default function ContactContent({ inModal }) {
               width={18}
               alt="twitter"
             />
-            <span className={styles.buttonText}>Twitter</span>
+            <span className={util.iconButtonText}>Twitter</span>
           </a>
           <a
             className={styles.textButton}
@@ -157,7 +149,7 @@ export default function ContactContent({ inModal }) {
               width={18}
               alt="linkedin"
             />
-            <span className={styles.buttonText}>LinkedIn</span>
+            <span className={util.iconButtonText}>LinkedIn</span>
           </a>
         </div>
       </div>

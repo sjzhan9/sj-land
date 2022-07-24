@@ -78,7 +78,7 @@ export default function Investments() {
 
               {" or some other investors who write larger checks."}
             </p>
-            <span className={util.badge}>{"Last updated Jun 12, 2022"}</span>
+            <span className={util.badge}>{"Last updated Jul 24, 2022"}</span>
           </div>
 
           <ul className={util.list}>
@@ -149,6 +149,13 @@ export default function Investments() {
               url="https://www.shopify.com"
             />
             <InvestmentTile
+              icon="tsla"
+              title="Tesla"
+              content="Cool car, robots and AI. Don't really know why I own."
+              entry="Jul 2022 · $670"
+              url="https://www.tesla.com/"
+            />
+            <InvestmentTile
               icon="real"
               title="The Real Real"
               content="Betting on consumer spending on “going out fashion” post pandemic and buying second-hand due to decreased spending power during the recession."
@@ -191,6 +198,13 @@ export default function Investments() {
               entry="Nov 2021 · $72"
               url="https://www.avax.network"
             /> */}
+            <InvestmentTile
+              icon="dydx"
+              title="DYDX"
+              content="Betting on crypto trading volume resurging."
+              entry="Jul 2022 · $2.00"
+              url="https://dydx.exchange/"
+            />
             <InvestmentTile
               icon="sq"
               title="Block"
