@@ -1,6 +1,7 @@
 // pages/404.js
 import Head from "next/head";
 import util from "../styles/util.module.css";
+import Link from "next/link";
 
 export default function Custom404() {
   return (
@@ -17,12 +18,14 @@ export default function Custom404() {
             404
           </h1>
           <p className={util.description}>Page not found</p>
-          <button
-            className={util.singleButton + " " + util.button}
-            style={{ marginTop: "1.25rem" }}
-          >
-            <span className={util.buttonText}>Go to Home</span>
-          </button>
+          <Link href="/">
+            <button
+              className={util.singleButton + " " + util.button}
+              style={{ marginTop: "1.25rem" }}
+            >
+              <span className={util.buttonText}>Go to Home</span>
+            </button>
+          </Link>
         </div>
       </main>
     </>
