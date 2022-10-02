@@ -11,12 +11,8 @@ export default function GoodsTile({
   tags,
   thumbnailUrl,
   price,
+  brand,
 }) {
-  // let displayUrl = url
-  //   .replace("https://www.", "")
-  //   .replace("http://www.", "")
-  //   .replace("https://", "")
-  //   .replace("http://", "");
   return (
     <a
       href={url}
@@ -24,7 +20,7 @@ export default function GoodsTile({
       rel="noopener noreferrer"
       className={styles.container}
     >
-      {fav ? (
+      {/* {fav ? (
         <Tooltip.Provider delayDuration={300}>
           <Tooltip.Root>
             <Tooltip.Trigger asChild>
@@ -52,35 +48,19 @@ export default function GoodsTile({
             </Tooltip.Content>
           </Tooltip.Root>
         </Tooltip.Provider>
-      ) : null}
+      ) : null} */}
       <img
         src={thumbnailUrl}
         alt="product image"
         className={styles.image}
       ></img>
-      {/* <div className={styles.icon}>
-        <Image
-          unoptimized
-          onError="this.src='/feature/link.svg'"
-          src={
-            "https://s2.googleusercontent.com/s2/favicons?domain_url=" +
-            url +
-            "&sz=64"
-          }
-          height={16}
-          width={16}
-          alt="url favicon"
-        ></Image>
-      </div> */}
 
-      <div className={styles.row}>
+      <div className={styles.col}>
         <div>
           <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
           <span className={styles.externalIcon}>↗</span>
         </div>
-        <p className={styles.price}>{"$" + price}</p>
-
-        {/* <p className={styles.url + " " + util.hiddenOnMobile}>{displayUrl}</p> */}
+        <p className={styles.brand}>{brand}</p>
       </div>
       {/* <div className={util.tags + " " + util.flexRow}>
           {tags

@@ -5,6 +5,7 @@ import Background from "../components/background";
 import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
 import React, { useEffect } from "react";
+import { grass } from "@radix-ui/colors";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
           },
         }}
       />
+      <div className="base"></div>
       <Background />
       <Menu />
       <Component {...pageProps} />

@@ -8,8 +8,8 @@ import Script from "next/script";
 import Settings from "../components/settings";
 
 export default function Goods({ list }) {
-  console.log(list);
-  const description = "Stuff SJ owns or seriously considered buying.";
+  const description =
+    "With a high bar for build quality, aesthetic, and usability. Here are some of the goods that I own or researched.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -33,7 +33,7 @@ export default function Goods({ list }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const filters = ["Watch", "Fashion Accessory", "Design", "Tech"];
+  const filters = ["Tech", "Home", "Workspace", "Watches", "Fashion"];
 
   //handlers to handle filter and fav setting changes
   function removeFilter() {
@@ -174,11 +174,15 @@ export default function Goods({ list }) {
 
       <main className={util.page} id="goodsPage">
         <div className={util.goodsColumn}>
-          <h1 className={util.header}>Aesthetic Goods</h1>
-          <p className={util.description}>{description}</p>
+          <div className={util.goodsTopContainer}>
+            <div className={util.projectTopLeft}>
+              <h1 className={util.goodsHeader}>Aesthetic Goods</h1>
+            </div>
+            <p className={util.goodsDescription}>{description}</p>
+          </div>
 
           <div className={util.tabBar}>
-            <div className={util.flexRow}>
+            <div className={util.tabRow}>
               <button
                 onClick={removeFilter}
                 className={util.tab}
@@ -224,6 +228,7 @@ export default function Goods({ list }) {
                     tags={link.properties.Tags.multi_select}
                     thumbnailUrl={link.properties.Thumbnail.files[0].file.url}
                     price={link.properties.Price.number}
+                    brand={link.properties.Brand.rich_text[0].plain_text}
                   />
                 ))}
               </ul>

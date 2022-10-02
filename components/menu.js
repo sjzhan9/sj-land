@@ -9,7 +9,15 @@ export default function Menu() {
   return (
     <div className={styles.container}>
       <div className={styles.upper}>
-        <h3 className={util.siteTitle}>SJ Zhang</h3>
+        {/* <h3 className={util.siteTitle}>SJ Zhang</h3> */}
+        <Link href="/">
+          <img
+            className={util.hiddenOnMobile + " " + util.pointer + " logoInvert"}
+            src="/logo.png"
+            alt="site logo"
+          ></img>
+        </Link>
+
         <nav className={styles.nav}>
           <NavLink svg="recents" href="/" label="Recents" shortcut="1" />
           <NavLink svg="about" href="/about" label="About" shortcut="2" />

@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: center;
   height: 1.75rem;
-  width: 76.4686px;
+  width: 74.07px;
   font-size: 0.825rem;
   font-weight: 500;
   color: var(--menuLabel);
@@ -64,7 +64,7 @@
   position: absolute;
   display: flex;
   height: 1.75rem;
-  width: 76.4686px;
+  width: 74.07px;
   background-color: var(--highlight);
 
   z-index: 1;

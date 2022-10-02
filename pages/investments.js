@@ -50,7 +50,7 @@ export default function Investments() {
 
             <p>
               {
-                "With public equity, I invest in a basket of 5-20 stocks at any given time. With crypto, I’m heavy in Ethereal and Solana, and tend hold positions in 1-5 smaller cap assets."
+                "With public equity, I invest in 5-20 stocks at any given time. With crypto, I’m heavy in Ethereal and Solana, and tend hold positions in 1-5 smaller cap tokens."
               }
             </p>
             <p>
@@ -139,6 +139,7 @@ export default function Investments() {
               entry="Feb 2018 · $40.5"
               url="https://www.apple.com"
             />
+
             <InvestmentTile
               icon="shop"
               title="Shopify"
@@ -147,6 +148,15 @@ export default function Investments() {
               }
               entry="Feb 2018 · $126"
               url="https://www.shopify.com"
+            />
+            <InvestmentTile
+              icon="lmnd"
+              title="Lemonage"
+              content={
+                "Betting on the Insurtech company surviving the recession and come out stronger."
+              }
+              entry="Aug 2022 · $18"
+              url="https://www.lemonade.com"
             />
             <InvestmentTile
               icon="tsla"
@@ -161,6 +171,24 @@ export default function Investments() {
               content="Betting on consumer spending on “going out fashion” post pandemic and buying second-hand due to decreased spending power during the recession."
               entry="May 2022 · $119"
               url="https://www.therealreal.com"
+            />
+            <InvestmentTile
+              icon="adbe"
+              title="Adobe"
+              content={
+                "Betting on the Insurtech company surviving the recession and come out stronger."
+              }
+              entry="Sep 2022 · $280"
+              url="https://www.adobe.com"
+            />
+            <InvestmentTile
+              icon="dis"
+              title="Disney"
+              content={
+                "Betting on Disney+ growth and how it contributes to the overall brand affinity we have with Disney."
+              }
+              entry="Sep 2022 · $100"
+              url="https://www.disney.com"
             />
             {/* <InvestmentTile
               icon="docu"
@@ -198,13 +226,13 @@ export default function Investments() {
               entry="Nov 2021 · $72"
               url="https://www.avax.network"
             /> */}
-            <InvestmentTile
+            {/* <InvestmentTile
               icon="dydx"
               title="DYDX"
               content="Betting on crypto trading volume resurging."
               entry="Jul 2022 · $2.00"
               url="https://dydx.exchange/"
-            />
+            /> */}
             <InvestmentTile
               icon="sq"
               title="Block"

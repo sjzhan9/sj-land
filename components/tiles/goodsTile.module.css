@@ -20,16 +20,34 @@
   min-width: 0;
   padding: 0.75rem 0.25rem;
 }
+.col {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0rem 0rem;
+}
 .image {
   object-fit: cover;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
+  background-color: #f8f8f8;
+  /* border: 1px solid rgba(125, 125, 125, 0.01); */
 }
 .price {
   color: var(--gray10);
   font-size: var(--font-l);
   font-weight: 390;
+}
+.title {
+  color: var(--gray12);
+  font-size: var(--font-m);
+  font-weight: 390;
+}
+.brand {
+  color: var(--gray10);
+  font-size: var(--font-s);
+  font-weight: 390;
+  margin-top: 0.125rem;
 }
 .icon {
   border-radius: 3px;
@@ -84,8 +102,5 @@
     width: 100%;
 
     max-width: 100%;
-  }
-  .container {
-    padding: 1rem 3rem 1rem 1.25rem;
   }
 }

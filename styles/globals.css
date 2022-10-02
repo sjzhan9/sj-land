@@ -11,6 +11,11 @@
 
   font-weight: 100 900;
 }
+/* @font-face {
+  font-family: "Caveat";
+  src: url("/fonts/Caveat-VariableFont_wght.ttf");
+  font-weight: 400 700;
+} */
 @import url("https://rsms.me/inter/inter.css");
 html {
   font-family: "Inter", sans-serif;
@@ -22,31 +27,34 @@ html {
   }
 }
 
+/* @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"); */
+
 :root {
   --font-sans: Aktiv Grotesk;
-  /* --font-serif: Blanco; */
-
   --font-l: 14.9px;
   --font-m: 13.7px;
   --font-s: 12.3px;
 
-  --appbg: rgb(252, 252, 252);
+  --appbg: rgb(248, 248, 248);
   --bg: white;
   --bgSticky: rgba(255, 255, 255, 0.746);
 
   --menu: rgba(255, 255, 255, 0.452);
   --menuLabel: rgba(0, 0, 0, 0.825);
 
-  --highlight: rgba(255, 255, 255, 0.589);
-  --highlighthover: rgba(255, 255, 255, 0.5);
-  --highlightActiveBorder: rgba(0, 0, 0, 0.08);
-  --tabbg: rgba(0, 0, 0, 0.071);
-  --tabText: rgba(0, 0, 0, 0.344);
+  --highlight: rgba(255, 255, 255, 0.95);
+  /* --highlight: rgba(0, 0, 0, 0.06); */
+  --highlighthover: rgba(0, 0, 0, 0.04);
+  --highlightActiveBorder: rgba(0, 0, 0, 0.064);
+  --tabbg: rgba(0, 0, 0, 0.04);
+  --tabText: rgba(0, 0, 0, 0.32);
 
   --linkContainerBg: rgb(255, 255, 255);
   --linkContainerBorder: rgb(245, 245, 245);
   --linkContainerBgHover: rgb(243, 243, 243);
   --linkContainerBorderHover: rgb(230, 230, 230);
+
+  --tabBorder: rgb(240, 240, 240);
 
   --overlayDarkness: rgba(0 0 0 / 0.3);
   --modalBg: rgb(255, 255, 255);
@@ -63,7 +71,7 @@ html {
 
 .dark-theme {
   /* Remap your colors for dark mode */
-  --appbg: rgb(26, 26, 26);
+  --appbg: rgb(32, 32, 32);
   --bg: rgb(16, 16, 16);
   --bgSticky: rgba(16, 16, 16, 0.746);
 
@@ -72,13 +80,15 @@ html {
   --highlight: rgba(255, 255, 255, 0.1);
   --highlighthover: rgba(255, 255, 255, 0.05);
   --highlightActiveBorder: rgba(255, 255, 255, 0.04);
-  --tabbg: rgba(255, 255, 255, 0.08);
+  --tabbg: rgba(255, 255, 255, 0.06);
   --tabText: rgba(255, 255, 255, 0.372);
 
   --linkContainerBg: rgb(21, 21, 21);
   --linkContainerBorder: rgb(26, 26, 26);
   --linkContainerBgHover: rgb(42, 42, 42);
   --linkContainerBorderHover: rgb(45, 45, 45);
+
+  --tabBorder: rgb(44, 44, 44);
 
   --overlayDarkness: rgba(0 0 0 / 0.65);
   --modalBg: rgb(28, 28, 28);
@@ -92,7 +102,7 @@ html {
   height: 100%;
   left: 0px;
   top: 0px;
-  opacity: 0.08;
+  opacity: 0.04;
   z-index: -1;
   height: 100%;
 }
@@ -100,9 +110,30 @@ html {
 .dark-theme .bg {
   opacity: 0.08;
 }
+
+.base {
+  background-color: var(--appbg);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: -2;
+}
 .dark-theme .iconInvert {
   filter: invert(1);
   transition: color 0.2s ease;
+}
+
+.logoInvert {
+  width: 130px;
+  margin: 1.775rem 0rem 0.75rem 0.975rem;
+  transition: color 0.2s ease;
+  opacity: 0.9;
+  -webkit-user-drag: none;
+}
+.dark-theme .logoInvert {
+  filter: invert(1);
 }
 
 html,

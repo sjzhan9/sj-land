@@ -181,7 +181,7 @@ export default function Talent({ list }) {
 
           <ul className={util.list}>
             <div className={util.tabBar}>
-              <div className={util.flexRow}>
+              <div className={util.tabRow}>
                 <button
                   onClick={removeFilter}
                   className={util.tab}
