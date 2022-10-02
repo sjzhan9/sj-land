@@ -253,7 +253,7 @@ export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_TALENTS_ID,
+    database_id: process.env.NOTION_TALENT_ID,
     filter: {
       and: [
         {
