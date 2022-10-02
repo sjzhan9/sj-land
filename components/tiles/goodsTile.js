@@ -20,7 +20,7 @@ export default function GoodsTile({
       rel="noopener noreferrer"
       className={styles.container}
     >
-      {/* {fav ? (
+      {fav ? (
         <Tooltip.Provider delayDuration={300}>
           <Tooltip.Root>
             <Tooltip.Trigger asChild>
@@ -48,7 +48,7 @@ export default function GoodsTile({
             </Tooltip.Content>
           </Tooltip.Root>
         </Tooltip.Provider>
-      ) : null} */}
+      ) : null}
       <img
         src={thumbnailUrl}
         alt="product image"

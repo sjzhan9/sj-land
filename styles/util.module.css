@@ -44,7 +44,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 .projectTopContainer {
   padding: 1.375rem;
