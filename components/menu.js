@@ -43,7 +43,7 @@ export default function Menu() {
           <NavLink
             svg="shopping-bag"
             href="/goods"
-            label="Goods"
+            label="Aesthetic Goods"
             shortcut="6"
           />
           <NavLink svg="users" href="/talent" label="Talent" shortcut="7" />

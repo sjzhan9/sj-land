@@ -153,7 +153,7 @@ export default function Goods({ list }) {
   return (
     <>
       <Head>
-        <title>{"SJ's List of Aesthetic Goods"}</title>
+        <title>{"Aesthetic Goods"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
