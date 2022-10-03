@@ -153,7 +153,7 @@ export default function Investments() {
               icon="lmnd"
               title="Lemonade"
               content={
-                "Betting on the Insurtech company surviving the recession and come out stronger."
+                "Betting on the Insurtech company surviving the recession and coming out stronger."
               }
               entry="Aug 2022 · $18"
               url="https://www.lemonade.com"
