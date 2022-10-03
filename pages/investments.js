@@ -151,7 +151,7 @@ export default function Investments() {
             />
             <InvestmentTile
               icon="lmnd"
-              title="Lemonage"
+              title="Lemonade"
               content={
                 "Betting on the Insurtech company surviving the recession and come out stronger."
               }
