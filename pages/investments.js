@@ -78,7 +78,7 @@ export default function Investments() {
 
               {" or some other investors who write larger checks."}
             </p>
-            <span className={util.badge}>{"Last updated Jul 24, 2022"}</span>
+            <span className={util.badge}>{"Last updated Oct 3, 2022"}</span>
           </div>
 
           <ul className={util.list}>
