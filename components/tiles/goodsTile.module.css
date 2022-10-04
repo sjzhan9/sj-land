@@ -30,7 +30,7 @@
   width: 100%;
   aspect-ratio: 1;
   /* border-radius: 0.5rem; */
-  background-color: #f8f8f8;
+  background-color: var(--linkContainerBgHover);
   /* border: 1px solid rgba(125, 125, 125, 0.01); */
 }
 .price {
