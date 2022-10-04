@@ -175,9 +175,7 @@ export default function Investments() {
             <InvestmentTile
               icon="adbe"
               title="Adobe"
-              content={
-                "Betting on the Insurtech company surviving the recession and come out stronger."
-              }
+              content={"Very bullish if the Figma acquisition go through."}
               entry="Sep 2022 · $280"
               url="https://www.adobe.com"
             />
