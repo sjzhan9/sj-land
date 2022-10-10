@@ -2,13 +2,9 @@ import styles from "../components/contactContent.module.css";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import util from "../styles/util.module.css";
-// import { PopupButton } from "react-calendly";
 import toast, { Toaster } from "react-hot-toast";
-import MyCal from "./myCal";
 
-export default function ContactContent({ inModal }) {
-  const [thisDocument, setThisDocument] = React.useState(false);
-
+export default function ContactContent() {
   //copy feature start
   function updateClipboard(e) {
     navigator.clipboard.writeText("hi.sj.zhang@gmail.com").then(
@@ -21,17 +17,6 @@ export default function ContactContent({ inModal }) {
     );
   }
   //copy feature end
-
-  // useEffect(() => {
-  //   if (document) {
-  //     // setThisDocument(document.getElementById("__next"));
-  //     setThisDocument(document.body);
-  //   }
-  //   // navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-  //   //   if (result.state == "granted" || result.state == "prompt") {
-  //   //   }
-  //   // });
-  // }, []);
 
   return (
     <>
@@ -88,22 +73,17 @@ export default function ContactContent({ inModal }) {
             {"If you want advice, it's easier to chat live"}
           </p>
         </div>
-        {inModal == "true" ? (
-          <a
-            href="https://cal.com/sjzhang/15min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={
-              util.button + " " + util.singleButton + " " + util.iconButtonText
-            }
-          >
-            Book a time
-          </a>
-        ) : (
-          <MyCal />
-        )}
+        <a
+          href="https://cal.com/sjzhang/15min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={
+            util.button + " " + util.singleButton + " " + util.iconButtonText
+          }
+        >
+          Book
+        </a>
       </div>
-
       <div className={styles.row}>
         <div className={styles.stack}>
           <p className={styles.mainText}>Stay in touch</p>
@@ -147,32 +127,3 @@ export default function ContactContent({ inModal }) {
     </>
   );
 }
-
-//below is the button for calendly modal
-//  {
-//    inModal == "true" ? (
-//      <a
-//        href="https://calendly.com/sjcompound/30min"
-//        target="_blank"
-//        rel="noopener noreferrer"
-//        className={
-//          util.button + " " + util.singleButton + " " + util.iconButtonText
-//        }
-//      >
-//        Book 30 mins
-//      </a>
-//    ) : (
-//      <PopupButton
-//        className={
-//          util.singleButton + " " + util.button + " " + util.iconButtonText
-//        }
-//        url="https://calendly.com/sjcompound/30min"
-//        /*
-//         * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-//         * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-//         */
-//        rootElement={thisDocument}
-//        text="Book 30 mins"
-//      ></PopupButton>
-//    );
-//  }

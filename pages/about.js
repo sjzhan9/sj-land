@@ -304,7 +304,7 @@ export default function About() {
               <h2 style={{ margin: "4rem 0rem -0.5rem 0rem" }}>Contact</h2>
             </div>
             <div className={util.inset}>
-              <ContactContent inModal="false" />
+              <ContactContent />
             </div>
           </div>
         </div>
