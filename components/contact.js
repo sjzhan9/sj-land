@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
 import util from "../styles/util.module.css";
-import { PopupButton } from "react-calendly";
 import ContactContent from "./contactContent";
 import * as Tooltip from "@radix-ui/react-tooltip";
 

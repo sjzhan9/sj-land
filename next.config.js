@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         source: "/book",
-        destination: "https://calendly.com/sjcompound/30min",
+        destination: "https://cal.com/sjzhang",
         permanent: true,
       },
     ];
