@@ -487,6 +487,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: var(--font-m);
 }
 .button:hover {
   background-color: var(--gray4);
@@ -541,6 +542,59 @@
   background-color: var(--modalBg);
   box-shadow: hsl(206 22% 7% / 60%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 30%) 0px 10px 20px -15px;
+}
+.homeSectionContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: -1rem;
+}
+.homeSectionTitle {
+  font-size: 1.25rem;
+  line-height: 170%;
+  font-weight: 550;
+  color: var(--gray12);
+  margin-bottom: 0.75rem;
+  transition: color 0.25s ease;
+}
+.homeLinkBotton {
+  font-size: var(--font-s);
+  /* font-weight: 550; */
+  color: var(--gray9);
+  transition: color 0.25s ease;
+}
+.swimlane {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0rem;
+  gap: 1rem;
+  align-items: stretch;
+}
+.arrowLeft {
+  background-image: url("/util/chevron-left.svg");
+  width: 24px;
+  height: 24px;
+}
+.arrowLeftDisabled {
+  background-image: url("/util/chevron-left.svg");
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+.arrowRight {
+  background-image: url("/util/chevron-right.svg");
+  width: 24px;
+  height: 24px;
+}
+.arrowRightDisabled {
+  background-image: url("/util/chevron-right.svg");
+  width: 24px;
+  height: 24px;
+  opacity: 0;
 }
 @media (prefers-reduced-motion: no-preference) {
   .popover {

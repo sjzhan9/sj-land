@@ -5,8 +5,10 @@ import util from "../styles/util.module.css";
 import ContactContent from "../components/contactContent";
 import ExpTile from "../components/tiles/expTile";
 import Script from "next/script";
+const { Client } = require("@notionhq/client");
+import Tile from "../components/tiles/tile";
 
-export default function About() {
+export default function About({ list }) {
   useEffect(() => {
     let thisPage = document.querySelector("#aboutPage");
     let top = sessionStorage.getItem("about-scroll");
@@ -21,7 +23,7 @@ export default function About() {
   }, []);
 
   const description =
-    "A summary of me, my interests, my design career, and why/how this site was built.";
+    "I’m a designer and developer by training and trade. I spend most of my spare time reading about business, finance and crypto. If this combination interests you, welcome to my corner of the internet. This is where I share my reading list, investment updates, and software adventures.";
   return (
     <>
       <Head>
@@ -212,6 +214,26 @@ export default function About() {
                 }
               />
             </div>
+
+            <div className={util.read}>
+              <h2 style={{ margin: "4rem 0rem 0rem 0rem" }}>Updates</h2>
+            </div>
+
+            <ul className={util.list} style={{ margin: "0rem 0rem 0rem 0rem" }}>
+              {list.map((item) => (
+                <Tile
+                  key={item.id}
+                  internalUrl={item.properties.Path.url}
+                  logoUrl={item.properties.Logo.files[0].file.url}
+                  title={item.properties.Name.title[0].plain_text}
+                  content={item.properties.Body.rich_text[0].plain_text}
+                  url={item.properties.URL.url}
+                  date={item.properties.Time.date.start}
+                  tags={item.properties.Tags.multi_select}
+                />
+              ))}
+            </ul>
+
             <div className={util.read}>
               <h2>This Site</h2>
 
@@ -311,4 +333,35 @@ export default function About() {
       </main>
     </>
   );
+}
+//notion API
+export async function getStaticProps() {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+
+  const response = await notion.databases.query({
+    database_id: process.env.NOTION_RECENTS_ID,
+    filter: {
+      and: [
+        {
+          property: "Display",
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
+    },
+    sorts: [
+      {
+        property: "Time",
+        direction: "descending",
+      },
+    ],
+  });
+
+  return {
+    props: {
+      list: response.results,
+    },
+    revalidate: 60,
+  };
 }
