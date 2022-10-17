@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  transition: background-color 0.15s ease, border 0.15s ease;
+  margin: 1.5rem 0rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.expandRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.75rem 0.25rem;
+}
+.image {
+  border-radius: 6px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.type {
+  margin-top: 0.25rem;
+  font-size: var(--font-s);
+  font-weight: 390;
+  color: var(--gray9);
+}

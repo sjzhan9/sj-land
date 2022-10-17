@@ -25,13 +25,11 @@
 }
 .pageColumn {
   padding: 4rem 0rem;
-
-  max-width: 38rem;
+  max-width: 40rem;
   width: 100%;
 }
 .projectColumn {
   padding: 0rem 0rem 3rem;
-
   max-width: 1200px;
   width: 100%;
   display: flex;
@@ -330,6 +328,17 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.inlineCTA {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--linkContainerBgHover);
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0rem -2rem;
+  justify-content: space-between;
+}
 .tabRow {
   display: flex;
   flex-direction: row;
@@ -498,6 +507,27 @@
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
   transition: border 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.secondaryButton {
+  background-color: var(--linkContainerBgHover);
+  border: 1px solid var(--gray5);
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: border 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.secondaryButton:hover {
+  background-color: var(--linkContainerBorderHover);
+}
+.primaryButton {
+  background-color: var(--gray12);
+  color: var(--gray1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: opacity 0.15s ease;
+}
+.primaryButton:hover {
+  opacity: 0.85;
+  background-color: var(--gray12);
 }
 .popover {
   border-radius: 5px;
