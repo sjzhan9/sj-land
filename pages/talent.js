@@ -190,9 +190,11 @@ export default function Talent({ list }) {
             </div>
             <a
               className={util.button + " " + util.primaryButton}
-              href="mailto:hi.sj.zhang@gmail.com?subject=I'm%20open%20to%20new%20opportunities&body=Name%3A%0D%0APortfolio%3A%0D%0ALinkedin%3A%0D%0ATwitter%3A"
+              href={
+                "mailto:hi.sj.zhang@gmail.com?subject=I'm%20open%20to%20new%20opportunities&body=Name%3A%0D%0APortfolio%3A%0D%0ALinkedin%3A%0D%0ATwitter%3A"
+              }
             >
-              I'm Open
+              {"I'm Open"}
             </a>
           </div>
 
