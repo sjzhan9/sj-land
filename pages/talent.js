@@ -179,6 +179,23 @@ export default function Talent({ list }) {
           <h1 className={util.header}>Talent</h1>
           <p className={util.description}>{description}</p>
 
+          <div className={util.inlineCTA}>
+            <div>
+              <h3 className={util.tileTitle}>Open to new opportunities?</h3>
+              <p className={util.tileContent}>
+                {
+                  "Many founders ask me for intros to designers. If you are looking for something new, let me know."
+                }
+              </p>
+            </div>
+            <a
+              className={util.button + " " + util.primaryButton}
+              href="mailto:hi.sj.zhang@gmail.com?subject=I'm%20open%20to%20new%20opportunities&body=Name%3A%0D%0APortfolio%3A%0D%0ALinkedin%3A%0D%0ATwitter%3A"
+            >
+              I'm Open
+            </a>
+          </div>
+
           <ul className={util.list}>
             <div className={util.tabBar}>
               <div className={util.tabRow}>

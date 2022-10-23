@@ -44,6 +44,7 @@
   flex-direction: column;
   align-items: stretch;
 }
+
 .projectTopContainer {
   padding: 1.375rem;
   width: 100%;
@@ -99,6 +100,7 @@
   color: var(--gray12);
   transition: color 0.25s ease;
 }
+
 .projectHeader {
   font-size: 2.25rem;
   font-weight: 620;
@@ -296,11 +298,6 @@
     margin: 0rem -0.5rem;
   }
 }
-.swimlane {
-  display: flex;
-  flex-direction: row;
-  overflow: auto;
-}
 
 .readTitle {
   margin-top: 3.5rem;
@@ -332,12 +329,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   background-color: var(--linkContainerBgHover);
   padding: 1.25rem 1.5rem;
   border-radius: 6px;
   margin: 1.5rem 0rem -2rem;
   justify-content: space-between;
+  gap: 1rem;
 }
 .tabRow {
   display: flex;
@@ -488,6 +486,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-m);
+  flex-shrink: 0;
 }
 .button:hover {
   background-color: var(--gray4);
@@ -515,6 +514,7 @@
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
   transition: border 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  font-weight: 480;
 }
 .secondaryButton:hover {
   background-color: var(--linkContainerBorderHover);
@@ -525,6 +525,7 @@
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
   transition: opacity 0.15s ease;
+  font-weight: 480;
 }
 .primaryButton:hover {
   opacity: 0.85;
@@ -543,59 +544,7 @@
   box-shadow: hsl(206 22% 7% / 60%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 30%) 0px 10px 20px -15px;
 }
-.homeSectionContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 4rem;
-  margin-bottom: -1rem;
-}
-.homeSectionTitle {
-  font-size: 1.25rem;
-  line-height: 170%;
-  font-weight: 550;
-  color: var(--gray12);
-  margin-bottom: 0.75rem;
-  transition: color 0.25s ease;
-}
-.homeLinkBotton {
-  font-size: var(--font-s);
-  /* font-weight: 550; */
-  color: var(--gray9);
-  transition: color 0.25s ease;
-}
-.swimlane {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0rem;
-  gap: 1rem;
-  align-items: stretch;
-}
-.arrowLeft {
-  background-image: url("/util/chevron-left.svg");
-  width: 24px;
-  height: 24px;
-}
-.arrowLeftDisabled {
-  background-image: url("/util/chevron-left.svg");
-  width: 24px;
-  height: 24px;
-  opacity: 0;
-}
-.arrowRight {
-  background-image: url("/util/chevron-right.svg");
-  width: 24px;
-  height: 24px;
-}
-.arrowRightDisabled {
-  background-image: url("/util/chevron-right.svg");
-  width: 24px;
-  height: 24px;
-  opacity: 0;
-}
+
 @media (prefers-reduced-motion: no-preference) {
   .popover {
     animation-duration: 400ms;
