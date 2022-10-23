@@ -6,6 +6,11 @@
   flex-direction: column;
   align-items: stretch;
 }
+@media (max-width: 700px) {
+  .homeColumn {
+    padding: 0rem 0.5rem;
+  }
+}
 
 .homeGreetingTitle {
   margin-top: 1.5rem;
@@ -21,7 +26,9 @@
 }
 @media (max-width: 700px) {
   .homeGreetingTitle {
-    font-size: 32px;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 42px;
     font-weight: 420;
   }
 }
@@ -60,17 +67,6 @@
   }
 }
 
-.homeStoreGrid {
-  display: grid;
-  grid-template: repeat(1, 1fr) / repeat(4, 1fr);
-  column-gap: 0.75rem;
-  row-gap: 0.75rem;
-  padding-left: 0rem;
-  justify-items: stretch;
-  align-items: stretch;
-  overflow: hidden;
-  grid-auto-rows: 0;
-}
 .homeUpdatesGrid {
   display: grid;
   grid-template: repeat(1, 1fr) / repeat(4, 1fr);
@@ -94,8 +90,21 @@
 }
 @media (max-width: 700px) {
   .homeUpdatesGrid {
-    grid-template: repeat(4, 1fr) / repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
   }
+}
+.homeStoreGrid {
+  display: grid;
+  grid-template: repeat(1, 1fr) / repeat(4, 1fr);
+  column-gap: 0.75rem;
+  row-gap: 0.75rem;
+  padding-left: 0rem;
+  justify-items: stretch;
+  align-items: stretch;
+  overflow: hidden;
+  grid-auto-rows: 0;
+  margin-top: 0px;
 }
 @media (max-width: 1280px) {
   .homeStoreGrid {
@@ -107,7 +116,6 @@
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   }
 }
-
 .homeReadingGrid {
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
@@ -132,9 +140,8 @@
 }
 @media (max-width: 700px) {
   .homeReadingGrid {
-    grid-template: repeat(8, 1fr) / repeat(1, 1fr);
-    justify-items: auto;
-    align-items: auto;
+    display: flex;
+    flex-direction: column;
   }
 }
 .homeGoodsGrid {
@@ -175,7 +182,7 @@
   line-height: 170%;
   font-weight: 550;
   color: var(--gray12);
-  margin-bottom: 0.75rem;
+  /* margin-bottom: 0.75rem; */
   transition: color 0.25s ease;
 }
 .homeLinkButton {

@@ -336,13 +336,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;
   background-color: var(--linkContainerBgHover);
   padding: 1.25rem 1.5rem;
   border-radius: 6px;
   margin: 1.5rem 0rem -2rem;
   justify-content: space-between;
   gap: 1rem;
+}
+@media (max-width: 700px) {
+  .inlineCTA {
+    flex-wrap: wrap;
+  }
 }
 .tabRow {
   display: flex;

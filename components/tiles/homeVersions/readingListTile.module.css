@@ -31,7 +31,7 @@
   flex-direction: column;
   align-items: stretch;
   padding: 0px;
-  margin-right: 1rem;
+  margin-right: 0rem;
   min-width: 0;
   gap: 6px;
 }
@@ -130,7 +130,6 @@
   }
   .stack {
     width: 100%;
-    margin-bottom: 0.5rem;
   }
   .url {
     margin: 0.35rem 0rem 0.5rem;
@@ -138,6 +137,6 @@
     max-width: 100%;
   }
   .container {
-    padding: 1rem 3rem 1rem 1.25rem;
+    padding: 1rem 3rem 1rem 1rem;
   }
 }
