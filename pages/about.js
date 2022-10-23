@@ -50,13 +50,34 @@ export default function About({ list }) {
           <h1 className={util.header}>About</h1>
           <div className={util.inset}>
             <p className={util.description}>{description}</p>
+
+            <div className={util.read}>
+              <h2 style={{ padding: "1rem 0rem 0rem 0rem" }} id="about-update">
+                Updates
+              </h2>
+            </div>
+
+            <ul className={util.list} style={{ margin: "0rem 0rem 0rem 0rem" }}>
+              {list.map((item) => (
+                <Tile
+                  key={item.id}
+                  internalUrl={item.properties.Path.url}
+                  logoUrl={item.properties.Logo.files[0].file.url}
+                  title={item.properties.Name.title[0].plain_text}
+                  content={item.properties.Body.rich_text[0].plain_text}
+                  url={item.properties.URL.url}
+                  date={item.properties.Time.date.start}
+                  tags={item.properties.Tags.multi_select}
+                />
+              ))}
+            </ul>
             <div className={util.divider}></div>
 
             <div className={util.read}>
               <h2>Me</h2>
               <p>
                 {
-                  "I’m a designer based in New York. I’m deeply fascinated by all design practices from UI history to iconic chairs. My "
+                  "Trained and still based in New York. I’m deeply fascinated by all design practices from UI history to iconic chairs. My "
                 }
                 <a
                   href="https://form2shape.com/"
@@ -129,6 +150,7 @@ export default function About({ list }) {
                 </a>
                 {" a lot between 2014-2018."}
               </p>
+
               <h2>Career</h2>
               <p className={util.read}>
                 {"I’m currently working at Series B fintech company "}
@@ -214,25 +236,6 @@ export default function About({ list }) {
                 }
               />
             </div>
-
-            <div className={util.read}>
-              <h2 style={{ margin: "4rem 0rem 0rem 0rem" }}>Updates</h2>
-            </div>
-
-            <ul className={util.list} style={{ margin: "0rem 0rem 0rem 0rem" }}>
-              {list.map((item) => (
-                <Tile
-                  key={item.id}
-                  internalUrl={item.properties.Path.url}
-                  logoUrl={item.properties.Logo.files[0].file.url}
-                  title={item.properties.Name.title[0].plain_text}
-                  content={item.properties.Body.rich_text[0].plain_text}
-                  url={item.properties.URL.url}
-                  date={item.properties.Time.date.start}
-                  tags={item.properties.Tags.multi_select}
-                />
-              ))}
-            </ul>
 
             <div className={util.read}>
               <h2>This Site</h2>
@@ -323,9 +326,11 @@ export default function About({ list }) {
                 </a>{" "}
                 made light/dark-mode management easy.
               </p>
+              <div className={util.divider}></div>
+
               <h2 style={{ margin: "4rem 0rem -0.5rem 0rem" }}>Contact</h2>
             </div>
-            <div className={util.inset}>
+            <div className={util.inset} style={{ marginBottom: "4rem" }}>
               <ContactContent />
             </div>
           </div>

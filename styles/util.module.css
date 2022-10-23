@@ -15,6 +15,13 @@
   transition: background-color 0.2s ease;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.035);
 }
+.viewTruncated {
+  font-size: var(--font-l);
+  line-height: 1.35;
+  color: var(--gray11);
+  padding: 0.5rem;
+  max-width: 300px;
+}
 
 .video {
   width: 100%;
@@ -95,7 +102,7 @@
 }
 .header {
   font-size: 2.275rem;
-  font-weight: 620;
+  font-weight: 560;
   margin-bottom: 1.5rem;
   color: var(--gray12);
   transition: color 0.25s ease;
@@ -204,7 +211,7 @@
   margin-top: 3.5rem;
   font-size: 1.25rem;
   line-height: 170%;
-  font-weight: 550;
+  font-weight: 540;
   color: var(--gray12);
   margin-bottom: 0.75rem;
   transition: color 0.25s ease;
@@ -213,7 +220,7 @@
   margin-top: 2rem;
   font-size: 1rem;
   line-height: 170%;
-  font-weight: 550;
+  font-weight: 540;
   color: var(--gray12);
   margin-bottom: 0.25rem;
   transition: color 0.25s ease;
@@ -309,8 +316,8 @@
   transition: color 0.25s ease;
 }
 .divider {
-  border-top: 1px solid var(--gray3);
-  margin: 3rem 0rem -1rem;
+  border-top: 1.5px solid var(--gray3);
+  margin: 4rem 0rem 2rem;
   transition: border 0.25s ease;
 }
 .icon {
@@ -577,6 +584,7 @@
   background-color: var(--modalBg);
   box-shadow: hsl(206 22% 7% / 80%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 50%) 0px 10px 20px -15px;
+  z-index: 999;
 }
 @media (prefers-reduced-motion: no-preference) {
   .tooltip {

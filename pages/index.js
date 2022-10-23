@@ -14,72 +14,85 @@ const { Client } = require("@notionhq/client");
 import Script from "next/script";
 
 export default function Home({ updatesList, goodsList, readingListList }) {
-  const [userTime, setUserTime] = React.useState(null);
-  const [onboarding1WasDismissed, setOnboarding1WasDismissed] =
-    React.useState(null);
-  const [onboarding2WasDismissed, setOnboarding2WasDismissed] =
-    React.useState(null);
-  const [onboarding3WasDismissed, setOnboarding3WasDismissed] =
-    React.useState(null);
-  const [userLocation, setUserLocation] = React.useState(null);
-  const [isVisible, setIsVisible] = React.useState(false);
+  //create masterlist objects with uuid and text and cta
+  const tips = [
+    {
+      id: "useShortCut",
+      text: "A tip for navigation: you can use keyboard shortcut 1 → 9 to navigate between pages. Try press 2, 3, 4, then 1 to come back here.",
+      ctaText: null,
+      ctaLink: null,
+    },
+    {
+      id: "firstTime",
+      text: "Don't know me yet? My name is SJ, and I love over-engineering my personal website.",
+      ctaText: "More about me →",
+      ctaLink: "/about",
+    },
+    {
+      id: "seeTalent",
+      text: "Many come here for my list of talented designers. If you are looking for a job, drop me a note!",
+      ctaText: "Go to Talent →",
+      ctaLink: "/talent",
+    },
+    {
+      id: "seeHowItWasBuilt",
+      text: "Many ask me how the site was built, I have a thread on the whole build.",
+      ctaText: "Check it out →",
+      ctaLink: "https://twitter.com/sjzhang_/status/1526189236084408324",
+    },
+    {
+      id: "openCal",
+      text: "I enjoy meeting random people, so say hi!",
+      ctaText: "My open calendar is here ↗",
+      ctaLink: "https://cal.com/sjzhang/15min",
+    },
+    {
+      id: "support",
+      text: "If this website helped you, or I helped you, go look at this awesome page.",
+      ctaText: "Check out some goodies →",
+      ctaLink: "/store",
+    },
+  ];
+  //create currentlist of what user need to see
+  const [currentTips, setCurrentTips] = React.useState([0]);
 
-  const [items, setItems] = React.useState([0, 1, 2, 3, 4]);
-  const ref1 = React.createRef();
-  const ref2 = React.createRef();
-  const ref3 = React.createRef();
-  //set onboarding state. if user dimissed before, do not show onboarding
+  //on load, check masterlist with location storage,
+  const [isVisible, setIsVisible] = React.useState(false);
   useEffect(() => {
-    setOnboarding1WasDismissed(localStorage.getItem("onboarding1"));
-    setOnboarding2WasDismissed(localStorage.getItem("onboarding2"));
-    setOnboarding3WasDismissed(localStorage.getItem("onboarding3"));
-    if (
-      !localStorage.getItem("onboarding1") ||
-      !localStorage.getItem("onboarding2") ||
-      !localStorage.getItem("onboarding2")
-    ) {
-      setIsVisible(true);
-    }
+    let newTips = tips;
+    tips.forEach((tip, index, array) => {
+      if (localStorage.getItem(tip.id)) {
+        console.log(`found ${tip.id}`);
+        newTips = newTips.filter((e) => e.id != tip.id);
+      }
+    });
+    //render currentlist
+    setCurrentTips(newTips);
+    //hide the tip section - framer motion depends on this
+    newTips.length < 1 ? setIsVisible(false) : setIsVisible(true);
+    console.log(newTips);
   }, []);
+
+  const [userTime, setUserTime] = React.useState(null);
+  const [userLocation, setUserLocation] = React.useState(null);
 
   //if all dismissed destroy the box with motion
   useEffect(() => {
-    console.log("checked");
-
-    if (
-      onboarding1WasDismissed &&
-      onboarding2WasDismissed &&
-      onboarding3WasDismissed
-    ) {
-      console.log("fire");
-      setIsVisible(false);
-    }
-  }, [
-    onboarding1WasDismissed,
-    onboarding2WasDismissed,
-    onboarding3WasDismissed,
-  ]);
+    currentTips.length < 1 ? setIsVisible(false) : null;
+  }, [currentTips]);
 
   //when user click on the x on onboarding cards
   //remove the card and write in local storage to not show again
   function handleOnboardingDismiss(e) {
     e.preventDefault();
     let element = e.target.parentElement;
-    console.log(element.id);
-
     localStorage.setItem(element.id, true);
-    const dismissedId = element.id.replace("onboarding", "");
-
-    dismissedId == 1
-      ? setOnboarding1WasDismissed(true)
-      : dismissedId == 2
-      ? setOnboarding2WasDismissed(true)
-      : dismissedId == 3
-      ? setOnboarding3WasDismissed(true)
-      : null;
+    let newTips = currentTips;
+    newTips = newTips.filter((e) => e.id != element.id);
+    //remove from current array to trigger a change
+    setCurrentTips(newTips);
   }
 
-  // console.log(updatesList);
   useEffect(() => {
     let thisPage = document.querySelector("#recentsPage");
     let top = sessionStorage.getItem("recents-scroll");
@@ -148,148 +161,61 @@ export default function Home({ updatesList, goodsList, readingListList }) {
       </Script>
       <main className={util.page} id="recentsPage">
         <div className={styles.homeColumn}>
-          <div className={styles.homeGreeting}>
-            <h1 className={styles.homeGreetingTitle}>
-              {userTime ? userTime : null}
-            </h1>
-            <h2 className={styles.homeGreetingSubtitle}>
-              my friend from{" "}
-              {userLocation
-                ? userLocation.city.name + " " + userLocation.country.flag
-                : null}
-            </h2>
-          </div>
-          <p className={styles.tinyText}>
-            Tip: Use keyboard shortcut 1 → 9 to navigate between pages
-          </p>
-          <AnimatePresence>
+          <h1 className={styles.homeGreetingTitle}>
+            {userTime ? userTime : "Hello"}
+          </h1>
+          <span className={styles.tinyText}>
+            My name is SJ — Welcome to sj.land, my friend.{" "}
+            {isVisible
+              ? `We got
+            some new tips below to get your started on this website.`
+              : null}
+          </span>
+          <AnimatePresence mode={"sync"}>
             {isVisible && (
-              <motion.ul
+              <motion.div
                 className={styles.introContainer}
                 layout
-                transition={{ type: "spring" }}
+                // transition={{ type: "spring" }}
                 initial={{
                   opacity: 0,
-                  height: 100,
+                  height: 0,
                   transition: { duration: 0.2, ease: "easeOut" },
                 }}
                 animate={{
                   opacity: 1,
-                  height: 100,
-                  transition: { duration: 0.4, ease: "easeOut" },
+                  height: 180,
+                  transition: { delay: 0.5, duration: 0.4, ease: "easeInOut" },
                 }}
                 exit={{
-                  opacity: 1,
+                  opacity: 0,
                   height: 0,
                   transition: { duration: 0.6, ease: "easeInOut" },
                 }}
               >
-                {" "}
-                {/* <AnimatePresence mode={"popLayout"}> */}
-                <AnimatePresence>
-                  {/* {items.map((id) => (
-                    <motion.div
-                      style={{
-                        background: "#6c6c6c",
-                        height: "60px",
-                        margin: "6px",
-                      }}
-                      layout
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.8, opacity: 0 }}
-                      transition={{ type: "spring" }}
-                      key={id}
-                      onClick={() => {
-                        const newItems = [...items];
-                        console.log(id);
-                        if (id > -1) newItems.splice(id - 1, 1);
-                        setItems(newItems);
-                        console.log(newItems);
-                      }}
-                    />
-                  ))} */}
-                  {/* {onboarding1WasDismissed ? null : (
-                    <motion.div
-                      style={{
-                        background: "#6c6c6c",
-                        height: "60px",
-                        margin: "6px",
-                      }}
-                      layout
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.8, opacity: 0 }}
-                      transition={{ type: "spring" }}
-                      key={onboarding1WasDismissed}
-                      onClick={() => {
-                        setOnboarding1WasDismissed(true);
-                      }}
-                    />
-                  )}
-                  {onboarding2WasDismissed ? null : (
-                    <motion.div
-                      style={{
-                        background: "#6c6c6c",
-                        height: "60px",
-                        margin: "6px",
-                      }}
-                      layout
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.8, opacity: 0 }}
-                      transition={{ type: "spring" }}
-                      key={onboarding2WasDismissed}
-                      onClick={() => {
-                        setOnboarding2WasDismissed(true);
-                      }}
-                    />
-                  )} */}
-
-                  {onboarding1WasDismissed ? null : (
+                <AnimatePresence mode={"popLayout"}>
+                  {currentTips.map((tip) => (
                     <OnboardingCard
-                      key={6}
+                      key={tip.id}
                       handleDismiss={handleOnboardingDismiss}
-                      id={1}
-                      ref={ref1}
-                      text={
-                        "First time on sj.land? My name is SJ, and I love over-engineering my personal website. More about me →"
-                      }
+                      id={tip.id}
+                      text={tip.text}
+                      ctaText={tip.ctaText}
+                      ctaLink={tip.ctaLink}
+                      ref={React.createRef()}
                     />
-                  )}
-                  {onboarding2WasDismissed ? null : (
-                    <OnboardingCard
-                      key={7}
-                      handleDismiss={handleOnboardingDismiss}
-                      id={2}
-                      ref={ref2}
-                      text={
-                        "I enjoy meeting random people, so say hi! My open calendar is here →"
-                      }
-                    />
-                  )}
-                  {onboarding3WasDismissed ? null : (
-                    <OnboardingCard
-                      key={8}
-                      handleDismiss={handleOnboardingDismiss}
-                      id={3}
-                      ref={ref3}
-                      text={
-                        "If this website helped you, or I helped you personally, you can always buy my wallpaper →"
-                      }
-                    />
-                  )}
+                  ))}
                 </AnimatePresence>
-              </motion.ul>
+              </motion.div>
             )}
           </AnimatePresence>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Updates</h2>
-            <Link href="/about">
+            <Link href="/about#about-update">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
           </div>
-          <ul className={styles.homeStoreGrid}>
+          <ul className={styles.homeUpdatesGrid}>
             {updatesList.map((item) => (
               <Tile
                 key={item.id}
@@ -300,56 +226,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
                 url={item.properties.URL.url}
                 date={item.properties.Time.date.start}
                 tags={item.properties.Tags.multi_select}
-              />
-            ))}
-          </ul>
-          <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Store</h2>
-            <Link href="/store">
-              <a className={styles.homeLinkButton}>View All</a>
-            </Link>
-          </div>
-          <ul className={styles.homeStoreGrid}>
-            <StoreTile
-              image="W01-01"
-              title="W01-01"
-              type="6K Desktop + Mobile"
-              url={"https://solana.com"}
-            />
-            <StoreTile
-              image="W01-02"
-              title="W01-02"
-              type="6K Desktop + Mobile"
-              url={"https://solana.com"}
-            />
-            <StoreTile
-              image="W01-03"
-              title="W01-03"
-              type="6K Desktop + Mobile"
-              url={"https://solana.com"}
-            />
-            <StoreTile
-              image="W01-04"
-              title="W01-04"
-              type="6K Desktop + Mobile"
-              url={"https://solana.com"}
-            />
-          </ul>
-          <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Reading List</h2>
-            <Link href="/reading-list">
-              <a className={styles.homeLinkButton}>View All</a>
-            </Link>
-          </div>{" "}
-          <ul className={styles.homeReadingGrid}>
-            {readingListList.map((link) => (
-              <ReadingListTile
-                key={link.id}
-                title={link.properties.Name.title[0].plain_text}
-                url={link.properties.URL.url}
-                date={link.created_time}
-                fav={link.properties.Fav.checkbox}
-                tags={link.properties.Tags.multi_select}
               />
             ))}
           </ul>
@@ -373,6 +249,36 @@ export default function Home({ updatesList, goodsList, readingListList }) {
                 brand={link.properties.Brand.rich_text[0].plain_text}
               />
             ))}
+          </ul>
+          <div className={styles.homeSectionContainer}>
+            <h2 className={styles.homeSectionTitle}>Reading List</h2>
+            <Link href="/reading-list">
+              <a className={styles.homeLinkButton}>View All</a>
+            </Link>
+          </div>{" "}
+          <ul className={styles.homeReadingGrid}>
+            {readingListList.map((link) => (
+              <ReadingListTile
+                key={link.id}
+                title={link.properties.Name.title[0].plain_text}
+                url={link.properties.URL.url}
+                date={link.created_time}
+                fav={link.properties.Fav.checkbox}
+                tags={link.properties.Tags.multi_select}
+              />
+            ))}
+          </ul>
+          <div className={styles.homeSectionContainer}>
+            <h2 className={styles.homeSectionTitle}>Store</h2>
+            <Link href="/store">
+              <a className={styles.homeLinkButton}>View All</a>
+            </Link>
+          </div>
+          <ul className={styles.homeStoreGrid}>
+            <StoreTile id="W01-01" title="W01-01" type="6K Desktop + Mobile" />
+            <StoreTile id="W01-02" title="W01-02" type="6K Desktop + Mobile" />
+            <StoreTile id="W01-03" title="W01-03" type="6K Desktop + Mobile" />
+            <StoreTile id="W01-04" title="W01-04" type="6K Desktop + Mobile" />
           </ul>
         </div>
       </main>
@@ -401,7 +307,7 @@ export async function getStaticProps() {
         direction: "descending",
       },
     ],
-    page_size: 1,
+    page_size: 4,
   });
   const goodsResponse = await notion.databases.query({
     database_id: process.env.NOTION_GOODS_ID,
@@ -421,7 +327,7 @@ export async function getStaticProps() {
         direction: "descending",
       },
     ],
-    page_size: 1,
+    page_size: 5,
   });
   const readingListResponse = await notion.databases.query({
     database_id: process.env.NOTION_READINGLIST_ID,
@@ -441,7 +347,7 @@ export async function getStaticProps() {
         direction: "descending",
       },
     ],
-    page_size: 1,
+    page_size: 8,
   });
   return {
     props: {
@@ -449,6 +355,6 @@ export async function getStaticProps() {
       goodsList: goodsResponse.results,
       readingListList: readingListResponse.results,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }

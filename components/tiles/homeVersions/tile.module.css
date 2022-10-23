@@ -1,12 +1,14 @@
 .container {
-  padding: 0.75rem 1rem;
+  padding: 1.125rem 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background-color: var(--linkContainerBgHover); */
-  border: 1px solid var(--linkContainerBorder);
+  background-color: var(--linkContainerGrayBg);
   border-radius: 8px;
 }
+/* .container:hover {
+  background-color: var(--linkContainerBgHover);
+} */
 .stack {
   display: flex;
   flex-direction: column;
@@ -25,7 +27,19 @@
   font-weight: 500;
   color: var(--gray9);
 }
+.tileContent {
+  margin-top: 0.25rem;
+  font-size: var(--font-m);
+  color: var(--gray9);
+  display: -webkit-inline-box;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
 
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.3;
+  transition: color 0.25s ease;
+}
 .date {
   width: 6rem;
   flex-shrink: 0;

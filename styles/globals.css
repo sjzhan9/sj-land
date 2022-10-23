@@ -50,6 +50,8 @@ html {
   --tabText: rgba(0, 0, 0, 0.32);
 
   --linkContainerBg: rgb(255, 255, 255);
+  --linkContainerGrayBg: rgb(251, 251, 251);
+
   --linkContainerBorder: rgb(245, 245, 245);
   --linkContainerBgHover: rgb(243, 243, 243);
   --linkContainerBorderHover: rgb(230, 230, 230);
@@ -84,6 +86,8 @@ html {
   --tabText: rgba(255, 255, 255, 0.372);
 
   --linkContainerBg: rgb(21, 21, 21);
+  --linkContainerGrayBg: rgb(25, 25, 25);
+
   --linkContainerBorder: rgb(26, 26, 26);
   --linkContainerBgHover: rgb(42, 42, 42);
   --linkContainerBorderHover: rgb(45, 45, 45);

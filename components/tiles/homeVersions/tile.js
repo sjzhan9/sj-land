@@ -2,6 +2,7 @@ import styles from ".//tile.module.css";
 import util from "../../../styles/util.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 export default function Tile({
   internalUrl,
@@ -55,7 +56,17 @@ export default function Tile({
             </a>
           </Link>
         )}
-        <p className={util.tileContent}>{content}</p>
+        <Tooltip.Provider delayDuration={500}>
+          <Tooltip.Root>
+            <Tooltip.Trigger asChild>
+              <p className={styles.tileContent}>{content}</p>
+            </Tooltip.Trigger>
+            <Tooltip.Content className={util.tooltip}>
+              <span className={util.viewTruncated}>{content}</span>
+              <Tooltip.Arrow className={util.arrow} />
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
       </div>
       <p className={styles.date}>
         {new Date(date).toLocaleDateString("en-US", {

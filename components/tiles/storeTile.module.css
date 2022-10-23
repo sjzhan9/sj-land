@@ -6,7 +6,7 @@
   display: block;
   overflow: hidden;
   transition: background-color 0.15s ease, border 0.15s ease;
-  margin: 1.5rem 0rem;
+  margin: 1rem 0rem 2rem;
 }
 
 .stack {

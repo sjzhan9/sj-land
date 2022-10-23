@@ -30,7 +30,7 @@ export default function Menu() {
           <NavLink
             svg="shopping-cart"
             href="/store"
-            label="Store"
+            label="Boutique"
             shortcut="4"
           />
           <NavLink

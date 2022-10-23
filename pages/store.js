@@ -19,7 +19,7 @@ export default function Store() {
   }, []);
 
   const description =
-    "Sharing some random stuff that I cooked up. I’ve also gotten asked a lot if I would sell this website as a template, or someone wants to fork it for a fee - addressing that here as well.";
+    "Sharing some random stuff that I cooked up. I’ve been asked a lot if I would sell this website as a template, or someone wants to fork it for a fee - so I made this page to address that.";
   return (
     <>
       <Head>
@@ -43,7 +43,7 @@ export default function Store() {
       </Script>
       <main className={util.page} id="storePage">
         <div className={util.pageColumn}>
-          <h1 className={util.header}>Store</h1>
+          <h1 className={util.header}>Boutique</h1>
           <div className={util.description}>
             <p>{description}</p>
           </div>
@@ -51,38 +51,44 @@ export default function Store() {
             <div>
               <h3 className={util.tileTitle}>Forking this website?</h3>
               <p className={util.tileContent}>
-                {"It is free on Github, but feel free to support me : )"}
+                {"It is free on Github, but feel free to buy me lunch : )"}
               </p>
             </div>
             <button className={util.button + " " + util.primaryButton}>
-              Buy me a coffee →
+              <a
+                href="https://sjzhang.gumroad.com/l/support"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Support my adventure ↗
+              </a>
             </button>
           </div>
           <ul className={util.list}>
             <p className={util.textDivider}>Wallpapers</p>
             <StoreTile
-              image="W01-01"
+              id="W01-01"
               title="W01-01"
               type="6K Desktop + Mobile"
-              url={"https://solana.com"}
+              url={"https://sjzhang.gumroad.com/l/wallpaper-01"}
             />
             <StoreTile
-              image="W01-02"
+              id="W01-02"
               title="W01-02"
               type="6K Desktop + Mobile"
-              url={"https://solana.com"}
+              url={"https://sjzhang.gumroad.com/l/wallpaper-01"}
             />
             <StoreTile
-              image="W01-03"
+              id="W01-03"
               title="W01-03"
               type="6K Desktop + Mobile"
-              url={"https://solana.com"}
+              url={"https://sjzhang.gumroad.com/l/wallpaper-01"}
             />
             <StoreTile
-              image="W01-04"
+              id="W01-04"
               title="W01-04"
               type="6K Desktop + Mobile"
-              url={"https://solana.com"}
+              url={"https://sjzhang.gumroad.com/l/wallpaper-01"}
             />
           </ul>
         </div>

@@ -82,25 +82,4 @@
 }
 
 @media (max-width: 700px) {
-  /* .container {
-    flex-direction: column;
-    align-items: flex-start;
-  } */
-  .right {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .dateSub {
-    display: none;
-  }
-  .stack {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  .url {
-    margin: 0.35rem 0rem 0.5rem;
-    width: 100%;
-
-    max-width: 100%;
-  }
 }

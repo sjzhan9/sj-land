@@ -78,7 +78,7 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
                 <div className={styles.shortcut}>
                   <span className={styles.shortcutText}>{shortcut}</span>
                 </div>
-                <Tooltip.Arrow className={styles.arrow} />
+                <Tooltip.Arrow className={util.arrow} />
               </Tooltip.Content>
             </Tooltip.Root>
           </Tooltip.Provider>

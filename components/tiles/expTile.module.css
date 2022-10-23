@@ -7,9 +7,6 @@
   padding: 1.375rem 0rem 1.375rem 0rem;
   transition: background-color 0.15s ease;
 }
-.container:last-child {
-  margin-bottom: 4rem;
-}
 .content {
   font-size: var(--font-l);
   color: var(--gray11);

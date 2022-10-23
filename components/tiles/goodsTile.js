@@ -62,15 +62,6 @@ export default function GoodsTile({
         </div>
         <p className={styles.brand}>{brand}</p>
       </div>
-      {/* <div className={util.tags + " " + util.flexRow}>
-          {tags
-            ? tags.map((tag) => (
-                <p key={tag.name + tag.color} className={tag.color + "Tag tag"}>
-                  {tag.name}
-                </p>
-              ))
-            : null}
-        </div> */}
     </a>
   );
 }

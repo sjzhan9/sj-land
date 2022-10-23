@@ -1,34 +1,59 @@
-// import styles from "../components/contactContent.module.css";
-import util from "../styles/util.module.css";
 import styles from "../components/onboardingCard.module.css";
-import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import React from "react";
+import Link from "next/link";
 
 const OnboardingCard = React.forwardRef(
-  ({ key, text, id, handleDismiss }, ref) => {
+  ({ key, text, id, handleDismiss, ctaLink, ctaText }, ref) => {
     return (
-      //   <AnimatePresence mode={"popLayout"}>
       <motion.div
-        key="box"
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
+        layout
+        key={id}
+        // initial={{
+        //   opacity: 0,
+        //   scale: 1,
+        //   //   transition: { duration: 1, ease: "easeOut" },
+        // }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          //   transition: { duration: 1 },
+        }}
+        // whileHover={{ background: "var(--gray8)" }}
         exit={{
-          y: "20%",
           opacity: 0,
           scale: 0.8,
-          transition: { duration: 0.2, ease: "easeIn" },
+          // x: -20,
+          //   y: -20,
+          transition: { delay: 0, duration: 0.2 },
         }}
-        // transition={{ duration: 0.5, ease: "easeIn" }}
+        transition={{
+          delay: 0.035,
+          duration: 0.6,
+          type: "spring",
+          bounce: 0.15,
+        }}
+        // width="30%"
         className={styles.intro}
-        id={`onboarding${id}`}
+        id={id}
         ref={ref}
       >
-        {text}
+        {text}{" "}
+        {ctaLink !== null && ctaLink.includes("http") ? (
+          <a href={ctaLink} target="_blank" rel="noopener noreferrer">
+            {ctaText}
+          </a>
+        ) : (
+          ctaLink !== null && (
+            <Link href={ctaLink}>
+              <a>{ctaText}</a>
+            </Link>
+          )
+        )}
         <span className={styles.closeIcon} onClick={handleDismiss}>
           {"×"}
         </span>
       </motion.div>
-      //   </AnimatePresence>
     );
   }
 );
