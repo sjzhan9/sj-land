@@ -70,7 +70,7 @@ export default function ContactContent() {
         <div className={styles.stack}>
           <p className={styles.mainText}>Book a time</p>
           <p className={styles.subText}>
-            {"For advice, it's easier to chat live"}
+            {`For advice, it's easier to chat live`}
           </p>
         </div>
         <a
@@ -87,7 +87,7 @@ export default function ContactContent() {
       <div className={styles.row}>
         <div className={styles.stack}>
           <p className={styles.mainText}>Stay in touch</p>
-          <p className={styles.subText}>{"I'm more active on twitter"}</p>
+          <p className={styles.subText}>{`I'm most active on twitter`}</p>
         </div>
         <div className={styles.flexRow}>
           <a

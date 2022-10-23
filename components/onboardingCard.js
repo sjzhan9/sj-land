@@ -57,4 +57,6 @@ const OnboardingCard = React.forwardRef(
     );
   }
 );
+OnboardingCard.displayName = "OnboardingCard";
+
 export default OnboardingCard;
