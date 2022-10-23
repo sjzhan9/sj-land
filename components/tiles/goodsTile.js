@@ -3,16 +3,7 @@ import Image from "next/image";
 import util from "../../styles/util.module.css";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
-export default function GoodsTile({
-  title,
-  url,
-  date,
-  fav,
-  tags,
-  thumbnailUrl,
-  price,
-  brand,
-}) {
+export default function GoodsTile({ title, url, fav, thumbnailUrl, brand }) {
   return (
     <a
       href={url}

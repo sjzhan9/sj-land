@@ -284,12 +284,12 @@
   grid-row-gap: 1.875rem;
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 1680px) {
   .fullWidthGrid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-@media (max-width: 1360px) {
+@media (max-width: 1280px) {
   .fullWidthGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -526,6 +526,7 @@
   border-radius: 5px;
   transition: border 0.15s ease, background-color 0.15s ease, color 0.15s ease;
   font-weight: 480;
+  color: var(--gray12);
 }
 .secondaryButton:hover {
   background-color: var(--linkContainerBorderHover);

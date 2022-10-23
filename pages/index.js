@@ -60,7 +60,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
   const [isVisible, setIsVisible] = React.useState(false);
   useEffect(() => {
     let newTips = tips;
-    tips.forEach((tip, index, array) => {
+    tips.forEach((tip) => {
       if (localStorage.getItem(tip.id)) {
         console.log(`found ${tip.id}`);
         newTips = newTips.filter((e) => e.id != tip.id);
@@ -74,7 +74,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
   }, []);
 
   const [userTime, setUserTime] = React.useState(null);
-  const [userLocation, setUserLocation] = React.useState(null);
 
   //if all dismissed destroy the box with motion
   useEffect(() => {
@@ -93,6 +92,14 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     setCurrentTips(newTips);
   }
 
+  function resetOnboarding() {
+    setCurrentTips(tips);
+    tips.forEach((tip) => {
+      localStorage.setItem(tip, null);
+    });
+    setIsVisible(true);
+  }
+
   useEffect(() => {
     let thisPage = document.querySelector("#recentsPage");
     let top = sessionStorage.getItem("recents-scroll");
@@ -106,18 +113,17 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  //get user location
   useEffect(() => {
     const hour = new Date().getHours();
     var greeting =
-      hour > 18
+      hour > 17
         ? "Good evening"
-        : hour > 12
+        : hour > 11
         ? "Good afternoon"
         : hour > 4
         ? "Good morning"
         : hour > 2
-        ? "You should go to bed"
+        ? "It's late, go to bed"
         : "Hello";
     setUserTime(greeting);
 
@@ -165,11 +171,15 @@ export default function Home({ updatesList, goodsList, readingListList }) {
             {userTime ? userTime : "Hello"}
           </h1>
           <span className={styles.tinyText}>
-            My name is SJ — Welcome to sj.land, my friend.{" "}
+            My name is SJ — Welcome to sj.land.{" "}
             {isVisible
-              ? `We got
-            some new tips below to get your started on this website.`
+              ? `Below we have some tips to get you started on this website.`
               : null}
+            {!isVisible ? (
+              <span onClick={resetOnboarding} className={styles.reset}>
+                Need a refresher? Reset onboarding
+              </span>
+            ) : null}
           </span>
           <AnimatePresence mode={"sync"}>
             {isVisible && (
@@ -185,7 +195,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
                 animate={{
                   opacity: 1,
                   height: 180,
-                  transition: { delay: 0.5, duration: 0.4, ease: "easeInOut" },
+                  transition: { delay: 0.25, duration: 0.4, ease: "easeInOut" },
                 }}
                 exit={{
                   opacity: 0,

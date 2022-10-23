@@ -51,7 +51,8 @@ export default function Store() {
             <div>
               <h3 className={util.tileTitle}>Forking this website?</h3>
               <p className={util.tileContent}>
-                {"It is free on Github, but feel free to buy me lunch : )"}
+                {"It is free on Github, but feel free to buy me lunch "}
+                <nobr>{": )"}</nobr>
               </p>
             </div>
             <button className={util.button + " " + util.primaryButton}>

@@ -40,7 +40,14 @@
   opacity: 0.9;
   padding-bottom: 8rem;
 }
-
+.reset {
+  user-select: none;
+  cursor: pointer;
+  transition: color 0.1s ease;
+}
+.reset:hover {
+  color: var(--gray11);
+}
 .introContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
