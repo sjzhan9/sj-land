@@ -28,10 +28,10 @@ const OnboardingCard = React.forwardRef(
           transition: { delay: 0, duration: 0.2 },
         }}
         transition={{
-          delay: 0.035,
-          duration: 0.6,
+          delay: 0.03,
+          duration: 0.5,
           type: "spring",
-          bounce: 0.15,
+          bounce: 0,
         }}
         // width="30%"
         className={styles.intro}

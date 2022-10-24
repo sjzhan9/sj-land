@@ -3,6 +3,7 @@
   color: var(--gray9);
   font-weight: 380;
   letter-spacing: 0.15px;
+  line-height: 1.35;
   opacity: 0.9;
   padding: 1rem 1.5rem 1rem 1.5rem;
   border-left: 1px solid var(--linkContainerBorderHover);

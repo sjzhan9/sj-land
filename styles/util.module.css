@@ -380,8 +380,6 @@
   top: -32px;
   height: 43px;
   z-index: 2;
-  /* background-color: var(--bgSticky); */
-  /* backdrop-filter: blur(10px); */
   background-color: var(--bg);
 
   transition: background-color 0.2s ease;
@@ -389,8 +387,6 @@
   box-sizing: border-box;
   transition: border 0.25s ease;
   margin-bottom: 1.5rem;
-  /* margin: 0rem -1rem 1.5rem -1rem;
-  padding: 0px 1rem; */
 }
 .emptyState {
   padding: 3rem;

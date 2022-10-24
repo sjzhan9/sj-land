@@ -18,7 +18,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
   const tips = [
     {
       id: "useShortCut",
-      text: "A tip for navigation: you can use keyboard shortcut 1 → 9 to navigate between pages. Try press 2, 3, 4, then 1 to come back here.",
+      text: "Use keyboard shortcut 1 → 9 to navigate between pages. Try press 2, 3, 4, then 1 to come back here.",
       ctaText: null,
       ctaLink: null,
     },
@@ -30,26 +30,26 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     },
     {
       id: "seeTalent",
-      text: "Many come here for my list of talented designers. If you are looking for a job, drop me a note!",
+      text: "Many come here for my list of talented builders. If you are looking for a job, drop me a note.",
       ctaText: "Go to Talent →",
       ctaLink: "/talent",
     },
     {
       id: "seeHowItWasBuilt",
-      text: "Many ask me how the site was built, I have a thread on the whole build.",
+      text: "If you are curious how the site was built, I have a Twitter thread on it.",
       ctaText: "Check it out →",
       ctaLink: "https://twitter.com/sjzhang_/status/1526189236084408324",
     },
     {
       id: "openCal",
-      text: "I enjoy meeting random people, so say hi!",
+      text: "I enjoy meeting random people and help where I can. ",
       ctaText: "My open calendar is here ↗",
       ctaLink: "https://cal.com/sjzhang/15min",
     },
     {
       id: "support",
-      text: "If this website helped you, or I helped you, go look at this awesome page.",
-      ctaText: "Check out some goodies →",
+      text: "If this website helped you, or I helped you, feel free to ",
+      ctaText: "check out some goodies →",
       ctaLink: "/store",
     },
   ];
@@ -95,7 +95,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
   function resetOnboarding() {
     setCurrentTips(tips);
     tips.forEach((tip) => {
-      localStorage.setItem(tip, null);
+      localStorage.removeItem(tip.id);
     });
     setIsVisible(true);
   }
@@ -177,7 +177,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
               : null}
             {!isVisible ? (
               <span onClick={resetOnboarding} className={styles.reset}>
-                Need a refresher? Reset onboarding
+                Need a refresher? Reset onboarding.
               </span>
             ) : null}
           </span>
