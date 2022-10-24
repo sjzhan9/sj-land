@@ -173,7 +173,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           <span className={styles.tinyText}>
             My name is SJ — Welcome to sj.land.{" "}
             {isVisible
-              ? `Below we have some tips to get you started on this website.`
+              ? `Below are some tips to get you started on this website.`
               : null}
             {!isVisible ? (
               <span onClick={resetOnboarding} className={styles.reset}>
