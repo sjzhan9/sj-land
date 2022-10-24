@@ -279,7 +279,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
             ))}
           </ul>
           <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Store</h2>
+            <h2 className={styles.homeSectionTitle}>Boutique</h2>
             <Link href="/store">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
