@@ -66,7 +66,7 @@ export default function Projects() {
             <ProjectTile
               image="compound"
               title="Compound"
-              content="This is where I work and spent the last 2 years"
+              content="This is where I work and spent the last few years"
               type="Design · Full-time"
               date="2022-05-01"
               url="https://withcompound.com"

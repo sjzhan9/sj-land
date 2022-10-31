@@ -94,8 +94,8 @@ html {
 
   --tabBorder: rgb(44, 44, 44);
 
-  --overlayDarkness: rgba(0 0 0 / 0.65);
-  --modalBg: rgb(28, 28, 28);
+  --overlayDarkness: rgba(0, 0, 0, 0.75);
+  --modalBg: rgb(32, 32, 32);
 
   --imageBg: #191919;
 }

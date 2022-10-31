@@ -2,57 +2,69 @@ import styles from ".//goodsTile.module.css";
 import Image from "next/image";
 import util from "../../styles/util.module.css";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import * as Dialog from "@radix-ui/react-dialog";
 
 export default function GoodsTile({ title, url, fav, thumbnailUrl, brand }) {
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.container}
-    >
-      {/* {fav ? (
-        <Tooltip.Provider delayDuration={300}>
-          <Tooltip.Root>
-            <Tooltip.Trigger asChild>
-              <div className={styles.heart}>
-                <svg
-                  width="13"
-                  height="18"
-                  viewBox="0 0 13 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 16.8747V0H13V16.8747C13 17.308 12.4864 17.5362 12.1649 17.2458L6.83512 12.4324C6.64477 12.2605 6.35523 12.2605 6.16488 12.4324L0.83512 17.2458C0.513554 17.5362 0 17.308 0 16.8747Z"
-                    fill="#838383"
-                    fillOpacity="0.27"
-                  />
-                </svg>
-              </div>
-            </Tooltip.Trigger>
+    <Dialog.Root>
+      <Dialog.Trigger asChild id="goodsTrigger">
+        <div className={styles.container}>
+          <img
+            src={thumbnailUrl}
+            alt="product image"
+            className={styles.image}
+          ></img>
 
-            <Tooltip.Content className={util.tooltip}>
-              One of my favorites. You can set the filter to only show
-              favorites.
-              <Tooltip.Arrow className={util.arrow} />
-            </Tooltip.Content>
-          </Tooltip.Root>
-        </Tooltip.Provider>
-      ) : null} */}
-      <img
-        src={thumbnailUrl}
-        alt="product image"
-        className={styles.image}
-      ></img>
-
-      <div className={styles.col}>
-        <div>
-          <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
-          <span className={styles.externalIcon}>↗</span>
+          <div className={styles.col}>
+            <div>
+              <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+            </div>
+            <p className={styles.brand}>{brand}</p>
+          </div>
         </div>
-        <p className={styles.brand}>{brand}</p>
-      </div>
-    </a>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className={styles.overlay} />
+        <Dialog.Content
+          className={styles.content}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
+          <img
+            src={thumbnailUrl}
+            alt="product image"
+            className={styles.imageInModal}
+          ></img>
+          <div className={styles.stack}>
+            <div className={styles.top}>
+              {" "}
+              <p className={styles.brandInModal}>{brand}</p>
+              <Dialog.Title className={styles.modalTitle}>{title}</Dialog.Title>
+            </div>
+
+            <div className={styles.row}>
+              {fav ? (
+                <p className={styles.brand}>
+                  I have owned this item, so feel free to ask me what I think of
+                  it.
+                </p>
+              ) : (
+                <p className={styles.brand}>
+                  I do not own this item, so I can't talk about the performance.
+                </p>
+              )}
+              <a
+                className={util.primaryButton}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>View</span>
+                <span className={styles.externalIcon}>↗</span>
+              </a>
+            </div>
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

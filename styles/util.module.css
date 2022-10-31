@@ -523,6 +523,7 @@
   transition: border 0.15s ease, background-color 0.15s ease, color 0.15s ease;
   font-weight: 480;
   color: var(--gray12);
+  font-size: var(--font-m);
 }
 .secondaryButton:hover {
   background-color: var(--linkContainerBorderHover);
@@ -534,6 +535,7 @@
   border-radius: 5px;
   transition: opacity 0.15s ease;
   font-weight: 480;
+  font-size: var(--font-m);
 }
 .primaryButton:hover {
   opacity: 0.85;
