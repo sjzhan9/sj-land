@@ -44,12 +44,15 @@ export default function GoodsTile({ title, url, fav, thumbnailUrl, brand }) {
             <div className={styles.row}>
               {fav ? (
                 <p className={styles.brand}>
-                  I have owned this item, so feel free to ask me what I think of
-                  it.
+                  {
+                    "I have owned this item, so feel free to ask me what I think of it."
+                  }
                 </p>
               ) : (
                 <p className={styles.brand}>
-                  I do not own this item, so I can't talk about the performance.
+                  {
+                    "I do not own this item, so I can't talk about the performance."
+                  }
                 </p>
               )}
               <a
