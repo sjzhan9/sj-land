@@ -1,11 +1,10 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
-import util from "../styles/util.module.css";
 import Background from "../components/background";
 import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
 import React, { useEffect } from "react";
-import { grass } from "@radix-ui/colors";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -24,6 +23,7 @@ function MyApp({ Component, pageProps }) {
       <Background />
       <Menu />
       <Component {...pageProps} />
+      <Analytics />
     </ThemeProvider>
   );
 }
