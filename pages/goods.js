@@ -8,7 +8,6 @@ import Script from "next/script";
 import Settings from "../components/settings";
 
 export default function Goods({ list }) {
-  console.log(list);
   const description =
     "With a high bar for build quality, aesthetic, and usability. Here are some of the goods that I own or researched.";
 

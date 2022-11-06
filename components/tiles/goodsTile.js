@@ -12,10 +12,6 @@ export default function GoodsTile({
   brand,
   note,
 }) {
-  // note.map((e, i) => {
-  //   console.log(e.plain_text);
-  // });
-
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild id="goodsTrigger">
@@ -51,8 +47,10 @@ export default function GoodsTile({
               <p className={styles.brandInModal}>{brand}</p>
               <Dialog.Title className={styles.modalTitle}>{title}</Dialog.Title>
               <span className={styles.brandInModal}>
-                {note.map((e) => (
-                  <a href={e.href}>{e.plain_text}</a>
+                {note.map((e, i) => (
+                  <a key={i} href={e.href}>
+                    {e.plain_text}
+                  </a>
                 ))}
                 {/* {note.map((e) => {
                   e.href ? (
