@@ -89,7 +89,7 @@ export default function Projects() {
               }
               type="GPT2 · Side Project"
               date="2020-04-25"
-              url="https://www.startupgenerator.app/"
+              url="https://startup-generator-app.web.app"
             />
             <ProjectTile
               image="flo-recruit"

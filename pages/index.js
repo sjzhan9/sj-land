@@ -62,7 +62,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     let newTips = tips;
     tips.forEach((tip) => {
       if (localStorage.getItem(tip.id)) {
-        console.log(`found ${tip.id}`);
         newTips = newTips.filter((e) => e.id != tip.id);
       }
     });
@@ -70,7 +69,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     setCurrentTips(newTips);
     //hide the tip section - framer motion depends on this
     newTips.length < 1 ? setIsVisible(false) : setIsVisible(true);
-    console.log(newTips);
   }, []);
 
   const [userTime, setUserTime] = React.useState(null);
@@ -126,19 +124,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
         ? "It's late, go to bed"
         : "Hello";
     setUserTime(greeting);
-
-    var requestOptions = {
-      method: "GET",
-    };
-    // i know my api key is exposed down below, if you are forking this site, please don't use my key, it's free!
-    fetch(
-      "https://api.geoapify.com/v1/ipinfo?&apiKey=255b8161369d4eb48bcd69e46cb0d8c4",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => setUserLocation(result))
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
   }, []);
 
   const description =
@@ -365,6 +350,6 @@ export async function getStaticProps() {
       goodsList: goodsResponse.results,
       readingListList: readingListResponse.results,
     },
-    revalidate: 60,
+    revalidate: 5,
   };
 }

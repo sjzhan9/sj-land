@@ -25,7 +25,7 @@ export default function Tile({
             width={28}
             alt={title}
           />
-        ) : (
+        ) : logoUrl ? (
           <Image
             className={styles.icon}
             priority
@@ -35,7 +35,7 @@ export default function Tile({
             width={28}
             alt={title}
           />
-        )}
+        ) : null}
       </div>
 
       <div className={styles.right}>
