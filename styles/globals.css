@@ -166,6 +166,10 @@ a {
 }
 span a[href*="http"] {
   text-decoration: underline;
+  transition: color 100ms ease;
+}
+span a[href*="http"]:hover {
+  color: var(--gray12);
 }
 * {
   box-sizing: border-box;
