@@ -164,7 +164,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+span a[href*="http"] {
+  text-decoration: underline;
+}
 * {
   box-sizing: border-box;
 }

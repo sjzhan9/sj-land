@@ -59,7 +59,14 @@ export default function Tile({
               </a>
             </Link>
           )}
-          <p className={util.tileContent}>{content}</p>
+          {/* <p className={util.tileContent}>{content}</p> */}
+          <p className={util.tileContent}>
+            {content.map((e, i) => (
+              <a key={i} href={e.href}>
+                {e.plain_text}
+              </a>
+            ))}
+          </p>
           <div className={util.tags + " " + util.flexRow}></div>
         </div>
         <p className={styles.date}>

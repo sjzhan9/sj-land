@@ -59,10 +59,22 @@ export default function Tile({
         <Tooltip.Provider delayDuration={500}>
           <Tooltip.Root>
             <Tooltip.Trigger asChild>
-              <p className={styles.tileContent}>{content}</p>
+              <span className={styles.tileContent}>
+                {content.map((e, i) => (
+                  <a key={i} href={e.href}>
+                    {e.plain_text}
+                  </a>
+                ))}
+              </span>
             </Tooltip.Trigger>
             <Tooltip.Content className={util.tooltip}>
-              <span className={util.viewTruncated}>{content}</span>
+              <span className={util.viewTruncated}>
+                {content.map((e, i) => (
+                  <a key={i} href={e.href}>
+                    {e.plain_text}
+                  </a>
+                ))}
+              </span>
               <Tooltip.Arrow className={util.arrow} />
             </Tooltip.Content>
           </Tooltip.Root>

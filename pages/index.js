@@ -219,7 +219,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
                 internalUrl={item.properties.Path.url}
                 // logoUrl={item.properties.Logo.files[0].file.url}
                 title={item.properties.Name.title[0].plain_text}
-                content={item.properties.Body.rich_text[0].plain_text}
+                content={item.properties.Body.rich_text}
                 url={item.properties.URL.url}
                 date={item.properties.Time.date.start}
                 tags={item.properties.Tags.multi_select}
