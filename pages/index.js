@@ -71,6 +71,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     newTips.length < 1 ? setIsVisible(false) : setIsVisible(true);
   }, []);
 
+  console.log(updatesList);
+
   const [userTime, setUserTime] = React.useState(null);
 
   //if all dismissed destroy the box with motion
@@ -215,7 +217,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
               <Tile
                 key={item.id}
                 internalUrl={item.properties.Path.url}
-                logoUrl={item.properties.Logo.files[0].file.url}
+                // logoUrl={item.properties.Logo.files[0].file.url}
                 title={item.properties.Name.title[0].plain_text}
                 content={item.properties.Body.rich_text[0].plain_text}
                 url={item.properties.URL.url}

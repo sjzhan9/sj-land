@@ -26,7 +26,7 @@ export default function Tile({
               width={28}
               alt={title}
             />
-          ) : (
+          ) : logoUrl ? (
             <Image
               className={styles.icon}
               priority
@@ -36,7 +36,7 @@ export default function Tile({
               width={28}
               alt={title}
             />
-          )}
+          ) : null}
         </div>
         {url.includes("http") ? (
           <a

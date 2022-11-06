@@ -8,7 +8,6 @@ export default function Tile({
   logoUrl,
   title,
   content,
-  tags,
   date,
   url,
 }) {
