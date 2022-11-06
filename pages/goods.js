@@ -8,6 +8,7 @@ import Script from "next/script";
 import Settings from "../components/settings";
 
 export default function Goods({ list }) {
+  console.log(list);
   const description =
     "With a high bar for build quality, aesthetic, and usability. Here are some of the goods that I own or researched.";
 
@@ -224,6 +225,7 @@ export default function Goods({ list }) {
                     title={link.properties.Name.title[0].plain_text}
                     url={link.properties.URL.url}
                     date={link.created_time}
+                    note={link.properties.Note.rich_text}
                     fav={link.properties.Fav.checkbox}
                     tags={link.properties.Tags.multi_select}
                     thumbnailUrl={link.properties.Thumbnail.files[0].file.url}
