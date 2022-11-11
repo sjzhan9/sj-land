@@ -7,6 +7,7 @@ import ExpTile from "../components/tiles/expTile";
 import Script from "next/script";
 const { Client } = require("@notionhq/client");
 import Tile from "../components/tiles/tile";
+import { TwitterTweetEmbed } from "react-twitter-embed";
 
 export default function About({ list }) {
   useEffect(() => {
@@ -50,13 +51,11 @@ export default function About({ list }) {
           <h1 className={util.header}>About</h1>
           <div className={util.inset}>
             <p className={util.description}>{description}</p>
-
             <div className={util.read}>
               <h2 style={{ padding: "1rem 0rem 0rem 0rem" }} id="about-update">
                 Updates
               </h2>
             </div>
-
             <ul className={util.list} style={{ margin: "0rem 0rem 0rem 0rem" }}>
               {list.map((item) => (
                 <Tile
@@ -72,7 +71,6 @@ export default function About({ list }) {
               ))}
             </ul>
             <div className={util.divider}></div>
-
             <div className={util.read}>
               <h2>Me</h2>
               <p>
@@ -177,7 +175,6 @@ export default function About({ list }) {
                 {". I’ve also added a summary below."}
               </p>
             </div>
-
             <div>
               <ExpTile
                 date="2020–Now"
@@ -236,10 +233,8 @@ export default function About({ list }) {
                 }
               />
             </div>
-
             <div className={util.read}>
               <h2>This Site</h2>
-
               <p>
                 This site was initially built in Apr 2022 over 2 weekends. I
                 built it for 2 reasons:
@@ -259,7 +254,6 @@ export default function About({ list }) {
                   frameworks.
                 </li>
               </ol>
-
               <p>
                 This site is built with{" "}
                 <a
@@ -326,12 +320,43 @@ export default function About({ list }) {
                 </a>{" "}
                 made light/dark-mode management easy.
               </p>
-              <div className={util.divider}></div>
+              {/* <div className={util.divider}></div> */}
 
               <h2 style={{ margin: "4rem 0rem -0.5rem 0rem" }}>Contact</h2>
             </div>
             <div className={util.inset} style={{ marginBottom: "4rem" }}>
               <ContactContent />
+            </div>
+
+            <div
+              className={util.read + " " + util.twitter}
+              style={{ marginBottom: "4rem" }}
+            >
+              <div>
+                <h2 id="twitter" style={{ margin: "0rem 0rem 0rem 0rem" }}>
+                  SJ on Twitter
+                </h2>
+                <span
+                  className={util.twitterSubtitle}
+                  style={{ margin: "0.25rem 0rem 1rem 0rem" }}
+                >
+                  Popular
+                </span>
+              </div>
+              <TwitterTweetEmbed tweetId={"1564256065159630849"} />
+              <TwitterTweetEmbed tweetId={"1501920540642234368"} />
+              <TwitterTweetEmbed tweetId={"1590434156840120320"} />
+              <span
+                className={util.twitterSubtitle}
+                style={{ margin: "2rem 0rem 0rem 0rem" }}
+              >
+                About this website
+              </span>
+
+              <TwitterTweetEmbed tweetId={"1526189236084408324"} />
+              <TwitterTweetEmbed tweetId={"1536719540775702530"} />
+              <TwitterTweetEmbed tweetId={"1576936243434491904"} />
+              <TwitterTweetEmbed tweetId={"1584547571342901248"} />
             </div>
           </div>
         </div>

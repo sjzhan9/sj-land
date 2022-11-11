@@ -2,6 +2,8 @@
 @import "@radix-ui/colors/whiteA.css";
 @import "@radix-ui/colors/blackA.css";
 @import "@radix-ui/colors/grayDark.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/blueDark.css";
 
 @font-face {
   font-family: "Aktiv Grotesk";

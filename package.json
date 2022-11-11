@@ -26,6 +26,7 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-hot-toast": "^2.2.0",
+    "react-twitter-embed": "^4.0.4",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1"
   },
