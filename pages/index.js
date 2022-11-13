@@ -239,6 +239,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
                 title={link.properties.Name.title[0].plain_text}
                 url={link.properties.URL.url}
                 date={link.created_time}
+                note={link.properties.Note.rich_text}
                 fav={link.properties.Fav.checkbox}
                 tags={link.properties.Tags.multi_select}
                 thumbnailUrl={link.properties.Thumbnail.files[0].file.url}

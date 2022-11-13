@@ -158,9 +158,9 @@
   row-gap: 0.5rem;
   padding-left: 0rem;
   justify-items: stretch;
-  align-items: stretch;
   overflow: hidden;
   grid-auto-rows: 0;
+  align-items: start;
 }
 @media (max-width: 1280px) {
   .homeGoodsGrid {
