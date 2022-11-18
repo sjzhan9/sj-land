@@ -11,6 +11,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/billshare",
+        destination: "/projects/billshare",
+        permanent: true,
+      },
+      {
+        source: "/oriant",
+        destination: "/projects/oriant",
+        permanent: true,
+      },
+      {
         source: "/book",
         destination: "https://cal.com/sjzhang",
         permanent: true,

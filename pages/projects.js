@@ -68,7 +68,7 @@ export default function Projects() {
               title="Compound"
               content="This is where I work and spent the last few years"
               type="Design · Full-time"
-              date="2022-05-01"
+              date="2020-06-01"
               url="https://withcompound.com"
             />
             <ProjectTile
