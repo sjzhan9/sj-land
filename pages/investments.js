@@ -52,7 +52,7 @@ export default function Investments({ list }) {
 
             <p>
               {
-                "With public equity, I invest in 5-20 stocks at any given time. With crypto, I’m heavy in Ethereal and Solana, and tend hold positions in 1-5 smaller cap tokens."
+                "With public equity, I invest in 5-20 stocks at any given time. With crypto, I’m heavy in Ethereum and Solana, and tend hold positions in 1-5 smaller cap tokens."
               }
             </p>
             <p>
