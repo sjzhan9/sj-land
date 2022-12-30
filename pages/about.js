@@ -346,6 +346,9 @@ export default function About({ list }) {
               <TwitterTweetEmbed tweetId={"1564256065159630849"} />
               <TwitterTweetEmbed tweetId={"1501920540642234368"} />
               <TwitterTweetEmbed tweetId={"1590434156840120320"} />
+              <TwitterTweetEmbed tweetId={"1607445552739885057"} />
+              <TwitterTweetEmbed tweetId={"1603959970592178176"} />
+
               <span
                 className={util.twitterSubtitle}
                 style={{ margin: "2rem 0rem 0rem 0rem" }}
