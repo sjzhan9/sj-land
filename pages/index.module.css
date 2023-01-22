@@ -72,6 +72,10 @@
   .introContainer {
     display: none;
   }
+
+  .tinyText {
+    display: none;
+  }
 }
 
 .homeUpdatesGrid {

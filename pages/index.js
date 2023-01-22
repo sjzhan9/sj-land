@@ -71,8 +71,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     newTips.length < 1 ? setIsVisible(false) : setIsVisible(true);
   }, []);
 
-  console.log(updatesList);
-
   const [userTime, setUserTime] = React.useState(null);
 
   //if all dismissed destroy the box with motion
