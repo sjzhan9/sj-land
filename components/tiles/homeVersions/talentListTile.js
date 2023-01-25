@@ -1,14 +1,24 @@
-import styles from ".//readingListTile.module.css";
+import styles from "./talentList.module.css";
 import Image from "next/image";
 import util from "../../../styles/util.module.css";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import * as Dialog from "@radix-ui/react-dialog";
+import { DiscordLogoIcon } from "@radix-ui/react-icons";
 
-export default function ReadingListTile({ title, url, date, fav, tags }) {
-  let displayUrl = url
-    .replace("https://www.", "")
-    .replace("http://www.", "")
-    .replace("https://", "")
-    .replace("http://", "");
+export default function CompanyListTile({ title, url, date, fav, tags }) {
+
+    
+    let displayUrl;
+    if (url) {
+      displayUrl = url
+        .replace("https://www.", "")
+        .replace("http://www.", "")
+        .replace("https://", "")
+        .replace("http://", "");
+    } else {
+      // You can set displayUrl to some default value if url is null or undefined
+      displayUrl = "";
+    }
   return (
     <a
       href={url}
@@ -30,10 +40,24 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
           alt="url favicon"
         ></Image>
       </div>
+
       <div className={styles.right}>
         <div className={styles.stack}>
           <div>
-            <h3 className={styles.tileTitle}>{title}</h3>
+            <Dialog.Root>
+              <Dialog.Trigger asChild id ="talentTrigger">
+                <h3 className={styles.tileTitle}>{title}</h3>
+              </Dialog.Trigger>
+           
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.overlay}/>
+                <Dialog.Content className={styles.content}
+                  onOpenAutoFocus={(e) => e.preventDefault()}
+                > 
+                  <Dialog.Title className={styles.modalTitle}>{title}</Dialog.Title>
+                </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
             <div className={util.tags + " " + util.flexRow + " " + styles.tags}>
               {tags
                 ? tags.map((tag) => (
@@ -43,6 +67,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
                   ))
                 : null}
               <span className={styles.externalIcon}>↗</span>
+
             </div>
           </div>
         </div>

@@ -59,7 +59,7 @@ export default function Tile({
               </a>
             </Link>
           )}
-          {/* <p className={util.tileContent}>{content}</p> */}
+          <p className={util.tileContent}>{content}</p>
           <p className={util.tileContent}>
             {content.map((e, i) => (
               <a key={i} href={e.href}>

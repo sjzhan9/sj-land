@@ -29,7 +29,7 @@ export default function Oriant() {
                 methods. It was a 4 day project that I carried out from research
                 to hi-fidelity UI design."
         />
-        <link rel="icon" href="/favicon.gif" />{" "}
+        <link rel="icon" href="icon.png" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script

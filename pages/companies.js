@@ -1,15 +1,15 @@
 import Head from "next/head";
 import util from "../styles/util.module.css";
-import ReadingListTile from "../components/tiles/readingListTile";
+import CompanyListTile from "../components/tiles/companyListTile";
 const { Client } = require("@notionhq/client");
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import Settings from "../components/settings";
 
-export default function ReadingList({ list }) {
+export default function CompanyList({ list }) {
   const description =
-    "From essays to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will improve sorting and filtering soon.";
+    "The top web3 companies who are hiring now. All of these startups are backed by tier 1 investors and are well capitalized.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -34,11 +34,11 @@ export default function ReadingList({ list }) {
   }, []);
 
   const filters = [
-    "General",
-    "Business & Finance",
-    "Design",
-    "Tech",
-    "Compensation",
+    "Infrastructure",
+    "NFT",
+    "Security",
+    "DeFi",
+    "Wallet",
   ];
 
   //handlers to handle filter and fav setting changes
@@ -159,9 +159,9 @@ export default function ReadingList({ list }) {
   return (
     <>
       <Head>
-        <title>{"SJ's Reading List"}</title>
+        <title>{"Company List"}</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.gif" />{" "}
+        <link rel="icon" href="icon.png" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script
@@ -180,7 +180,7 @@ export default function ReadingList({ list }) {
 
       <main className={util.page} id="readingPage">
         <div className={util.pageColumn}>
-          <h1 className={util.header}>Reading List</h1>
+          <h1 className={util.header}>Company List</h1>
           <p className={util.description}>{description}</p>
 
           <ul className={util.list}>
@@ -214,7 +214,6 @@ export default function ReadingList({ list }) {
               </div>
               <Settings status={fav} updateCheckbox={setFav} />
             </div>
-
             {currentList ? (
               currentList.length == 0 ? (
                 <div className={util.emptyState}>
@@ -222,7 +221,8 @@ export default function ReadingList({ list }) {
                 </div>
               ) : (
                 currentList.map((link) => (
-                  <ReadingListTile
+    
+                  <CompanyListTile
                     key={link.id}
                     title={link.properties.Name.title[0].plain_text}
                     url={link.properties.URL.url}
@@ -247,7 +247,7 @@ export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_READINGLIST_ID,
+    database_id: process.env.NOTION_COMPANYLIST_ID,
     filter: {
       and: [
         {

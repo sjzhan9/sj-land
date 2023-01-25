@@ -26,7 +26,7 @@ export default function Post({ postData }) {
       <Head>
         <title> {postData.title}</title>
         <meta name="description" content={postData.contentHtml} />
-        <link rel="icon" href="/favicon.gif" />{" "}
+        <link rel="icon" href="icon.png" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script

@@ -155,7 +155,7 @@ export default function Goods({ list }) {
       <Head>
         <title>{"Aesthetic Goods"}</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.gif" />{" "}
+        <link rel="icon" href="icon.png" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script

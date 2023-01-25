@@ -15,8 +15,7 @@
 .homeGreetingTitle {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-
-  font-size: clamp(56px, calc((100vw - 350px) * 0.1), 135px);
+  font-size: clamp(56px, calc((100vw - 350px) * 0.1), 95px);
   margin-left: clamp(-12px, calc((100vw - 350px) * -0.009), 0px);
   font-weight: 390;
   color: var(--gray12);
@@ -33,12 +32,12 @@
   }
 }
 .tinyText {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--gray9);
   font-weight: 380;
   letter-spacing: 0.15px;
   opacity: 0.9;
-  padding-bottom: 8rem;
+  padding-bottom: 3.5rem;
 }
 .reset {
   user-select: none;
@@ -204,4 +203,10 @@
   font-size: var(--font-s);
   color: var(--gray11);
   background: var(--linkContainerBgHover);
+}
+
+.homeGradient{
+  background: -webkit-linear-gradient(right,#6B50EA, #61BBF9 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

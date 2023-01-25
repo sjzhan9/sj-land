@@ -1,9 +1,9 @@
-import styles from ".//readingListTile.module.css";
+import styles from ".//companyListTile.module.css";
 import Image from "next/image";
 import util from "../../styles/util.module.css";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
-export default function ReadingListTile({ title, url, date, fav, tags }) {
+export default function CompanyListTile({ title, url, date, fav, tags }) {
   let displayUrl = url
     .replace("https://www.", "")
     .replace("http://www.", "")
@@ -38,7 +38,7 @@ export default function ReadingListTile({ title, url, date, fav, tags }) {
             </Tooltip.Trigger>
 
             <Tooltip.Content className={util.tooltip}>
-              One of my favorites. You can set the filter to only show
+              One of our favorites. You can set the filter to only show
               favorites.
               <Tooltip.Arrow className={util.arrow} />
             </Tooltip.Content>

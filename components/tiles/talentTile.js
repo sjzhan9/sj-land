@@ -15,12 +15,18 @@ export default function TalentTile({
 }) {
   const [displayNotableTitle, setdisplayNotableTitle] =
     React.useState(notableTitle);
-
-  let displayUrl = url
-    .replace("https://www.", "")
-    .replace("http://www.", "")
-    .replace("https://", "")
-    .replace("http://", "");
+    
+    let displayUrl;
+    if (url) {
+      displayUrl = url
+        .replace("https://www.", "")
+        .replace("http://www.", "")
+        .replace("https://", "")
+        .replace("http://", "");
+    } else {
+      // You can set displayUrl to some default value if url is null or undefined
+      displayUrl = "";
+    }
 
   if (notableUrl) {
     if (!displayNotableTitle) {

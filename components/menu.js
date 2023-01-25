@@ -20,8 +20,11 @@ export default function Menu() {
         <nav className={styles.nav}>
           <NavLink svg="recents" href="/" label="Home" shortcut="1" />
           <NavLink svg="about" href="/about" label="About" shortcut="2" />
+          <NavLink svg="users" href="/talent" label="Talent" shortcut="3" />
+          <NavLink svg="projects" href="/companies" label="Companies" shortcut="4" />
+          
 
-          <NavLink
+          {/* <NavLink
             svg="projects"
             href="/projects"
             label="Projects"
@@ -38,38 +41,38 @@ export default function Menu() {
             href="/investments"
             label="Investments"
             shortcut="5"
-          />
+          /> */}
           <p className={styles.divider}>Resources</p>
           <NavLink
             svg="reading"
             href="/reading-list"
-            label="Reading List"
-            shortcut="6"
+            label="Building web3 teams"
+            shortcut="5"
           />
-          <NavLink
+          {/* <NavLink
             svg="shopping-bag"
             href="/goods"
             label="Aesthetic Goods"
             shortcut="7"
           />
-          <NavLink svg="users" href="/talent" label="Talent" shortcut="8" />
+           */}
           <NavLink
             svg="newsletters"
-            href="/newsletters"
-            label="Newsletters"
-            shortcut="9"
+            href="/newsletter"
+            label="Newsletter"
+            shortcut="6"
           />
           <NavLink
             svg="podcasts"
-            href="/podcasts"
-            label="Podcasts"
-            shortcut="0"
+            href="/podcast"
+            label="Podcast"
+            shortcut="7"
           />
-          <p className={styles.divider}>Stay in touch</p>
+          <p className={styles.divider}>Reach out</p>
           <Contact svg="chat" label="Contact" shortcut="/" />
           <NavLink
             svg="twitter"
-            href="https://twitter.com/sjzhang_"
+            href="https://twitter.com/alchemy_vc_"
             label="Twitter"
             external="true"
           />

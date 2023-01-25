@@ -28,7 +28,7 @@ export default function Investments({ list }) {
       <Head>
         <title>{"SJ's Investments"}</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.gif" />
+        <link rel="icon" href="icon.png" />
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script

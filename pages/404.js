@@ -9,7 +9,7 @@ export default function Custom404() {
       <Head>
         <title>404 Not Found</title>
         <meta name="description" content="Page missing" />
-        <link rel="icon" href="/favicon.gif" type="image/gif" />
+        <link rel="icon" href="icon.png" type="image/gif" />
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <main className={util.page} id="recentsPage">

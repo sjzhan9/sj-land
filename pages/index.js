@@ -1,9 +1,11 @@
 import Head from "next/head";
 import React, { useEffect } from "react";
+import { useMediaQuery } from 'react-responsive';
 import util from "../styles/util.module.css";
 import Link from "next/link";
 import Tile from "../components/tiles/homeVersions/tile";
-import ReadingListTile from "../components/tiles/homeVersions/readingListTile";
+import CompanyListTile from "../components/tiles/homeVersions/companyListTile";
+import TalentListTile from "../components/tiles/homeVersions/talentListTile";
 import GoodsTile from "../components/tiles/homeVersions/goodsTile";
 import StoreTile from "../components/tiles/homeVersions/storeTile";
 import styles from "../pages/index.module.css";
@@ -13,8 +15,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const { Client } = require("@notionhq/client");
 import Script from "next/script";
 
-export default function Home({ updatesList, goodsList, readingListList }) {
+export default function Home({ companyListList, talentListList }) {
   //create masterlist objects with uuid and text and cta
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const tips = [
     {
       id: "useShortCut",
@@ -24,34 +27,29 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     },
     {
       id: "firstTime",
-      text: "Don't know me yet? My name is SJ, and I love over-engineering my personal website.",
-      ctaText: "More about me →",
+      text: "Want to learn more about why we made this?",
+      ctaText: "More about Alchemy Connect →",
       ctaLink: "/about",
     },
     {
       id: "seeTalent",
-      text: "Many come here for my list of talented builders. If you are looking for a job, drop me a note.",
-      ctaText: "Go to Talent →",
+      text: "Want to see our full list of talent?",
+      ctaText: "Check out our list →",
       ctaLink: "/talent",
     },
     {
       id: "seeHowItWasBuilt",
-      text: "If you are curious how the site was built, I have a Twitter thread on it.",
-      ctaText: "Check it out →",
-      ctaLink: "https://twitter.com/sjzhang_/status/1526189236084408324",
+      text: "Make sure to check out our other products!",
+      ctaText: "Visit Alchemy",
+      ctaLink: "alchemy.com",
     },
     {
-      id: "openCal",
-      text: "I enjoy meeting random people and help where I can. ",
-      ctaText: "My open calendar is here ↗",
+      id: "web3Teams",
+      text: "Want advice on building a rockstar web3 team?",
+      ctaText: "See our guide here ↗",
       ctaLink: "https://cal.com/sjzhang/15min",
     },
-    {
-      id: "support",
-      text: "If this website helped you, or I helped you, feel free to ",
-      ctaText: "check out some goodies →",
-      ctaLink: "/store",
-    },
+  
   ];
   //create currentlist of what user need to see
   const [currentTips, setCurrentTips] = React.useState([0]);
@@ -71,7 +69,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
     newTips.length < 1 ? setIsVisible(false) : setIsVisible(true);
   }, []);
 
-  console.log(updatesList);
+
 
   const [userTime, setUserTime] = React.useState(null);
 
@@ -129,14 +127,14 @@ export default function Home({ updatesList, goodsList, readingListList }) {
   }, []);
 
   const description =
-    "I’m a designer and developer by training and trade. I spend most of my spare time reading about business, finance and crypto. If this combination interests you, welcome to my corner of the internet. This is where I share my reading list, investment updates, and software adventures.";
+    "Alchemy Connect is the best way to find talent in web3. We help you find the right people for your team, and help you get hired by the best companies in the space.";
 
   return (
     <>
       <Head>
-        <title>SJ · Home</title>
+        <title>Alchemy Connect | Home</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.gif" type="image/gif" />
+        <link rel="icon" href="/icon.png" type="image/gif" />
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>{" "}
       <Script
@@ -155,11 +153,12 @@ export default function Home({ updatesList, goodsList, readingListList }) {
       <main className={util.page} id="recentsPage">
         <div className={styles.homeColumn}>
           <h1 className={styles.homeGreetingTitle}>
-            {userTime ? userTime : "Hello"}
+            {/* Welcome, <span className={util.gradient}>Paul.</span> */}
+             Welcome, Nikil.
           </h1>
           <span className={styles.tinyText}>
-            My name is SJ — Welcome to sj.land.{" "}
-            {isVisible
+            Explore a curated list of the best talent in the industry. {" "}
+            {isVisible && !isMobile
               ? `Below are some tips to get you started on this website.`
               : null}
             {!isVisible ? (
@@ -206,79 +205,50 @@ export default function Home({ updatesList, goodsList, readingListList }) {
               </motion.div>
             )}
           </AnimatePresence>
+          
           <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Updates</h2>
-            <Link href="/about#about-update">
+            <h2 className={styles.homeSectionTitle}>Talent</h2>
+            <Link href="/reading-list">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
-          </div>
-          <ul className={styles.homeUpdatesGrid}>
-            {updatesList.map((item) => (
-              <Tile
-                key={item.id}
-                internalUrl={item.properties.Path.url}
-                // logoUrl={item.properties.Logo.files[0].file.url}
+          </div>{" "}
+          <ul className = {styles.homeUpdatesGrid}>
+            {talentListList.map((item) => (
+              <Tile 
+              key={item.id}
+                internalUrl={item.properties.Path.plain_text}
                 title={item.properties.Name.title[0].plain_text}
-                content={item.properties.Body.rich_text}
+                content = {item.properties.Body.rich_text}
+                experience = {item.properties.Experience.rich_text}
+                education = {item.properties.Education.rich_text}
                 url={item.properties.URL.url}
-                date={item.properties.Time.date.start}
+                date={item.created_time}
                 tags={item.properties.Tags.multi_select}
               />
+        
             ))}
           </ul>
+
           <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Aesthetic Goods</h2>
-            <Link href="/goods">
-              <a className={styles.homeLinkButton}>View All</a>
-            </Link>
-          </div>
-          <ul className={styles.homeGoodsGrid}>
-            {goodsList.map((link) => (
-              <GoodsTile
-                key={link.id}
-                title={link.properties.Name.title[0].plain_text}
-                url={link.properties.URL.url}
-                date={link.created_time}
-                note={link.properties.Note.rich_text}
-                fav={link.properties.Fav.checkbox}
-                tags={link.properties.Tags.multi_select}
-                thumbnailUrl={link.properties.Thumbnail.files[0].file.url}
-                price={link.properties.Price.number}
-                brand={link.properties.Brand.rich_text[0].plain_text}
-              />
-            ))}
-          </ul>
-          <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Reading List</h2>
+            <h2 className={styles.homeSectionTitle}>Companies</h2>
             <Link href="/reading-list">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
           </div>{" "}
           <ul className={styles.homeReadingGrid}>
-            {readingListList.map((link) => (
-              <ReadingListTile
+            {companyListList.map((link) => (
+              <CompanyListTile
                 key={link.id}
                 title={link.properties.Name.title[0].plain_text}
                 url={link.properties.URL.url}
                 date={link.created_time}
-                fav={link.properties.Fav.checkbox}
+                content = {link.properties.Body.rich_text}
                 tags={link.properties.Tags.multi_select}
               />
             ))}
           </ul>
-          <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Boutique</h2>
-            <Link href="/store">
-              <a className={styles.homeLinkButton}>View All</a>
-            </Link>
-          </div>
-          <ul className={styles.homeStoreGrid}>
-            <StoreTile id="W01-01" title="W01-01" type="6K Desktop + Mobile" />
-            <StoreTile id="W01-02" title="W01-02" type="6K Desktop + Mobile" />
-            <StoreTile id="W01-03" title="W01-03" type="6K Desktop + Mobile" />
-            <StoreTile id="W01-04" title="W01-04" type="6K Desktop + Mobile" />
-          </ul>
         </div>
+
       </main>
     </>
   );
@@ -287,48 +257,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
 //notion API
 export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  const updatesResponse = await notion.databases.query({
-    database_id: process.env.NOTION_RECENTS_ID,
-    filter: {
-      and: [
-        {
-          property: "Display",
-          checkbox: {
-            equals: true,
-          },
-        },
-      ],
-    },
-    sorts: [
-      {
-        property: "Time",
-        direction: "descending",
-      },
-    ],
-    page_size: 4,
-  });
-  const goodsResponse = await notion.databases.query({
-    database_id: process.env.NOTION_GOODS_ID,
-    filter: {
-      and: [
-        {
-          property: "Display",
-          checkbox: {
-            equals: true,
-          },
-        },
-      ],
-    },
-    sorts: [
-      {
-        property: "Created",
-        direction: "descending",
-      },
-    ],
-    page_size: 5,
-  });
-  const readingListResponse = await notion.databases.query({
-    database_id: process.env.NOTION_READINGLIST_ID,
+  const companyListResponse = await notion.databases.query({
+    database_id: process.env.NOTION_COMPANYLIST_ID,
     filter: {
       and: [
         {
@@ -347,11 +277,30 @@ export async function getStaticProps() {
     ],
     page_size: 8,
   });
+  const talentListResponse = await notion.databases.query({
+    database_id: process.env.NOTION_TALENTLIST_ID,
+    filter: {
+      and: [
+        {
+          property: "Display",
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
+    },
+    sorts: [
+      {
+        property: "Created",
+        direction: "descending",
+      },
+    ],
+  });
+
   return {
     props: {
-      updatesList: updatesResponse.results,
-      goodsList: goodsResponse.results,
-      readingListList: readingListResponse.results,
+      companyListList: companyListResponse.results,
+      talentListList: talentListResponse.results,
     },
     revalidate: 5,
   };

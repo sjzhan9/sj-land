@@ -9,7 +9,7 @@ import Settings from "../components/settings";
 
 export default function Talent({ list }) {
   const description =
-    "Incredible design talent that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
+    "We've spent hours pouring over all the talent in web3 to create a curated list of the best of the best. \nRemember, with great power, comes great responsibility. ";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -35,7 +35,7 @@ export default function Talent({ list }) {
 
   //logic should remember filter, fav setting, and it's very own scroll pos
 
-  const filters = ["Product", "Brand", "Craft", "Design Engineer", "Agency"];
+  const filters = ["Engineering", "Product", "Growth", "Design"];
 
   //handlers to handle filter and fav setting changes
   function removeFilter() {
@@ -157,7 +157,7 @@ export default function Talent({ list }) {
       <Head>
         <title>{"SJ's Talent List"}</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.gif" />{" "}
+        <link rel="icon" href="icon.png" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
       <Script
@@ -184,7 +184,7 @@ export default function Talent({ list }) {
               <h3 className={util.tileTitle}>Open to new opportunities?</h3>
               <p className={util.tileContent}>
                 {
-                  "Many founders ask me for intros to designers. If you are looking for something new, let me know."
+                  "Top-tier companies are hiring in web3. Want in? Let them know by signing up to be featured on Alchemy Connect."
                 }
               </p>
             </div>
@@ -194,7 +194,7 @@ export default function Talent({ list }) {
                 "mailto:hi.sj.zhang@gmail.com?subject=I'm%20open%20to%20new%20opportunities&body=Name%3A%0D%0APortfolio%3A%0D%0ALinkedin%3A%0D%0ATwitter%3A"
               }
             >
-              {"I'm Open"}
+              {"Sign me up!"}
             </a>
           </div>
 
@@ -270,9 +270,11 @@ export default function Talent({ list }) {
 //notion API
 export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
+  if (!process.env.NOTION_TALENTLIST_ID) {
+    throw new Error("NOTION_TALENTLIST_ID is not defined");
+  }
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_TALENT_ID,
+    database_id: process.env.NOTION_TALENTLIST_ID,
     filter: {
       and: [
         {
@@ -298,3 +300,5 @@ export async function getStaticProps() {
     revalidate: 5,
   };
 }
+
+

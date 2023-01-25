@@ -23,7 +23,7 @@ export default function ContactContent() {
       <div className={styles.row}>
         <div className={styles.stack}>
           <p className={styles.mainText}>Email</p>
-          <p className={styles.subText}>hi.sj.zhang@gmail.com</p>
+          <p className={styles.subText}>ventures@alchemy.com</p>
         </div>
 
         <div className={styles.buttonPair}>
@@ -70,11 +70,11 @@ export default function ContactContent() {
         <div className={styles.stack}>
           <p className={styles.mainText}>Book a time</p>
           <p className={styles.subText}>
-            {"For advice, it's easier to chat live"}
+            {"Need advice? Let's chat!"}
           </p>
         </div>
         <a
-          href="https://cal.com/sjzhang/15min"
+          href="alchemy.com"
           target="_blank"
           rel="noopener noreferrer"
           className={
@@ -86,13 +86,13 @@ export default function ContactContent() {
       </div>
       <div className={styles.row}>
         <div className={styles.stack}>
-          <p className={styles.mainText}>Stay in touch</p>
-          <p className={styles.subText}>{"I'm most active on twitter"}</p>
+          <p className={styles.mainText}>Reach out</p>
+          <p className={styles.subText}>{"We're here to talk."}</p>
         </div>
         <div className={styles.flexRow}>
           <a
             className={styles.textButton}
-            href="https://twitter.com/sjzhang_"
+            href="https://twitter.com/alchemyplatform"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -108,7 +108,7 @@ export default function ContactContent() {
           </a>
           <a
             className={styles.textButton}
-            href="https://www.linkedin.com/in/s-j-zhang/"
+            href="https://www.linkedin.com/in/enzocoglitore"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -122,22 +122,7 @@ export default function ContactContent() {
             />
             <span className={util.iconButtonText}>LinkedIn</span>
           </a>
-          <a
-            className={styles.textButton}
-            href="https://read.cv/sj"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.icon}
-              priority
-              src={"/icons/readcv.jpg"}
-              height={18}
-              width={18}
-              alt="readcv"
-            />
-            <span className={util.iconButtonText}>CV</span>
-          </a>
+         
         </div>
       </div>
     </>
