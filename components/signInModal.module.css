@@ -1,0 +1,20 @@
+.container {
+    background-color: var(--tabbg);
+    border-radius: 8px;   
+        border: none;
+}
+
+.button {
+    background-color: transparent;
+    border-radius: 8px;
+    color: var(--menuLabel);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.button:hover {
+    background-color: var(--highlighthover);
+}

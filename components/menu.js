@@ -4,13 +4,16 @@ import Link from "next/link";
 import NavLink from "./navLink";
 import Contact from "./contact";
 import util from "../styles/util.module.css";
+import SignInModal from "./signInModal";
+
+
 
 export default function Menu() {
   return (
     <div className={styles.container}>
       <div className={styles.upper}>
         <Link href="/">
-          <img
+          <img style = {{width: "150px"}}
             className={util.hiddenOnMobile + " " + util.pointer + " logoInvert"}
             src="/logo.png"
             alt="site logo"
@@ -78,7 +81,10 @@ export default function Menu() {
           />
         </nav>
       </div>
-      <ThemeChanger />
+      <div className={styles.loginDiv}>
+        <SignInModal />
+        <ThemeChanger />
+      </div>
     </div>
   );
 }

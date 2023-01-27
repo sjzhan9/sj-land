@@ -14,9 +14,14 @@ import OnboardingCard from "../components/onboardingCard";
 import { motion, AnimatePresence } from "framer-motion";
 const { Client } = require("@notionhq/client");
 import Script from "next/script";
+import { useSession } from "next-auth/react";
+
 
 export default function Home({ companyListList, talentListList }) {
   //create masterlist objects with uuid and text and cta
+
+  const { data: session } = useSession()
+
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const tips = [
     {
@@ -129,7 +134,17 @@ export default function Home({ companyListList, talentListList }) {
   const description =
     "Alchemy Connect is the best way to find talent in web3. We help you find the right people for your team, and help you get hired by the best companies in the space.";
 
-  return (
+  let firstName = "";
+    if (session) {
+      let name = session.user.name;
+      firstName = name.split(" ")[0];
+    }
+    else {
+      firstName = null;
+    }
+   
+    
+    return (
     <>
       <Head>
         <title>Alchemy Connect | Home</title>
@@ -154,10 +169,21 @@ export default function Home({ companyListList, talentListList }) {
         <div className={styles.homeColumn}>
           <h1 className={styles.homeGreetingTitle}>
             {/* Welcome, <span className={util.gradient}>Paul.</span> */}
-             Welcome, Nikil.
+          
+            {session ? 
+                (
+                  <>
+                   Welcome, {firstName}.
+                  </>
+            ): 
+            <>
+                Welcome to Alchemy Ventures.
+            </>
+              }
+        
           </h1>
           <span className={styles.tinyText}>
-            Explore a curated list of the best talent in the industry. {" "}
+            A collection of the best web3 companies. {" "}
             {isVisible && !isMobile
               ? `Below are some tips to get you started on this website.`
               : null}
@@ -205,6 +231,25 @@ export default function Home({ companyListList, talentListList }) {
               </motion.div>
             )}
           </AnimatePresence>
+
+          <div className={styles.homeSectionContainer}>
+            <h2 className={styles.homeSectionTitle}>Companies</h2>
+            <Link href="/reading-list">
+              <a className={styles.homeLinkButton}>View All</a>
+            </Link>
+          </div>{" "}
+          <ul className={styles.homeReadingGrid}>
+            {companyListList.map((link) => (
+              <CompanyListTile
+                key={link.id}
+                title={link.properties.Name.title[0].plain_text}
+                url={link.properties.URL.url}
+                date={link.created_time}
+                content = {link.properties.Body.rich_text}
+                tags={link.properties.Tags.multi_select}
+              />
+            ))}
+          </ul>
           
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Talent</h2>
@@ -225,28 +270,10 @@ export default function Home({ companyListList, talentListList }) {
                 date={item.created_time}
                 tags={item.properties.Tags.multi_select}
               />
-        
             ))}
           </ul>
 
-          <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Companies</h2>
-            <Link href="/reading-list">
-              <a className={styles.homeLinkButton}>View All</a>
-            </Link>
-          </div>{" "}
-          <ul className={styles.homeReadingGrid}>
-            {companyListList.map((link) => (
-              <CompanyListTile
-                key={link.id}
-                title={link.properties.Name.title[0].plain_text}
-                url={link.properties.URL.url}
-                date={link.created_time}
-                content = {link.properties.Body.rich_text}
-                tags={link.properties.Tags.multi_select}
-              />
-            ))}
-          </ul>
+          
         </div>
 
       </main>

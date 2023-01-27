@@ -12,6 +12,12 @@
   margin: 0.5rem;
 }
 
+.loginDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .divider {
   padding: 1.25rem 0rem 0.5rem 0.875rem;
   /* margin-top: 0.5rem; */
@@ -62,3 +68,4 @@
     flex-direction: row;
   }
 }
+

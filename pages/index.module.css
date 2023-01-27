@@ -15,7 +15,7 @@
 .homeGreetingTitle {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  font-size: clamp(56px, calc((100vw - 350px) * 0.1), 95px);
+  font-size: clamp(56px, calc((100vw - 350px) * 0.1), 85px);
   margin-left: clamp(-12px, calc((100vw - 350px) * -0.009), 0px);
   font-weight: 390;
   color: var(--gray12);

@@ -41,9 +41,9 @@
   cursor: pointer;
   transition: color 0.15s ease-in;
 }
-/* .tab:hover {
-  color: var(--gray12);
-} */
+.tab:hover {
+  background-color: var(--highlighthover);
+}
 .input[type="radio"]:checked + label {
   color: var(--menuLabel);
 }
