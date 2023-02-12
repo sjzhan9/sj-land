@@ -1,0 +1,172 @@
+.homeFounderDiv{
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    background-color: var(--linkContainerBg);
+    border: 1px solid var(--linkContainerBorder);
+    gap: 8px;
+  }
+  
+  .homeFounderdiv p {
+    font-size: var(--font-l);
+    font-weight: 390;
+    color: var(--gray12);
+    transition: all 0.2s ease;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .homeFounderDiv:hover {
+    background-color: var(--linkContainerBgHover);
+    border: 1px solid var(--linkContainerBorderHover);
+    cursor: pointer;
+  }
+  
+  .logoIcon {
+    border-radius: 3.5px;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 700px) {
+    .homeFounderDiv {
+      justify-content: left;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    /* backdrop-filter: blur(2px); */
+    background-color: var(--overlayDarkness);
+    /* animation: overlay-show 150ms cubic-bezier(0.16, 1, 0.3, 1) forwards; */
+    z-index: 9;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: var(--modalBg);
+    color: var(--gray12);
+    box-shadow: rgba(20, 20, 20, 0.15) 0px 10px 38px -10px,
+      rgba(20, 20, 20, 0.05) 0px 10px 20px -15px;
+    border-radius: 8px;
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(300px, 30vw, 1080px);
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: stretch;
+    z-index: 10;
+    padding: 1.5rem;
+  }
+
+  
+  .dialogTitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .formFieldset {
+   border: none;
+   padding: none;
+   margin: 0;
+
+  }
+
+  .label {
+    font-size: 15px;
+    color: var(--gray12);
+    width: 90px;
+    text-align: right;
+  }
+
+  .input {
+    width: 100%;
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 1;
+    color: var(--violet11);
+    box-shadow: 0 0 0 1px var(--violet7);
+    height: 35px;
+  }
+
+  .LabelRoot {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 35px;
+    color: var(--gray12);
+  }
+  
+  .Input {
+    width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0 10px;
+    height: 35px;
+    font-size: 15px;
+    line-height: 1;
+    color: var(--gray11);
+    background-color: var(--linkContainerBg);
+    padding: 5px;
+    border: 1px solid var(--gray5);
+  }
+
+  .Input:hover {
+    background-color: var(--linkContainerBgHover);
+  }
+
+  .fieldContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .textArea {
+    background-color: var(--linkContainerBg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--gray11);
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-top: 5px;
+    border: 1px solid var(--gray5);
+    resize:vertical;
+  }
+
+  .Select {
+    background-color: var(--linkContainerBg);
+    height: 35px;
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 5px;
+    border: 1px solid var(--gray5);
+    color: var(--gray11);
+  }
+
+  .textArea:hover{
+    background-color: var(--linkContainerBgHover);
+
+  }

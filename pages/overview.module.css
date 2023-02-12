@@ -1,0 +1,148 @@
+.grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: .5fr repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.grid1{
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.grid2{
+    grid-area: 2 / 1 / 4 / 3;
+    width: 100%;
+    height: 100%;
+    background-color: var(--linkContainerBg);
+    border-radius: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    box-shadow: rgba(20, 20, 20, 0.15) 0px 10px 38px -10px;
+    border: 1px solid var(--linkContainerBorder);
+}
+
+.grid2:hover {
+    background-color: var(--linkContainerBgHover);
+}
+
+.grid3 {
+   grid-area: 4 / 1 / 6 / 3;
+   width: 100%;
+    height: 100%;
+    background-color: var(--linkContainerBg);
+    border-radius: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    box-shadow: rgba(20, 20, 20, 0.15) 0px 10px 38px -10px;
+    border: 1px solid var(--linkContainerBorder);
+}
+.grid3:hover {
+    background-color: var(--linkContainerBgHover);
+}
+
+.grid4 {
+    grid-area: 2 / 3 / 4 / 5;
+    width: 100%;
+    height: 100%;
+    background-color: var(--linkContainerBg);
+    border-radius: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    box-shadow: rgba(20, 20, 20, 0.15) 0px 10px 38px -10px;
+    border: 1px solid var(--linkContainerBorder);
+}
+
+.grid4:hover {
+    background-color: var(--linkContainerBgHover);
+}
+
+.grid5 {
+    grid-area: 4 / 3 / 6 / 5;
+    width: 100%;
+    height: 100%;
+    background-color: var(--linkContainerBg);
+    border-radius: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    box-shadow: rgba(20, 20, 20, 0.15) 0px 10px 38px -10px;
+    border: 1px solid var(--linkContainerBorder);
+}
+
+.grid5:hover {
+    background-color: var(--linkContainerBgHover);
+}
+
+.pieChart{
+    width: 90%;
+    height: 90%;
+}
+
+.chart {
+    padding: 10px;
+    width: 100% !important;
+    height: 100%;
+}
+
+.barChart {
+    height: 100%;
+    width: 100% !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.optionRow {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .chart {
+      width: 100%;
+    }
+
+    .grid1 {
+        padding-top: 20px;
+    }
+  }
+  
+
+
+  .logoIcon {
+    border-radius: 3.5px;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+  }

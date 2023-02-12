@@ -84,6 +84,18 @@
   overflow: hidden;
   grid-auto-rows: 0;
 }
+
+.homeFounderGrid {
+  padding-top: 1rem;
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  column-gap: 0.75rem;
+  padding-left: 0rem;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-auto-rows: 0;
+}
+
 @media (max-width: 1280px) {
   .homeUpdatesGrid {
     grid-template: repeat(1, 1fr) / repeat(3, 1fr);
@@ -98,6 +110,12 @@
   .homeUpdatesGrid {
     display: flex;
     flex-direction: column;
+  }
+  .homeFounderGrid {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    justify-content: left;
   }
 }
 .homeStoreGrid {
@@ -132,6 +150,7 @@
   align-items: stretch;
   grid-auto-rows: 0;
   overflow: hidden;
+
 }
 
 @media (max-width: 1280px) {
@@ -174,7 +193,7 @@
 @media (max-width: 700px) {
   .homeGoodsGrid {
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-  }
+  } 
 }
 .homeSectionContainer {
   display: flex;
@@ -209,4 +228,61 @@
   background: -webkit-linear-gradient(right,#6B50EA, #61BBF9 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0px;
+  margin-right: 0rem;
+  min-width: 0;
+  gap: 8px;
+}
+
+.homeFounderDiv{
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  background-color: var(--linkContainerBg);
+  border: 1px solid var(--linkContainerBorder);
+  gap: 8px;
+}
+
+.homeFounderdiv p {
+  font-size: var(--font-l);
+  font-weight: 390;
+  color: var(--gray12);
+  transition: all 0.2s ease;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.homeFounderDiv:hover {
+  background-color: var(--linkContainerBgHover);
+  border: 1px solid var(--linkContainerBorderHover);
+  cursor: pointer;
+}
+
+.logoIcon {
+  border-radius: 3.5px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .homeFounderGrid {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    justify-content: left;
+  }
+  .homeFounderDiv {
+    justify-content: left;
+  }
 }

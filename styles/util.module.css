@@ -106,6 +106,15 @@
   color: var(--gray12);
   transition: color 0.25s ease;
 }
+
+.subheader {
+  font-size: 1.5rem;
+  font-weight: 560;
+  margin-bottom: .5rem;
+  color: var(--gray12);
+  transition: color 0.25s ease;
+}
+
 .subtitle {
   margin-bottom: .5rem;
   background: -webkit-linear-gradient(right,#6B50EA, #61BBF9 );
@@ -564,6 +573,7 @@
   transition: opacity 0.15s ease;
   font-weight: 480;
   font-size: var(--font-m);
+  max-width: 135px;
 }
 .primaryButton:hover {
   opacity: 0.85;
@@ -707,9 +717,22 @@
     flex-grow: 1;
     margin-left: 0rem;
     overflow: auto;
-    margin: 0rem;
+    margin-left: 0rem;
     height: auto;
   }
+
+  .gridPage {
+    display: grid;
+    height: 100%;
+    padding: 0rem 1rem 4rem;
+    margin-left: 0rem;
+    margin-left: 0rem;
+    position: static;
+    width: 100%;
+    background-color: red;
+    
+  }
+
   .header {
     font-size: 2.5rem;
     
@@ -849,4 +872,19 @@
 
 .overlayRow {
   gap: 10px;
+}
+ 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  /* backdrop-filter: blur(2px); */
+  background-color: var(--overlayDarkness);
+  /* animation: overlay-show 150ms cubic-bezier(0.16, 1, 0.3, 1) forwards; */
+  z-index: 9;
 }

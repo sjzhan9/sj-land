@@ -9,7 +9,7 @@ import Settings from "../components/settings";
 
 export default function CompanyList({ list }) {
   const description =
-    "The top web3 companies who are hiring now. All of these startups are backed by tier 1 investors and are well capitalized.";
+    "A collection of web3 companies building revolutionary products.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -34,11 +34,15 @@ export default function CompanyList({ list }) {
   }, []);
 
   const filters = [
-    "Infrastructure",
-    "NFT",
-    "Security",
+    "Developer Tool",
+    "Protocol (L1 / L2s)",
+    "Social / Identity",
+    "NFTs",
     "DeFi",
-    "Wallet",
+    "Transaction Infrastructure",
+    "Infrastructure",
+    "Gaming",
+    "Security"
   ];
 
   //handlers to handle filter and fav setting changes
@@ -99,11 +103,11 @@ export default function CompanyList({ list }) {
         for (var i = 0; i < list.length; i++) {
           for (
             var j = 0;
-            j < list[i].properties.Tags.multi_select.length;
+            j < list[i].properties.Industry.multi_select.length;
             j++
           ) {
             if (
-              list[i].properties.Tags.multi_select[j].name ==
+              list[i].properties.Industry.multi_select[j].name ==
               filter.replace("&amp;", "&")
             ) {
               tempList.push(list[i]);
@@ -119,13 +123,13 @@ export default function CompanyList({ list }) {
         for (var i = 0; i < list.length; i++) {
           for (
             var j = 0;
-            j < list[i].properties.Tags.multi_select.length;
+            j < list[i].properties.Industry.multi_select.length;
             j++
           ) {
             if (
-              list[i].properties.Tags.multi_select[j].name ==
+              list[i].properties.Industry.multi_select[j].name ==
                 filter.replace("&amp;", "&") &&
-              list[i].properties.Fav.checkbox == fav
+              list[i].properties.Raising.checkbox == fav
             ) {
               tempList.push(list[i]);
             }
@@ -138,7 +142,7 @@ export default function CompanyList({ list }) {
         sessionStorage.setItem("reading-filter", "all");
         sessionStorage.setItem("reading-fav", true);
         for (var i = 0; i < list.length; i++) {
-          if (list[i].properties.Fav.checkbox == fav) {
+          if (list[i].properties.Raising.checkbox == fav) {
             tempList.push(list[i]);
           }
         }
@@ -164,23 +168,11 @@ export default function CompanyList({ list }) {
         <link rel="icon" href="icon.png" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'GA_MEASUREMENT_ID');
-        `}
-      </Script>
+     
 
       <main className={util.page} id="readingPage">
         <div className={util.pageColumn}>
-          <h1 className={util.header}>Company List</h1>
+          <h1 className={util.header}>Portfolio</h1>
           <p className={util.description}>{description}</p>
 
           <ul className={util.list}>
@@ -192,7 +184,7 @@ export default function CompanyList({ list }) {
                   role="tab"
                   aria-selected={filter == "all" ? "true" : null}
                 >
-                  Recently Added
+                  All
                 </button>
                 {filters.map((filterName) => (
                   <button
@@ -224,11 +216,14 @@ export default function CompanyList({ list }) {
     
                   <CompanyListTile
                     key={link.id}
-                    title={link.properties.Name.title[0].plain_text}
-                    url={link.properties.URL.url}
-                    date={link.created_time}
-                    fav={link.properties.Fav.checkbox}
-                    tags={link.properties.Tags.multi_select}
+                    title={link.properties.Company.title[0].plain_text}
+                    tags={link.properties.Industry.multi_select}
+                    url = {link.properties.URL.url}
+                    about = {link.properties.About.rich_text}
+                    founder = {link.properties.Founder.rich_text}
+                    founderLinkedin = {link.properties.FounderLinkedin.url}
+                    email = {link.properties.Email.email}
+                    raising = {link.properties.Raising.checkbox}
                   />
                 ))
               )
@@ -244,31 +239,22 @@ export default function CompanyList({ list }) {
 
 //notion API
 export async function getStaticProps() {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
-  const response = await notion.databases.query({
-    database_id: process.env.NOTION_COMPANYLIST_ID,
-    filter: {
-      and: [
-        {
-          property: "Display",
-          checkbox: {
-            equals: true,
-          },
-        },
-      ],
-    },
+  const alchemy_notion = new Client({ auth: process.env.ALCHEMOTION_API_KEY});
+
+  const portfolioListResponse = await alchemy_notion.databases.query({
+    database_id: process.env.NOTION_PORTFOLIOLIST_ID,
     sorts: [
       {
         property: "Created",
-        direction: "descending",
+        direction: "ascending",
       },
     ],
   });
 
   return {
     props: {
-      list: response.results,
+      list: portfolioListResponse.results,
     },
     revalidate: 5,
   };

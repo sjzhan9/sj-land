@@ -25,7 +25,7 @@ export default function About({ list }) {
     <Accordion.Item className={util.AccordionItem} value="item-2">
       <AccordionTrigger>Is it unstyled?</AccordionTrigger>
       <AccordionContent>
-        Yes. It's unstyled by default, giving you freedom over the look and feel.
+        <p>Yes. Its unstyled by default, giving you freedom over the look and feel. </p>
       </AccordionContent>
     </Accordion.Item>
   
@@ -103,19 +103,8 @@ export default function About({ list }) {
         <link rel="icon" href="icon.png" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'GA_MEASUREMENT_ID');
-        `}
-      </Script>
+     
+     
       <main className={util.page} id="aboutPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Introducing Alchemy Connect</h1>
@@ -126,7 +115,7 @@ export default function About({ list }) {
                 </p>
                 <br></br>
                 <p className={util.description}>
-                That's why we've created a platform that carefully curates and connects top talent with leading companies in the web3 space. Our team of experts personally reviews and selects only the most qualified candidates and reputable businesses to be featured on our site.
+                    Thats why weve created a platform that carefully curates and connects top talent with leading companies in the web3 space. Our team of experts personally reviews and selects only the most qualified candidates and reputable businesses to be featured on our site.
                 </p>
                 <br></br>
                 <p className = {util.description}>

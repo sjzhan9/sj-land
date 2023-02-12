@@ -8,6 +8,7 @@ import CompanyListTile from "../components/tiles/homeVersions/companyListTile";
 import TalentListTile from "../components/tiles/homeVersions/talentListTile";
 import GoodsTile from "../components/tiles/homeVersions/goodsTile";
 import StoreTile from "../components/tiles/homeVersions/storeTile";
+import FounderRequestTile from "../components/tiles/homeVersions/founderRequestTile";
 import styles from "../pages/index.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import OnboardingCard from "../components/onboardingCard";
@@ -15,12 +16,40 @@ import { motion, AnimatePresence } from "framer-motion";
 const { Client } = require("@notionhq/client");
 import Script from "next/script";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 
-export default function Home({ companyListList, talentListList }) {
+export default function Home({ companyListList, portfolioListCompanies, talentListList, portfolioListList }) {
   //create masterlist objects with uuid and text and cta
 
-  const { data: session } = useSession()
+  const { data: session } = useSession();
+
+
+  function getCompanyNameFromEmail(email) {
+    let companyName = email.split("@")[1].split(".")[0];
+    companyName = companyName[0].toUpperCase() + companyName.slice(1);
+    return companyName.toUpperCase();
+  }
+  
+  function checkEmails(userEmail, portfolioListCompanies) {
+    userEmail = getCompanyNameFromEmail(userEmail);
+    return portfolioListCompanies.some(value => {
+      let companyEmail = getCompanyNameFromEmail(value.properties.Email.email);
+      return userEmail == companyEmail || userEmail == "ALCHEMY";
+    });
+  }
+
+
+
+  let email;
+  let isPortfolioCompany = false;
+
+  if (session) {
+    email = session.user.email;
+    isPortfolioCompany = checkEmails(email, portfolioListList);
+  }
+ 
+
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const tips = [
@@ -83,6 +112,7 @@ export default function Home({ companyListList, talentListList }) {
     currentTips.length < 1 ? setIsVisible(false) : null;
   }, [currentTips]);
 
+
   //when user click on the x on onboarding cards
   //remove the card and write in local storage to not show again
   function handleOnboardingDismiss(e) {
@@ -142,8 +172,8 @@ export default function Home({ companyListList, talentListList }) {
     else {
       firstName = null;
     }
-   
-    
+
+
     return (
     <>
       <Head>
@@ -152,19 +182,8 @@ export default function Home({ companyListList, talentListList }) {
         <link rel="icon" href="/icon.png" type="image/gif" />
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>{" "}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'GA_MEASUREMENT_ID');
-        `}
-      </Script>
+    
+      
       <main className={util.page} id="recentsPage">
         <div className={styles.homeColumn}>
           <h1 className={styles.homeGreetingTitle}>
@@ -239,18 +258,56 @@ export default function Home({ companyListList, talentListList }) {
             </Link>
           </div>{" "}
           <ul className={styles.homeReadingGrid}>
-            {companyListList.map((link) => (
+            {portfolioListList.map((link) => (
               <CompanyListTile
-                key={link.id}
-                title={link.properties.Name.title[0].plain_text}
-                url={link.properties.URL.url}
-                date={link.created_time}
-                content = {link.properties.Body.rich_text}
-                tags={link.properties.Tags.multi_select}
+                key = {link.id}
+                title={link.properties.Company.title[0].plain_text}
+                tags={link.properties.Industry.multi_select}
+                url = {link.properties.URL.url}
+                about = {link.properties.About.rich_text}
+                founder = {link.properties.Founder.rich_text}
+                founderLinkedin = {link.properties.FounderLinkedin.url}
+                email = {link.properties.Email.email}
               />
             ))}
           </ul>
+         
+  
+          {isPortfolioCompany ? (
+            <div>
+              <div className={styles.homeSectionContainer}>
+                <h2 className={styles.homeSectionTitle}>Founder Perks</h2>
+                <Link href="/reading-list">
+                  <a className={styles.homeLinkButton}>View All</a>
+                </Link>
+              </div>
+            
+              <div className = {styles.homeFounderGrid}>
+                <FounderRequestTile
+                  title = "Reach out to us"
+                  logo = "intro"
+                  portfolioList = {portfolioListCompanies}
+                />
+
+                <FounderRequestTile
+                  title = "Request an intro"
+                  logo = "help"
+                  portfolioList = {portfolioListCompanies}
+                />
+
+                <FounderRequestTile
+                  title = "Book office space"
+                  logo = "home"
+                  portfolioList = {portfolioListCompanies}
+                />
+                </div>
+            </div>
+
+          ): null}
           
+          
+             
+
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Talent</h2>
             <Link href="/reading-list">
@@ -260,7 +317,7 @@ export default function Home({ companyListList, talentListList }) {
           <ul className = {styles.homeUpdatesGrid}>
             {talentListList.map((item) => (
               <Tile 
-              key={item.id}
+                key={item.id}
                 internalUrl={item.properties.Path.plain_text}
                 title={item.properties.Name.title[0].plain_text}
                 content = {item.properties.Body.rich_text}
@@ -276,14 +333,54 @@ export default function Home({ companyListList, talentListList }) {
           
         </div>
 
+      
+ 
+
       </main>
     </>
   );
 }
 
+
 //notion API
 export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
+  const alchemy_notion = new Client({ auth: process.env.ALCHEMOTION_API_KEY});
+
+  const portfolioListResponse = await alchemy_notion.databases.query({
+    database_id: process.env.NOTION_PORTFOLIOLIST_ID,
+    filter: {
+      and: [
+        {
+          property: "Display",
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
+    },
+    sorts: [
+      {
+        property: "Created",
+        direction: "ascending",
+      },
+    ],
+    page_size: 8,
+  });
+
+  const portfolioListCompanies = await alchemy_notion.databases.query({
+    database_id: process.env.NOTION_PORTFOLIOLIST_ID,
+    sorts: [
+      {
+        property: "Company",
+        direction: "ascending",
+      },
+    ],
+  });
+
+
+
+
   const companyListResponse = await notion.databases.query({
     database_id: process.env.NOTION_COMPANYLIST_ID,
     filter: {
@@ -304,6 +401,8 @@ export async function getStaticProps() {
     ],
     page_size: 8,
   });
+
+
   const talentListResponse = await notion.databases.query({
     database_id: process.env.NOTION_TALENTLIST_ID,
     filter: {
@@ -323,12 +422,17 @@ export async function getStaticProps() {
       },
     ],
   });
+ 
 
   return {
     props: {
       companyListList: companyListResponse.results,
       talentListList: talentListResponse.results,
+      portfolioListList: portfolioListResponse.results,
+      portfolioListCompanies: portfolioListCompanies.results,
     },
     revalidate: 5,
   };
 }
+
+

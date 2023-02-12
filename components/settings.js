@@ -71,7 +71,7 @@ export default function Settings({ status, updateCheckbox }) {
             </svg>
           </Checkbox.Indicator>
         </Checkbox.Root>
-        <label htmlFor="fav-only">Show favorites only</label>
+        <label htmlFor="fav-only">Show Currently Raising Companies </label>
         <Popover.Arrow className={util.arrow} />
       </Popover.Content>
     </Popover.Root>

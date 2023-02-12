@@ -11,9 +11,9 @@ import {
 
 import styles from "./overlay.module.css";
 import Image from "next/image";
-import util from "../styles/util.module.css";
+import util from "../../../styles/util.module.css"
   
-export default function Overlay({title, url, description, tags, content}) {
+export default function Overlay({title, url, about, founder, email, tags, content, founderLinkedin}) {
 const Tags = () => {
     return (
         <div className={util.tags + " " + util.flexRow}>
@@ -73,7 +73,11 @@ return (
                     <div className = {styles.contentWrapper}>
                         <h4 className = {styles.subheader}>About:</h4>
                         <p className = {styles.description}>
-                        The only way to manage and monitor your Web3 Finance. Enable financial workflows such as reconciliation, balance calculation, audit and reporting for Web3 assets from on-ramp to off-ramp
+                        {about.map((e, i) => (
+                            <a key={i} href={e.href}>
+                                {e.plain_text}
+                            </a>
+                        ))}
                         </p>
                     </div>
                     <div className = {styles.row + " " + styles.subrow}>
@@ -102,20 +106,44 @@ return (
                                 </p>
                             </div>
                         </div>
+
+                        <div className = {styles.contentWrapper}>
+                            <h4 className = {styles.subheader}>Stage:</h4>
+                            <p className = {styles.description}>
+                           Series A
+                            </p>
+                        </div>
+
+
                     </div>
 
                     <div className = {styles.contentWrapper}>
                         <h4 className = {styles.subheader}>Founders:</h4>
                         <div className = {styles.row}>
                             <p className = {styles.description}>
-                            <a href = "https://linkedin.com/in/talzackon" className = {styles.founderLink}>Tal Zackon<span className = {styles.linkArrow + " " + styles.founderArrow}> ↗ </span></a> <a className = {styles.founderLink}>Elion Tomer <span className = {styles.linkArrow + " " + styles.founderArrow}> ↗</span></a>
+                            <a href = {founderLinkedin} className = {styles.founderLink}>
+                            {founder.map((e, i) => (
+                            <a key={i} href={e.href}>
+                                {e.plain_text}
+                            </a>
+                                ))}
+                                <span className = {styles.linkArrow + " " + styles.founderArrow}> ↗ </span>
+                                </a>
                             </p>
                         </div>
                     </div>
                     
                     <div className = {styles.contentWrapper}>
                         <h4 className = {styles.subheader}>Reach Out:</h4>
-                        <button className = {styles.contact}>Request An Intro</button>
+                        <a
+                            className={util.primaryButton + " " + util.primaryButtonContainer}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer" >     
+                        <span className = {styles.requestText}>Request An Intro</span>
+                        <span className={styles.externalIcon}>↗</span>
+                        </a>
+                       
                     </div>
                     
                     

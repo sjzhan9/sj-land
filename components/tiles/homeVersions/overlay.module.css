@@ -277,5 +277,18 @@
     background-color: var(--gray6);
     cursor: pointer;
   }
-  
 
+
+  .externalIcon {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    margin-left: 6px;
+    font-weight: 300;
+    color: var(--font-s)
+  }
+
+  .requestText {
+    font-size: 12px;
+    color: var(--font-s);
+  }

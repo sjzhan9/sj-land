@@ -2,7 +2,7 @@ import styles from "./companyListTile.module.css";
 import Image from "next/image";
 import util from "../../../styles/util.module.css";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import Overlay from "../../overlay";
+import Overlay from "./overlay";
 
 import {
   Root as DialogRoot,
@@ -16,7 +16,7 @@ import {
 } from "@radix-ui/react-dialog";
 
 
-export default function CompanyListTile({ title, url, date, fav, tags, content }) {
+export default function CompanyListTile({ title, url, date, email, founder, fav, tags, about, founderLinkedin }) {
   let displayUrl = url
     .replace("https://www.", "")
     .replace("http://www.", "")
@@ -43,7 +43,7 @@ export default function CompanyListTile({ title, url, date, fav, tags, content }
  
   return (
     <div>
-    <Overlay url = {url}  tags = {tags} title = {title}/>
+    <Overlay url = {url} about = {about} founder = {founder} email = {email} tags = {tags} title = {title} founderLinkedin = {founderLinkedin}/>
     </div>
      
 
