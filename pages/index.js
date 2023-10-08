@@ -214,8 +214,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
             {updatesList.map((item) => (
               <Tile
                 key={item.id}
-                internalUrl={item.properties.Path.url}
-                // logoUrl={item.properties.Logo.files[0].file.url}
+                internalUrl={item.properties.Path?.url || null}
+                logoUrl={item.properties.Logo?.files[0]?.file?.url || null}
                 title={item.properties.Name.title[0].plain_text}
                 content={item.properties.Body.rich_text}
                 url={item.properties.URL.url}

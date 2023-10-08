@@ -9,7 +9,7 @@ const { Client } = require("@notionhq/client");
 import Tile from "../components/tiles/tile";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 
-export default function About({ list }) {
+export default function About({ list, expList }) {
   useEffect(() => {
     let thisPage = document.querySelector("#aboutPage");
     let top = sessionStorage.getItem("about-scroll");
@@ -60,8 +60,8 @@ export default function About({ list }) {
               {list.map((item) => (
                 <Tile
                   key={item.id}
-                  internalUrl={item.properties.Path.url}
-                  // logoUrl={item.properties.Logo.files[0].file.url}
+                  internalUrl={item.properties.Path.url || null}
+                  logoUrl={item.properties.Logo?.files[0]?.file?.url || null}
                   title={item.properties.Name.title[0].plain_text}
                   content={item.properties.Body.rich_text}
                   url={item.properties.URL.url}
@@ -75,7 +75,7 @@ export default function About({ list }) {
               <h2>Me</h2>
               <p>
                 {
-                  "Trained and still based in New York. I’m deeply fascinated by all design practices from UI history to iconic chairs. My "
+                  "I’m deeply fascinated by all design practices from UI history to iconic chairs. My "
                 }
                 <a
                   href="https://form2shape.com/"
@@ -91,7 +91,7 @@ export default function About({ list }) {
               </p>
               <p>
                 {
-                  "Another big part of my life is my pursuit to better understand how the world works. Complicated systems and economic patterns fascinate me. You can find what I’ve been reading in my "
+                  "A big part of my life is my pursuit to better understand how the world works. Complicated systems fascinate me. You can find what I’ve been reading in my "
                 }
                 <Link href="/reading-list">
                   <a className={util.internalLink}>Reading List</a>
@@ -120,7 +120,7 @@ export default function About({ list }) {
                   Republic
                 </a>
                 {
-                  " and now often make deal introductions. You can get a look at my current "
+                  " and now prequently make intros. You can get a look at my current "
                 }
                 <Link href="/investments">
                   <a className={util.internalLink}>investing portfolio here</a>
@@ -162,7 +162,7 @@ export default function About({ list }) {
                 </a>
                 {". "}
                 {
-                  "In the 10+ years that I've been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In the last few years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on "
+                  "In the 10+ years that I've been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In the last 6+ years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on "
                 }
                 <a
                   href="https://www.linkedin.com/in/s-j-zhang/"
@@ -175,69 +175,23 @@ export default function About({ list }) {
                 {". I’ve also added a summary below."}
               </p>
             </div>
+
             <div>
-              <ExpTile
-                date="2020–Now"
-                title="Design at Compound"
-                url={"https://withcompound.com"}
-                content={
-                  "Started as the only designer from Seed to Series B. Then recruited and built a talented team of designers across product and brand."
-                }
-              />
-              <ExpTile
-                date="2020"
-                title="Design Fellow at Kleiner Perkins (Zumper)"
-                url={"https://zumper.com"}
-                content={
-                  "Led Zumper’s landlord portal redesign to improve listing completeness and product adoption. Zumper is the largest US private startup in the rental space."
-                }
-              />
-              <ExpTile
-                date="2019–20"
-                title="Design at Friendly Studio"
-                url={"https://friendly.studio"}
-                content={
-                  "First designer at the design collective. Mainly worked for YC19 recruiting startup Flo Recruit. Design experiences across web, tablet and mobile use-cases for lawyers. Design and built landing pages and CMS-driven blogs."
-                }
-              />
-              <ExpTile
-                date="2019"
-                title="UX Design at Sonos"
-                url={"https://sonos.com"}
-                content={
-                  "Led service connections redesign. Ran exploration on music scheduling experiences. Sonos app is used by 10M households. "
-                }
-              />
-              <ExpTile
-                date="2017–18"
-                title="Web/Digital Design at Fashion Company"
-                url={"https://illesteva.com"}
-                content={
-                  "Led the website redesign and relaunched the e-commerce platform on Shopify. Supported social graphics and ran all email marketing efforts."
-                }
-              />
-              <ExpTile
-                date="2015–17"
-                title="Co-Founder at Fashion Company"
-                content={
-                  "Targeted the affordable luxury accessory market. Got some press, sales, and traction but ultimately closed it down. The site I built was featured as a Squarespace template example, which accidentally pushed me toward web and digital design."
-                }
-              />
-              <ExpTile
-                date="2012–20"
-                title={
-                  "Freelance Designer & Intern at multiple Fashion Companies"
-                }
-                content={
-                  "Did graphic design freelance gigs, while doing the most ridiculous intern chores at different New York fashion companies."
-                }
-              />
+              {expList?.map((item) => (
+                <ExpTile
+                  key={item.id}
+                  date={item.properties.Date?.rich_text[0]?.plain_text || ""} //
+                  title={item.properties.Name.title[0].plain_text} //
+                  url={item.properties.URL.url} //
+                  content={item.properties.Body.rich_text[0].plain_text}
+                />
+              ))}
             </div>
             <div className={util.read}>
               <h2>This Site</h2>
               <p>
-                This site was initially built in Apr 2022 over 2 weekends. I
-                built it for 2 reasons:
+                {`This site was initially built in Apr 2022 over 2 weekends(176,591 page views since). I built it for 2
+                reasons:`}
               </p>
               <ol
                 type="1"
@@ -291,7 +245,8 @@ export default function About({ list }) {
                 >
                   Notion API
                 </a>
-                . When new discoveries are added on the go, content is{" "}
+                . When new discoveries are added on the go, content is
+                automatically{" "}
                 <a
                   href="https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration"
                   target="_blank"
@@ -300,7 +255,7 @@ export default function About({ list }) {
                 >
                   regenerated
                 </a>{" "}
-                at server-side on demand, without manual redeployment.{" "}
+                server-side.{" "}
                 <a
                   href="https://www.radix-ui.com/"
                   target="_blank"
@@ -320,7 +275,6 @@ export default function About({ list }) {
                 </a>{" "}
                 made light/dark-mode management easy.
               </p>
-              {/* <div className={util.divider}></div> */}
 
               <h2 style={{ margin: "4rem 0rem -0.5rem 0rem" }}>Contact</h2>
             </div>
@@ -390,10 +344,30 @@ export async function getStaticProps() {
       },
     ],
   });
+  const expResponse = await notion.databases.query({
+    database_id: process.env.NOTION_EXPERIENCE_ID,
+    filter: {
+      and: [
+        {
+          property: "Display",
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
+    },
+    sorts: [
+      {
+        property: "Order",
+        direction: "ascending",
+      },
+    ],
+  });
 
   return {
     props: {
       list: response.results,
+      expList: expResponse.results,
     },
     revalidate: 5,
   };
