@@ -124,6 +124,39 @@
   transition: color 0.25s ease;
 }
 
+.projectSectionHeader {
+  font-size: 1.45rem;
+  font-weight: 520;
+  color: var(--gray12);
+  transition: color 0.25s ease;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 0.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1rem;
+}
+
+.projectDescription {
+  font-weight: 390;
+  padding: 0.125rem;
+  line-height: 1.68;
+  font-size: var(--font-l);
+  color: var(--gray11);
+  transition: color 0.25s ease;
+  max-width: 580px;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  padding-left: 1.25rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 700px) {
+  .projectDescription {
+    width: 100%;
+
+  }
+}
+
 .goodsHeader {
   font-size: 1.75rem;
   font-weight: 580;
@@ -810,6 +843,10 @@
 
   .description {
     margin: 1rem 0rem;
+  }
+
+  .projectTopLeft {
+    width: 100%;
   }
 
   .goodsTopContainer {
