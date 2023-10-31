@@ -3,8 +3,68 @@ import Link from "next/link";
 import util from "../../styles/util.module.css";
 import Image from "next/image";
 import Script from "next/script";
+import StickyTab from "../../components/stickyTab";
+import React, { useState, useEffect } from "react";
 
 export default function Compound() {
+  const [activeTab, setActiveTab] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    //if scrollY is larger than 80px setScrolled to true
+
+    let thisPage = document.querySelector("#compoundPage");
+
+    const handleScrollHere = () => {
+      const scrollTop = parseFloat(thisPage.scrollTop);
+      if (scrollTop > 80) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      const sections = [
+        "net-worth",
+        "onboarding",
+        "roadmap",
+        "investment-account-opening",
+        "investment-proposal",
+        "command-bar",
+        "toast-notification",
+        "secondary-marketplace",
+        "alternative-investments",
+        "landing-page",
+        "compound-manual",
+        "compound-archive",
+      ];
+      const sectionOffsets = sections.map((sectionId) => {
+        const section = document.getElementById(sectionId);
+        return {
+          id: sectionId,
+          top: section.getBoundingClientRect().top,
+          bottom: section.getBoundingClientRect().bottom,
+        };
+      });
+
+      // Determine which section is currently in view
+      let currentSection = null;
+      for (const section of sectionOffsets) {
+        if (section.top <= 80 && section.bottom >= 80) {
+          currentSection = section.id;
+          break;
+        }
+      }
+      setActiveTab(currentSection);
+    };
+
+    handleScrollHere(); // Call it once to set the initial active tab
+    thisPage.addEventListener("scroll", handleScrollHere);
+
+    return () => {
+      thisPage.removeEventListener("scroll", handleScrollHere);
+    };
+  }, []);
+
   const description = `Leading Product & Brand Design at the $1B+ Wealth Management Tech firm.`;
   const netWorthDescription = `Clients use the net worth dashboard to track their net worth. Below: 1-2) the latest desktop design, 3) a well-beloved past version, 4) a speculative mock and 5) mobile version.`;
   const onboardingDescription = `Onboarding was an ever evolving project. We delicately balanced between friction and cohesiveness aiming to provide the most amount of value asap with reasonable amount of client input.`;
@@ -26,6 +86,7 @@ export default function Compound() {
         src={"/project-page/compound/networth" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"networth" + i}
       />
     );
   }
@@ -37,6 +98,7 @@ export default function Compound() {
         src={"/project-page/compound/onboarding" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"onboarding" + i}
       />
     );
   }
@@ -48,6 +110,7 @@ export default function Compound() {
         src={"/project-page/compound/invest-opening" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"invest-opening" + i}
       />
     );
   }
@@ -59,6 +122,7 @@ export default function Compound() {
         src={"/project-page/compound/invest-proposal" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"invest-proposal" + i}
       />
     );
   }
@@ -71,6 +135,7 @@ export default function Compound() {
         src={"/project-page/compound/cmd-bar" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"cmd-bar" + i}
       />
     );
   }
@@ -82,6 +147,7 @@ export default function Compound() {
         src={"/project-page/compound/toast" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"toast" + i}
       />
     );
   }
@@ -93,6 +159,7 @@ export default function Compound() {
         src={"/project-page/compound/roadmap" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"roadmap" + i}
       />
     );
   }
@@ -104,6 +171,7 @@ export default function Compound() {
         src={"/project-page/compound/secondary" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"secondary" + i}
       />
     );
   }
@@ -115,6 +183,7 @@ export default function Compound() {
         src={"/project-page/compound/alts" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"alts" + i}
       />
     );
   }
@@ -126,6 +195,7 @@ export default function Compound() {
         src={"/project-page/compound/website" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"website" + i}
       />
     );
   }
@@ -137,6 +207,7 @@ export default function Compound() {
         src={"/project-page/compound/manual" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"manual" + i}
       />
     );
   }
@@ -148,6 +219,7 @@ export default function Compound() {
         src={"/project-page/compound/archive" + i + ".png"}
         width="100%"
         alt="project image"
+        key={"archive" + i}
       />
     );
   }
@@ -173,7 +245,7 @@ export default function Compound() {
         `}
       </Script>
 
-      <main className={util.page}>
+      <main className={util.page} id="compoundPage">
         <div className={util.projectColumn}>
           <div className={util.projectTopContainer}>
             <div className={util.projectTopLeft}>
@@ -185,79 +257,117 @@ export default function Compound() {
           </div>
           <div
             style={{
-              borderBottom: "1px solid var(--gray3)",
-              height: "10px",
+              position: "sticky",
+              top: "-20px",
+              zIndex: "99",
               width: "calc(100% - 2.5rem)",
-              margin: "0 1.25rem 1rem",
+              margin: "0 1.25rem",
+              border: `1px solid ${scrolled ? `var(--gray3)` : "transparent"}`,
+              border: `1px solid var(--gray3)`,
+              borderRadius: "9px",
+              backgroundColor: "var(--modalBg)",
+              padding: "0.5rem 1rem 0.5rem 1rem",
             }}
-          />
-          <h2 className={util.projectSectionHeader}>Net Worth Dashboard</h2>
-          <p className={util.projectDescription}>{netWorthDescription}</p>
-          {netWorthImages}
-          <h2 className={util.projectSectionHeader}>Onboarding</h2>
-          <p className={util.projectDescription}>{onboardingDescription}</p>
-          <video
-            className={util.imageBg}
-            src={"/project-page/compound/sign-up.mov"}
-            width="100%"
-            controls
-          />
-          <video
-            className={util.imageBg}
-            src={"/project-page/compound/unlock.mov"}
-            width="100%"
-            controls
-          />
-          {onboardingImages}
-          <h2
-            className={util.projectSectionHeader}
-          >{`Roadmap (Cash Flow Planning)`}</h2>
-          <p className={util.projectDescription}>{roadmapDescription}</p>
-          {roadmapImages}
-          <h2 className={util.projectSectionHeader}>
-            Investment Account Opening
-          </h2>
-          <p className={util.projectDescription}>{investmentDescription}</p>
-          {investmentImages}
-          <h2 className={util.projectSectionHeader}>Investment Proposal</h2>
-          <p className={util.projectDescription}>{proposalDescription}</p>
-          {proposalImages}
-          <h2 className={util.projectSectionHeader}>Command Bar</h2>
-          <p className={util.projectDescription}>{commandDescription}</p>
-          {commandImages}
-          <h2 className={util.projectSectionHeader}>Toast Notification</h2>
-          <p className={util.projectDescription}>{toastDescription}</p>
-          {toastImages}
+          >
+            <StickyTab activeTab={activeTab} />
+          </div>
 
-          <h2 className={util.projectSectionHeader}>Secondary Marketplace</h2>
-          <p className={util.projectDescription}>{marketplaceDescription}</p>
-          {marketplaceImages}
-          <h2 className={util.projectSectionHeader}>Alternative Investments</h2>
-          <p className={util.projectDescription}>{alternativeDescription}</p>
-          {alternativeImages}
+          <section id="net-worth">
+            <h2 className={util.projectSectionHeader}>Net Worth Dashboard</h2>
+            <p className={util.projectDescription}>{netWorthDescription}</p>
+            {netWorthImages}
+          </section>
+          <section id="onboarding">
+            <h2 className={util.projectSectionHeader}>Onboarding</h2>
+            <p className={util.projectDescription}>{onboardingDescription}</p>
+            <video
+              className={util.imageBg}
+              src={"/project-page/compound/sign-up.mov"}
+              width="100%"
+              controls
+            />
+            <video
+              className={util.imageBg}
+              src={"/project-page/compound/unlock.mov"}
+              width="100%"
+              controls
+            />
+            {onboardingImages}
+          </section>
+          <section id="roadmap">
+            <h2
+              className={util.projectSectionHeader}
+            >{`Roadmap (Cash Flow Planning)`}</h2>
+            <p className={util.projectDescription}>{roadmapDescription}</p>
+            {roadmapImages}
+          </section>
+          <section id="investment-account-opening">
+            <h2 className={util.projectSectionHeader}>
+              Investment Account Opening
+            </h2>
+            <p className={util.projectDescription}>{investmentDescription}</p>
+            {investmentImages}
+          </section>
+          <section id="investment-proposal">
+            <h2 className={util.projectSectionHeader}>Investment Proposal</h2>
+            <p className={util.projectDescription}>{proposalDescription}</p>
+            {proposalImages}
+          </section>
+          <section id="command-bar">
+            <h2 className={util.projectSectionHeader} id="command-bar">
+              Command Bar
+            </h2>
+            <p className={util.projectDescription}>{commandDescription}</p>
+            {commandImages}
+          </section>
+          <section id="toast-notification">
+            <h2 className={util.projectSectionHeader}>Toast Notification</h2>
+            <p className={util.projectDescription}>{toastDescription}</p>
+            {toastImages}
+          </section>
+          <section id="secondary-marketplace">
+            <h2 className={util.projectSectionHeader}>Secondary Marketplace</h2>
 
-          <h2 className={util.projectSectionHeader}>Marketing Website</h2>
-          <p className={util.projectDescription}>{marketingDescription}</p>
-          <video
-            className={util.imageBg}
-            src={"/project-page/compound/membership.mp4"}
-            width="100%"
-            controls
-          />
-          <video
-            className={util.imageBg}
-            src={"/project-page/compound/home.mov"}
-            width="100%"
-            controls
-          />
-          {marketingImages}
-          <h2 className={util.projectSectionHeader}>Compound Manual</h2>
-          <p className={util.projectDescription}>{manualDescription}</p>
-          {manualImages}
-          <h2 className={util.projectSectionHeader}>Compound Archive</h2>
-          <p className={util.projectDescription}>{archiveDescription}</p>
+            <p className={util.projectDescription}>{marketplaceDescription}</p>
+            {marketplaceImages}
+          </section>
+          <section id="alternative-investments">
+            <h2 className={util.projectSectionHeader}>
+              Alternative Investments
+            </h2>
+            <p className={util.projectDescription}>{alternativeDescription}</p>
+            {alternativeImages}
+          </section>
+          <section id="landing-page">
+            <h2 className={util.projectSectionHeader}>Landing Page</h2>
+            <p className={util.projectDescription}>{marketingDescription}</p>
+            <video
+              className={util.imageBg}
+              src={"/project-page/compound/membership.mp4"}
+              width="100%"
+              controls
+            />
+            <video
+              className={util.imageBg}
+              src={"/project-page/compound/home.mov"}
+              width="100%"
+              controls
+            />
+            {marketingImages}
+          </section>
+          <section id="compound-manual">
+            <h2 className={util.projectSectionHeader}>Compound Manual</h2>
+            <p className={util.projectDescription}>{manualDescription}</p>
+            {manualImages}
+          </section>
+          <section id="compound-archive">
+            <h2 className={util.projectSectionHeader} id="compound-archive">
+              Compound Archive
+            </h2>
+            <p className={util.projectDescription}>{archiveDescription}</p>
 
-          {archiveImages}
+            {archiveImages}
+          </section>
 
           <Link scroll={false} href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>

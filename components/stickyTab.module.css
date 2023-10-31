@@ -1,0 +1,41 @@
+.tabBar {
+    display: flex;
+    gap: 10px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabBar a {
+    font-size: 13px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    margin-right: 2px;
+    display: block;
+    flex-shrink: 0;
+    color: var(--gray11);
+}
+
+
+@media (pointer: fine) {
+    .tabBar a:hover {
+        background-color: var(--gray2);
+    }
+}
+
+.tabBar a.active {
+    background-color: var(--gray4);
+    color: var(--gray12);
+}
+
+.sectionTitle {
+    width: 60px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--gray9);
+    flex-shrink: 0;
+    padding-top: 4px;
+}

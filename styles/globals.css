@@ -7,21 +7,23 @@
 
 @font-face {
   font-family: "Aktiv Grotesk";
-  src: url("/fonts/AktivGroteskVF_W_Wght.woff2")
-      format("woff2 supports variations"),
+  src: url("/fonts/AktivGroteskVF_W_Wght.woff2") format("woff2 supports variations"),
     url("/fonts/AktivGroteskVF_W_Wght.woff2") format("woff2-variations");
 
   font-weight: 100 900;
 }
+
 /* @font-face {
   font-family: "Caveat";
   src: url("/fonts/Caveat-VariableFont_wght.ttf");
   font-weight: 400 700;
 } */
 @import url("https://rsms.me/inter/inter.css");
+
 html {
   font-family: "Inter", sans-serif;
 }
+
 @supports (font-variation-settings: normal) {
   html {
     font-family: "Inter var", sans-serif;
@@ -65,6 +67,7 @@ html {
 
   --imageBg: #f9fafb;
 }
+
 @media (max-width: 700px) {
   :root {
     --font-l: 15px;
@@ -126,6 +129,7 @@ html {
   top: 0px;
   z-index: -2;
 }
+
 .dark-theme .iconInvert {
   filter: invert(1);
   transition: color 0.2s ease;
@@ -138,6 +142,7 @@ html {
   opacity: 0.9;
   -webkit-user-drag: none;
 }
+
 .dark-theme .logoInvert {
   filter: invert(1);
 }
@@ -157,6 +162,10 @@ button {
   position: relative;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 p {
   letter-spacing: 0.1px;
   font-weight: 390;
@@ -166,22 +175,27 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 span a[href*="http"] {
   text-decoration: underline;
   transition: color 100ms ease;
 }
+
 span a[href*="http"]:hover {
   color: var(--gray12);
 }
+
 * {
   box-sizing: border-box;
 }
+
 code {
   background: var(--gray5);
   border-radius: 3px;
   padding: 0px 4px;
   margin: 0px 0px 0px;
 }
+
 /* ::-webkit-scrollbar {
   display: none;
 } */
@@ -194,36 +208,47 @@ code {
   color: rgba(0, 0, 0, 0.74);
   transition: all 0.2s ease;
 }
+
 .dark-theme .tag {
   color: rgba(255, 255, 255, 0.68);
 }
+
 .defaultTag {
   background-color: #f1f1f0;
 }
+
 .grayTag {
   background-color: #e3e2e0;
 }
+
 .brownTag {
   background-color: #ece1db;
 }
+
 .orangeTag {
   background-color: #f6dfcc;
 }
+
 .yellowTag {
   background-color: #faedcc;
 }
+
 .greenTag {
   background-color: #dfeddd;
 }
+
 .blueTag {
   background-color: #d7e5ee;
 }
+
 .purpleTag {
   background-color: #e6dfed;
 }
+
 .pinkTag {
   background-color: #f2e1e9;
 }
+
 .redTag {
   background-color: #fae3de;
 }
@@ -231,6 +256,7 @@ code {
 .dark-theme .defaultTag {
   background-color: #414141;
 }
+
 .dark-theme .grayTag {
   background-color: #5a5a5a;
 }
