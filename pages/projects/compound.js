@@ -225,7 +225,7 @@ export default function Compound() {
           <h2 className={util.projectSectionHeader}>Command Bar</h2>
           <p className={util.projectDescription}>{commandDescription}</p>
           {commandImages}
-          <h2 className={util.projectSectionHeader}>Toast</h2>
+          <h2 className={util.projectSectionHeader}>Toast Notification</h2>
           <p className={util.projectDescription}>{toastDescription}</p>
           {toastImages}
 
@@ -246,7 +246,7 @@ export default function Compound() {
           />
           <video
             className={util.imageBg}
-            src={"/project-page/compound/home.mp4"}
+            src={"/project-page/compound/home.mov"}
             width="100%"
             controls
           />
