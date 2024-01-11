@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./stickyTab.module.css";
 
 const StickyTab = ({ activeTab }) => {
-  console.log(activeTab);
+  // console.log(activeTab);
   return (
     <nav>
       <div className={styles.tabBar} style={{ marginBottom: "4px" }}>

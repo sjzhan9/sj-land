@@ -27,7 +27,6 @@ export default function Compound() {
         "net-worth",
         "crypto",
         "add-assets",
-
         "onboarding",
         "roadmap",
         "investment-account-opening",
@@ -73,7 +72,6 @@ export default function Compound() {
   const netWorthDescription = `We built our net worth dashboard with unique coverage in private assets. Beyond banks, stock brokerages and crypto platforms, our dashboard allow users to track their employer equity, angel investments and fund investment LP stakes. Below images: 1-2) the latest desktop design, 3) a well-beloved past version, 4) a speculative mock and 5) mobile view.`;
   const crytpoDescription = `We built support for clients to track their crypto assets in their Compound dashboard and mobile app. For centralized exchanges, we first used Zabo for integrations. After Zabo was acquired and discontinued their API services, we built direct Coinbase and Coinbase Pro integrations. For web3 participants, we allow users to simply paste in their Ethereum wallet address or ENS to track their holdings, from L2 DeFi tokens to NFTs.`;
   const addAssetsDescription = `We designed the "add an asset/account" flow utilizing the command bar interface. It not only allows users to progressively narrow down choices, but more conveniently to just type and search for the asset class or institution. Users can do it anywhere in the app without interrupting their current task.`;
-
   const onboardingDescription = `We've consistently dedicated efforts to enhance onboarding experiences for both new users and our financial advisors. Users gain from swiftly connecting accounts and obtaining insightful details about their balance sheet – speed is crucial. Advisors, on the other hand, seek extensive information about the prospect's financial life to optimize the insights they can deliver during the initial call. Every time we make adjustments, we carefully find the sweet spot between maintaining low friction and maximizing data collection.`;
   const investmentDescription = `We built a robo-advisor in 2021 to allow self-serve users to open a Compound Investment Account. The product was designed to provide a classic yet sophisticated robo-advisory experience that offers both ETF based portfolios and custom-indexing based portfolios.`;
   const proposalDescription = `We built a fast yet comprehensive proposal generation tool for advisors to create personalized investment proposals. This tool, along with the generated proposal, is connected to data from clients' accounts, the most up-to-date models from our investment committee and live asset prices from the market.`;
@@ -86,6 +84,7 @@ export default function Compound() {
   const marketingDescription = `Since 2020, I’ve managed, and sometimes directly designed several relaunches of the main Compound landing page. In early 2023, I took the lead in designing the version below. Following its launch, it received widespread acclaim within the design community and attracted hundreds of new qualified leads within a matter of hours."`;
   const manualDescription = `We built a curated library of wealth planning resources for tech employees. Since the launch, we've received hundreds of compliments from clients and others in the industry who found it beautiful and useful. We collaborated with Nicolas Solerieu on the initial design, who set the art direction. In the few years after the release, I managed the maintenance and iterations.`;
   const archiveDescription = `We built a collection of long-form essays exploring the marginalia of financial and startup history. We worked with Patrick Altair McDonald on this site, who set the art direction.`;
+
   let netWorthImages = [];
   for (var i = 1; i < 5 + 1; i++) {
     netWorthImages.push(
