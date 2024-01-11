@@ -227,10 +227,11 @@
 .description {
   font-weight: 390;
   padding: 0.125rem;
-  line-height: 1.68;
+  line-height: 1.6;
   font-size: var(--font-l);
   color: var(--gray11);
   transition: color 0.25s ease;
+  margin-top: 16px;
 }
 
 .description p {

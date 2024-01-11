@@ -25,11 +25,15 @@ export default function Compound() {
 
       const sections = [
         "net-worth",
+        "crypto",
+        "add-assets",
+
         "onboarding",
         "roadmap",
         "investment-account-opening",
         "investment-proposal",
-        "command-bar",
+        "investment-management",
+        "advisor",
         "toast-notification",
         "secondary-marketplace",
         "alternative-investments",
@@ -65,19 +69,23 @@ export default function Compound() {
     };
   }, []);
 
-  const description = `Leading Product & Brand Design at the $1B+ Wealth Management Tech firm.`;
-  const netWorthDescription = `Clients use the net worth dashboard to track their net worth. Below: 1-2) the latest desktop design, 3) a well-beloved past version, 4) a speculative mock and 5) mobile version.`;
-  const onboardingDescription = `Onboarding was an ever evolving project. We delicately balanced between friction and cohesiveness aiming to provide the most amount of value asap with reasonable amount of client input.`;
-  const investmentDescription = `A flow for self-serve investment account opening. The product featured a custom-indexed option and a reduced-tech-exposure option, which was challenging to design for.`;
-  const proposalDescription = `Advisors create proposals to align with clients on their investment allocations. The generation tool is connected to live data from clients' accounts and the market.`;
-  const commandDescription = `We redesigned the "add an account" flow utilizing the command bar interface. It allowed user to progressively narrow down choices, as well as to just type and search.`;
-  const toastDescription = `We designed a flexible custom toast component to account for different types of user feedback needed. The engineer, Emil, later open sourced the component and it was very well received by the front-end community.`;
-  const roadmapDescription = `A powerful cash flow planning tool. It allows advisors to model clients' short term cash flow as well as different long-term scenarios.`;
-  const marketplaceDescription = `A secondary marketplace for clients to trade their private investments.`;
-  const alternativeDescription = `A list of carefully sourced alternative investments for Compound clients.`;
-  const marketingDescription = `I've been in charge of evolving Compound's main landing page since 2020. I got hands on designing the latest version featured below. It was very well received by the design community.`;
-  const manualDescription = `The curated library of wealth planning resources for entrepreneurs, professionals and retirees. I worked with Nicolas Solerieu on this site, who was the main designer.`;
-  const archiveDescription = `The Archive is a collection of long-form essays exploring the marginalia of financial and startup history. I worked with Patrick Altair McDonald on this site, who was the main designer.`;
+  const description = `Leading Product & Brand Design at the Wealth Management Tech firm. I joined the company in 2020 as the second employee, designed and shipped early products and helped the company grow from 4 employees to over 50, from $0 in Assets Under Management to over $1.3 Billion.`;
+  const netWorthDescription = `We built our net worth dashboard with unique coverage in private assets. Beyond banks, stock brokerages and crypto platforms, our dashboard allow users to track their employer equity, angel investments and fund investment LP stakes. Below images: 1-2) the latest desktop design, 3) a well-beloved past version, 4) a speculative mock and 5) mobile view.`;
+  const crytpoDescription = `We built support for clients to track their crypto assets in their Compound dashboard and mobile app. For centralized exchanges, we first used Zabo for integrations. After Zabo was acquired and discontinued their API services, we built direct Coinbase and Coinbase Pro integrations. For web3 participants, we allow users to simply paste in their Ethereum wallet address or ENS to track their holdings, from L2 DeFi tokens to NFTs.`;
+  const addAssetsDescription = `We designed the "add an asset/account" flow utilizing the command bar interface. It not only allows users to progressively narrow down choices, but more conveniently to just type and search for the asset class or institution. Users can do it anywhere in the app without interrupting their current task.`;
+
+  const onboardingDescription = `We've consistently dedicated efforts to enhance onboarding experiences for both new users and our financial advisors. Users gain from swiftly connecting accounts and obtaining insightful details about their balance sheet – speed is crucial. Advisors, on the other hand, seek extensive information about the prospect's financial life to optimize the insights they can deliver during the initial call. Every time we make adjustments, we carefully find the sweet spot between maintaining low friction and maximizing data collection.`;
+  const investmentDescription = `We built a robo-advisor in 2021 to allow self-serve users to open a Compound Investment Account. The product was designed to provide a classic yet sophisticated robo-advisory experience that offers both ETF based portfolios and custom-indexing based portfolios.`;
+  const proposalDescription = `We built a fast yet comprehensive proposal generation tool for advisors to create personalized investment proposals. This tool, along with the generated proposal, is connected to data from clients' accounts, the most up-to-date models from our investment committee and live asset prices from the market.`;
+  const investmentManagementDescription = `For clients with actively managed investment accounts, we built a mobile experience the enables them to review pre-aligned trades before our trading desk execute them. Additionally, we've crafted a first-party experience for clients to seamlessly monitor returns on their Compound managed portfolios and compare them to benchmarks.`;
+  const advisorDescription = `We are building a powerful back-office tools for advisors. The platform allows advisors to view client profiles, look up accounts, monitor billing and much more. After the merger, we are currently in the process of consolidating the two legacy advisor dashboards to provide a unified experience for advisors from both firms.`;
+  const toastDescription = `We designed a flexible custom toast component to account for different types of user feedback needed. Our lead engineer, Emil, later open sourced the component and it was very well received by the front-end community.`;
+  const roadmapDescription = `We built a powerful cash flow and tax planning tool for clients with dedicated advisors. Advisors project short-term cash flow and tax implications by simulating events like donations, exercising options, having new kids, or buying a house. Some clients also use it for long-term financial modeling and retirement planning, simulating income changes and potential investment growth.`;
+  const marketplaceDescription = `Partnering with a few licensed broker dealers, we built a proof of concept platform for our clients to sell their shares in private companies like Stripe, Space X, and Notion. Due to several of compliance and market condition reasons, the platform was not fully launched.`;
+  const alternativeDescription = `Our investment team consistently engages in meetings with fund managers and conducts thorough due diligence. We've established a repository of high-quality alternative investment opportunities available to our clients. This project aims to present them in the best, compliant way. The 'Deals Page' displays high-level key stats on different types of deals, while the 'Deal Details Page' includes our in-house memo on the deal, fact sheets, and other collateral from the fund managers. As a client, you can express interest directly in the app, and our back office will coordinate with the investment firm for your allocation.`;
+  const marketingDescription = `Since 2020, I’ve managed, and sometimes directly designed several relaunches of the main Compound landing page. In early 2023, I took the lead in designing the version below. Following its launch, it received widespread acclaim within the design community and attracted hundreds of new qualified leads within a matter of hours."`;
+  const manualDescription = `We built a curated library of wealth planning resources for tech employees. Since the launch, we've received hundreds of compliments from clients and others in the industry who found it beautiful and useful. We collaborated with Nicolas Solerieu on the initial design, who set the art direction. In the few years after the release, I managed the maintenance and iterations.`;
+  const archiveDescription = `We built a collection of long-form essays exploring the marginalia of financial and startup history. We worked with Patrick Altair McDonald on this site, who set the art direction.`;
   let netWorthImages = [];
   for (var i = 1; i < 5 + 1; i++) {
     netWorthImages.push(
@@ -87,6 +95,30 @@ export default function Compound() {
         width="100%"
         alt="project image"
         key={"networth" + i}
+      />
+    );
+  }
+  let addAssetsImages = [];
+  for (var i = 1; i < 5 + 1; i++) {
+    addAssetsImages.push(
+      <img
+        className={util.imageBg}
+        src={"/project-page/compound/cmd-bar" + i + ".png"}
+        width="100%"
+        alt="project image"
+        key={"cmd-bar" + i}
+      />
+    );
+  }
+  let crytpoImages = [];
+  for (var i = 1; i < 5 + 1; i++) {
+    crytpoImages.push(
+      <img
+        className={util.imageBg}
+        src={"/project-page/compound/crypto" + i + ".png"}
+        width="100%"
+        alt="project image"
+        key={"crypto" + i}
       />
     );
   }
@@ -126,19 +158,31 @@ export default function Compound() {
       />
     );
   }
-
-  let commandImages = [];
-  for (var i = 1; i < 5 + 1; i++) {
-    commandImages.push(
+  let investmentManagementImages = [];
+  for (var i = 1; i < 2 + 1; i++) {
+    investmentManagementImages.push(
       <img
         className={util.imageBg}
-        src={"/project-page/compound/cmd-bar" + i + ".png"}
+        src={"/project-page/compound/investment-management" + i + ".png"}
         width="100%"
         alt="project image"
-        key={"cmd-bar" + i}
+        key={"invest-management" + i}
       />
     );
   }
+  let advisorImages = [];
+  for (var i = 1; i < 1 + 1; i++) {
+    advisorImages.push(
+      <img
+        className={util.imageBg}
+        src={"/project-page/compound/advisor" + i + ".png"}
+        width="100%"
+        alt="project image"
+        key={"advisor" + i}
+      />
+    );
+  }
+
   let toastImages = [];
   for (var i = 1; i < 2 + 1; i++) {
     toastImages.push(
@@ -226,7 +270,7 @@ export default function Compound() {
   return (
     <>
       <Head>
-        <title>Compound</title>
+        <title>Compound Planning</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
@@ -249,8 +293,13 @@ export default function Compound() {
         <div className={util.projectColumn}>
           <div className={util.projectTopContainer}>
             <div className={util.projectTopLeft}>
-              <h1 className={util.projectHeader}>Compound</h1>
-              <p className={util.description}>{description} </p>
+              <h1 className={util.projectHeader}>Compound Planning</h1>
+              <p className={util.description}>
+                {`Leading Product & Brand Design at the Wealth Management Tech firm. I joined as the second employee in 2020, designed and shipped early products and helped the company grow from 4 employees to over 60, from $0 in Assets Under Management to over $1.3 Billion.`}
+              </p>
+              <p className={util.description}>
+                {`My work at the company ranges from interviewing clients, doing blue sky design explorations, writing specs, making small improvements to managing product releases. Below are some of the projects I designed or managed.`}{" "}
+              </p>
             </div>
 
             <p className={util.projectDate}>{`Apr 2020 – Now`}</p>
@@ -277,6 +326,17 @@ export default function Compound() {
             <p className={util.projectDescription}>{netWorthDescription}</p>
             {netWorthImages}
           </section>
+          <section id="add-assets">
+            <h2 className={util.projectSectionHeader}>Adding Assets</h2>
+            <p className={util.projectDescription}>{addAssetsDescription}</p>
+            {addAssetsImages}
+          </section>
+          <section id="crypto">
+            <h2 className={util.projectSectionHeader}>Crypto</h2>
+            <p className={util.projectDescription}>{crytpoDescription}</p>
+            {crytpoImages}
+          </section>
+
           <section id="onboarding">
             <h2 className={util.projectSectionHeader}>Onboarding</h2>
             <p className={util.projectDescription}>{onboardingDescription}</p>
@@ -313,13 +373,19 @@ export default function Compound() {
             <p className={util.projectDescription}>{proposalDescription}</p>
             {proposalImages}
           </section>
-          <section id="command-bar">
-            <h2 className={util.projectSectionHeader} id="command-bar">
-              Command Bar
-            </h2>
-            <p className={util.projectDescription}>{commandDescription}</p>
-            {commandImages}
+          <section id="investment-management">
+            <h2 className={util.projectSectionHeader}>Investment Management</h2>
+            <p className={util.projectDescription}>
+              {investmentManagementDescription}
+            </p>
+            {investmentManagementImages}
           </section>
+          <section id="advisor">
+            <h2 className={util.projectSectionHeader}>Advisor Dashboard</h2>
+            <p className={util.projectDescription}>{advisorDescription}</p>
+            {advisorImages}
+          </section>
+
           <section id="toast-notification">
             <h2 className={util.projectSectionHeader}>Toast Notification</h2>
             <p className={util.projectDescription}>{toastDescription}</p>

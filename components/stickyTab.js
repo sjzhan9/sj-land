@@ -14,6 +14,14 @@ const StickyTab = ({ activeTab }) => {
               Net Worth
             </a>
           </Link>
+          <Link href="#add-assets">
+            <a className={activeTab == "add-assets" ? styles.active : ""}>
+              Adding Assets
+            </a>
+          </Link>
+          <Link href="#crypto">
+            <a className={activeTab == "crypto" ? styles.active : ""}>Crypto</a>
+          </Link>
           <Link href="#onboarding">
             <a className={activeTab == "onboarding" ? styles.active : ""}>
               Onboarding
@@ -42,11 +50,21 @@ const StickyTab = ({ activeTab }) => {
               Investment Proposal
             </a>
           </Link>
-          <Link href="#command-bar">
-            <a className={activeTab == "command-bar" ? styles.active : ""}>
-              Command Bar
+          <Link href="#investment-management">
+            <a
+              className={
+                activeTab == "investment-management" ? styles.active : ""
+              }
+            >
+              Investment Management
             </a>
           </Link>
+          <Link href="#advisor">
+            <a className={activeTab == "advisor" ? styles.active : ""}>
+              Advisor Dashboard
+            </a>
+          </Link>
+
           <Link href="#toast-notification">
             <a
               className={activeTab == "toast-notification" ? styles.active : ""}
