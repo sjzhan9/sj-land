@@ -7,57 +7,41 @@ import React, { useState, useEffect } from "react";
 import { addScrollListener } from "../../lib/scroll";
 import StickyTab from "../../components/stickyTab";
 
-export default function Xyla() {
-  const pageId = "xylaPage";
+export default function Magik() {
+  const pageId = "magikPage";
   const description = `Leading Product & Brand Design at the Wealth Management Tech firm. I joined the company in 2020 as the second employee, designed and shipped early products and helped the company grow from 4 employees to over 50, from $0 in Assets Under Management to over $1.3 Billion.`;
 
   const sections = [
     {
-      id: "bison",
-      title: "Bison Financial AI",
+      id: "dashboard",
+      title: "Dashboard",
       description:
         "We built our net worth dashboard with unique coverage in private assets. Beyond banks, stock brokerages and crypto platforms, our dashboard allows users to track their employer equity, angel investments and fund investment LP stakes. Below images: 1-2) the latest desktop design, 3) a well-beloved past version, 4) a speculative mock and 5) mobile view.",
+      imageCount: 1,
+      section: "product",
+    },
+    {
+      id: "flow-manager",
+      title: "Flow Manager",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
       imageCount: 5,
       section: "product",
     },
     {
-      id: "tldr",
-      title: "TL;Dr.",
+      id: "website",
+      title: "Pre-launch Website",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 4,
-      section: "product",
-    },
-    {
-      id: "oev2",
-      title: "OpenEvidence V2",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 2,
-      section: "product",
-    },
-    {
-      id: "oe",
-      title: "OpenEvidence for Doctors",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 4,
-      section: "product",
-    },
-    {
-      id: "vs-chatgpt",
-      title: "OpenEvidence vs ChatGPT",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 4,
+      imageCount: 5,
       section: "brand",
     },
     {
-      id: "drug-discovery",
-      title: "Drug Discovery Pitch Deck",
+      id: "marketing",
+      title: "1 Pager",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 4,
+      imageCount: 1,
       section: "brand",
     },
   ];
@@ -81,7 +65,7 @@ export default function Xyla() {
   return (
     <>
       <Head>
-        <title>Xyla</title>
+        <title>Magik</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
@@ -104,7 +88,7 @@ export default function Xyla() {
         <div className={util.projectColumn}>
           <div className={util.projectTopContainer}>
             <div className={util.projectTopLeft}>
-              <h1 className={util.projectHeader}>Xyla</h1>
+              <h1 className={util.projectHeader}>Magik</h1>
               <p className={util.description}>
                 {`Founded by Daniel Nadler who previously sold his AI company Kensho Technologies for $700 million, Xyla is working on aligning and grounding large language models for accuracy-critical domains. Learn more about the `}
                 <a
@@ -159,7 +143,11 @@ export default function Xyla() {
             <section key={section.id} id={section.id}>
               <h2 className={util.projectSectionHeader}>{section.title}</h2>
               <p className={util.projectDescription}>{section.description}</p>
-              {generateImageComponents(`/xyla`, section.imageCount, section.id)}
+              {generateImageComponents(
+                `/magik`,
+                section.imageCount,
+                section.id
+              )}
             </section>
           ))}
 
