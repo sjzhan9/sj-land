@@ -55,6 +55,7 @@ export default function RecentProjects() {
               content="Wealth tech platform with $1.3B+ assets under management."
               type="Fintech · Full-time"
               url={"compound"}
+              internal="true"
             />
             <ProjectTile
               image="xyla"
@@ -64,6 +65,7 @@ export default function RecentProjects() {
               }
               type="AI · Advising"
               url={"xyla"}
+              internal="true"
             />
             <ProjectTile
               image="orbit"
@@ -73,6 +75,7 @@ export default function RecentProjects() {
               }
               type="Mobile · Side Project"
               url={"orbit"}
+              internal="true"
             />
             <ProjectTile
               image="magik"
@@ -82,6 +85,7 @@ export default function RecentProjects() {
               }
               type="AI · Advising"
               url={"magik"}
+              internal="true"
             />
           </ul>
           <p
