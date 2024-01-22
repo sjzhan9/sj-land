@@ -11,50 +11,47 @@ export default function Xyla() {
   const pageId = "xylaPage";
   const description = `Founded by Daniel Nadler who previously sold his AI company Kensho Technologies for $700 million, Xyla is working on aligning and grounding large language models for accuracy-critical domains.`;
 
-  const sections = [
-    {
-      id: "bison",
-      title: "Bison Financial AI",
-      description:
-        "We developed a web interface for Bison, a finance-focused LLM trained on up-to-date official financial databases such as direct SEC filings and other reliable news sources on the web.",
-      imageCount: 5,
-      section: "product",
-    },
-    {
-      id: "tldr",
-      title: "TL;Dr.",
-      description:
-        "We created a series of dynamic summaries on medical topics. In contrast to other online medical journals, where a random doctor can write an article after reading three papers and forget to ever update it, TL;Dr. is constantly screening and evaluating the published universe of 34,000,000+ peer-reviewed medical studies, updating sections as new evidence is released.",
-      imageCount: 4,
-      section: "product",
-    },
+  const sections = React.useMemo(
+    () => [
+      {
+        id: "bison",
+        title: "Bison Financial AI",
+        description: `We developed a web interface for Bison, a finance-focused LLM trained on up-to-date official financial databases such as direct SEC filings and other reliable news sources on the web.`,
+        imageCount: 5,
+        section: "product",
+      },
+      {
+        id: "tldr",
+        title: "TL;Dr.",
+        description: `We created a series of dynamic summaries on medical topics. In contrast to other online medical journals, where a random doctor can write an article after reading three papers and forget to ever update it, TL;Dr. is constantly screening and evaluating the published universe of 34,000,000+ peer-reviewed medical studies, updating sections as new evidence is released.`,
+        imageCount: 4,
+        section: "product",
+      },
 
-    {
-      id: "oe",
-      title: "OpenEvidence for Doctors",
-      description:
-        "OpenEvidence AI allows doctors to ask questions related to everything from symptoms to drug effects. Doctors can also preset and reuse patient profiles. The first version is optimized for the first question asked and its answer. We built the capability to share generated output, and doctors sharing these answers have greatly contributed to our growth. After gaining adoption and receiving more demand for follow-up questions, we updated the UI to be more like a chat interface.",
-      imageCount: 6,
-      section: "product",
-    },
-    {
-      id: "vs-chatgpt",
-      title: "OpenEvidence vs ChatGPT",
-      description:
-        "We published a comparison graphic of OpenEvidence vs ChatGPT for medical related application.",
-      imageCount: 1,
-      section: "brand",
-    },
-    {
-      id: "drug-discovery",
-      title: "Drug Discovery & Development Pitch Deck",
-      description:
-        "I helped Daniel in creating the pitch deck for pharmaceutical companies, showcasing the use of OpenEvidence AI to expedite the drug development process. The pitch successfully secured a million dollar contract with one of the largest companies in the world. Here are a few slides from the deck.",
-      imageCount: 3,
-      section: "brand",
-    },
-  ];
-
+      {
+        id: "oe",
+        title: "OpenEvidence for Doctors",
+        description: `OpenEvidence AI allows doctors to ask questions related to everything from symptoms to drug effects. Doctors can also preset and reuse patient profiles. The first version is optimized for the first question asked and its answer. We built the capability to share generated output, and doctors sharing these answers have greatly contributed to our growth. After gaining adoption and receiving more demand for follow-up questions, we updated the UI to be more like a chat interface.`,
+        imageCount: 6,
+        section: "product",
+      },
+      {
+        id: "vs-chatgpt",
+        title: "OpenEvidence vs ChatGPT",
+        description: `We published a comparison graphic of OpenEvidence vs ChatGPT for medical related application.`,
+        imageCount: 1,
+        section: "brand",
+      },
+      {
+        id: "drug-discovery",
+        title: "Drug Discovery & Development Pitch Deck",
+        description: `I helped Daniel in creating the pitch deck for pharmaceutical companies, showcasing the use of OpenEvidence AI to expedite the drug development process. The pitch successfully secured a million dollar contract with one of the largest companies in the world. Here are a few slides from the deck.`,
+        imageCount: 3,
+        section: "brand",
+      },
+    ],
+    []
+  );
   const [activeTab, setActiveTab] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
@@ -106,7 +103,7 @@ export default function Xyla() {
                   rel="noopener noreferrer"
                   style={{ textDecoration: "underline" }}
                 >
-                  company's mission
+                  {`company's mission`}
                 </a>
                 {" and "}
                 <a

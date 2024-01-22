@@ -11,43 +11,45 @@ export default function Magik() {
   const pageId = "magikPage";
   const description = `After working on the Rev Ops team at Compound, my friend Daniel started Magik, using AI to help Rev Ops teams better manage their Salesforce environments. I became an advisor early on, helping with designing the first MVP for idea validation, creating an animation showcasing the company’s ambition for fundraising, and building its first website.`;
 
-  const sections = [
-    {
-      id: "flow-manager",
-      title: "Flow Manager",
-      description:
-        "We used the flow manager design to validate the idea with Rev Ops teams. We ended up choosing to build other features first for technical reasons, but the flow manager idea was what gave us confidence that there’s a market for what we are building.",
-      imageCount: 5,
-      section: "product",
-    },
-    {
-      id: "dashboard",
-      title: "Dashboard",
-      description:
-        "I set the early navigation foundation for the main dashboard, which has evolved a lot since.",
-      imageCount: 1,
-      section: "product",
-    },
+  const sections = React.useMemo(
+    () => [
+      {
+        id: "flow-manager",
+        title: "Flow Manager",
+        description:
+          "We used the flow manager design to validate the idea with Rev Ops teams. We ended up choosing to build other features first for technical reasons, but the flow manager idea was what gave us confidence that there’s a market for what we are building.",
+        imageCount: 5,
+        section: "product",
+      },
+      {
+        id: "dashboard",
+        title: "Dashboard",
+        description:
+          "I set the early navigation foundation for the main dashboard, which has evolved a lot since.",
+        imageCount: 1,
+        section: "product",
+      },
 
-    {
-      id: "website",
-      title: "Early Website",
-      description:
-        "I designed and built this early website for connecting with customers and applying to Y-Combinator (we got in). The most challenging part was creating the hero animation to illustrate the different features Magik would build. It made our value proposition immediately clear to our potential buyers.",
-      imageCount: 5,
-      section: "brand",
-    },
-    {
-      id: "sales",
-      title: "Sales One-Pager",
-      description:
-        "Before the product matured, Daniel and I worked on this one-pager together for him to use on sales calls and got the earliest beta customers",
+      {
+        id: "website",
+        title: "Early Website",
+        description:
+          "I designed and built this early website for connecting with customers and applying to Y-Combinator (we got in). The most challenging part was creating the hero animation to illustrate the different features Magik would build. It made our value proposition immediately clear to our potential buyers.",
+        imageCount: 5,
+        section: "brand",
+      },
+      {
+        id: "sales",
+        title: "Sales One-Pager",
+        description:
+          "Before the product matured, Daniel and I worked on this one-pager together for him to use on sales calls and got the earliest beta customers",
 
-      imageCount: 1,
-      section: "brand",
-    },
-  ];
-
+        imageCount: 1,
+        section: "brand",
+      },
+    ],
+    []
+  );
   const [activeTab, setActiveTab] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 

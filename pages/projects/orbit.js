@@ -12,33 +12,35 @@ export default function Orbit() {
   const description = `Orbit helps you share what you love, from restaurants to music and films. It's a side project I started with a friend. We initially built a desktop version of the concept, tested it with some friends, and gathered real content. We quickly realized that the right platform is mobile, so we taught ourselves React Native and got to work. The project hasn't been released yet, but below, we have some video recordings and screenshots..
 `;
 
-  const sections = [
-    {
-      id: "mobile",
-      title: "Mobile App",
-      description:
-        "Currently, we are working on V2, simplifying the app before its release. However, here are some recordings of V1. Please note that we experienced some issues with the image API, so some images are not loading.",
-      imageCount: 1,
-      section: "product",
-    },
-    {
-      id: "animation",
-      title: "V1 Interactions",
-      description:
-        "This section highlights the architecture choices, logic, and navigation of the app.",
-      imageCount: 0,
-      section: "product",
-    },
-    {
-      id: "desktop",
-      title: "Web Version",
-      description:
-        "We beta-tested the web clients with a small group of friends, and these are some curations that they've made.",
-      imageCount: 6,
-      section: "product",
-    },
-  ];
-
+  const sections = React.useMemo(
+    () => [
+      {
+        id: "mobile",
+        title: "Mobile App",
+        description:
+          "Currently, we are working on V2, simplifying the app before its release. However, here are some recordings of V1. Please note that we experienced some issues with the image API, so some images are not loading.",
+        imageCount: 1,
+        section: "product",
+      },
+      {
+        id: "animation",
+        title: "V1 Interactions",
+        description:
+          "This section highlights the architecture choices, logic, and navigation of the app.",
+        imageCount: 0,
+        section: "product",
+      },
+      {
+        id: "desktop",
+        title: "Web Version",
+        description:
+          "We beta-tested the web clients with a small group of friends, and these are some curations that they've made.",
+        imageCount: 6,
+        section: "product",
+      },
+    ],
+    []
+  );
   const [activeTab, setActiveTab] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
