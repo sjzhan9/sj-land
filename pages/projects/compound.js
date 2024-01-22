@@ -245,7 +245,6 @@ export default function Compound() {
             if (section.id === "landing-page") {
               return (
                 <React.Fragment key={section.id}>
-                  {/* Add your custom Landing Page section here */}
                   <section id={section.id}>
                     <h2 className={util.projectSectionHeader}>
                       {section.title}

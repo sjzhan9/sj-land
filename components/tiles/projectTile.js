@@ -8,17 +8,18 @@ export default function ProjectTile({
   title,
   content,
   type,
-  date,
+  date = null,
   url,
   internal,
 }) {
   return (
     <div className={styles.outer}>
       <p className={styles.date}>
-        {new Date(date).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "short",
-        })}
+        {date &&
+          new Date(date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+          })}
       </p>
       {internal ? (
         <Link href={"/projects/" + url}>

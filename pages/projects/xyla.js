@@ -9,14 +9,14 @@ import StickyTab from "../../components/stickyTab";
 
 export default function Xyla() {
   const pageId = "xylaPage";
-  const description = `Leading Product & Brand Design at the Wealth Management Tech firm. I joined the company in 2020 as the second employee, designed and shipped early products and helped the company grow from 4 employees to over 50, from $0 in Assets Under Management to over $1.3 Billion.`;
+  const description = `Founded by Daniel Nadler who previously sold his AI company Kensho Technologies for $700 million, Xyla is working on aligning and grounding large language models for accuracy-critical domains.`;
 
   const sections = [
     {
       id: "bison",
       title: "Bison Financial AI",
       description:
-        "We built our net worth dashboard with unique coverage in private assets. Beyond banks, stock brokerages and crypto platforms, our dashboard allows users to track their employer equity, angel investments and fund investment LP stakes. Below images: 1-2) the latest desktop design, 3) a well-beloved past version, 4) a speculative mock and 5) mobile view.",
+        "We developed a web interface for Bison, a finance-focused LLM trained on up-to-date official financial databases such as direct SEC filings and other reliable news sources on the web.",
       imageCount: 5,
       section: "product",
     },
@@ -24,40 +24,33 @@ export default function Xyla() {
       id: "tldr",
       title: "TL;Dr.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
+        "We created a series of dynamic summaries on medical topics. In contrast to other online medical journals, where a random doctor can write an article after reading three papers and forget to ever update it, TL;Dr. is constantly screening and evaluating the published universe of 34,000,000+ peer-reviewed medical studies, updating sections as new evidence is released.",
       imageCount: 4,
       section: "product",
     },
-    {
-      id: "oev2",
-      title: "OpenEvidence V2",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 2,
-      section: "product",
-    },
+
     {
       id: "oe",
       title: "OpenEvidence for Doctors",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 4,
+        "OpenEvidence AI allows doctors to ask questions related to everything from symptoms to drug effects. Doctors can also preset and reuse patient profiles. The first version is optimized for the first question asked and its answer. We built the capability to share generated output, and doctors sharing these answers have greatly contributed to our growth. After gaining adoption and receiving more demand for follow-up questions, we updated the UI to be more like a chat interface.",
+      imageCount: 6,
       section: "product",
     },
     {
       id: "vs-chatgpt",
       title: "OpenEvidence vs ChatGPT",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 4,
+        "We published a comparison graphic of OpenEvidence vs ChatGPT for medical related application.",
+      imageCount: 1,
       section: "brand",
     },
     {
       id: "drug-discovery",
-      title: "Drug Discovery Pitch Deck",
+      title: "Drug Discovery & Development Pitch Deck",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
-      imageCount: 4,
+        "I helped Daniel in creating the pitch deck for pharmaceutical companies, showcasing the use of OpenEvidence AI to expedite the drug development process. The pitch successfully secured a million dollar contract with one of the largest companies in the world. Here are a few slides from the deck.",
+      imageCount: 3,
       section: "brand",
     },
   ];
@@ -127,7 +120,7 @@ export default function Xyla() {
                 {". "}
               </p>
               <p className={util.description}>
-                {`I help the team part-time with product design, brand positioning and marketing. The team inked multiple partnerships with top medical institutions and is now working on a product that will provide the same reliable AI to finance professionals.`}
+                {`I contribute to the team part-time, assisting with product design, brand positioning, and marketing. We have established partnerships with top hospitals and pharmaceutical companies, reaching thousands of doctors. In parallel, we have initiated work on a financial AI product that will provide the same reliable AI to investors and finance professionals.`}
               </p>
             </div>
 

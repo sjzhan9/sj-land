@@ -18,12 +18,12 @@ const StickyTab = ({ activeTab, sections, includeBrandSection }) => {
 
   return (
     <nav>
-      <div className={styles.tabBar} style={{ marginBottom: "4px" }}>
+      <div className={styles.tabBar}>
         {includeBrandSection && <p className={styles.sectionTitle}>Product</p>}
         <div className={styles.items}>{renderSectionLinks("product")}</div>
       </div>
       {includeBrandSection && (
-        <div className={styles.tabBar}>
+        <div className={styles.tabBar} style={{ marginTop: "4px" }}>
           <p className={styles.sectionTitle}>Brand</p>
           <div className={styles.items}>{renderSectionLinks("brand")}</div>
         </div>

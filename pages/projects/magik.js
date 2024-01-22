@@ -9,38 +9,40 @@ import StickyTab from "../../components/stickyTab";
 
 export default function Magik() {
   const pageId = "magikPage";
-  const description = `Leading Product & Brand Design at the Wealth Management Tech firm. I joined the company in 2020 as the second employee, designed and shipped early products and helped the company grow from 4 employees to over 50, from $0 in Assets Under Management to over $1.3 Billion.`;
+  const description = `After working on the Rev Ops team at Compound, my friend Daniel started Magik, using AI to help Rev Ops teams better manage their Salesforce environments. I became an advisor early on, helping with designing the first MVP for idea validation, creating an animation showcasing the company’s ambition for fundraising, and building its first website.`;
 
   const sections = [
-    {
-      id: "dashboard",
-      title: "Dashboard",
-      description:
-        "We built our net worth dashboard with unique coverage in private assets. Beyond banks, stock brokerages and crypto platforms, our dashboard allows users to track their employer equity, angel investments and fund investment LP stakes. Below images: 1-2) the latest desktop design, 3) a well-beloved past version, 4) a speculative mock and 5) mobile view.",
-      imageCount: 1,
-      section: "product",
-    },
     {
       id: "flow-manager",
       title: "Flow Manager",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
+        "We used the flow manager design to validate the idea with Rev Ops teams. We ended up choosing to build other features first for technical reasons, but the flow manager idea was what gave us confidence that there’s a market for what we are building.",
       imageCount: 5,
       section: "product",
     },
     {
-      id: "website",
-      title: "Pre-launch Website",
+      id: "dashboard",
+      title: "Dashboard",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
+        "I set the early navigation foundation for the main dashboard, which has evolved a lot since.",
+      imageCount: 1,
+      section: "product",
+    },
+
+    {
+      id: "website",
+      title: "Early Website",
+      description:
+        "I designed and built this early website for connecting with customers and applying to Y-Combinator (we got in). The most challenging part was creating the hero animation to illustrate the different features Magik would build. It made our value proposition immediately clear to our potential buyers.",
       imageCount: 5,
       section: "brand",
     },
     {
-      id: "marketing",
-      title: "1 Pager",
+      id: "sales",
+      title: "Sales One-Pager",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor massa, vel sodales leo tristique vel.",
+        "Before the product matured, Daniel and I worked on this one-pager together for him to use on sales calls and got the earliest beta customers",
+
       imageCount: 1,
       section: "brand",
     },
@@ -89,30 +91,8 @@ export default function Magik() {
           <div className={util.projectTopContainer}>
             <div className={util.projectTopLeft}>
               <h1 className={util.projectHeader}>Magik</h1>
-              <p className={util.description}>
-                {`Founded by Daniel Nadler who previously sold his AI company Kensho Technologies for $700 million, Xyla is working on aligning and grounding large language models for accuracy-critical domains. Learn more about the `}
-                <a
-                  href="https://www.forbes.com/sites/katiejennings/2023/07/27/this-health-ai-startup-aims-to-keep-doctors-up-to-date-on-the-latest-science/?sh=11e89421442a"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "underline" }}
-                >
-                  company's mission
-                </a>
-                {" and "}
-                <a
-                  href="https://arxiv.org/pdf/2302.08091.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "underline" }}
-                >
-                  why we need a specialized LLM
-                </a>
-                {". "}
-              </p>
-              <p className={util.description}>
-                {`I help the team part-time with product design, brand positioning and marketing. The team inked multiple partnerships with top medical institutions and is now working on a product that will provide the same reliable AI to finance professionals.`}
-              </p>
+
+              <p className={util.description}>{description}</p>
             </div>
 
             <p className={util.projectDate}>{`2023 – Now`}</p>
@@ -139,17 +119,46 @@ export default function Magik() {
             />
           </div>
 
-          {sections.map((section) => (
-            <section key={section.id} id={section.id}>
-              <h2 className={util.projectSectionHeader}>{section.title}</h2>
-              <p className={util.projectDescription}>{section.description}</p>
-              {generateImageComponents(
-                `/magik`,
-                section.imageCount,
-                section.id
-              )}
-            </section>
-          ))}
+          {sections.map((section) => {
+            if (section.id === "website") {
+              return (
+                <React.Fragment key={section.id}>
+                  <section id={section.id}>
+                    <h2 className={util.projectSectionHeader}>
+                      {section.title}
+                    </h2>
+                    <p className={util.projectDescription}>
+                      {section.description}
+                    </p>
+                    <video
+                      className={util.imageBg}
+                      src={"/project-page/magik/magik2-265.mp4"}
+                      width="100%"
+                      controls
+                    />
+                    {generateImageComponents(
+                      `/magik`,
+                      section.imageCount,
+                      section.id
+                    )}
+                  </section>
+                </React.Fragment>
+              );
+            }
+
+            // Continue mapping other sections
+            return (
+              <section key={section.id} id={section.id}>
+                <h2 className={util.projectSectionHeader}>{section.title}</h2>
+                <p className={util.projectDescription}>{section.description}</p>
+                {generateImageComponents(
+                  `/magik`,
+                  section.imageCount,
+                  section.id
+                )}
+              </section>
+            );
+          })}
 
           <Link scroll={false} href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>
