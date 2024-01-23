@@ -47,7 +47,21 @@ export default function RecentProjects() {
       <main id="recentProjectsPage" className={util.page}>
         <div className={util.pageColumn}>
           <h1 className={util.header}> Recent Projects</h1>
-          <p className={util.description}>{description}</p>
+          <p
+            className={util.description}
+          >{`Selective work from 2020-2024. I worked full-time as Design Lead at Compound Planning.`}</p>
+          <p className={util.description}>
+            {`On the side I advised a few startups: `}
+            <ol>
+              <li>Xyla, a Medical AI company valued at $450M.</li>
+              <li>
+                Magik, a Y-Combinator and Jack Altman backed AI SaaS Company
+              </li>
+            </ol>
+          </p>
+          <p
+            className={util.description}
+          >{`Over the weekends, I also built some personal projects, Orbit, a consumer social idea is one that stands out.`}</p>
           <ul className={util.list}>
             <ProjectTile
               image="compound-detailed"
@@ -61,7 +75,7 @@ export default function RecentProjects() {
               image="xyla"
               title="Xyla"
               content={
-                "Multi-product AI Company building LLMs for accuracy-critical domains, starting with Medicine and Finance."
+                "Medical & Finance AI Company building LLMs for accuracy-critical domains."
               }
               type="AI · Advising"
               url={"xyla"}

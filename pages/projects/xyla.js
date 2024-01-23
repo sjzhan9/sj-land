@@ -23,7 +23,7 @@ export default function Xyla() {
       {
         id: "tldr",
         title: "TL;Dr.",
-        description: `We created a series of dynamic summaries on medical topics. In contrast to other online medical journals, where a random doctor can write an article after reading three papers and forget to ever update it, TL;Dr. is constantly screening and evaluating the published universe of 34,000,000+ peer-reviewed medical studies, updating sections as new evidence is released.`,
+        description: `TL;Dr. is a series of dynamic summaries on medical topics. In contrast to other online medical journals, where a random doctor can write an article after reading three papers and forget to ever update it, TL;Dr. is constantly screening and evaluating the published universe of 34,000,000+ peer-reviewed medical studies, updating sections as new evidence is released.`,
         imageCount: 4,
         section: "product",
       },
