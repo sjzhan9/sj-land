@@ -51,13 +51,13 @@ export default function ProjectTile({
           rel="noopener noreferrer"
           className={styles.container}
         >
-          <Image
+          <img
             className={styles.image}
             // priority
             src={"/projects/" + image + ".png"}
             width={400}
             height={220}
-            layout="responsive"
+            // layout="responsive"
             alt={title}
           />
 
