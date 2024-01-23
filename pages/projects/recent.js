@@ -49,11 +49,11 @@ export default function RecentProjects() {
           <h1 className={util.header}> Recent Projects</h1>
           <p
             className={util.description}
-          >{`Selective work from 2020-2024. I worked full-time as Design Lead at Compound Planning.`}</p>
+          >{`Selective work from 2020-2024, where I worked full-time as Design Lead at Compound Planning.`}</p>
           <p className={util.description}>
             {`On the side I advised a few startups: `}
             <ol>
-              <li>Xyla, a Medical AI company valued at $450M.</li>
+              <li>Xyla, a Medical AI company valued at $450M</li>
               <li>
                 Magik, a Y-Combinator and Jack Altman backed AI SaaS Company
               </li>
@@ -61,7 +61,7 @@ export default function RecentProjects() {
           </p>
           <p
             className={util.description}
-          >{`Over the weekends, I also built some personal projects, Orbit, a consumer social idea is one that stands out.`}</p>
+          >{`Over the weekends, I built some personal projects. Orbit, a consumer social idea is one that stands out.`}</p>
           <ul className={util.list}>
             <ProjectTile
               image="compound-detailed"
