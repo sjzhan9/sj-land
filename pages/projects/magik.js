@@ -134,7 +134,7 @@ export default function Magik() {
                     </p>
                     <video
                       className={util.imageBg}
-                      src={"/project-page/magik/magik2-265.mp4"}
+                      src={"/project-page/magik/magik.mov"}
                       width="100%"
                       controls
                     />
