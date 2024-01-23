@@ -28,13 +28,14 @@ export default function ProjectTile({
             // rel="noopener noreferrer"
             className={styles.container}
           >
-            <Image
-              priority
+            <img
+              // priority
               className={styles.image}
               src={"/projects/" + image + ".png"}
-              width={400}
-              height={220}
-              layout="responsive"
+              // width={400}
+              // height={220}
+              // layout="responsive"
+              width={"100%"}
               alt={title}
             />
             <div className={styles.stack}>
@@ -55,8 +56,9 @@ export default function ProjectTile({
             className={styles.image}
             // priority
             src={"/projects/" + image + ".png"}
-            width={400}
-            height={220}
+            // width={400}
+            // height={220}
+            width={"100%"}
             // layout="responsive"
             alt={title}
           />
