@@ -23,8 +23,7 @@ export default function About({ list, expList }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const description =
-    "I’m a designer and developer by training and trade. I spend most of my spare time reading about business, finance and crypto. If this combination interests you, welcome to my corner of the internet. This is where I share my reading list, investment updates, and software adventures.";
+  const description = `I work full-time at Compound Planning and spend my weekends tinkering on side projects. I also read a lot about business, finance, and crypto. If this combination interests you, welcome to my corner of the internet. This is where I share my reading list, investment updates, and software adventures.`;
   return (
     <>
       <Head>
@@ -86,7 +85,7 @@ export default function About({ list, expList }) {
                   {"master's thesis"}
                 </a>
                 {
-                  " included an archive of influential 20th century industrial design. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In those fashion years, I learned about supply chains and sewed dozens of garments myself. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
+                  " shares my love of influential 20th century industrial design. During undergrad, I wrote papers on Jony Ive and Issey Miyake. In those fashion years, I learned about supply chains and sewed dozens of hundreds of pieces of garments. Growing up with an architect father, I’ve paid attention to shapes, forms and spaces at every street corner since I was a kid. "
                 }
               </p>
               <p>
@@ -100,7 +99,7 @@ export default function About({ list, expList }) {
               </p>
               <p>
                 {
-                  "As I learn I get interested in validating my understanding through investing. I participated in different venture related progroms at "
+                  "As I learn I get interested in validating my understanding through investing. I participated in venture related progroms at "
                 }
                 <a
                   href="https://fellows.kleinerperkins.com/"
@@ -120,7 +119,7 @@ export default function About({ list, expList }) {
                   Republic
                 </a>
                 {
-                  " and now prequently make intros. You can get a look at my current "
+                  " and now frequently make intros. You can get a look at my current "
                 }
                 <Link href="/investments">
                   <a className={util.internalLink}>investing portfolio here</a>
@@ -137,7 +136,9 @@ export default function About({ list, expList }) {
                 >
                   PingPod
                 </a>
-                {" and boulder at a few different gyms in Brooklyn. I used to "}
+                {
+                  " and boulder at a few different gyms in Brooklyn. I do four laps of Prospect Park loop every week on my bike preparing for my first Triathlon. I used to "
+                }
                 <a
                   href="https://instagram.com/woandworld"
                   target="_blank"
@@ -162,7 +163,7 @@ export default function About({ list, expList }) {
                 </a>
                 {". "}
                 {
-                  "In the 10+ years that I've been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In the last 6+ years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on "
+                  "In the 10+ years that I've been studying and working in design. I spent the first two in arts, and the next four years trying my hands in different design practices. In the last 7+ years, I focused on designing and developing software products. I’ve worked in large design teams as well as performed as the sole designer for startups. If you are interested to know more, you can find me on "
                 }
                 <a
                   href="https://www.linkedin.com/in/s-j-zhang/"
@@ -299,9 +300,9 @@ export default function About({ list, expList }) {
               </div>
               <TwitterTweetEmbed tweetId={"1564256065159630849"} />
               <TwitterTweetEmbed tweetId={"1501920540642234368"} />
-              <TwitterTweetEmbed tweetId={"1590434156840120320"} />
+              {/* <TwitterTweetEmbed tweetId={"1590434156840120320"} />
               <TwitterTweetEmbed tweetId={"1607445552739885057"} />
-              <TwitterTweetEmbed tweetId={"1603959970592178176"} />
+              <TwitterTweetEmbed tweetId={"1603959970592178176"} /> */}
 
               <span
                 className={util.twitterSubtitle}

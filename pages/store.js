@@ -19,7 +19,7 @@ export default function Store() {
   }, []);
 
   const description =
-    "Sharing some random stuff that I cooked up. I’ve been asked a lot if I would sell this website as a template, or someone wants to fork it for a fee - so I made this page to address that.";
+    "Sharing some random stuff that I cooked up. I’ve been asked a lot if I would sell this website as a template. Nope, it's free to fork, but you are welcome to buy me coffee : )";
   return (
     <>
       <Head>

@@ -15,7 +15,7 @@ export default function Tile({
     <div className={styles.container}>
       <div className={styles.left}>
         {internalUrl ? (
-          <Image
+          <img
             className={styles.icon}
             priority
             // unoptimized
@@ -25,7 +25,7 @@ export default function Tile({
             alt={title}
           />
         ) : logoUrl ? (
-          <Image
+          <img
             className={styles.icon}
             priority
             // unoptimized
