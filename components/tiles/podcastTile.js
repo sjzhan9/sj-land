@@ -22,25 +22,25 @@ export default function PodcastTile({
     >
       <div>
         {internalUrl ? (
-          <Image
+          <img
             priority
             // unoptimized
             className={styles.image}
             src={"/podcasts/" + internalUrl + ".png"}
             width={288}
             height={288}
-            layout="responsive"
+            // layout="responsive"
             alt={title}
           />
         ) : (
-          <Image
+          <img
             // unoptimized
             className={styles.image}
             priority
             src={imageUrl}
             width={288}
             height={288}
-            layout="responsive"
+            // layout="responsive"
             alt={title}
           />
         )}
