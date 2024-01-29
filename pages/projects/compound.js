@@ -39,6 +39,7 @@ export default function Compound() {
         description:
           "We built support for clients to track their crypto assets in their Compound dashboard and mobile app. For centralized exchanges, we first used Zabo for integrations. After Zabo was acquired and discontinued their API services, we built direct Coinbase and Coinbase Pro integrations. For web3 participants, we allow users to simply paste in their Ethereum wallet address or ENS to track their holdings, from L2 DeFi tokens to NFTs.",
         imageCount: 5,
+        section: "product",
       },
       {
         id: "onboarding",
@@ -46,10 +47,11 @@ export default function Compound() {
         description:
           "We've consistently dedicated efforts to enhance onboarding experiences for both new users and our financial advisors. Users gain from swiftly connecting accounts and obtaining insightful details about their balance sheet – speed is crucial. Advisors, on the other hand, seek extensive information about the prospect's financial life to optimize the insights they can deliver during the initial call. Every time we make adjustments, we carefully find the sweet spot between maintaining low friction and maximizing data collection.",
         imageCount: 5,
+        section: "product",
       },
       {
         id: "roadmap",
-        title: "Roadmap (Cash Flow Planning)",
+        title: "Roadmap",
         description:
           "We built a powerful cash flow and tax planning tool for clients with dedicated advisors. Advisors project short-term cash flow and tax implications by simulating events like donations, exercising options, having new kids, or buying a house. Some clients also use it for long-term financial modeling and retirement planning, simulating income changes and potential investment growth.",
         imageCount: 3,
@@ -81,7 +83,7 @@ export default function Compound() {
       },
       {
         id: "advisor",
-        title: "Advisor Dashboard",
+        title: "Advisor HQ",
         description:
           "We are building a powerful back-office tools for advisors. The platform allows advisors to view client profiles, look up accounts, monitor billing and much more. After the merger, we are currently in the process of consolidating the two legacy advisor dashboards to provide a unified experience for advisors from both firms.",
         imageCount: 1,
