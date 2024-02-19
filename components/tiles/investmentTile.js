@@ -1,8 +1,6 @@
 import styles from ".//investmentTile.module.css";
 import util from "../../styles/util.module.css";
 
-import Image from "next/image";
-
 export default function InvestmentTile({ icon, title, content, url, logoUrl }) {
   return (
     <div className={styles.container}>

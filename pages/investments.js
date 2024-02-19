@@ -86,7 +86,7 @@ export default function Investments({ list }) {
             <p className={util.textDivider}>Private</p>
             {list
               .filter((item) => item.properties.Private.checkbox == true)
-              .map((item) => (
+              .display.map((item) => (
                 <InvestmentTile
                   key={item.id}
                   icon={item.properties.Path.url}
@@ -121,6 +121,16 @@ export async function getStaticProps() {
 
   const response = await notion.databases.query({
     database_id: process.env.NOTION_INVESTMENTS_ID,
+    filter: {
+      and: [
+        {
+          property: "Display",
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
+    },
     sorts: [
       {
         property: "Order",
