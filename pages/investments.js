@@ -93,6 +93,7 @@ export default function Investments({ list }) {
                   title={item.properties.Name.title[0].plain_text}
                   content={item.properties.Body.rich_text[0].plain_text}
                   url={item.properties.URL.url}
+                  logoUrl={item.properties.Logo?.files[0]?.file?.url || null}
                 />
               ))}
             <p className={util.textDivider}>Public</p>
@@ -105,6 +106,7 @@ export default function Investments({ list }) {
                   title={item.properties.Name.title[0].plain_text}
                   content={item.properties.Body.rich_text[0].plain_text}
                   url={item.properties.URL.url}
+                  logoUrl={item.properties.Logo?.files[0]?.file?.url || null}
                 />
               ))}
           </ul>

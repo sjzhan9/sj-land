@@ -3,15 +3,14 @@ import util from "../../styles/util.module.css";
 
 import Image from "next/image";
 
-export default function InvestmentTile({ icon, title, content, url, entry }) {
+export default function InvestmentTile({ icon, title, content, url, logoUrl }) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.iconContainer}>
-          <Image
-            priority
+          <img
             className={styles.icon}
-            src={"/investments/" + icon + ".png"}
+            src={logoUrl || "/investments/" + icon + ".png"}
             height={32}
             width={32}
             alt="investment icon"
@@ -32,10 +31,6 @@ export default function InvestmentTile({ icon, title, content, url, entry }) {
           </a>
           <p className={util.tileContent}>{content}</p>
         </div>
-        {/* <div className={styles.stackRight}>
-          <p className={styles.type}>First entered</p>
-          <p className={styles.entry}>{entry}</p>
-        </div> */}
       </div>
     </div>
   );
