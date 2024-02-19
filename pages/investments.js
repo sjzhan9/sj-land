@@ -86,7 +86,7 @@ export default function Investments({ list }) {
             <p className={util.textDivider}>Private</p>
             {list
               .filter((item) => item.properties.Private.checkbox == true)
-              .display.map((item) => (
+              .map((item) => (
                 <InvestmentTile
                   key={item.id}
                   icon={item.properties.Path.url}
