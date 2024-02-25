@@ -53,7 +53,8 @@ export default function RecentProjects() {
           <p className={util.description}>
             {`On the side I advised a few startups: `}
             <ol>
-              <li>Xyla, a Medical AI company valued at $450M</li>
+              <li>Xyla, a Medical AI company valued at $600M</li>
+              <li>A new company by Attentive (valued at $6.8B) cofounders</li>
               <li>
                 Magik, a Y-Combinator and Jack Altman backed AI SaaS Company
               </li>
@@ -82,6 +83,25 @@ export default function RecentProjects() {
               internal="true"
             />
             <ProjectTile
+              image="team-guard"
+              title="Team Guard"
+              content={"Security training and compliance."}
+              type="AI SaaS · Advising"
+              url={"team-guard"}
+              internal="true"
+            />
+
+            <ProjectTile
+              image="magik"
+              title="Magik"
+              content={
+                "AI startup helping team to more efficiently manage their Salesforce CRM."
+              }
+              type="AI SaaS · Advising"
+              url={"magik"}
+              internal="true"
+            />
+            <ProjectTile
               image="orbit"
               title="Orbit"
               content={
@@ -89,16 +109,6 @@ export default function RecentProjects() {
               }
               type="Mobile · Side Project"
               url={"orbit"}
-              internal="true"
-            />
-            <ProjectTile
-              image="magik"
-              title="Magik"
-              content={
-                "AI startup helping team to more efficiently manage their Salesforce CRM."
-              }
-              type="AI · Advising"
-              url={"magik"}
               internal="true"
             />
           </ul>

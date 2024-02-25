@@ -116,7 +116,7 @@ export default function Orbit() {
               return (
                 <React.Fragment key={section.id}>
                   <section id={section.id}>
-                    <h2 className={util.projectSectionHeader}>
+                    <h2 className={util.projectSectionHeader} data-size="s">
                       {section.title}
                     </h2>
                     <p className={util.projectDescription}>
@@ -149,7 +149,7 @@ export default function Orbit() {
               return (
                 <React.Fragment key={section.id}>
                   <section id={section.id}>
-                    <h2 className={util.projectSectionHeader}>
+                    <h2 className={util.projectSectionHeader} data-size="s">
                       {section.title}
                     </h2>
                     <p className={util.projectDescription}>
@@ -180,7 +180,9 @@ export default function Orbit() {
             // Continue mapping other sections
             return (
               <section key={section.id} id={section.id}>
-                <h2 className={util.projectSectionHeader}>{section.title}</h2>
+                <h2 className={util.projectSectionHeader} data-size="s">
+                  {section.title}
+                </h2>
                 <p className={util.projectDescription}>{section.description}</p>
                 {generateImageComponents(
                   `/orbit`,

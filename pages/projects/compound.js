@@ -217,7 +217,7 @@ export default function Compound() {
               return (
                 <React.Fragment key={section.id}>
                   <section id={section.id}>
-                    <h2 className={util.projectSectionHeader}>
+                    <h2 className={util.projectSectionHeader} data-size="l">
                       {section.title}
                     </h2>
                     <p className={util.projectDescription}>
@@ -251,7 +251,7 @@ export default function Compound() {
               return (
                 <React.Fragment key={section.id}>
                   <section id={section.id}>
-                    <h2 className={util.projectSectionHeader}>
+                    <h2 className={util.projectSectionHeader} data-size="l">
                       {section.title}
                     </h2>
                     <p className={util.projectDescription}>
@@ -282,7 +282,9 @@ export default function Compound() {
             // Continue mapping other sections
             return (
               <section key={section.id} id={section.id}>
-                <h2 className={util.projectSectionHeader}>{section.title}</h2>
+                <h2 className={util.projectSectionHeader} data-size="l">
+                  {section.title}
+                </h2>
                 <p className={util.projectDescription}>{section.description}</p>
                 {generateImageComponents(
                   `/compound`,
