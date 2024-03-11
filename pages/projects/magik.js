@@ -29,7 +29,14 @@ export default function Magik() {
         imageCount: 1,
         section: "product",
       },
-
+      {
+        id: "rebrand",
+        title: "Rebrand",
+        description:
+          "Rebranding to Synch, launching on TechCrunch and annocing our seed round.",
+        imageCount: 1,
+        section: "brand",
+      },
       {
         id: "website",
         title: "Early Website",
