@@ -89,7 +89,7 @@ export default function RecentProjects() {
               image="team-guard"
               title="Team Guard"
               content={"Security training and compliance."}
-              type="AI SaaS · Advising"
+              type="SaaS · Advising"
               url={"team-guard"}
               internal="true"
             />
