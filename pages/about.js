@@ -99,7 +99,7 @@ export default function About({ list, expList }) {
               </p>
               <p>
                 {
-                  "As I learn I get interested in validating my understanding through investing. I participated in venture related progroms at "
+                  "As I learn I get interested in validating my understanding through investing. I participated in venture related programs at "
                 }
                 <a
                   href="https://fellows.kleinerperkins.com/"
