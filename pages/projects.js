@@ -22,7 +22,7 @@ export default function Projects() {
 
   //page header and in-page description
   const description =
-    "Since mid 2020, I’ve focused my energy on Compound. Before that, I worked on a few personal coding projects, freelance and in-house design jobs. Between 2018 and 2020 I worked on a variety of hardware, installations, AR and creative coding sketches.";
+    "My work today focuses on Financing products for hedge funds. Before this job, I spent 4 years at Compound designing prosumer finance dashboards and wealth manager tooling, where you likely know me from. Before compound, I worked on a few personal coding projects, freelance and in-house jobs. Between 2018 and 2020 I worked on a variety of hardware, installations, AR and creative coding sketches.";
   return (
     <>
       <Head>
@@ -49,7 +49,18 @@ export default function Projects() {
         <div className={util.pageColumn}>
           <h1 className={util.header}>Projects</h1>
           <p className={util.description}>
-            {"Since mid 2020, I’ve focused my energy on "}
+            {"My work today at "}
+            <a
+              href="https://www.coinbase.com/institutional"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={util.externalLink}
+            >
+              Coinbase Insitutional
+            </a>
+            {
+              " focuses on Financing products for hedge funds. Prior to this, I spent 4 years at "
+            }
             <a
               href="https://withcompound.com"
               target="_blank"
@@ -59,17 +70,40 @@ export default function Projects() {
               Compound
             </a>
             {
-              ". Before that, I worked on a few personal coding projects, freelance and in-house design jobs. Between 2018 and 2020 I worked on a variety of hardware, installations, AR and creative coding sketches."
+              " designing prosumer finance dashboards and wealth manager tooling. Before Compound, I worked on a variety of UX jobs, coded web experiences and built hardware installations."
             }
           </p>
           <ul className={util.list}>
             <ProjectTile
-              image="compound"
+              image="compound-detailed"
               title="Compound"
-              content="This is where I work and spent the last few years"
-              type="Design · Full-time"
-              date="2020-06-01"
-              url="https://withcompound.com"
+              content="Wealth tech platform with $2.5B+ assets under management."
+              type="Fintech · Full-time"
+              date="2024-04-01"
+              url={"compound"}
+              internal="true"
+            />
+            <ProjectTile
+              image="magik"
+              title="Magik"
+              content={
+                "AI startup helping team to more efficiently manage their Salesforce CRM."
+              }
+              type="AI SaaS · Advising"
+              date="2024-02-01"
+              url={"magik"}
+              internal="true"
+            />
+            <ProjectTile
+              image="orbit"
+              title="Orbit"
+              content={
+                "A personal home page for things you love and recommend."
+              }
+              type="Mobile · Side Project"
+              date="2023-10-01"
+              url={"orbit"}
+              internal="true"
             />
             <ProjectTile
               image="f2s"
@@ -91,7 +125,7 @@ export default function Projects() {
               date="2020-04-25"
               url="https://startup-generator-app.web.app"
             />
-            <ProjectTile
+            {/* <ProjectTile
               image="flo-recruit"
               title="Flo Recruit"
               content={
@@ -101,7 +135,7 @@ export default function Projects() {
               date="2020-04-20"
               url={"flo"}
               internal="true"
-            />
+            /> */}
             <ProjectTile
               image="gesture-map"
               title="Gesture Map"
@@ -194,11 +228,11 @@ export default function Projects() {
                 "A design exercise to encourage students exploring orientation events and manage their orientation schedules. It was a 5 day project that I covered from research to prototyping. "
               }
               type="Design Exercise"
-              date="2019-02-20"
+              date="2018-12-20"
               url={"oriant"}
               internal="true"
             />
-            <ProjectTile
+            {/* <ProjectTile
               image="parkamigo"
               title="ParkAmigo"
               content={
@@ -208,7 +242,7 @@ export default function Projects() {
               date="2018-12-20"
               url={"parkamigo"}
               internal="true"
-            />
+            /> */}
             <ProjectTile
               image="illesteva"
               title="Illesteva"
