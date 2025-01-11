@@ -28,17 +28,18 @@ export default function OneCare() {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
+
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
+      ></script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+       window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('config', 'G-T2CWC86NTK');
         `}
       </Script>
 

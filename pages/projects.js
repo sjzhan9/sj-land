@@ -22,7 +22,7 @@ export default function Projects() {
 
   //page header and in-page description
   const description =
-    "My work today focuses on Financing products for hedge funds. Before this job, I spent 4 years at Compound designing prosumer finance dashboards and wealth manager tooling, where you likely know me from. Before compound, I worked on a few personal coding projects, freelance and in-house jobs. Between 2018 and 2020 I worked on a variety of hardware, installations, AR and creative coding sketches.";
+    "My work today focuses on Financing products for hedge funds. Before this, I spent 4 years at Compound designing prosumer finance dashboards and wealth manager tooling, where you likely know me from. Prior to Compound, my experience spanned various UX roles, coding web experiences, and creating hardware installations.";
   return (
     <>
       <Head>
@@ -31,17 +31,18 @@ export default function Projects() {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
+
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
+      ></script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+       window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('config', 'G-T2CWC86NTK');
         `}
       </Script>
 
@@ -250,7 +251,7 @@ export default function Projects() {
                 "I worked as a graphic designer at the eyewear brand. I redesigned and maintained the e-commerce site and was in charge of all online and offline graphical assets."
               }
               type="Web · Full-time"
-              date="2017-8-24"
+              date="2017-08-24"
               url={"illesteva"}
               internal="true"
             />

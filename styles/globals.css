@@ -180,6 +180,11 @@ a {
   text-decoration: none;
 }
 
+strong,
+b {
+  font-weight: 600;
+}
+
 span a[href*="http"] {
   text-decoration: underline;
   transition: color 100ms ease;
@@ -187,6 +192,11 @@ span a[href*="http"] {
 
 span a[href*="http"]:hover {
   color: var(--gray12);
+}
+
+hr {
+  border: 0.75px solid var(--gray5);
+  margin: 32px 0px;
 }
 
 * {

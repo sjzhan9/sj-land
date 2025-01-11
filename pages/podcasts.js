@@ -23,8 +23,7 @@ export default function Podcasts({ list }) {
   }, []);
 
   //page header and in-page description
-  const description =
-    "Mainly business and finance because there are infinite material to talk about. I used to listen to a few UX podcasts but most of them died except Design Details.";
+  const description = `There’s always something playing in my AirPods. If I had to pick a favorite, it’d be Founders—a podcast with hundreds of episodes distilling the host’s insights from biographies of the greatest business minds.`;
 
   return (
     <>
@@ -34,17 +33,18 @@ export default function Podcasts({ list }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
+
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
+      ></script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+       window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('config', 'G-T2CWC86NTK');
         `}
       </Script>
       <main className={util.page} id="podcastPage">

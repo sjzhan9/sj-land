@@ -13,7 +13,7 @@ export default function About({ list, expList }) {
   const tabs = [
     "Recent Updates",
     "Career",
-    "Background",
+    // "Background",
     "About This Site",
     "Twitter",
   ];
@@ -42,17 +42,18 @@ export default function About({ list, expList }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
+
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
+      ></script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+       window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('config', 'G-T2CWC86NTK');
         `}
       </Script>
       <main className={util.page} id="aboutPage">
@@ -76,7 +77,7 @@ export default function About({ list, expList }) {
               </p>
               <p>
                 {
-                  "Outside of work I spend most of my energy reading about the economy and the capital market. I "
+                  "Outside of work I spend most of my energy reading about the economy and the capital markets. I "
                 }
 
                 <Link href="/investments">
@@ -109,22 +110,20 @@ export default function About({ list, expList }) {
                   building this website
                 </a>
                 {
-                  ". I left Compound after an incredible 4 years following the acquisition. I don’t have any plan to rebuild this website anytime soon."
+                  ". After four incredible years at Compound, I left following the acquisition. While I don’t have plans to rebuild this website anytime soon, I'll try my best to keep it updated."
                 }
               </p>
             </div>
-            <div className={util.read}>
-              <h2 style={{ margin: "4rem 0rem -0.5rem 0rem" }}>
-                Stay in touch
-              </h2>
-            </div>
+            <div className={util.read}></div>
             <div className={util.inset} style={{ marginBottom: "4rem" }}>
               <ContactContent />
             </div>
             <div className={util.read}>
-              <h2 style={{ margin: "4rem 0rem 0.25rem 0rem" }}>More</h2>
+              <h2 style={{ margin: "4rem 0rem 0.25rem 0rem" }}>
+                More about me
+              </h2>
             </div>
-            <div className={util.tabBar}>
+            <div className={util.tabBar} id={`about-update`}>
               <div className={util.tabRow}>
                 {tabs.map((tabName) => (
                   <button

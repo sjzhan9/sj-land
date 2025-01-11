@@ -232,6 +232,7 @@
   margin-top: 3rem;
 }
 
+
 .description {
   font-weight: 390;
   padding: 0.125rem;
@@ -268,17 +269,35 @@
   font-size: var(--font-l);
   line-height: 1.75;
   color: var(--gray12);
-  margin-bottom: 1.5rem;
+  transition: color 0.25s ease;
+}
+
+.read p {
+  margin-bottom: 1.25rem;
+}
+
+
+.read li {
+  margin-bottom: 0.25rem;
+}
+
+.read h1 {
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+  line-height: 150%;
+  font-weight: 560;
+  color: var(--gray12);
+  margin-bottom: 0.75rem;
   transition: color 0.25s ease;
 }
 
 .read h2 {
-  margin-top: 3.5rem;
+  margin-top: 2rem;
   font-size: 1.25rem;
   line-height: 170%;
   font-weight: 540;
   color: var(--gray12);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   transition: color 0.25s ease;
 }
 
@@ -324,6 +343,11 @@
 
 .read ul {
   padding-left: 1.5rem;
+}
+
+.read ul,
+.read ol {
+  margin-top: -0.5rem;
 }
 
 .projectDate {

@@ -9,7 +9,7 @@ import Settings from "../components/settings";
 
 export default function Talent({ list }) {
   const description =
-    "Incredible design talent that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
+    "Incredible design talent I’ve either collaborated with or am keeping an eye on. This list highlights individual contributors and agencies with public portfolios, excluding skilled ICs (many of whom I know personally) who have kept their work private.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -160,17 +160,18 @@ export default function Talent({ list }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
+
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
+      ></script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+       window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('config', 'G-T2CWC86NTK');
         `}
       </Script>
 

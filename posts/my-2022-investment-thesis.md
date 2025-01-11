@@ -1,5 +1,5 @@
 ---
-title: "SJ’s Investment Thesis"
+title: "My 2022 Investment Thesis"
 date: "2022-05-16"
 ---
 

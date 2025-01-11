@@ -21,7 +21,7 @@ export default function Newsletters({ list }) {
 
   //page header and in-page description
   const description =
-    "I skim through a lot of newsletters everyday. But below are the ones I pay closer attention to and frequently share with friends.";
+    "I skim through numerous newsletters every day, but these are the ones I follow closely and often share with friends.";
 
   return (
     <>
@@ -31,17 +31,18 @@ export default function Newsletters({ list }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
+
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
+      ></script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+       window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('config', 'G-T2CWC86NTK');
         `}
       </Script>
       <main className={util.page} id="newslettersPage">

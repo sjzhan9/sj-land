@@ -29,17 +29,18 @@ export default function Post({ postData }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-      <Script
+
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
+      ></script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+       window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('config', 'G-T2CWC86NTK');
         `}
       </Script>
       <main className={util.page} id="aboutPage">
@@ -47,8 +48,7 @@ export default function Post({ postData }) {
           <h1 className={util.header}>{postData.title}</h1>
           <div className={util.inset}>
             <p className={util.description}>{postData.date}</p>
-            <div className={util.divider}></div>
-            <p className={util.read}>
+            <p className={util.read} style={{ margin: "2rem 0rem 0rem 0rem" }}>
               <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </p>
           </div>
