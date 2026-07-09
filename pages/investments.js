@@ -6,7 +6,6 @@ import Script from "next/script";
 const { Client } = require("@notionhq/client");
 
 export default function Investments({ list }) {
-  console.log(list);
   useEffect(() => {
     let thisPage = document.querySelector("#investmentsPage");
     let top = sessionStorage.getItem("investments-scroll");
@@ -21,7 +20,7 @@ export default function Investments({ list }) {
   }, []);
 
   const description =
-    "Below are my current investment holdings. They range from 20% of my investable asset to as small as $1K, roughly ordered by my position size.";
+    "I primarily focus on the public market these days. I own long term investments, do sector rotation trades, and frequently swing trade familiar names.";
 
   return (
     <>
@@ -53,7 +52,7 @@ export default function Investments({ list }) {
 
             <p>
               {
-                "With public equity, I invest in 5-20 stocks at any given time. With crypto, I’m heavy in Ethereum and Solana, and tend hold positions in 1-5 smaller cap tokens."
+                "I primarily focus on the public market these days. I own long term investments, do sector rotation trades, and frequently swing trade familiar names. Holdings featured on the page are most likely outdated. NFA."
               }
             </p>
             <p>
