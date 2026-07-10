@@ -48,7 +48,6 @@ export default function Investments({ list }) {
         <div className={util.pageColumn}>
           <h1 className={util.header}>Investments</h1>
           <div className={util.description}>
-            <p>{description}</p>
 
             <p>
               {
