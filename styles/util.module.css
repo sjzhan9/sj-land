@@ -455,6 +455,12 @@
   opacity: 0.85;
 }
 
+.icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .flexRow {
   display: flex;
   flex-direction: row;
