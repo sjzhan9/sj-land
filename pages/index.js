@@ -10,7 +10,7 @@ import styles from "../pages/index.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import OnboardingCard from "../components/onboardingCard";
 import { motion, AnimatePresence } from "framer-motion";
-const { Client } = require("@notionhq/client");
+import { queryNotionDatabase } from "../lib/notion";
 import Script from "next/script";
 
 export default function Home({ updatesList, goodsList, readingListList }) {
@@ -284,8 +284,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
 
 //notion API
 export async function getStaticProps() {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  const updatesResponse = await notion.databases.query({
+  const updatesResponse = await queryNotionDatabase({
     database_id: process.env.NOTION_RECENTS_ID,
     filter: {
       and: [
@@ -305,7 +304,7 @@ export async function getStaticProps() {
     ],
     page_size: 4,
   });
-  const goodsResponse = await notion.databases.query({
+  const goodsResponse = await queryNotionDatabase({
     database_id: process.env.NOTION_GOODS_ID,
     filter: {
       and: [
@@ -325,7 +324,7 @@ export async function getStaticProps() {
     ],
     page_size: 5,
   });
-  const readingListResponse = await notion.databases.query({
+  const readingListResponse = await queryNotionDatabase({
     database_id: process.env.NOTION_READINGLIST_ID,
     filter: {
       and: [

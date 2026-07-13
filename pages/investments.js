@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import util from "../styles/util.module.css";
 import InvestmentTile from "../components/tiles/investmentTile";
 import Script from "next/script";
-import { getNotionClient } from "../lib/notion";
+import { queryNotionDatabase } from "../lib/notion";
 
 export default function Investments({ list }) {
   useEffect(() => {
@@ -116,9 +116,7 @@ export default function Investments({ list }) {
 }
 //notion API
 export async function getStaticProps() {
-  const notion = getNotionClient();
-
-  const response = await notion.databases.query({
+  const response = await queryNotionDatabase({
     database_id: process.env.NOTION_INVESTMENTS_ID,
     filter: {
       and: [

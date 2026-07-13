@@ -3,7 +3,7 @@ import Image from "next/image";
 import util from "../styles/util.module.css";
 import Link from "next/link";
 import React, { useEffect } from "react";
-const { Client } = require("@notionhq/client");
+import { queryNotionDatabase } from "../lib/notion";
 
 import PodcastTile from "../components/tiles/podcastTile";
 import Script from "next/script";
@@ -72,9 +72,7 @@ export default function Podcasts({ list }) {
 }
 //notion API
 export async function getStaticProps() {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
-  const response = await notion.databases.query({
+  const response = await queryNotionDatabase({
     database_id: process.env.NOTION_PODCASTS_ID,
     sorts: [
       {

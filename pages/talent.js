@@ -1,7 +1,7 @@
 import Head from "next/head";
 import util from "../styles/util.module.css";
 import TalentTile from "../components/tiles/talentTile";
-const { Client } = require("@notionhq/client");
+import { queryNotionDatabase } from "../lib/notion";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
@@ -270,9 +270,7 @@ export default function Talent({ list }) {
 
 //notion API
 export async function getStaticProps() {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
-  const response = await notion.databases.query({
+  const response = await queryNotionDatabase({
     database_id: process.env.NOTION_TALENT_ID,
     filter: {
       and: [

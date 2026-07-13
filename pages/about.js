@@ -5,7 +5,7 @@ import util from "../styles/util.module.css";
 import ContactContent from "../components/contactContent";
 import ExpTile from "../components/tiles/expTile";
 import Script from "next/script";
-const { Client } = require("@notionhq/client");
+import { queryNotionDatabase } from "../lib/notion";
 import Tile from "../components/tiles/tile";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 
@@ -322,9 +322,7 @@ export default function About({ list, expList }) {
 }
 //notion API
 export async function getStaticProps() {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
-  const response = await notion.databases.query({
+  const response = await queryNotionDatabase({
     database_id: process.env.NOTION_RECENTS_ID,
     filter: {
       and: [
@@ -343,7 +341,7 @@ export async function getStaticProps() {
       },
     ],
   });
-  const expResponse = await notion.databases.query({
+  const expResponse = await queryNotionDatabase({
     database_id: process.env.NOTION_EXPERIENCE_ID,
     filter: {
       and: [
