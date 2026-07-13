@@ -351,6 +351,6 @@ export async function getStaticProps() {
       goodsList: goodsResponse.results,
       readingListList: readingListResponse.results,
     },
-    revalidate: 5,
+    revalidate: 3600,
   };
 }

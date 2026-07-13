@@ -368,6 +368,6 @@ export async function getStaticProps() {
       list: response.results,
       expList: expResponse.results,
     },
-    revalidate: 5,
+    revalidate: 3600,
   };
 }
