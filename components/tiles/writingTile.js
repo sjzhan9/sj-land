@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function WritingTile({ title, excerpt, url, date, tags }) {
   return (
-    <Link href={`writing/${url}`}>
+    <Link legacyBehavior href={`writing/${url}`}>
       <a className={styles.container}>
         <div className={styles.stack}>
           <div>

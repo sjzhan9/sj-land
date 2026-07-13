@@ -64,7 +64,7 @@ export default function Oriant() {
             <p className={util.projectDate}>Mar 2019</p>
           </div>
           {images}
-          <Link href="/projects">
+          <Link legacyBehavior href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>
           </Link>
         </div>

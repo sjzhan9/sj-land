@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function StoreTile({ id, title, type }) {
   return (
-    <Link href={`/store#${title}`}>
+    <Link legacyBehavior href={`/store#${title}`}>
       <a className={styles.container}>
         <img className={styles.image} src={"/store/" + id + ".jpg"} alt={id} />
         <div className={styles.expandRow}>

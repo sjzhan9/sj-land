@@ -63,7 +63,7 @@ export default function Oriant() {
               type="video/mp4"
             />
           </video>
-          <Link scroll={false} href="/projects">
+          <Link legacyBehavior scroll={false} href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>
           </Link>
         </div>

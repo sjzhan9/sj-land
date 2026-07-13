@@ -296,7 +296,7 @@ export default function Compound() {
             );
           })}
 
-          <Link scroll={false} href="/projects">
+          <Link legacyBehavior scroll={false} href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>
           </Link>
         </div>

@@ -70,7 +70,7 @@ export default function Oriant() {
             allowFullScreen
           ></iframe>
           {images}
-          <Link scroll={true} href="/projects">
+          <Link legacyBehavior scroll={true} href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>
           </Link>
         </div>

@@ -45,7 +45,7 @@ const OnboardingCard = React.forwardRef(
           </a>
         ) : (
           ctaLink !== null && (
-            <Link href={ctaLink}>
+            <Link legacyBehavior href={ctaLink}>
               <a>{ctaText}</a>
             </Link>
           )

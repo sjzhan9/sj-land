@@ -1,3 +1,4 @@
+@import url("https://rsms.me/inter/inter.css");
 @import "@radix-ui/colors/gray.css";
 @import "@radix-ui/colors/whiteA.css";
 @import "@radix-ui/colors/blackA.css";
@@ -18,8 +19,6 @@
   src: url("/fonts/Caveat-VariableFont_wght.ttf");
   font-weight: 400 700;
 } */
-@import url("https://rsms.me/inter/inter.css");
-
 html {
   font-family: "Inter", sans-serif;
 }

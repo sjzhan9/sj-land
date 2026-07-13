@@ -49,7 +49,7 @@ export default function Tile({
             <span className={styles.externalIcon}>↗</span>
           </a>
         ) : (
-          <Link href={url}>
+          <Link legacyBehavior href={url}>
             <a className={styles.titleLink}>
               <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
               <span className={styles.externalIcon}>→</span>

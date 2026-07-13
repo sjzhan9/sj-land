@@ -49,7 +49,7 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
       </div>
     </a>
   ) : (
-    <Link href={href}>
+    <Link legacyBehavior href={href}>
       <a className={styles.item} aria-current={ariaCurrent}>
         <div className={styles.left}>
           <div className={util.icon}>

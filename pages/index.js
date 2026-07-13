@@ -206,7 +206,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </AnimatePresence>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Updates</h2>
-            <Link href="/about#about-update">
+            <Link legacyBehavior href="/about#about-update">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
           </div>
@@ -226,7 +226,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </ul>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Aesthetic Goods</h2>
-            <Link href="/goods">
+            <Link legacyBehavior href="/goods">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
           </div>
@@ -248,7 +248,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </ul>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Reading List</h2>
-            <Link href="/reading-list">
+            <Link legacyBehavior href="/reading-list">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
           </div>{" "}
@@ -266,7 +266,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </ul>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Boutique</h2>
-            <Link href="/store">
+            <Link legacyBehavior href="/store">
               <a className={styles.homeLinkButton}>View All</a>
             </Link>
           </div>

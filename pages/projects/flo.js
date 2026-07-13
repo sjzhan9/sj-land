@@ -59,7 +59,7 @@ export default function Flo() {
             <p className={util.projectDate}>Sep 2019 – Apr 2020</p>
           </div>
           {images}
-          <Link scroll={false} href="/projects">
+          <Link legacyBehavior scroll={false} href="/projects">
             <a className={util.backButton}> ← &nbsp; Other Projects</a>
           </Link>
         </div>

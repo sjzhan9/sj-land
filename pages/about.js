@@ -80,7 +80,7 @@ export default function About({ list, expList }) {
                   "Outside of work I spend most of my energy reading about the economy and the capital markets. I "
                 }
 
-                <Link href="/investments">
+                <Link legacyBehavior href="/investments">
                   <a className={util.internalLink}>
                     invest in mostly equity and crypto
                   </a>
@@ -307,7 +307,7 @@ export default function About({ list, expList }) {
                   {
                     "A big part of my life is my pursuit to better understand how the world works. Complicated systems fascinate me. You can find what I’ve been reading in my "
                   }
-                  <Link href="/reading-list">
+                  <Link legacyBehavior href="/reading-list">
                     <a className={util.internalLink}>Reading List</a>
                   </Link>
                   {". "}
