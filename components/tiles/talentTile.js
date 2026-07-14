@@ -91,7 +91,9 @@ export default function TalentTile({
         ) : null}
         <div className={styles.icon}>
           <Image
-            onError="this.src='/feature/link.svg'"
+            onError={(event) => {
+              event.currentTarget.src = "/feature/link.svg";
+            }}
             src={
               "https://s2.googleusercontent.com/s2/favicons?domain_url=" +
               url +
@@ -139,7 +141,9 @@ export default function TalentTile({
           >
             <div className={styles.iconSmall}>
               <Image
-                onError="this.src='/feature/link.svg'"
+                onError={(event) => {
+                  event.currentTarget.src = "/feature/link.svg";
+                }}
                 src={
                   "https://s2.googleusercontent.com/s2/favicons?domain_url=" +
                   notableUrl +

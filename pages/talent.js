@@ -95,12 +95,11 @@ export default function Talent({ list }) {
         for (var i = 0; i < list.length; i++) {
           for (
             var j = 0;
-            j < list[i].properties.Tags.multi_select.length;
+            j < list[i].tags.length;
             j++
           ) {
             if (
-              list[i].properties.Tags.multi_select[j].name ==
-              filter.replace("&amp;", "&")
+              list[i].tags[j].name == filter.replace("&amp;", "&")
             ) {
               tempList.push(list[i]);
             }
@@ -115,13 +114,12 @@ export default function Talent({ list }) {
         for (var i = 0; i < list.length; i++) {
           for (
             var j = 0;
-            j < list[i].properties.Tags.multi_select.length;
+            j < list[i].tags.length;
             j++
           ) {
             if (
-              list[i].properties.Tags.multi_select[j].name ==
-                filter.replace("&amp;", "&") &&
-              list[i].properties.Fav.checkbox == fav
+              list[i].tags[j].name == filter.replace("&amp;", "&") &&
+              list[i].fav == fav
             ) {
               tempList.push(list[i]);
             }
@@ -134,7 +132,7 @@ export default function Talent({ list }) {
         sessionStorage.setItem("talent-filter", "all");
         sessionStorage.setItem("talent-fav", true);
         for (var i = 0; i < list.length; i++) {
-          if (list[i].properties.Fav.checkbox == fav) {
+          if (list[i].fav == fav) {
             tempList.push(list[i]);
           }
         }
@@ -240,21 +238,12 @@ export default function Talent({ list }) {
                 currentList.map((link) => (
                   <TalentTile
                     key={link.id}
-                    title={link.properties.Name.title[0].plain_text}
-                    url={link.properties.URL.url}
-                    date={link.created_time}
-                    fav={link.properties.Fav.checkbox}
-                    tags={link.properties.Tags.multi_select}
-                    notableUrl={
-                      link.properties.NotableUrl.url == null
-                        ? null
-                        : link.properties.NotableUrl.url
-                    }
-                    notableTitle={
-                      link.properties.NotableTitle.rich_text[0] == undefined
-                        ? null
-                        : link.properties.NotableTitle.rich_text[0].plain_text
-                    }
+                    title={link.title}
+                    url={link.url}
+                    fav={link.fav}
+                    tags={link.tags}
+                    notableUrl={link.notableUrl}
+                    notableTitle={link.notableTitle}
                   />
                 ))
               )
@@ -266,6 +255,24 @@ export default function Talent({ list }) {
       </main>
     </>
   );
+}
+
+function serializeTalentItem(page) {
+  const properties = page.properties;
+
+  return {
+    id: page.id,
+    title: properties.Name.title[0]?.plain_text ?? "",
+    url: properties.URL.url,
+    fav: properties.Fav.checkbox,
+    tags: properties.Tags.multi_select.map(({ name, color }) => ({
+      name,
+      color,
+    })),
+    notableUrl: properties.NotableUrl.url,
+    notableTitle:
+      properties.NotableTitle.rich_text[0]?.plain_text ?? null,
+  };
 }
 
 //notion API
@@ -292,7 +299,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      list: response.results,
+      list: response.results.map(serializeTalentItem),
     },
     revalidate: 3600,
   };

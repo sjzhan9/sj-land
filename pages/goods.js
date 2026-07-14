@@ -93,12 +93,11 @@ export default function Goods({ list }) {
         for (var i = 0; i < list.length; i++) {
           for (
             var j = 0;
-            j < list[i].properties.Tags.multi_select.length;
+            j < list[i].tags.length;
             j++
           ) {
             if (
-              list[i].properties.Tags.multi_select[j].name ==
-              filter.replace("&amp;", "&")
+              list[i].tags[j] == filter.replace("&amp;", "&")
             ) {
               tempList.push(list[i]);
             }
@@ -113,13 +112,12 @@ export default function Goods({ list }) {
         for (var i = 0; i < list.length; i++) {
           for (
             var j = 0;
-            j < list[i].properties.Tags.multi_select.length;
+            j < list[i].tags.length;
             j++
           ) {
             if (
-              list[i].properties.Tags.multi_select[j].name ==
-                filter.replace("&amp;", "&") &&
-              list[i].properties.Fav.checkbox == fav
+              list[i].tags[j] == filter.replace("&amp;", "&") &&
+              list[i].fav == fav
             ) {
               tempList.push(list[i]);
             }
@@ -132,7 +130,7 @@ export default function Goods({ list }) {
         sessionStorage.setItem("goods-filter", "all");
         sessionStorage.setItem("goods-fav", true);
         for (var i = 0; i < list.length; i++) {
-          if (list[i].properties.Fav.checkbox == fav) {
+          if (list[i].fav == fav) {
             tempList.push(list[i]);
           }
         }
@@ -222,15 +220,12 @@ export default function Goods({ list }) {
                 {currentList.map((link) => (
                   <GoodsTile
                     key={link.id}
-                    title={link.properties.Name.title[0].plain_text}
-                    url={link.properties.URL.url}
-                    date={link.created_time}
-                    note={link.properties.Note.rich_text}
-                    fav={link.properties.Fav.checkbox}
-                    tags={link.properties.Tags.multi_select}
-                    thumbnailUrl={link.properties.Thumbnail.files[0].file.url}
-                    price={link.properties.Price.number}
-                    brand={link.properties.Brand.rich_text[0].plain_text}
+                    title={link.title}
+                    url={link.url}
+                    note={link.note}
+                    fav={link.fav}
+                    thumbnailUrl={link.thumbnailUrl}
+                    brand={link.brand}
                   />
                 ))}
               </ul>
@@ -242,6 +237,25 @@ export default function Goods({ list }) {
       </main>
     </>
   );
+}
+
+function serializeGoodsItem(page) {
+  const properties = page.properties;
+  const thumbnail = properties.Thumbnail.files[0];
+
+  return {
+    id: page.id,
+    title: properties.Name.title[0]?.plain_text ?? "",
+    url: properties.URL.url,
+    note: properties.Note.rich_text.map(({ href, plain_text }) => ({
+      href,
+      plain_text,
+    })),
+    fav: properties.Fav.checkbox,
+    tags: properties.Tags.multi_select.map(({ name }) => name),
+    thumbnailUrl: thumbnail?.file?.url ?? thumbnail?.external?.url ?? "",
+    brand: properties.Brand.rich_text[0]?.plain_text ?? "",
+  };
 }
 
 // notion API
@@ -268,7 +282,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      list: response.results,
+      list: response.results.map(serializeGoodsItem),
     },
     revalidate: 3600,
   };
