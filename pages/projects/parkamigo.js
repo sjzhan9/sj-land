@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import util from "../../styles/util.module.css";
 import Image from "next/image";
-import Script from "next/script";
 
 export default function ParkAmigo() {
   const numOfImg = 7;
@@ -29,20 +28,6 @@ export default function ParkAmigo() {
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
 
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
-
       <main className={util.page}>
         <div className={util.projectColumn}>
           <div className={util.projectTopContainer}>
@@ -68,8 +53,8 @@ export default function ParkAmigo() {
           ></iframe>
 
           {images}
-          <Link legacyBehavior scroll={false} href="/projects">
-            <a className={util.backButton}> ← &nbsp; Other Projects</a>
+          <Link scroll={false} href="/projects" className={util.backButton}>
+            ← &nbsp; Other Projects
           </Link>
         </div>
       </main>

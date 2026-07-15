@@ -8,10 +8,12 @@ const StickyTab = ({ activeTab, sections, includeBrandSection }) => {
     return sections
       .filter((section) => section.section == sectionType)
       .map((section) => (
-        <Link legacyBehavior key={section.id} href={`#${section.id}`}>
-          <a className={activeTab === section.id ? styles.active : ""}>
-            {section.title}
-          </a>
+        <Link
+          key={section.id}
+          href={`#${section.id}`}
+          className={activeTab === section.id ? styles.active : ""}
+        >
+          {section.title}
         </Link>
       ));
   };

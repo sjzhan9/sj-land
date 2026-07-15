@@ -11,7 +11,6 @@ import toast, { Toaster } from "react-hot-toast";
 import OnboardingCard from "../components/onboardingCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { queryNotionDatabase } from "../lib/notion";
-import Script from "next/script";
 
 export default function Home({ updatesList, goodsList, readingListList }) {
   //create masterlist objects with uuid and text and cta
@@ -136,21 +135,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" type="image/gif" />
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
-      </Head>{" "}
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
-      <main className={util.page} id="recentsPage">
+      </Head>{" "}      <main className={util.page} id="recentsPage">
         <div className={styles.homeColumn}>
           <h1 className={styles.homeGreetingTitle}>
             {userTime ? userTime : "Hello"}
@@ -206,8 +191,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </AnimatePresence>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Updates</h2>
-            <Link legacyBehavior href="/about#about-update">
-              <a className={styles.homeLinkButton}>View All</a>
+            <Link href="/about#about-update" className={styles.homeLinkButton}>
+              View All
             </Link>
           </div>
           <ul className={styles.homeUpdatesGrid}>
@@ -226,8 +211,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </ul>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Aesthetic Goods</h2>
-            <Link legacyBehavior href="/goods">
-              <a className={styles.homeLinkButton}>View All</a>
+            <Link href="/goods" className={styles.homeLinkButton}>
+              View All
             </Link>
           </div>
           <ul className={styles.homeGoodsGrid}>
@@ -248,8 +233,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </ul>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Reading List</h2>
-            <Link legacyBehavior href="/reading-list">
-              <a className={styles.homeLinkButton}>View All</a>
+            <Link href="/reading-list" className={styles.homeLinkButton}>
+              View All
             </Link>
           </div>{" "}
           <ul className={styles.homeReadingGrid}>
@@ -266,8 +251,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
           </ul>
           <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Boutique</h2>
-            <Link legacyBehavior href="/store">
-              <a className={styles.homeLinkButton}>View All</a>
+            <Link href="/store" className={styles.homeLinkButton}>
+              View All
             </Link>
           </div>
           <ul className={styles.homeStoreGrid}>

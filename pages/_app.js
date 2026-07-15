@@ -5,6 +5,7 @@ import Menu from "../components/menu";
 import toast, { Toaster } from "react-hot-toast";
 import React, { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
       <Menu />
       <Component {...pageProps} />
       <Analytics />
+      <GoogleAnalytics gaId="G-T2CWC86NTK" />
     </ThemeProvider>
   );
 }

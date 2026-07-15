@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import util from "../../styles/util.module.css";
-import Script from "next/script";
 import generateImageComponents from "../../lib/imageUtil";
 import React, { useState, useEffect } from "react";
 import { addScrollListener } from "../../lib/scroll";
@@ -56,20 +55,6 @@ export default function TeamGuard() {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
 
       <main className={util.page} id={pageId}>
         <div className={util.projectColumn}>
@@ -172,8 +157,8 @@ export default function TeamGuard() {
             );
           })}
 
-          <Link legacyBehavior scroll={false} href="/projects">
-            <a className={util.backButton}> ← &nbsp; Other Projects</a>
+          <Link scroll={false} href="/projects" className={util.backButton}>
+            ← &nbsp; Other Projects
           </Link>
         </div>
       </main>

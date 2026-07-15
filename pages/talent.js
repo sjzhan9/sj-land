@@ -4,7 +4,6 @@ import TalentTile from "../components/tiles/talentTile";
 import { queryNotionDatabase } from "../lib/notion";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import Settings from "../components/settings";
 
 export default function Talent({ list }) {
@@ -158,20 +157,6 @@ export default function Talent({ list }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
 
       <main className={util.page} id="talentPage">
         <div className={util.pageColumn}>

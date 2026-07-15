@@ -45,9 +45,7 @@ const OnboardingCard = React.forwardRef(
           </a>
         ) : (
           ctaLink !== null && (
-            <Link legacyBehavior href={ctaLink}>
-              <a>{ctaText}</a>
-            </Link>
+            <Link href={ctaLink}>{ctaText}</Link>
           )
         )}
         <span className={styles.closeIcon} onClick={handleDismiss}>

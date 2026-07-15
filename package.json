@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@notionhq/client": "5.23.1",
+    "@next/third-parties": "16.2.10",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-checkbox": "^1.0.0",
     "@radix-ui/react-dialog": "^1.0.0",

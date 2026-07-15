@@ -3,7 +3,6 @@ import util from "../styles/util.module.css";
 import React, { useEffect } from "react";
 import NewsletterTile from "../components/tiles/newsletterTile";
 import { queryNotionDatabase } from "../lib/notion";
-import Script from "next/script";
 
 export default function Newsletters({ list }) {
   useEffect(() => {
@@ -31,20 +30,6 @@ export default function Newsletters({ list }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
       <main className={util.page} id="newslettersPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Newsletters</h1>

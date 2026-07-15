@@ -49,41 +49,39 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
       </div>
     </a>
   ) : (
-    <Link legacyBehavior href={href}>
-      <a className={styles.item} aria-current={ariaCurrent}>
-        <div className={styles.left}>
-          <div className={util.icon}>
-            <Image
-              className={"iconInvert"}
-              priority
-              src={"/feather/" + svg + ".svg"}
-              height={66}
-              width={66}
-              alt={label}
-            />
-          </div>
-          <p className={styles.label}>{label}</p>
+    <Link href={href} className={styles.item} aria-current={ariaCurrent}>
+      <div className={styles.left}>
+        <div className={util.icon}>
+          <Image
+            className={"iconInvert"}
+            priority
+            src={"/feather/" + svg + ".svg"}
+            height={66}
+            width={66}
+            alt={label}
+          />
         </div>
-        {shortcut ? (
-          <Tooltip.Provider delayDuration={500}>
-            <Tooltip.Root>
-              <Tooltip.Trigger asChild>
-                <div className={styles.shortcut}>
-                  <span className={styles.shortcutText}>{shortcut}</span>
-                </div>
-              </Tooltip.Trigger>
+        <p className={styles.label}>{label}</p>
+      </div>
+      {shortcut ? (
+        <Tooltip.Provider delayDuration={500}>
+          <Tooltip.Root>
+            <Tooltip.Trigger asChild>
+              <div className={styles.shortcut}>
+                <span className={styles.shortcutText}>{shortcut}</span>
+              </div>
+            </Tooltip.Trigger>
 
-              <Tooltip.Content className={util.tooltip}>
-                <span style={{ marginRight: "4px" }}>Press</span>
-                <div className={styles.shortcut}>
-                  <span className={styles.shortcutText}>{shortcut}</span>
-                </div>
-                <Tooltip.Arrow className={util.arrow} />
-              </Tooltip.Content>
-            </Tooltip.Root>
-          </Tooltip.Provider>
-        ) : null}
-      </a>
+            <Tooltip.Content className={util.tooltip}>
+              <span style={{ marginRight: "4px" }}>Press</span>
+              <div className={styles.shortcut}>
+                <span className={styles.shortcutText}>{shortcut}</span>
+              </div>
+              <Tooltip.Arrow className={util.arrow} />
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      ) : null}
     </Link>
   );
 }

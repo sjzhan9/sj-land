@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import util from "../../styles/util.module.css";
-import Script from "next/script";
 import { queryNotionDatabase } from "../../lib/notion";
 import WritingTile from "../../components/tiles/writingTile";
 import { TwitterTweetEmbed } from "react-twitter-embed";
@@ -30,20 +29,6 @@ export default function Writing({ list, expList }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
       <main className={util.page} id="writingPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Writing</h1>

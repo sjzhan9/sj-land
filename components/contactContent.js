@@ -108,7 +108,7 @@ export default function ContactContent() {
           </a>
           <a
             className={styles.textButton}
-            href="https://www.linkedin.com/in/s-j-zhang/"
+            href="https://www.linkedin.com/in/sj-zhang"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -121,22 +121,6 @@ export default function ContactContent() {
               alt="linkedin"
             />
             <span className={util.iconButtonText}>LinkedIn</span>
-          </a>
-          <a
-            className={styles.textButton}
-            href="https://read.cv/sj"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.icon}
-              priority
-              src={"/icons/readcv.jpg"}
-              height={18}
-              width={18}
-              alt="readcv"
-            />
-            <span className={util.iconButtonText}>CV</span>
           </a>
         </div>
       </div>

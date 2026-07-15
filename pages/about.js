@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import util from "../styles/util.module.css";
 import ContactContent from "../components/contactContent";
 import ExpTile from "../components/tiles/expTile";
-import Script from "next/script";
 import { queryNotionDatabase } from "../lib/notion";
 import Tile from "../components/tiles/tile";
 import { TwitterTweetEmbed } from "react-twitter-embed";
@@ -42,20 +41,6 @@ export default function About({ list, expList }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
       <main className={util.page} id="aboutPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>About</h1>
@@ -80,10 +65,8 @@ export default function About({ list, expList }) {
                   "Outside of work I spend most of my energy reading about the economy and the capital markets. I "
                 }
 
-                <Link legacyBehavior href="/investments">
-                  <a className={util.internalLink}>
-                    invest in mostly equity and crypto
-                  </a>
+                <Link href="/investments" className={util.internalLink}>
+                  invest in mostly equity and crypto
                 </Link>
 
                 {
@@ -307,8 +290,8 @@ export default function About({ list, expList }) {
                   {
                     "A big part of my life is my pursuit to better understand how the world works. Complicated systems fascinate me. You can find what I’ve been reading in my "
                   }
-                  <Link legacyBehavior href="/reading-list">
-                    <a className={util.internalLink}>Reading List</a>
+                  <Link href="/reading-list" className={util.internalLink}>
+                    Reading List
                   </Link>
                   {". "}
                 </p>

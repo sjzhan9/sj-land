@@ -2,7 +2,6 @@ import Head from "next/head";
 import React, { useEffect } from "react";
 import util from "../styles/util.module.css";
 import StoreTile from "../components/tiles/storeTile";
-import Script from "next/script";
 
 export default function Store() {
   useEffect(() => {
@@ -28,20 +27,6 @@ export default function Store() {
         <link rel="icon" href="/favicon.gif" />
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
       </Head>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-      ></script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-       window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T2CWC86NTK');
-        `}
-      </Script>
       <main className={util.page} id="storePage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Boutique</h1>
