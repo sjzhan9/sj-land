@@ -1,5 +1,5 @@
 import styles from "../components/contact.module.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
 import util from "../styles/util.module.css";
@@ -7,27 +7,32 @@ import ContactContent from "./contactContent";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 export default function Contact({ svg, label, shortcut }) {
-  var time = 0;
+  const triggerRef = useRef(null);
+  const lastTriggeredAt = useRef(0);
 
   useEffect(() => {
-    setInterval(function () {
-      time++;
-    }, 200);
-  }, []);
+    if (!shortcut) return;
 
-  useEffect(() => {
-    document.addEventListener("keypress", function (event) {
-      if (event.key === shortcut && time > 1) {
-        document.getElementById("contactTrigger").click();
-        time = 0;
+    lastTriggeredAt.current = Date.now();
+
+    const handleKeyPress = (event) => {
+      const now = Date.now();
+
+      if (event.key === shortcut && now - lastTriggeredAt.current > 400) {
+        triggerRef.current?.click();
+        lastTriggeredAt.current = now;
       }
-    });
-  });
+    };
+
+    document.addEventListener("keypress", handleKeyPress);
+
+    return () => document.removeEventListener("keypress", handleKeyPress);
+  }, [shortcut]);
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger asChild id="contactTrigger">
-        <div className={styles.item}>
+      <Dialog.Trigger asChild>
+        <div ref={triggerRef} className={styles.item}>
           <div className={styles.left}>
             <div className={util.icon}>
               <Image
