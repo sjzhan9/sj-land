@@ -49,7 +49,12 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
       </div>
     </a>
   ) : (
-    <Link href={href} className={styles.item} aria-current={ariaCurrent}>
+    <Link
+      href={href}
+      prefetch={false}
+      className={styles.item}
+      aria-current={ariaCurrent}
+    >
       <div className={styles.left}>
         <div className={util.icon}>
           <Image

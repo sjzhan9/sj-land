@@ -9,7 +9,7 @@ export default function Menu() {
   return (
     <div className={styles.container}>
       <div className={styles.upper}>
-        <Link href="/">
+        <Link href="/" prefetch={false}>
           <img
             className={util.hiddenOnMobile + " " + util.pointer + " logoInvert"}
             src="/logo.png"
