@@ -40,12 +40,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
       ctaLink: "https://twitter.com/sjzhang_/status/1526189236084408324",
     },
     {
-      id: "openCal",
-      text: "I enjoy meeting random people and help where I can. ",
-      ctaText: "My open calendar is here ↗",
-      ctaLink: "https://cal.com/sjzhang/15min",
-    },
-    {
       id: "support",
       text: "If this website helped you, or I helped you, feel free to ",
       ctaText: "check out some goodies →",

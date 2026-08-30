@@ -25,11 +25,6 @@ const nextConfig = {
         destination: "/projects/oriant",
         permanent: true,
       },
-      {
-        source: "/book",
-        destination: "https://cal.com/sjzhang",
-        permanent: true,
-      },
     ];
   },
 };
