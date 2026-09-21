@@ -27,32 +27,32 @@ export default function Menu() {
             label="Projects"
             shortcut="3"
           />
-          <NavLink svg="edit-3" href="/writing" label="Writing" shortcut="4" />
           <NavLink
             svg="investments"
             href="/investments"
             label="Investments"
-            shortcut="5"
+            shortcut="4"
           />
+          <NavLink svg="edit-3" href="/writing" label="Writing" shortcut="5" />
           <p className={styles.divider}>Resources</p>
           <NavLink
             svg="reading"
             href="/reading-list"
             label="Reading List"
-            shortcut="7"
+            shortcut="6"
+          />
+          <NavLink svg="users" href="/talent" label="Talent" shortcut="7" />
+          <NavLink
+            svg="newsletters"
+            href="/media"
+            label="Media"
+            shortcut="8"
           />
           <NavLink
             svg="shopping-bag"
             href="/goods"
             label="Aesthetic Goods"
-            shortcut="8"
-          />
-          <NavLink svg="users" href="/talent" label="Talent" shortcut="9" />
-          <NavLink
-            svg="newsletters"
-            href="/media"
-            label="Media"
-            shortcut="0"
+            shortcut="9"
           />
           <p className={styles.divider}>Stay in touch</p>
           <Contact svg="chat" label="Contact" shortcut="/" />

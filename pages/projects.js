@@ -238,12 +238,6 @@ export default function Projects() {
               internal="true"
             />
           </ul>
-          <p
-            className={util.tileContent}
-            style={{ marginTop: "6rem", textAlign: "center" }}
-          >
-            {"Work before 2017 wasn't very well-documented :)"}
-          </p>
         </div>
       </main>
     </>

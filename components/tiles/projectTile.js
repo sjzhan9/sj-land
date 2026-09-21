@@ -3,6 +3,8 @@ import Image from "next/image";
 import util from "../../styles/util.module.css";
 import Link from "next/link";
 
+const PROJECTS_VISIBLE_FROM = "2019-07-20";
+
 export default function ProjectTile({
   image,
   title,
@@ -12,6 +14,8 @@ export default function ProjectTile({
   url,
   internal,
 }) {
+  if (date && date < PROJECTS_VISIBLE_FROM) return null;
+
   const tileContent = (
     <>
       <img

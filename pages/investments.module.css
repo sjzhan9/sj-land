@@ -1,0 +1,88 @@
+.pageColumn {
+  max-width: 48rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-right: 0.25rem;
+}
+
+.sectionHeader span {
+  font-size: var(--font-s);
+  color: var(--gray9);
+}
+
+.metricHeaders {
+  width: 20rem;
+  display: grid;
+  grid-template-columns: 7rem 5rem 6rem;
+  gap: 1rem;
+  text-align: right;
+}
+
+.activityHeader,
+.activityRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activityHeader {
+  padding: 1.25rem 0.25rem 0.75rem;
+  color: var(--gray9);
+  font-size: var(--font-s);
+}
+
+.activityRow {
+  padding: 1.25rem 0.25rem;
+  border-bottom: 1px solid var(--linkContainerBorder);
+}
+
+.activityTitle {
+  margin: 0 0 0.25rem;
+  color: var(--gray12);
+  font-size: var(--font-m);
+}
+
+.activityTitle span {
+  display: inline-block;
+  width: 2.75rem;
+  margin-right: 0.75rem;
+  text-transform: capitalize;
+  font-size: var(--font-s);
+}
+
+.buy,
+.positive {
+  color: var(--green11);
+}
+
+.sell,
+.negative {
+  color: var(--red11);
+}
+
+.activityDate {
+  margin-left: 3.5rem;
+  color: var(--gray9);
+  font-size: var(--font-s);
+}
+
+.positionChange {
+  font-size: var(--font-m);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 700px) {
+  .metricHeaders {
+    width: 12rem;
+    grid-template-columns: 4rem 4rem 4rem;
+    gap: 0;
+  }
+
+  .metricHeaders span {
+    font-size: 10px;
+  }
+}
