@@ -5,7 +5,6 @@ import Link from "next/link";
 import Tile from "../components/tiles/homeVersions/tile";
 import ReadingListTile from "../components/tiles/homeVersions/readingListTile";
 import GoodsTile from "../components/tiles/homeVersions/goodsTile";
-import StoreTile from "../components/tiles/homeVersions/storeTile";
 import styles from "../pages/index.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import OnboardingCard from "../components/onboardingCard";
@@ -38,12 +37,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
       text: "If you are curious how the site was built, I have a Twitter thread on it.",
       ctaText: "Check it out →",
       ctaLink: "https://twitter.com/sjzhang_/status/1526189236084408324",
-    },
-    {
-      id: "support",
-      text: "If this website helped you, or I helped you, feel free to ",
-      ctaText: "check out some goodies →",
-      ctaLink: "/store",
     },
   ];
   //create currentlist of what user need to see
@@ -242,18 +235,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
                 tags={link.properties.Tags.multi_select}
               />
             ))}
-          </ul>
-          <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Boutique</h2>
-            <Link href="/store" className={styles.homeLinkButton}>
-              View All
-            </Link>
-          </div>
-          <ul className={styles.homeStoreGrid}>
-            <StoreTile id="W01-01" title="W01-01" type="6K Desktop + Mobile" />
-            <StoreTile id="W01-02" title="W01-02" type="6K Desktop + Mobile" />
-            <StoreTile id="W01-03" title="W01-03" type="6K Desktop + Mobile" />
-            <StoreTile id="W01-04" title="W01-04" type="6K Desktop + Mobile" />
           </ul>
         </div>
       </main>

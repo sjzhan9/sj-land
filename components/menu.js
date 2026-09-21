@@ -34,12 +34,6 @@ export default function Menu() {
             label="Investments"
             shortcut="5"
           />
-          <NavLink
-            svg="shopping-cart"
-            href="/store"
-            label="Boutique"
-            shortcut="6"
-          />
           <p className={styles.divider}>Resources</p>
           <NavLink
             svg="reading"
