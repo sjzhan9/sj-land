@@ -55,10 +55,12 @@ export default function InvestmentTile({
                 />
               </span>
             </div>
-            <span className={styles.metricValue}>
+            <span className={`${styles.metricValue} ${styles.metricEmphasis}`}>
               {formatCurrency(averageCost)}
             </span>
-            <span className={returnClass(unrealizedReturn, styles)}>
+            <span
+              className={`${returnClass(unrealizedReturn, styles)} ${styles.metricEmphasis}`}
+            >
               {formatPercent(unrealizedReturn, true)}
             </span>
           </div>

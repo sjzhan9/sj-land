@@ -64,6 +64,9 @@
   color: var(--gray11);
   font-variant-numeric: tabular-nums;
 }
+.metricEmphasis {
+  font-size: var(--font-m);
+}
 .positive {
   color: var(--green11);
 }
