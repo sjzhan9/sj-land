@@ -48,12 +48,14 @@ export default function InvestmentTile({
               <span className={styles.metricValue}>
                 {formatPercent(allocation)}
               </span>
-              <span className={styles.allocationTrack} aria-hidden="true">
-                <span
-                  className={styles.allocationFill}
-                  style={{ width: `${allocationPercent ?? 0}%` }}
-                />
-              </span>
+              {allocationPercent != null ? (
+                <span className={styles.allocationTrack} aria-hidden="true">
+                  <span
+                    className={styles.allocationFill}
+                    style={{ width: `${allocationPercent}%` }}
+                  />
+                </span>
+              ) : null}
             </div>
             <span className={`${styles.metricValue} ${styles.metricEmphasis}`}>
               {formatCurrency(averageCost)}

@@ -94,8 +94,16 @@ export default function Investments({ list, activities = [] }) {
                   <span>Unrealized</span>
                 </div>
               </li>
-              {list
+              {[...list]
                 .filter((item) => item.properties.Private.checkbox == false)
+                .sort((a, b) => {
+                  const aAllocation = a.properties.Allocation?.number;
+                  const bAllocation = b.properties.Allocation?.number;
+
+                  if (aAllocation == null) return bAllocation == null ? 0 : 1;
+                  if (bAllocation == null) return -1;
+                  return bAllocation - aAllocation;
+                })
                 .map((item) => (
                   <InvestmentTile
                     key={item.id}
