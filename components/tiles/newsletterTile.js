@@ -4,6 +4,7 @@ import util from "../../styles/util.module.css";
 
 export default function NewsletterTile({
   internalUrl,
+  imageDirectory = "newsletters",
   imageUrl,
   title,
   content,
@@ -23,7 +24,7 @@ export default function NewsletterTile({
           <Image
             priority
             // unoptimized
-            src={"/newsletters/" + internalUrl + ".png"}
+            src={"/" + imageDirectory + "/" + internalUrl + ".png"}
             height={64}
             width={64}
             layout="fixed"

@@ -47,7 +47,7 @@ export default function Writing({ list, expList }) {
               key={2}
               title={"My 2022 Investment Thesis"}
               excerpt={
-                "In hindsight everything I said was either obvious or rebatable. Some I don't even agree with anymore, but for the sake of record keeping, here it is."
+                "In hindsight everything I said was either obvious or debatable. Some I don't even agree with anymore, but for the sake of record keeping, here it is."
               }
               url={"my-2022-investment-thesis"}
               date={"2022-05-16"}

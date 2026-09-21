@@ -32,7 +32,7 @@ export default function Goods({ list }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const filters = ["Tech", "Home", "Workspace", "Watches", "Fashion"];
+  const filters = ["Tech", "Home", "Workspace", "Watches"];
 
   //handlers to handle filter and fav setting changes
   function removeFilter() {

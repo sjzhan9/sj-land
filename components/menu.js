@@ -56,15 +56,9 @@ export default function Menu() {
           <NavLink svg="users" href="/talent" label="Talent" shortcut="9" />
           <NavLink
             svg="newsletters"
-            href="/newsletters"
-            label="Newsletters"
+            href="/media"
+            label="Media"
             shortcut="0"
-          />
-          <NavLink
-            svg="podcasts"
-            href="/podcasts"
-            label="Podcasts"
-            shortcut="-"
           />
           <p className={styles.divider}>Stay in touch</p>
           <Contact svg="chat" label="Contact" shortcut="/" />
