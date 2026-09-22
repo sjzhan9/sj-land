@@ -14,6 +14,10 @@
   color: var(--gray9);
 }
 
+.privateHeader {
+  list-style: none;
+}
+
 .metricHeaders {
   width: 20rem;
   display: grid;
@@ -22,52 +26,100 @@
   text-align: right;
 }
 
-.activityHeader,
-.activityRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.activityTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
-.activityHeader {
+.sideColumn {
+  width: 15%;
+}
+
+.tickerColumn {
+  width: 25%;
+}
+
+.changeColumn {
+  width: 30%;
+}
+
+.dateColumn {
+  width: 30%;
+}
+
+.activityTable th {
   padding: 1.25rem 0.25rem 0.75rem;
   color: var(--gray9);
   font-size: var(--font-s);
+  font-weight: 400;
+  text-align: left;
 }
 
-.activityRow {
+.activityTable td {
   padding: 1.25rem 0.25rem;
   border-bottom: 1px solid var(--linkContainerBorder);
-}
-
-.activityTitle {
-  margin: 0 0 0.25rem;
   color: var(--gray12);
   font-size: var(--font-m);
+  vertical-align: middle;
 }
 
-.activityTitle span {
-  display: inline-block;
-  width: 2.75rem;
-  margin-right: 0.75rem;
+.activityTable th:nth-child(n + 3),
+.activityTable td:nth-child(n + 3) {
+  text-align: right;
+}
+
+.activityTable td:first-child span {
   text-transform: capitalize;
   font-size: var(--font-s);
 }
 
-.buy,
-.positive {
+.activityTicker {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.activityIcon {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  overflow: hidden;
+  border: 1px solid var(--linkContainerBorder);
+  border-radius: 50%;
+  background: var(--gray2);
+  color: var(--gray9);
+  font-size: var(--font-s);
+}
+
+.activityIcon img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--gray1);
+}
+
+.activityTable .buy,
+.activityTable td.positive {
   color: var(--green11);
 }
 
-.sell,
-.negative {
+.activityTable .sell,
+.activityTable td.negative {
   color: var(--red11);
 }
 
 .activityDate {
-  margin-left: 3.5rem;
   color: var(--gray9);
   font-size: var(--font-s);
+  white-space: nowrap;
 }
 
 .positionChange {

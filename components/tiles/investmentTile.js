@@ -46,7 +46,7 @@ export default function InvestmentTile({
           <div className={styles.metrics}>
             <div className={styles.allocation}>
               <span className={styles.metricValue}>
-                {formatPercent(allocation)}
+                {formatPercent(allocation, { decimals: 1 })}
               </span>
               {allocationPercent != null ? (
                 <span className={styles.allocationTrack} aria-hidden="true">
@@ -63,7 +63,7 @@ export default function InvestmentTile({
             <span
               className={`${returnClass(unrealizedReturn, styles)} ${styles.metricEmphasis}`}
             >
-              {formatPercent(unrealizedReturn, true)}
+              {formatPercent(unrealizedReturn, { signed: true, decimals: 2 })}
             </span>
           </div>
         ) : null}
@@ -78,18 +78,19 @@ function formatCurrency(value) {
   return value.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
-    minimumFractionDigits: value < 100 ? 2 : 0,
-    maximumFractionDigits: value < 100 ? 2 : 0,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   });
 }
 
-function formatPercent(value, signed = false) {
+function formatPercent(value, { signed = false, decimals = 2 } = {}) {
   if (value == null) return "—";
 
   const percent = value * 100;
   const prefix = signed && percent > 0 ? "+" : "";
   return `${prefix}${percent.toLocaleString("en-US", {
-    maximumFractionDigits: 1,
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
   })}%`;
 }
 
