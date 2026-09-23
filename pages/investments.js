@@ -2,11 +2,13 @@ import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import util from "../styles/util.module.css";
 import InvestmentTile from "../components/tiles/investmentTile";
+import Settings from "../components/settings";
 import { queryNotionDatabase, queryNotionDataSource } from "../lib/notion";
 import styles from "./investments.module.css";
 
 export default function Investments({ list, activities = [] }) {
   const [activeTab, setActiveTab] = useState("Holdings");
+  const [excludeOptions, setExcludeOptions] = useState(false);
   useEffect(() => {
     let thisPage = document.querySelector("#investmentsPage");
     let top = sessionStorage.getItem("investments-scroll");
@@ -22,6 +24,9 @@ export default function Investments({ list, activities = [] }) {
 
   const description =
     "I primarily focus on the public market these days. I own long term investments, do sector rotation trades, and frequently swing trade familiar names.";
+  const visibleActivities = excludeOptions
+    ? activities.filter((activity) => !activity.isOption)
+    : activities;
 
   return (
     <>
@@ -82,6 +87,14 @@ export default function Investments({ list, activities = [] }) {
                 </button>
               ))}
             </div>
+            {activeTab === "Recent Trades" ? (
+              <Settings
+                status={excludeOptions}
+                updateCheckbox={setExcludeOptions}
+                label="Exclude options"
+                id="exclude-options"
+              />
+            ) : null}
           </div>
 
           {activeTab === "Holdings" ? (
@@ -135,7 +148,9 @@ export default function Investments({ list, activities = [] }) {
                 ))}
             </ul>
           ) : activities.length ? (
-            <table className={styles.activityTable}>
+            <div>
+              {visibleActivities.length ? (
+                <table className={styles.activityTable}>
               <colgroup>
                 <col className={styles.sideColumn} />
                 <col className={styles.tickerColumn} />
@@ -150,8 +165,8 @@ export default function Investments({ list, activities = [] }) {
                   <th>Date</th>
                 </tr>
               </thead>
-              <tbody>
-                {activities.map((activity) => (
+                  <tbody>
+                {visibleActivities.map((activity) => (
                   <tr key={activity.id}>
                     <td>
                       <span className={styles[activity.side]}>{activity.side}</span>
@@ -169,6 +184,9 @@ export default function Investments({ list, activities = [] }) {
                           />
                         </span>
                         <span>{activity.name}</span>
+                        {activity.isOption ? (
+                          <span className={styles.optionBadge}>Option</span>
+                        ) : null}
                       </div>
                     </td>
                     <td
@@ -197,8 +215,12 @@ export default function Investments({ list, activities = [] }) {
                     </td>
                   </tr>
                 ))}
-              </tbody>
-            </table>
+                  </tbody>
+                </table>
+              ) : (
+                <div className={util.emptyState}>No matching trades.</div>
+              )}
+            </div>
           ) : (
             <div className={util.emptyState}>No trading activity yet.</div>
           )}
@@ -242,12 +264,6 @@ export async function getStaticProps() {
               equals: false,
             },
           },
-          {
-            property: "Notional",
-            number: {
-              greater_than: 10000,
-            },
-          },
         ],
       },
       sorts: [
@@ -270,12 +286,19 @@ export async function getStaticProps() {
     });
   });
 
-  const activities = activityResponse.results.filter((item) => !isOptionTrade(item)).map((item) => {
+  const activities = activityResponse.results
+    .filter(
+      (item) =>
+        isOptionTrade(item) || (item.properties.Notional?.number ?? 0) > 10000
+    )
+    .map((item) => {
     const executedAt = item.properties["Executed At"]?.date?.start;
-    const name =
+    const rawSymbol =
       item.properties.Symbol?.rich_text?.[0]?.plain_text ||
       item.properties.Name?.title?.[0]?.plain_text ||
       "Trade";
+    const optionTrade = isOptionTrade(item);
+    const name = optionTrade ? getOptionUnderlying(rawSymbol) : rawSymbol;
     const side = item.properties.Side?.select?.name?.toLowerCase() || "buy";
     const relatedInvestmentId =
       item.properties.Holding?.relation?.[0]?.id ||
@@ -294,6 +317,7 @@ export async function getStaticProps() {
     return {
       id: item.id,
       name,
+      isOption: optionTrade,
       icon: getInvestmentIcon(investment, name),
       side,
       date: executedAt || "",
@@ -349,6 +373,10 @@ function isOptionTrade(item) {
     /^[A-Z]{1,6}\d{6}[CP]\d{8}$/i.test(symbol.replace(/\s/g, "")) ||
     /\b(call|put)\b/i.test(name)
   );
+}
+
+function getOptionUnderlying(symbol) {
+  return symbol.match(/^([A-Z]{1,6})\d{6}[CP]\d{8}$/i)?.[1] || symbol;
 }
 
 function getInvestmentKeys(investment) {

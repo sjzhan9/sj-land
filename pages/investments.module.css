@@ -81,6 +81,15 @@
   font-variant-numeric: tabular-nums;
 }
 
+.optionBadge {
+  padding: 0.2rem 0.35rem;
+  border-radius: 4px;
+  background: var(--gray3);
+  color: var(--gray10);
+  font-size: 10px;
+  line-height: 1;
+}
+
 .activityIcon {
   position: relative;
   display: inline-flex;

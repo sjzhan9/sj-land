@@ -4,7 +4,12 @@ import util from "../styles/util.module.css";
 import * as Popover from "@radix-ui/react-popover";
 import * as Checkbox from "@radix-ui/react-checkbox";
 
-export default function Settings({ status, updateCheckbox }) {
+export default function Settings({
+  status,
+  updateCheckbox,
+  label = "Show favorites only",
+  id = "fav-only",
+}) {
   const handleChange = () => {
     updateCheckbox(!status);
   };
@@ -50,7 +55,7 @@ export default function Settings({ status, updateCheckbox }) {
         <Checkbox.Root
           checked={status}
           onCheckedChange={handleChange}
-          id="fav-only"
+          id={id}
           className={util.checkbox}
         >
           <Checkbox.Indicator asChild>
@@ -71,7 +76,7 @@ export default function Settings({ status, updateCheckbox }) {
             </svg>
           </Checkbox.Indicator>
         </Checkbox.Root>
-        <label htmlFor="fav-only">Show favorites only</label>
+        <label htmlFor={id}>{label}</label>
         <Popover.Arrow className={util.arrow} />
       </Popover.Content>
     </Popover.Root>
