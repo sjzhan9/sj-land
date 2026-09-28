@@ -150,8 +150,8 @@
     background: rgba(244, 244, 244, 0.8);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(32px) saturate(180%);
-    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
     animation: menu-sheet-in 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
