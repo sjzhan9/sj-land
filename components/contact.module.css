@@ -12,6 +12,9 @@
   margin-top: 2px;
   border: 0.5px solid transparent;
   transition: all 0.1s ease;
+  background: transparent;
+  font: inherit;
+  text-align: left;
 }
 .item:hover {
   background: var(--highlighthover);
@@ -41,19 +44,10 @@
   color: var(--menuLabel);
   letter-spacing: 0.15px;
 }
-.shortcut {
-  background: var(--tabbg);
-  border-radius: 3px;
+.copyIcon {
   width: 16px;
   height: 16px;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.shortcutText {
-  font-size: 11px;
-  color: var(--tabText);
+  opacity: 0.55;
 }
 .icon {
   border-radius: 4px;
@@ -153,7 +147,7 @@
 }
 
 @media (max-width: 700px) {
-  .shortcut {
+  .copyIcon {
     display: none;
   }
   .label {
