@@ -290,8 +290,8 @@ export default function About({ list, expList }) {
                   {
                     "A big part of my life is my pursuit to better understand how the world works. Complicated systems fascinate me. You can find what I’ve been reading in my "
                   }
-                  <Link href="/bookmark" className={util.internalLink}>
-                    Bookmark
+                  <Link href="/bookmarks" className={util.internalLink}>
+                    Bookmarks
                   </Link>
                   {". "}
                 </p>

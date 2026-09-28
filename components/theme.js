@@ -1,12 +1,12 @@
 import { useTheme } from "next-themes";
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../components/theme.module.css";
 
 export const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
-  let isLightChecked = theme == "light" ? "checked" : null;
-  let isDarkChecked = theme == "dark" ? "checked" : null;
-  let isAutoChecked = theme == "system" ? "checked" : null;
+  const isLightChecked = theme === "light";
+  const isDarkChecked = theme === "dark";
+  const isAutoChecked = theme === "system";
 
   return (
     <div>

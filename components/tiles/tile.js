@@ -1,7 +1,7 @@
 import styles from ".//tile.module.css";
 import util from "../../styles/util.module.css";
 import Link from "next/link";
-import Image from "next/image";
+import { getUpdateFallbackIcon } from "./updateFallback";
 
 export default function Tile({
   internalUrl,
@@ -10,7 +10,10 @@ export default function Tile({
   content,
   date,
   url,
+  tags,
 }) {
+  const fallbackIcon = getUpdateFallbackIcon(tags, title);
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -34,12 +37,22 @@ export default function Tile({
             width={28}
             alt={title}
           />
-        ) : null}
+        ) : (
+          <span className={styles.fallbackIcon} aria-hidden="true">
+            <img
+              className="iconInvert"
+              src={`/feather/${fallbackIcon}.svg`}
+              alt=""
+            />
+          </span>
+        )}
       </div>
 
       <div className={styles.right}>
         <div className={styles.stack}>
-          {url.includes("http") ? (
+          {!url ? (
+            <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
+          ) : url.includes("http") ? (
             <a
               href={url}
               target="_blank"

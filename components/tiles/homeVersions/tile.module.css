@@ -18,6 +18,19 @@
   border-radius: 6px;
   flex-shrink: 0;
 }
+.fallbackIcon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--gray4);
+}
+.fallbackIcon img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.62;
+}
 .iconContainer {
   margin-bottom: 6px;
 }

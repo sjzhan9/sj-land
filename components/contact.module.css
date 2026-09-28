@@ -45,9 +45,11 @@
   letter-spacing: 0.15px;
 }
 .copyIcon {
-  width: 16px;
-  height: 16px;
-  opacity: 0.55;
+  width: 14px;
+  height: 14px;
+  background-color: var(--tabText);
+  mask: url("/feather/copy.svg") center / contain no-repeat;
+  -webkit-mask: url("/feather/copy.svg") center / contain no-repeat;
 }
 .icon {
   border-radius: 4px;

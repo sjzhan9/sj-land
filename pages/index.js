@@ -197,6 +197,24 @@ export default function Home({ updatesList, goodsList, readingListList }) {
             ))}
           </ul>
           <div className={styles.homeSectionContainer}>
+            <h2 className={styles.homeSectionTitle}>Bookmarks</h2>
+            <Link href="/bookmarks" className={styles.homeLinkButton}>
+              View All
+            </Link>
+          </div>{" "}
+          <ul className={styles.homeReadingGrid}>
+            {readingListList.map((link) => (
+              <ReadingListTile
+                key={link.id}
+                title={link.properties.Name.title[0].plain_text}
+                url={link.properties.URL.url}
+                date={link.created_time}
+                fav={link.properties.Fav.checkbox}
+                tags={link.properties.Tags.multi_select}
+              />
+            ))}
+          </ul>
+          <div className={styles.homeSectionContainer}>
             <h2 className={styles.homeSectionTitle}>Goods</h2>
             <Link href="/goods" className={styles.homeLinkButton}>
               View All
@@ -215,24 +233,6 @@ export default function Home({ updatesList, goodsList, readingListList }) {
                 thumbnailUrl={link.properties.Thumbnail.files[0].file.url}
                 price={link.properties.Price.number}
                 brand={link.properties.Brand.rich_text[0].plain_text}
-              />
-            ))}
-          </ul>
-          <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Bookmark</h2>
-            <Link href="/bookmark" className={styles.homeLinkButton}>
-              View All
-            </Link>
-          </div>{" "}
-          <ul className={styles.homeReadingGrid}>
-            {readingListList.map((link) => (
-              <ReadingListTile
-                key={link.id}
-                title={link.properties.Name.title[0].plain_text}
-                url={link.properties.URL.url}
-                date={link.created_time}
-                fav={link.properties.Fav.checkbox}
-                tags={link.properties.Tags.multi_select}
               />
             ))}
           </ul>

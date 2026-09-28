@@ -9,7 +9,7 @@
   padding: 2rem 2rem;
   order: 1;
   flex-grow: 1;
-  margin-left: 15.5rem;
+  margin-left: 13.5rem;
   background-color: var(--bg);
   overflow: auto;
   transition: background-color 0.2s ease;

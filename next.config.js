@@ -15,7 +15,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: "/reading-list", destination: "/bookmark", permanent: true },
+      { source: "/reading-list", destination: "/bookmarks", permanent: true },
+      { source: "/bookmark", destination: "/bookmarks", permanent: true },
       { source: "/newsletters", destination: "/media", permanent: true },
       { source: "/podcasts", destination: "/media", permanent: true },
       {

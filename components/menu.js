@@ -23,7 +23,7 @@ const workLinks = [
 ];
 
 const resourceLinks = [
-  { href: "/bookmark", label: "Bookmark", icon: "reading" },
+  { href: "/bookmarks", label: "Bookmarks", icon: "reading" },
   { href: "/goods", label: "Goods", icon: "shopping-bag" },
   { href: "/talent", label: "Talent", icon: "users" },
   { href: "/media", label: "Media", icon: "newsletters" },
@@ -48,6 +48,20 @@ function MobileMenu() {
     <Dialog.Root>
       <nav className={styles.mobileDock} aria-label="Primary navigation">
         <div className={styles.mobilePrimaryGroup}>
+          <Link
+            href="/"
+            prefetch={false}
+            className={`${styles.mobileDockButton} ${styles.mobileSignature}`}
+            aria-label="Home"
+          >
+            <Image
+              src="/logo.png"
+              width={62}
+              height={11}
+              alt=""
+              priority
+            />
+          </Link>
           {primaryLinks.map((link) => (
             <Link
               key={link.href}
@@ -220,8 +234,8 @@ export default function Menu() {
           <p className={styles.divider}>Resources</p>
           <NavLink
             svg="reading"
-            href="/bookmark"
-            label="Bookmark"
+            href="/bookmarks"
+            label="Bookmarks"
             shortcut="6"
           />
           <NavLink

@@ -35,13 +35,7 @@ export default function Contact({ svg, label }) {
         </div>
         <p className={styles.label}>{label}</p>
       </div>
-      <Image
-        className={`${styles.copyIcon} iconInvert`}
-        src="/feather/copy.svg"
-        height={16}
-        width={16}
-        alt=""
-      />
+      <span className={styles.copyIcon} aria-hidden="true" />
     </button>
   );
 }
