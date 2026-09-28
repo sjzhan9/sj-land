@@ -53,7 +53,7 @@
   .mobileDock {
     position: fixed;
     right: 12px;
-    bottom: calc(10px + env(safe-area-inset-bottom));
+    bottom: calc(5px + env(safe-area-inset-bottom));
     left: 12px;
     z-index: 20;
     display: flex;
@@ -149,7 +149,7 @@
     border: 1px solid rgba(255, 255, 255, 0.76);
     border-radius: 18px;
     outline: none;
-    background: rgba(244, 244, 244, 0.9);
+    background: rgba(244, 244, 244, 0.1);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(32px) saturate(180%);
@@ -183,7 +183,7 @@
   .sheetItem:hover,
   .sheetItem:active,
   .sheetItem[aria-current="page"] {
-    background: rgba(255, 255, 255, 0.62);
+    background: rgba(255, 255, 255, 0.2);
   }
 
   .sheetDivider {
@@ -217,7 +217,7 @@
   :global(.dark-theme) .mobileMoreButton,
   :global(.dark-theme) .sheetContent {
     border-color: rgba(255, 255, 255, 0.12);
-    background: rgba(38, 38, 38, 0.9);
+    background: rgba(38, 38, 38, 0.1);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.46),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
@@ -227,7 +227,7 @@
   :global(.dark-theme) .sheetItem:hover,
   :global(.dark-theme) .sheetItem:active,
   :global(.dark-theme) .sheetItem[aria-current="page"] {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
   }
 
   :global(.dark-theme) .sheetDivider {
