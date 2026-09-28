@@ -131,9 +131,7 @@
     position: fixed;
     inset: 0;
     z-index: 30;
-    background: rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(24px) saturate(80%);
-    -webkit-backdrop-filter: blur(24px) saturate(80%);
+    background: transparent;
     animation: menu-overlay-in 160ms ease-out;
   }
 
@@ -149,7 +147,7 @@
     border: 1px solid rgba(255, 255, 255, 0.76);
     border-radius: 18px;
     outline: none;
-    background: rgba(244, 244, 244, 0.1);
+    background: rgba(244, 244, 244, 0.8);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(32px) saturate(180%);
@@ -217,7 +215,7 @@
   :global(.dark-theme) .mobileMoreButton,
   :global(.dark-theme) .sheetContent {
     border-color: rgba(255, 255, 255, 0.12);
-    background: rgba(38, 38, 38, 0.1);
+    background: rgba(38, 38, 38, 0.8);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.46),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
