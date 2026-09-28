@@ -150,7 +150,7 @@ export default function Goods({ list }) {
   return (
     <>
       <Head>
-        <title>{"Aesthetic Goods"}</title>
+        <title>{"Goods"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
@@ -160,7 +160,7 @@ export default function Goods({ list }) {
         <div className={util.goodsColumn}>
           <div className={util.goodsTopContainer}>
             <div className={util.projectTopLeft}>
-              <h1 className={util.goodsHeader}>Aesthetic Goods</h1>
+              <h1 className={util.goodsHeader}>Goods</h1>
             </div>
             <p className={util.goodsDescription}>{description}</p>
           </div>

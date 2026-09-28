@@ -151,14 +151,20 @@
     display: none;
   }
   .label {
-    display: none;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.15;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .item {
-    border-radius: 8px;
-
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    height: 3rem;
-    width: 3rem;
+    border-radius: 5px;
+    padding: 4px 7px;
+    height: auto;
+    width: auto;
     flex-shrink: 0;
     flex-direction: row;
     justify-content: center;
@@ -174,5 +180,8 @@
   }
   .title {
     margin-bottom: 0rem;
+  }
+  .contactIcon {
+    display: none;
   }
 }

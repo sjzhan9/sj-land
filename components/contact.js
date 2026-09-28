@@ -23,7 +23,7 @@ export default function Contact({ svg, label }) {
       aria-label={`Copy ${EMAIL}`}
     >
       <div className={styles.left}>
-        <div className={util.icon}>
+        <div className={`${util.icon} ${styles.contactIcon}`}>
           <Image
             className={"iconInvert"}
             priority

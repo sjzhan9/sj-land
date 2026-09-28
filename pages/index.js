@@ -197,7 +197,7 @@ export default function Home({ updatesList, goodsList, readingListList }) {
             ))}
           </ul>
           <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Aesthetic Goods</h2>
+            <h2 className={styles.homeSectionTitle}>Goods</h2>
             <Link href="/goods" className={styles.homeLinkButton}>
               View All
             </Link>
@@ -219,8 +219,8 @@ export default function Home({ updatesList, goodsList, readingListList }) {
             ))}
           </ul>
           <div className={styles.homeSectionContainer}>
-            <h2 className={styles.homeSectionTitle}>Reading List</h2>
-            <Link href="/reading-list" className={styles.homeLinkButton}>
+            <h2 className={styles.homeSectionTitle}>Bookmark</h2>
+            <Link href="/bookmark" className={styles.homeLinkButton}>
               View All
             </Link>
           </div>{" "}

@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Settings from "../components/settings";
 
-export default function ReadingList({ list }) {
+export default function Bookmark({ list }) {
   const description =
     "From essays to videos and tweets, this page is a collection of learning materials that I enjoy. I add to the list frequently, and will improve sorting and filtering soon.";
 
@@ -158,7 +158,7 @@ export default function ReadingList({ list }) {
   return (
     <>
       <Head>
-        <title>{"SJ's Reading List"}</title>
+        <title>{"SJ's Bookmark"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sj.land/og/index.png" />
@@ -166,7 +166,7 @@ export default function ReadingList({ list }) {
 
       <main className={util.page} id="readingPage">
         <div className={util.pageColumn}>
-          <h1 className={util.header}>Reading List</h1>
+          <h1 className={util.header}>Bookmark</h1>
           <p className={util.description}>{description}</p>
 
           <ul className={util.list}>

@@ -29,42 +29,221 @@
   padding: 6px;
 }
 
+.mobileDock {
+  display: none;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (max-width: 700px) {
   .container {
-    padding: 0.375rem 1.5rem 0.5rem 0.375rem;
-    width: 100%;
-    justify-content: flex-start;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-shrink: 0;
-    transition: all 0.15s ease-in;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    display: none;
+  }
+
+  .mobileDock {
     position: fixed;
-    height: 60px;
-    top: auto;
-    bottom: 0px;
-    border-top: 1px solid var(--linkContainerBorder);
-    margin: 0px;
-    background-color: var(--appbg);
-    z-index: 9;
-  }
-
-  .container::-webkit-scrollbar {
-    display: none;
-  }
-
-  .divider {
-    display: none;
-  }
-
-  .upper {
-    flex-shrink: 0;
-  }
-
-  .nav {
+    right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    left: 12px;
+    z-index: 20;
     display: flex;
-    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .mobilePrimaryGroup {
+    display: grid;
+    width: 180px;
+    flex: 0 0 180px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 999px;
+    background: rgba(244, 244, 244, 0.78);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  .mobileDockButton {
+    display: flex;
+    min-width: 0;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--menuLabel);
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 520;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobileDockButton[aria-current="page"],
+  .mobileDockButton[data-state="open"] {
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobileDockButton:active {
+    transform: scale(0.96);
+  }
+
+  .mobileMoreButton {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    background: rgba(244, 244, 244, 0.78);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  .moreDots {
+    position: relative;
+    top: -2px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .sheetOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(24px) saturate(80%);
+    -webkit-backdrop-filter: blur(24px) saturate(80%);
+    animation: menu-overlay-in 160ms ease-out;
+  }
+
+  .sheetContent {
+    position: fixed;
+    right: 12px;
+    bottom: calc(72px + env(safe-area-inset-bottom));
+    z-index: 31;
+    width: min(280px, 70vw);
+    max-height: calc(100vh - 96px - env(safe-area-inset-bottom));
+    overflow-y: auto;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 18px;
+    outline: none;
+    background: rgba(244, 244, 244, 0.9);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    animation: menu-sheet-in 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .sheetList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sheetItem {
+    display: grid;
+    grid-template-columns: 20px 1fr auto;
+    gap: 10px;
+    min-height: 40px;
+    align-items: center;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 13px;
+    background: transparent;
+    color: var(--menuLabel);
+    font: inherit;
+    font-size: var(--font-m);
+    font-weight: 450;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .sheetItem:hover,
+  .sheetItem:active,
+  .sheetItem[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.62);
+  }
+
+  .sheetDivider {
+    height: 1px;
+    margin: 5px 10px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .sheetLeadingIcon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .sheetSocialIcon {
+    border-radius: 4px;
+  }
+
+  .sheetTrailingIcon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.5;
+  }
+
+  .sheetExternal {
+    color: var(--tabText);
+    font-size: 16px;
+    font-weight: 350;
+  }
+
+  :global(.dark-theme) .mobilePrimaryGroup,
+  :global(.dark-theme) .mobileMoreButton,
+  :global(.dark-theme) .sheetContent {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(38, 38, 38, 0.9);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.46),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  :global(.dark-theme) .mobileDockButton[aria-current="page"],
+  :global(.dark-theme) .mobileDockButton[data-state="open"],
+  :global(.dark-theme) .sheetItem:hover,
+  :global(.dark-theme) .sheetItem:active,
+  :global(.dark-theme) .sheetItem[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  :global(.dark-theme) .sheetDivider {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+@keyframes menu-overlay-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes menu-sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
   }
 }

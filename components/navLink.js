@@ -56,7 +56,7 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
       aria-current={ariaCurrent}
     >
       <div className={styles.left}>
-        <div className={util.icon}>
+        <div className={`${util.icon} ${styles.navIcon}`}>
           <Image
             className={"iconInvert"}
             priority
