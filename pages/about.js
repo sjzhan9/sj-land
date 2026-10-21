@@ -32,7 +32,7 @@ export default function About({ list, expList }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const description = `I work full-time on Coinbase’s Institutional products, servicing hedge funds, market makers, and asset managers. I’m currently leading design on Prime Brokerage Financing solutions including spot leverage, shorting and agency lending products`;
+  const description = `I’m a Director of Product Design at AlphaSense, leading product design for AI-native workflows for financial services.`;
   return (
     <>
       <Head>
@@ -47,34 +47,46 @@ export default function About({ list, expList }) {
           <div className={util.inset}>
             <div className={util.read}>
               <p>
-                {"I work full-time on "}
+                {"I’m a Director of Product Design at "}
+                <a
+                  href="https://www.alpha-sense.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={util.externalLink}
+                >
+                  AlphaSense
+                </a>
+                {", leading product design for AI-native workflows for financial services. AlphaSense already plays an important role in how many of the world’s largest companies make financial decisions. My focus is on how AI changes the work around those decisions, not just the research people consume."}
+              </p>
+              <p>
+                {"Before AlphaSense, I led design across Prime Financing and Trading at "}
                 <a
                   href="https://www.coinbase.com/institutional"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={util.externalLink}
                 >
-                  {"Coinbase’s Institutional products"}
+                  {"Coinbase Institutional"}
                 </a>
                 {
-                  ", servicing hedge funds, market makers, and asset managers. I’m currently leading design on Prime Brokerage Financing solutions including spot leverage, shorting and agency lending products."
+                  ", building products for hedge funds, market makers, and asset managers. The work covered spot leverage, shorting, agency lending, and derivatives, and gave me a much deeper understanding of how institutional markets work."
                 }
               </p>
               <p>
                 {
-                  "Outside of work I spend most of my energy reading about the economy and the capital markets. I "
+                  "Outside of work, I spend most of my energy reading about the economy and capital markets. I "
                 }
 
                 <Link href="/investments" className={util.internalLink}>
-                  invest in mostly equity and crypto
+                  invest mostly in public equities
                 </Link>
 
                 {
-                  " , but I have stakes in a few private startups as well. I used to do a bit more advising and consulting work with startups, always down to jam about the market, businesses and startup ideas."
+                  ", with stakes in a few private startups. I used to do more advising and consulting with startups, but I’m always down to talk about markets, businesses, and new ideas."
                 }
               </p>
               <p>
-                {"If you knew me before it's likely from my work at "}
+                {"If you knew me before, it’s likely from my work at "}
                 <a
                   href="https://withcompound.com/"
                   target="_blank"
@@ -93,7 +105,7 @@ export default function About({ list, expList }) {
                   building this website
                 </a>
                 {
-                  ". After four incredible years at Compound, I left following the acquisition. While I don’t have plans to rebuild this website anytime soon, I'll try my best to keep it updated."
+                  ". I spent four incredible years at Compound and left following its acquisition. I don’t have plans to rebuild this website anytime soon, but I’ll keep doing my best to keep it updated."
                 }
               </p>
             </div>

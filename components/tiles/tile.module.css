@@ -36,6 +36,8 @@
   padding: 0px;
 }
 .icon {
+  object-fit: cover;
+  object-position: center;
   border-radius: 6px;
 
   flex-shrink: 0;
