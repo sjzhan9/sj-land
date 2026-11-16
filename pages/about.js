@@ -32,7 +32,7 @@ export default function About({ list, expList }) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const description = `I’m a Director of Product Design at AlphaSense, leading product design for AI-native workflows for financial services.`;
+  const description = `I’m currently a Director of Product Design at AlphaSense, working on AI-native workflows for financial services.`;
   return (
     <>
       <Head>
@@ -47,7 +47,7 @@ export default function About({ list, expList }) {
           <div className={util.inset}>
             <div className={util.read}>
               <p>
-                {"I’m a Director of Product Design at "}
+                {"I’m currently a Director of Product Design at "}
                 <a
                   href="https://www.alpha-sense.com/"
                   target="_blank"
@@ -56,7 +56,7 @@ export default function About({ list, expList }) {
                 >
                   AlphaSense
                 </a>
-                {", leading product design for AI-native workflows for financial services. AlphaSense already plays an important role in how many of the world’s largest companies make financial decisions. My focus is on how AI changes the work around those decisions, not just the research people consume."}
+                {", working on AI-native workflows for financial services."}
               </p>
               <p>
                 {"Before AlphaSense, I led design across Prime Financing and Trading at "}
@@ -66,15 +66,15 @@ export default function About({ list, expList }) {
                   rel="noopener noreferrer"
                   className={util.externalLink}
                 >
-                  {"Coinbase Institutional"}
+                  {"Coinbase"}
                 </a>
                 {
-                  ", building products for hedge funds, market makers, and asset managers. The work covered spot leverage, shorting, agency lending, and derivatives, and gave me a much deeper understanding of how institutional markets work."
+                  ", built products for hedge funds, market makers, and asset managers. I worked on products from spot leverage, shorting, and agency lending to US/International derivatives."
                 }
               </p>
               <p>
                 {
-                  "Outside of work, I spend most of my energy reading about the economy and capital markets. I "
+                  "Outside of work, I spend most of my time reading and thinking about the economy and markets. I "
                 }
 
                 <Link href="/investments" className={util.internalLink}>
