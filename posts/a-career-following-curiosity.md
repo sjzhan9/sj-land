@@ -3,7 +3,7 @@ title: "A Career Following Curiosity"
 date: "2026-11-26"
 ---
 
-Last month I joined AlphaSense as a Director of Product Design.
+[Last month I joined](https://www.linkedin.com/posts/sj-zhang_career-update-ive-joined-alphasense-as-share-7518665036723204096-nctT/) AlphaSense as a Director of Product Design.
 
 Since its founding in 2011, AlphaSense has changed how financial professionals find information and make decisions. Now, AI is changing how the work itself gets done. With 7,000+ enterprise customers, including 90% of the S&P 100, there’s so much opportunity to improve how those firms work. I’m excited to get started.
 

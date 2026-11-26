@@ -33,9 +33,9 @@ export default function Post({ postData }) {
           <h1 className={util.header}>{postData.title}</h1>
           <div className={util.inset}>
             <p className={util.description}>{postData.date}</p>
-            <p className={util.read} style={{ margin: "2rem 0rem 0rem 0rem" }}>
+            <div className={util.read} style={{ margin: "2rem 0rem 0rem 0rem" }}>
               <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-            </p>
+            </div>
           </div>
         </div>
       </main>
