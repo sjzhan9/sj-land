@@ -43,7 +43,7 @@ export default function Investments({ list, activities = [] }) {
 
             <p>
               {
-                "I primarily focus on the public market these days. I own long term investments, do sector rotation trades, and frequently swing trade familiar names. Holdings featured on the page are most likely outdated. NFA."
+                "I primarily focus on the public market these days. I own long term investments, do sector rotation trades, and frequently swing trade familiar names. Holdings are automatically synced by AI agents and are usually accurate, though occasional sync failures can leave them out of date. NFA."
               }
             </p>
             <p>

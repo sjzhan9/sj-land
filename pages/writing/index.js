@@ -35,6 +35,15 @@ export default function Writing({ list, expList }) {
           <p className={util.description}>{description}</p>
           <ul className={util.list} style={{ margin: "3rem -1rem" }}>
             <WritingTile
+              key={"a-career-following-curiosity"}
+              title={"A Career Following Curiosity"}
+              excerpt={
+                "Some thoughts reflecting on my decision to join AlphaSense, and how following my curiosity shaped the work I took on, what I became good at, and how I could contribute."
+              }
+              url={"a-career-following-curiosity"}
+              date={"2026-11-26"}
+            />
+            <WritingTile
               key={1}
               title={"The Long Game: Choose a Career That Brings Lasting Joy"}
               excerpt={
